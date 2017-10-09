@@ -1,0 +1,125 @@
+[
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.palm.advisory.desc2",
+		"type": "include_regex",
+		"checks": [
+			"<a id='advisory_provider'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.malwarePage.errorDesc.override",
+		"type": "include_regex",
+		"checks": [
+			"<span id='malware_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>",
+			"<a id='report_detection'>",
+			"<a id='ignore_warning_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.malwarePage.errorDesc.noOverride",
+		"type": "include_regex",
+		"checks": [
+	    	"<span id='malware_sitename'(\\s)*/>",
+	    	"<a id='error_desc_link'>",
+	    	"<a id='report_detection'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.malwarePage.learnMore",
+		"type": "include_regex",
+		"checks": [
+	    	"<a id='learn_more_link'>StopBadware.org</a>",
+	    	"<a id='firefox_support'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.unwantedPage.errorDesc.override",
+		"type": "include_regex",
+		"checks": [
+			"<span id='unwanted_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>",
+			"<a id='ignore_warning_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.unwantedPage.errorDesc.noOverride",
+		"type": "include_regex",
+		"checks": [
+			"<span id='unwanted_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.unwantedPage.learnMore",
+		"type": "include_regex",
+		"checks": [
+			"<a id='learn_more_link'>",
+			"<a id='firefox_support'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.phishingPage.errorDesc.override",
+		"type": "include_regex",
+		"checks": [
+			"<span id='phishing_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>",
+			"<a id='report_detection'>",
+			"<a id='ignore_warning_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.phishingPage.errorDesc.noOverride",
+		"type": "include_regex",
+		"checks": [
+			"<span id='phishing_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>",
+			"<a id='report_detection'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.phishingPage.learnMore",
+		"type": "include_regex",
+		"checks": [
+			"<a id='learn_more_link'>www.antiphishing.org</a>",
+			"<a id='firefox_support'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.harmfulPage.errorDesc.override",
+		"type": "include_regex",
+		"checks": [
+			"<span id='harmful_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>",
+			"<a id='ignore_warning_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.harmfulPage.errorDesc.noOverride",
+		"type": "include_regex",
+		"checks": [
+			"<span id='harmful_sitename'(\\s)*/>",
+			"<a id='error_desc_link'>"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd",
+		"entity": "safeb.blocked.harmfulPage.learnMore",
+		"type": "include_regex",
+		"checks": [
+			"<a id='firefox_support'>"
+		]
+	}
+]

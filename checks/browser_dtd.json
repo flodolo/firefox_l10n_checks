@@ -1,0 +1,14 @@
+[
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "bookmarkThisPageCmd.commandkey",
+		"type": "equal_to",
+		"value": "d"
+	},
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "quitApplicationCmd.key",
+		"type": "equal_to",
+		"value": "Q"
+	}
+]

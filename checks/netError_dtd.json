@@ -1,0 +1,21 @@
+[
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.wrongSystemTime2",
+		"type": "include_regex",
+		"checks": [
+			"<span id='wrongSystemTime_URL'(\\s)*/>",
+			"<span id='wrongSystemTime_URL'(\\s)*/>",
+			"<span id='wrongSystemTime_actualDate'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.wrongSystemTimeWithoutReference",
+		"type": "include_regex",
+		"checks": [
+			"<span id='wrongSystemTimeWithoutReference_URL'(\\s)*/>",
+			"<span id='wrongSystemTimeWithoutReference_systemDate'(\\s)*/>"
+		]
+	}
+]
