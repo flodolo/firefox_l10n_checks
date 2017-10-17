@@ -7,15 +7,18 @@ import sys
 import urllib2
 
 filenames = [
+    'abouttabcrashed_dtd',
     'browser_dtd',
     'intl_properties',
     'mobile_phishing_dtd',
     'netError_dtd',
     'phishing-afterload-warning-message_dtd',
+    'preferences_properties',
 ]
 url = 'https://transvision.flod.org/api/v1/entity/central/?id={}:{}'
 
 script_folder = os.path.dirname(os.path.realpath(__file__))
+errors = 0
 for filename in filenames:
     print('\n---\nCheck name: {}\n'.format(filename))
     try:
@@ -39,23 +42,33 @@ for filename in filenames:
 
                 if c['type'] == 'include_regex':
                     for t in c['checks']:
-                        if not re.search(t, str):
+                        pattern = re.compile(t, re.UNICODE)
+                        if not pattern.search(str):
                             print(u'  {}: missing {} in {}'.format(locale, t, c['entity']))
+                            errors += 1
                 elif c['type'] == 'include':
                     for t in c['checks']:
                         if t not in str:
                             print(u'  {}: missing {} in {}'.format(locale, t, c['entity']))
+                            errors += 1
                 elif c['type'] == 'equal_to':
                     if c['value'] != str:
                         print(u'  {}: {} not equal to {} in {}'.format(locale, str, c['value'], c['entity']))
+                        errors += 1
                 elif c['type'] == 'not_equal_to':
                     if c['value'] == str:
                         print(u'  {}: {} is equal to {} in {}'.format(locale, str, c['value'], c['entity']))
+                        errors += 1
                 elif c['type'] == 'acceptable_values':
                     if str not in c['values']:
                         print(u'  {}: {} is not an acceptable value'.format(locale, str))
+                        errors += 1
                 elif c['type'] == 'typeof':
                     if type(str) != c['value']:
                         print(u'  {}: {} is not of type'.format(locale, str))
+                        errors += 1
         except Exception as e:
             print(e)
+
+    if errors:
+        print('There are errors ({})'.format(errors))
