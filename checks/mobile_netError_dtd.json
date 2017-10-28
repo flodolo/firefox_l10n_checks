@@ -1,0 +1,69 @@
+[
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "dnsNotFound.longDesc4",
+		"excluded_locales": ["da", "eu"],
+		"type": "include_regex",
+		"checks": [
+			"<strong>ww</strong>.example.com",
+			"<strong>www</strong>.example.com",
+			"<div id='searchbox'>",
+			"<input id='searchtext' type='search'>\\s*</input>",
+			"<button id='searchbutton'>",
+			"<button id='wifi'>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "malformedURI.longDesc2",
+		"excluded_locales": ["da", "eu"],
+		"type": "include_regex",
+		"checks": [
+			"<strong>http://www.example.com/*</strong>",
+			"<div id='searchbox'>",
+			"<input id='searchtext' type='search'>\\s*</input>",
+			"<button id='searchbutton'>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "netOffline.longDesc3",
+		"type": "include_regex",
+		"checks": [
+			"<button id='wifi'>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "proxyResolveFailure.longDesc3",
+		"type": "include_regex",
+		"checks": [
+			"<button id='wifi'>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "sharedLongDesc3",
+		"type": "include_regex",
+		"checks": [
+			"<button id='wifi'>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "securityOverride.warningContent",
+		"type": "include_regex",
+		"checks": [
+			"<button id='getMeOutOfHereButton'>&securityOverride.getMeOutOfHereButton;</button>",
+			"<button id='exceptionDialogButton'>&securityOverride.exceptionButtonLabel;</button>"
+		]
+	},
+	{
+		"file": "mobile/overrides/netError.dtd",
+		"entity": "inadequateSecurityError.longDesc",
+		"type": "include_regex",
+		"checks": [
+			"<span class='hostname'></span>"
+		]
+	}
+]

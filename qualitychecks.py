@@ -11,6 +11,7 @@ filenames = [
     'browser_dtd',
     'intl_properties',
     'mobile_phishing_dtd',
+    'mobile_netError_dtd',
     'netError_dtd',
     'phishing-afterload-warning-message_dtd',
     'preferences_properties',
