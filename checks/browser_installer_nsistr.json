@@ -1,0 +1,94 @@
+[
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "INSTALLER_WIN_CAPTION",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "STUB_CLEANUP_PAVEOVER_HEADER",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "STUB_CLEANUP_REINSTALL_HEADER",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "STUB_BLURB_FIRST1",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "ERROR_DOWNLOAD_CONT",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "VERSION_32BIT",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "VERSION_64BIT",
+		"type": "include",
+		"checks": [
+			"$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "WARN_MIN_SUPPORTED_OSVER_MSG",
+		"excluded_locales": ["it"],
+		"type": "include_regex",
+		"checks": [
+			"\\$BrandShortName.*\\$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "WARN_MIN_SUPPORTED_CPU_MSG",
+		"excluded_locales": ["it"],
+		"type": "include_regex",
+		"checks": [
+			"\\$BrandShortName.*\\$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+		"excluded_locales": ["it"],
+		"type": "include_regex",
+		"checks": [
+			"\\$BrandShortName.*\\$BrandShortName"
+		]
+	},
+	{
+		"file": "browser/installer/nsisstrings.properties",
+		"entity": "WARN_MANUALLY_CLOSE_APP_LAUNCH",
+		"excluded_locales": ["it", "pl"],
+		"type": "include_regex",
+		"checks": [
+			"\\$BrandShortName.*\\$BrandShortName"
+		]
+	}
+]

@@ -9,6 +9,7 @@ import urllib2
 filenames = [
     'abouttabcrashed_dtd',
     'browser_dtd',
+    'browser_installer_nsistr',
     'intl_properties',
     'mobile_phishing_dtd',
     'mobile_netError_dtd',
@@ -19,7 +20,7 @@ filenames = [
 url = 'https://transvision.flod.org/api/v1/entity/central/?id={}:{}'
 
 script_folder = os.path.dirname(os.path.realpath(__file__))
-errors = 0
+error_messages = []
 for filename in filenames:
     print('\n---\nCheck name: {}\n'.format(filename))
     try:
@@ -45,31 +46,40 @@ for filename in filenames:
                     for t in c['checks']:
                         pattern = re.compile(t, re.UNICODE)
                         if not pattern.search(str):
-                            print(u'  {}: missing {} in {}'.format(locale, t, c['entity']))
-                            errors += 1
+                            error_msg = u'{}: missing {} in {}'.format(locale, t, c['entity'])
+                            print('  {}'.format(error_msg))
+                            error_messages.append('  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'include':
                     for t in c['checks']:
                         if t not in str:
-                            print(u'  {}: missing {} in {}'.format(locale, t, c['entity']))
-                            errors += 1
+                            error_msg = u'{}: missing {} in {}'.format(locale, t, c['entity'])
+                            print('  {}'.format(error_msg))
+                            error_messages.append('  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'equal_to':
                     if c['value'] != str:
-                        print(u'  {}: {} not equal to {} in {}'.format(locale, str, c['value'], c['entity']))
-                        errors += 1
+                        error_msg = u'  {}: {} not equal to {} in {}'.format(locale, str, c['value'], c['entity'])
+                        print('  {}'.format(error_msg))
+                        error_messages.append('  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'not_equal_to':
                     if c['value'] == str:
-                        print(u'  {}: {} is equal to {} in {}'.format(locale, str, c['value'], c['entity']))
-                        errors += 1
+                        error_msg = u'  {}: {} is equal to {} in {}'.format(locale, str, c['value'], c['entity'])
+                        print('  {}'.format(error_msg))
+                        error_messages.append('  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'acceptable_values':
                     if str not in c['values']:
-                        print(u'  {}: {} is not an acceptable value'.format(locale, str))
-                        errors += 1
+                        error_msg = u'  {}: {} is not an acceptable value'.format(locale, str)
+                        print('  {}'.format(error_msg))
+                        error_messages.append('  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'typeof':
                     if type(str) != c['value']:
-                        print(u'  {}: {} is not of type'.format(locale, str))
-                        errors += 1
+                        error_msg = u'  {}: {} is not of type'.format(locale, str)
+                        print('  {}'.format(error_msg))
+                        error_messages.append('  {} - {}'.format(filename, error_msg))
         except Exception as e:
             print(e)
 
-    if errors:
-        print('There are errors ({})'.format(errors))
+if error_messages:
+    print('\nThere are errors ({})'.format(len(error_messages)))
+    print('\n'.join(error_messages))
+else:
+    print('\nThere are no errors.')
