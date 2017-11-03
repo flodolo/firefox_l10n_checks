@@ -17,7 +17,7 @@ filenames = [
     'phishing-afterload-warning-message_dtd',
     'preferences_properties',
 ]
-url = 'https://transvision.flod.org/api/v1/entity/central/?id={}:{}'
+url = 'https://transvision.flod.org/api/v1/entity/gecko_strings/?id={}:{}'
 
 script_folder = os.path.dirname(os.path.realpath(__file__))
 error_messages = []
