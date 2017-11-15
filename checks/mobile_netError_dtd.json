@@ -2,7 +2,7 @@
 	{
 		"file": "mobile/overrides/netError.dtd",
 		"entity": "dnsNotFound.longDesc4",
-		"excluded_locales": ["da", "eu"],
+		"excluded_locales": ["da", "et", "eu"],
 		"type": "include_regex",
 		"checks": [
 			"<strong>ww</strong>.example.com",
@@ -16,7 +16,7 @@
 	{
 		"file": "mobile/overrides/netError.dtd",
 		"entity": "malformedURI.longDesc2",
-		"excluded_locales": ["da", "eu"],
+		"excluded_locales": ["da", "et", "eu"],
 		"type": "include_regex",
 		"checks": [
 			"<strong>http://www.example.com/*</strong>",
