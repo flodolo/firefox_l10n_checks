@@ -47,39 +47,39 @@ for filename in filenames:
                         pattern = re.compile(t, re.UNICODE)
                         if not pattern.search(str):
                             error_msg = u'{}: missing {} in {}'.format(locale, t, c['entity'])
-                            print('  {}'.format(error_msg))
-                            error_messages.append('  {} - {}'.format(filename, error_msg))
+                            print(u'  {}'.format(error_msg))
+                            error_messages.append(u'  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'include':
                     for t in c['checks']:
                         if t not in str:
                             error_msg = u'{}: missing {} in {}'.format(locale, t, c['entity'])
-                            print('  {}'.format(error_msg))
-                            error_messages.append('  {} - {}'.format(filename, error_msg))
+                            print(u'  {}'.format(error_msg))
+                            error_messages.append(u'  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'equal_to':
-                    if c['value'] != str:
+                    if c['value'].lower() != str.lower():
                         error_msg = u'  {}: {} not equal to {} in {}'.format(locale, str, c['value'], c['entity'])
-                        print('  {}'.format(error_msg))
-                        error_messages.append('  {} - {}'.format(filename, error_msg))
+                        print(u'  {}'.format(error_msg))
+                        error_messages.append(u'  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'not_equal_to':
                     if c['value'] == str:
                         error_msg = u'  {}: {} is equal to {} in {}'.format(locale, str, c['value'], c['entity'])
-                        print('  {}'.format(error_msg))
-                        error_messages.append('  {} - {}'.format(filename, error_msg))
+                        print(u'  {}'.format(error_msg))
+                        error_messages.append(u'  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'acceptable_values':
                     if str not in c['values']:
                         error_msg = u'  {}: {} is not an acceptable value'.format(locale, str)
-                        print('  {}'.format(error_msg))
-                        error_messages.append('  {} - {}'.format(filename, error_msg))
+                        print(u'  {}'.format(error_msg))
+                        error_messages.append(u'  {} - {}'.format(filename, error_msg))
                 elif c['type'] == 'typeof':
                     if type(str) != c['value']:
                         error_msg = u'  {}: {} is not of type'.format(locale, str)
-                        print('  {}'.format(error_msg))
-                        error_messages.append('  {} - {}'.format(filename, error_msg))
+                        print(u'  {}'.format(error_msg))
+                        error_messages.append(u'  {} - {}'.format(filename, error_msg))
         except Exception as e:
             print(e)
 
 if error_messages:
     print('\nThere are errors ({})'.format(len(error_messages)))
-    print('\n'.join(error_messages))
+    print(u'\n'.join(error_messages))
 else:
     print('\nThere are no errors.')
