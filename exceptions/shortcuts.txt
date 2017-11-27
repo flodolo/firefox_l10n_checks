@@ -1,0 +1,6 @@
+it: devtools/client/sourceeditor.properties:indentLess.commandkey
+it: devtools/client/sourceeditor.properties:indentMore.commandkey
+it: devtools/client/toolbox.properties:toolbox.nextTool.key
+it: devtools/client/toolbox.properties:toolbox.previousTool.key
+sv-SE: devtools/client/sourceeditor.properties:indentLess.commandkey
+sv-SE: devtools/client/sourceeditor.properties:indentMore.commandkey
