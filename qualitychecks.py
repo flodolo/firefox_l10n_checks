@@ -17,6 +17,7 @@ def check_api(script_folder):
         'netError_dtd',
         'phishing-afterload-warning-message_dtd',
         'preferences_properties',
+        'pipnss_properties',
     ]
     url = 'https://transvision.flod.org/api/v1/entity/gecko_strings/?id={}:{}'
 
@@ -75,11 +76,18 @@ def check_api(script_folder):
                             error_msg = u'  {}: {} is not of type'.format(locale, str)
                             print(u'  {}'.format(error_msg))
                             error_messages.append(u'  {} - {}'.format(filename, error_msg))
+                    elif c['type'] == 'bytes_length':
+                        current_length = len(str.encode('utf-8'))
+                        if current_length > c['value']:
+                            error_msg = u'  {}: {} ({}) is longer than {} bytes (current length: {} bytes)'.format(locale, c['entity'], str, c['value'], current_length)
+                            print(u'  {}'.format(error_msg))
+                            error_messages.append(u'  {} - {}'.format(filename, error_msg))
             except Exception as e:
                 print(e)
 
     if error_messages:
         print('\nThere are errors ({})'.format(len(error_messages)))
+        error_messages.sort()
         print(u'\n'.join(error_messages))
     else:
         print('\nThere are no errors.')
