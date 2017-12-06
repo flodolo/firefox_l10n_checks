@@ -61,16 +61,6 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
-		"entity": "menuUndoCloseWindowLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "menuUndoCloseWindowLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
 		"entity": "getUserMedia.shareApplicationWindowCount.label",
 		"type": "plural_forms"
 	},
@@ -158,79 +148,79 @@
 		"file": "devtools/client/canvasdebugger.properties",
 		"entity": "snapshotsList.drawCallsLabel",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/canvasdebugger.properties",
 		"entity": "snapshotsList.functionCallsLabel",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/debugger.properties",
 		"entity": "variablesViewMoreObjects",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/inspector.properties",
 		"entity": "markupView.more.showAll2",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/jit-optimizations.properties",
 		"entity": "jit.samples",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/netmonitor.properties",
 		"entity": "networkMenu.summary.requestsCount",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/netmonitor.properties",
 		"entity": "charts.totalSeconds",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/styleeditor.properties",
 		"entity": "ruleCount.label",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/toolbox.properties",
 		"entity": "toolboxToggleButton.errors",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/toolbox.properties",
 		"entity": "toolboxToggleButton.warnings",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/webconsole.properties",
 		"entity": "messageRepeats.tooltip2",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/webconsole.properties",
 		"entity": "emptySlotLabel",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "devtools/client/webconsole.properties",
 		"entity": "webconsole.filteredMessages.label",
 		"type": "plural_forms",
-		"excluded_locales": ["ka"]
+		"excluded_locales": ["gd", "ka", "sr"]
 	},
 	{
 		"file": "dom/chrome/accessibility/AccessFu.properties",
