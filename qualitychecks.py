@@ -119,16 +119,28 @@ class QualityCheck():
     def printErrors(self):
         ''' Print error messages '''
         error_count = 0
+        locales_with_errors = OrderedDict()
         for locale, errors in self.error_messages.iteritems():
             if errors:
-                print('\n----\nLocale: {} ({})'.format(locale, len(errors)))
-                error_count += len(errors)
+                num_errors = len(errors)
+                print('\n----\nLocale: {} ({})'.format(locale, num_errors))
+                locales_with_errors[locale] = num_errors
+                error_count += num_errors
                 for e in errors:
                     print(u'- {}'.format(e))
         if error_count:
             print('\n----\nTotal errors: {}'.format(error_count))
+        else:
+            print('\n----\nNo errors')
+
+        if locales_with_errors:
+            print('\n----\nLocales with errors ({} errors):'.format(len(locales_with_errors)))
+            for locale, num in locales_with_errors.iteritems():
+                print('- {} ({})'.format(locale, num))
+
+        # General error (e.g. invalid API calls)
         if self.general_errors:
-            print('\n----\nGeneral errors ({})'.format(len(self.general_errors)))
+            print('\n----\nGeneral errors ({} errors):'.format(len(self.general_errors)))
             self.general_errors.sort()
             print(u'\n'.join(self.general_errors))
 
@@ -181,6 +193,7 @@ class QualityCheck():
                         json_data = json.load(response)
                     except Exception as e:
                         self.general_errors.append('Error checking {}:{}: {}'.format(c['file'], c['entity'], e))
+                        continue
                     for locale, translation in json_data.iteritems():
                         # Ignore some locales if exclusions are defined
                         if 'excluded_locales' in c and locale in c['excluded_locales']:
@@ -188,43 +201,38 @@ class QualityCheck():
                         if 'included_locales' in c and locale not in c['included_locales']:
                             continue
 
+                        error_msg = ''
                         if c['type'] == 'include_regex':
                             for t in c['checks']:
                                 pattern = re.compile(t, re.UNICODE)
                                 if not pattern.search(translation):
-                                    error_msg = u'Missing {} in {}'.format(t, c['entity'])
-                                    self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                    error_msg = u'Missing {} in {} ({})'.format(t, c['entity'], c['file'])
                         elif c['type'] == 'include':
                             for t in c['checks']:
                                 if t not in translation:
-                                    error_msg = u'Missing {} in {}'.format(t, c['entity'])
-                                    self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                    error_msg = u'Missing {} in {} ({})'.format(t, c['entity'], c['file'])
                         elif c['type'] == 'equal_to':
                             if c['value'].lower() != translation.lower():
-                                error_msg = u'{} not equal to {} in {}'.format(translation, c['value'], c['entity'])
-                                self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} is not equal to {} in {} ({})'.format(translation, c['value'], c['entity'], c['file'])
                         elif c['type'] == 'not_equal_to':
                             if c['value'] == translation:
-                                error_msg = u'{} is equal to {} in {}'.format(translation, c['value'], c['entity'])
-                                self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} is equal to {} in {} ({})'.format(translation, c['value'], c['entity'], c['file'])
                         elif c['type'] == 'acceptable_values':
                             if translation not in c['values']:
-                                error_msg = u'{}: {} is not an acceptable value'.format(translation)
-                                self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} is not an acceptable value for {} ({})'.format(translation, c['entity'], c['file'])
                         elif c['type'] == 'typeof':
                             if type(translation) != c['value']:
-                                error_msg = u'{} is not of type'.format(translation)
-                                self.error_messages[locale](u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} ({}) is not of type {}'.format(translation, c['file'], c['type'])
                         elif c['type'] == 'bytes_length':
                             current_length = len(translation.encode('utf-8'))
                             if current_length > c['value']:
-                                error_msg = u'{} ({}) is longer than {} bytes (current length: {} bytes)'.format(c['entity'], translation, c['value'], current_length)
-                                self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} ({}) is longer than {} bytes (current length: {} bytes - current text: {})'.format(c['entity'], c['file'], c['value'], current_length, translation)
                         elif c['type'] == 'plural_forms':
                             num_forms = len(translation.split(';'))
                             if num_forms != self.plural_forms[locale]:
-                                error_msg = u'{} has {} plural forms (requested: {})'.format(c['entity'], num_forms, self.plural_forms[locale])
-                                self.error_messages[locale].append(u'{} - {}'.format(json_file, error_msg))
+                                error_msg = u'{} ({}) has {} plural forms (requested: {})'.format(c['entity'], c['file'], num_forms, self.plural_forms[locale])
+                        if error_msg:
+                            self.error_messages[locale].append(error_msg)
                 except Exception as e:
                     print(e)
 
