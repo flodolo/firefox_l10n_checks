@@ -46,6 +46,21 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
+		"entity": "addonsInstalledNeedsRestart",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
+		"entity": "addonsGenericInstalled",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
+		"entity": "addonsGenericInstalledNeedsRestart",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
 		"entity": "popupWarning.message",
 		"type": "plural_forms"
 	},
@@ -183,6 +198,12 @@
 	{
 		"file": "devtools/client/netmonitor.properties",
 		"entity": "charts.totalSeconds",
+		"type": "plural_forms",
+		"excluded_locales": ["gd", "sr"]
+	},
+	{
+		"file": "devtools/client/netmonitor.properties",
+		"entity": "charts.totalSecondsNonBlocking",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "sr"]
 	},
