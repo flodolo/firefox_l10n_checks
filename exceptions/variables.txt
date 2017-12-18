@@ -1,3 +1,4 @@
+br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription

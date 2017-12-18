@@ -64,6 +64,15 @@ class QualityCheck():
         'plurals',
     ]
 
+    excluded_products = (
+        'calendar/',
+        'chat/',
+        'editor/',
+        'extensions/',
+        'mail/',
+        'suite/',
+    )
+
     def __init__(self, script_folder, requested_check):
         ''' Initialize object '''
         self.script_folder = script_folder
@@ -81,6 +90,7 @@ class QualityCheck():
 
         # Initialize error messages
         self.error_messages = OrderedDict()
+        self.error_summary = {}
         for locale in self.locales:
             self.error_messages[locale] = []
         self.general_errors = []
@@ -88,7 +98,8 @@ class QualityCheck():
         # Run checks
         self.checkAPI()
         if requested_check == 'all':
-            self.checkViews()
+            self.checkView('variables')
+            self.checkView('shortcuts')
 
         # Print errors
         self.printErrors()
@@ -134,9 +145,15 @@ class QualityCheck():
             print('\n----\nNo errors')
 
         if locales_with_errors:
-            print('\n----\nLocales with errors ({} errors):'.format(len(locales_with_errors)))
+            print('\n----\nLocales with errors ({} locales):'.format(len(locales_with_errors)))
             for locale, num in locales_with_errors.iteritems():
                 print('- {} ({})'.format(locale, num))
+
+        # Error summary
+        if self.error_summary:
+            print('\n----\nErrors summary by type:')
+            for check, count in self.error_summary.iteritems():
+                print ('- {}: {}'.format(check, count))
 
         # General error (e.g. invalid API calls)
         if self.general_errors:
@@ -158,7 +175,7 @@ class QualityCheck():
             for c in checks:
                 id = '{}-{}-{}'.format(c['file'], c['entity'], c['type'])
                 if id in available_checks:
-                    print('ERROR: check {} is duplidated'.format(id))
+                    print('ERROR: check {} is duplicated'.format(id))
                     continue
                 available_checks.append(id)
 
@@ -177,6 +194,7 @@ class QualityCheck():
         url = '{}/entity/gecko_strings/?id={}:{}'
 
         for json_file in self.json_files:
+            total_errors = 0
             print('CHECK: {}'.format(json_file))
             try:
                 checks = json.load(open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
@@ -233,55 +251,40 @@ class QualityCheck():
                                 error_msg = u'{} ({}) has {} plural forms (requested: {})'.format(c['entity'], c['file'], num_forms, self.plural_forms[locale])
                         if error_msg:
                             self.error_messages[locale].append(error_msg)
+                            total_errors += 1
                 except Exception as e:
                     print(e)
+            if total_errors:
+                self.error_summary[json_file] = total_errors
 
-    def checkViews(self):
+    def checkView(self, checkname):
         ''' Check views for access keys and keyboard shortcuts '''
-        excluded_products = (
-            'calendar/',
-            'chat/',
-            'editor/',
-            'extensions/',
-            'mail/',
-            'suite/',
-        )
+        if checkname == 'variables':
+            print('CHECK: variables')
+            url = '{}/variables/?locale={}&repo=gecko_strings&json'
+        elif checkname == 'shortcuts':
+            print('CHECK: keyboard shortcuts')
+            url = '{}/commandkeys/?locale={}&repo=gecko_strings&json'
 
-        print('CHECK: variables')
-        f = open(os.path.join(self.script_folder, 'exceptions', 'variables.txt'), 'r')
+        f = open(os.path.join(self.script_folder, 'exceptions', '{}.txt'.format(checkname)), 'r')
         exceptions = []
         for l in f:
             exceptions.append(l.rstrip())
+        total_errors = 0
         for locale in self.locales:
-            url = '{}/variables/?locale={}&repo=gecko_strings&json'.format(self.domain, locale)
-            response = urllib2.urlopen(url)
-            variable_errors = json.load(response)
-            for error in variable_errors:
-                if error.startswith((excluded_products)):
+            response = urllib2.urlopen(url.format(self.domain, locale))
+            errors = json.load(response)
+            for error in errors:
+                if error.startswith((self.excluded_products)):
                     continue
                 error_msg = '{}: {}'.format(locale, error)
                 if error_msg in exceptions:
                     continue
-                error_msg = error_msg.replace(locale, 'variables')
+                error_msg = error_msg.replace(locale, checkname)
                 self.error_messages[locale].append(error_msg)
-
-        f = open(os.path.join(self.script_folder, 'exceptions', 'shortcuts.txt'), 'r')
-        exceptions = []
-        for l in f:
-            exceptions.append(l.rstrip())
-        print('CHECK: keyboard shortcuts')
-        for locale in self.locales:
-            url = '{}/commandkeys/?locale={}&repo=gecko_strings&json'.format(self.domain, locale)
-            response = urllib2.urlopen(url)
-            variable_errors = json.load(response)
-            for error in variable_errors:
-                if error.startswith((excluded_products)):
-                    continue
-                error_msg = '{}: {}'.format(locale, error)
-                if error_msg in exceptions:
-                    continue
-                error_msg = error_msg.replace(locale, 'keyboard shortcuts')
-                self.error_messages[locale].append(error_msg)
+                total_errors +=1
+        if total_errors:
+            self.error_summary[checkname] = total_errors
 
 def main():
     # Parse command line options
