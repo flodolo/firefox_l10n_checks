@@ -4,6 +4,7 @@ import argparse
 from collections import OrderedDict
 import json
 import os
+import pickle
 import re
 import sys
 import urllib2
@@ -103,6 +104,54 @@ class QualityCheck():
 
         # Print errors
         self.printErrors()
+
+        # Compare with previous run
+        if requested_check == 'all':
+            self.comparePreviousRun()
+
+    def comparePreviousRun(self):
+
+        def diff(a, b):
+            b = set(b)
+            return [aa for aa in a if aa not in b]
+
+        # Read the list of errors from a previous run (if available)
+        file_name = os.path.join(self.script_folder, 'previous_errors.dump')
+        previous_errors = []
+        if os.path.exists(file_name):
+            try:
+                f = open(file_name, 'rb')
+                previous_errors = pickle.load(f)
+                f.close()
+            except Exception as e:
+                print(e)
+
+        current_errors = []
+        for locale, errors in self.error_messages.iteritems():
+            for e in errors:
+                current_errors.append(u'{} - {}'.format(locale, e))
+        current_errors.sort()
+
+        changes = False
+        new_errors = diff(current_errors, previous_errors)
+        if new_errors:
+            changes = True
+            print('\n----\nNew errors ({}):'.format(len(new_errors)))
+            print('\n'.join(new_errors))
+
+        fixed_errors = diff(previous_errors, current_errors)
+        if fixed_errors:
+            changes = True
+            print('\n----\nFixed errors ({}):'.format(len(fixed_errors)))
+            print('\n'.join(fixed_errors))
+
+        if not changes:
+            print('\n----\nThere are no changes from previous run.')
+
+        # Write back the current list of errors
+        f = open(file_name, 'wb')
+        pickle.dump(current_errors, f)
+        f.close()
 
     def getPluralForms(self):
         ''' Get the number of plural forms for each locale '''
