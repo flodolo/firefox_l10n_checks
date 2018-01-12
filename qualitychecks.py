@@ -42,14 +42,16 @@ class QualityCheck():
         6,
         # 13: Maltese
         4,
-        # 14: Macedonian
+        # 14: Unused
         3,
-        # 15: Icelandic
+        # 15: Icelandic, Macedonian
         2,
         # 16: Breton
         5,
         # 17: Shuar
         2,
+        # 18: Welsh
+        6,
     ]
 
     json_files = [
