@@ -331,7 +331,7 @@ class QualityCheck():
                 error_msg = '{}: {}'.format(locale, error)
                 if error_msg in exceptions:
                     continue
-                error_msg = error_msg.replace(locale, checkname)
+                error_msg = error_msg.replace(locale, checkname, 1)
                 self.error_messages[locale].append(error_msg)
                 total_errors +=1
         if total_errors:

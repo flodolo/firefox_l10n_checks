@@ -246,6 +246,7 @@ sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 uk: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
