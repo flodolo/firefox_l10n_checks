@@ -1,0 +1,10 @@
+[
+	{
+		"file": "browser/browser/preferences/main.ftl",
+		"entity": "default-content-process-count.label",
+		"type": "include_regex",
+		"checks": [
+			"{(\\s)*\\$num(\\s)*}"
+		]
+	}
+]
