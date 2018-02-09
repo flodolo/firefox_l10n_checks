@@ -261,3 +261,4 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
 uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
+vi: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
