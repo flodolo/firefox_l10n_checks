@@ -1,5 +1,6 @@
 br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
 cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
+cs: browser/browser/preferences/preferences.ftl:help-button-label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
@@ -170,6 +171,7 @@ lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 lt: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+pl: browser/browser/preferences/preferences.ftl:should-restart-ok
 pl: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 pl: browser/chrome/browser/aboutDialog.dtd:update.updateButton.label3
 pl: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
