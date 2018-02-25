@@ -1,0 +1,11 @@
+[
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "addonPostInstallMessage.label",
+		"type": "include_regex",
+		"checks": [
+			"<image class='addon-addon-icon'(\\s)*/>",
+			"<image class='addon-toolbar-icon'(\\s)*/>"
+		]
+	}
+]
