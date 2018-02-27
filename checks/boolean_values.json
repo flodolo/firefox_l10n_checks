@@ -1,0 +1,20 @@
+[
+	{
+		"file": "browser/chrome/browser/browser.properties",
+		"entity": "browser.menu.showCharacterEncoding",
+		"type": "acceptable_values",
+		"values": [
+			"true",
+			"false"
+		]
+	},
+	{
+		"file": "mobile/android/chrome/browser.properties",
+		"entity": "browser.menu.showCharacterEncoding",
+		"type": "acceptable_values",
+		"values": [
+			"true",
+			"false"
+		]
+	}
+]
