@@ -1,6 +1,11 @@
+ach - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ar - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+bn-BD - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+bn-IN - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
-cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
+cak - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 cs: browser/browser/preferences/preferences.ftl:help-button-label
+cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
@@ -16,6 +21,8 @@ de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 de: toolkit/chrome/mozapps/extensions/extensions.dtd:legacyExtensions.description
 dsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 el: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
+en-US - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+eo - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 eo: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 et: browser/chrome/browser/preferences/preferences.dtd:prefWindow.titleGNOME
 et: browser/chrome/overrides/netError.dtd:notCached.longDesc
@@ -62,6 +69,7 @@ et: mobile/overrides/netError.dtd:netOffline.longDesc3
 et: mobile/overrides/netError.dtd:notCached.longDesc
 eu: browser/chrome/browser/aboutDialog.dtd:community.start2
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
+fa - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 fi: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
 fi: browser/installer/custom.properties:CONTEXT_OPTIONS
 fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
@@ -105,8 +113,12 @@ fr: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 fr: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
 fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
+gd - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+gu-IN - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+hi-IN - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 hsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+hy-AM - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
 it: browser/chrome/browser/preferences/privacy.dtd:dontrememberDescription.label
@@ -161,6 +173,10 @@ ja: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+kk - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+km - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+kn - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ko - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ko: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
@@ -171,6 +187,15 @@ lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 lt: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+lv - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+mai - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ml - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+mr - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+or - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pa-IN - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl - variables: browser/browser/preferences/preferences.ftl:get-started-configured
+pl - variables: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
+pl - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/preferences.ftl:should-restart-ok
 pl: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 pl: browser/chrome/browser/aboutDialog.dtd:update.updateButton.label3
@@ -207,6 +232,10 @@ pl: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 pl: toolkit/chrome/mozapps/extensions/newaddon.dtd:restartButton
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ro - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ru - variables: browser/browser/preferences/preferences.ftl:get-started-configured
+ru - variables: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
+ru - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ru: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 ru: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
 ru: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
@@ -227,6 +256,7 @@ ru: mobile/android/base/sync_strings.dtd:fxaccount_status_needs_master_sync_auto
 ru: mobile/android/base/sync_strings.dtd:fxaccount_sync_sign_in_error_notification_title2
 ru: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 ru: mobile/android/base/sync_strings.dtd:sync.title.connect.label
+si - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 sk: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
 sk: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
@@ -248,7 +278,11 @@ sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+ta - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
+uk - variables: browser/browser/preferences/preferences.ftl:get-started-configured
+uk - variables: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
+uk - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 uk: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
@@ -263,4 +297,8 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
 uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
+ur - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+uz - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 vi: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
+xh - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+zh-CN - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
