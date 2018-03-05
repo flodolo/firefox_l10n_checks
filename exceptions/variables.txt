@@ -122,6 +122,7 @@ hy-AM - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
 it: browser/chrome/browser/preferences/privacy.dtd:dontrememberDescription.label
+it: browser/chrome/browser/preferences/privacy.dtd:dontrememberDescription1.label
 it: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 it: browser/chrome/browser/preferences/privacy.dtd:rememberDescription.label
 it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTime2
@@ -187,6 +188,7 @@ lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 lt: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+lv - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 mai - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ml - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync

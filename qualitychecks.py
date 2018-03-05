@@ -65,7 +65,6 @@ class QualityCheck():
         'mobile_netError_dtd',
         'netError_dtd',
         'phishing-afterload-warning-message_dtd',
-        'preferences_properties',
         'pipnss_properties',
         'plurals',
     ]

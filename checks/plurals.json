@@ -41,16 +41,6 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonsInstalled",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonsInstalledNeedsRestart",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
 		"entity": "addonsGenericInstalled",
 		"type": "plural_forms"
 	},
@@ -356,11 +346,6 @@
 	{
 		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
 		"entity": "experiment.time.daysPassed",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "showAllSearchResults",
 		"type": "plural_forms"
 	},
 	{

@@ -1,13 +1,6 @@
 [
 	{
 		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "general.useragent.locale",
-		"type": "not_equal_to",
-		"excluded_locales": ["en-US"],
-		"value": "en-US"
-	},
-	{
-		"file": "toolkit/chrome/global/intl.properties",
 		"entity": "intl.accept_languages",
 		"type": "not_equal_to",
 		"excluded_locales": ["en-US"],
