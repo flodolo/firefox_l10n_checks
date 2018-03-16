@@ -70,6 +70,7 @@ et: mobile/overrides/netError.dtd:notCached.longDesc
 eu: browser/chrome/browser/aboutDialog.dtd:community.start2
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
 fa: browser/browser/preferences/preferences.ftl:use-firefox-sync
+fi: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 fi: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
 fi: browser/installer/custom.properties:CONTEXT_OPTIONS
 fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
@@ -134,6 +135,7 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja-JP-mac: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja-JP-mac: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
@@ -154,6 +156,7 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
@@ -188,6 +191,7 @@ lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 lt: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
 mai: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -197,8 +201,8 @@ or: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/preferences.ftl:get-started-configured
 pl: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
-pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/preferences.ftl:should-restart-ok
+pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 pl: browser/chrome/browser/aboutDialog.dtd:update.updateButton.label3
 pl: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
@@ -285,7 +289,6 @@ ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 uk: browser/browser/preferences/preferences.ftl:get-started-configured
 uk: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
-ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
 uk: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
