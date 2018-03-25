@@ -215,7 +215,9 @@ pl: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
 pl: browser/chrome/browser/browser.dtd:syncReAuthItem.label
 pl: browser/chrome/browser/browser.dtd:syncSignIn.label
 pl: browser/chrome/browser/preferences/advanced.dtd:alwaysSubmitCrashReports1.label
+pl: browser/chrome/browser/preferences/advanced.dtd:collectBrowserErrors.label
 pl: browser/chrome/browser/preferences/advanced.dtd:enableHealthReport2.label
+pl: browser/chrome/browser/preferences/clearSiteData.dtd:window.description
 pl: browser/chrome/browser/preferences/main.dtd:getStarted.configured.label
 pl: browser/chrome/browser/preferences/main.dtd:getStarted.notloggedin.label
 pl: browser/chrome/browser/preferences/preferences.properties:okToRestartButton
@@ -227,6 +229,7 @@ pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:s
 pl: browser/chrome/browser/sanitize.dtd:clearDataSettings3.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserAlertConfirm.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserConfirm.label
+pl: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
 pl: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
 pl: mobile/android/base/android_strings.dtd:firstrun_tabqueue_subtext_on
 pl: mobile/android/base/android_strings.dtd:pref_donottrack_summary
