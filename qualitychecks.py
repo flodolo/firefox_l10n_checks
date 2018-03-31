@@ -325,17 +325,20 @@ class QualityCheck():
             exceptions.append(l.rstrip())
         total_errors = 0
         for locale in self.locales:
-            response = urllib2.urlopen(url.format(self.domain, locale))
-            errors = json.load(response)
-            for error in errors:
-                if error.startswith((self.excluded_products)):
-                    continue
-                error_msg = '{}: {}'.format(locale, error)
-                if error_msg in exceptions:
-                    continue
-                error_msg = error_msg.replace(locale, checkname, 1)
-                self.error_messages[locale].append(error_msg)
-                total_errors +=1
+            try:
+                response = urllib2.urlopen(url.format(self.domain, locale), timeout=10)
+                errors = json.load(response)
+                for error in errors:
+                    if error.startswith((self.excluded_products)):
+                        continue
+                    error_msg = '{}: {}'.format(locale, error)
+                    if error_msg in exceptions:
+                        continue
+                    error_msg = error_msg.replace(locale, checkname, 1)
+                    self.error_messages[locale].append(error_msg)
+                    total_errors +=1
+            except Exception as e:
+                print('Error reading locale {} ({})'.format(locale, str(e)))
         if total_errors:
             self.error_summary[checkname] = total_errors
 
