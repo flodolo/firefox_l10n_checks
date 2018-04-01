@@ -9,6 +9,8 @@ import re
 import sys
 import urllib2
 
+MAX_TRIES = 5
+
 class QualityCheck():
 
     # Number of plural forms for each rule
@@ -259,12 +261,18 @@ class QualityCheck():
             for c in checks:
                 try:
                     # print('Checking {}'.format(c['entity']))
-                    try:
-                        response = urllib2.urlopen(url.format(self.api_url, c['file'], c['entity']))
-                        json_data = json.load(response)
-                    except Exception as e:
-                        self.general_errors.append('Error checking {}:{}: {}'.format(c['file'], c['entity'], e))
+                    for try_number in range(MAX_TRIES):
+                        try:
+                            response = urllib2.urlopen(url.format(self.api_url, c['file'], c['entity']))
+                            json_data = json.load(response)
+                            break
+                        except Exception as e:
+                            print('Error #{} checking {}:{}: {}'.format(try_number + 1, c['file'], c['entity'], e))
+
+                    if not json_data and try_number == MAX_TRIES:
+                        self.general_errors.append('Error checking {}:{}'.format(c['file'], c['entity']))
                         continue
+
                     for locale, translation in json_data.iteritems():
                         # Ignore some locales if exclusions are defined
                         if 'excluded_locales' in c and locale in c['excluded_locales']:
@@ -325,20 +333,28 @@ class QualityCheck():
             exceptions.append(l.rstrip())
         total_errors = 0
         for locale in self.locales:
-            try:
-                response = urllib2.urlopen(url.format(self.domain, locale), timeout=10)
-                errors = json.load(response)
-                for error in errors:
-                    if error.startswith((self.excluded_products)):
-                        continue
-                    error_msg = '{}: {}'.format(locale, error)
-                    if error_msg in exceptions:
-                        continue
-                    error_msg = error_msg.replace(locale, checkname, 1)
-                    self.error_messages[locale].append(error_msg)
-                    total_errors +=1
-            except Exception as e:
-                print('Error reading locale {} ({})'.format(locale, str(e)))
+            for try_number in range(MAX_TRIES):
+                try:
+                    response = urllib2.urlopen(url.format(self.domain, locale))
+                    errors = json.load(response)
+                    break
+                except Exception as e:
+                    print('Error #{} checking *{}* for locale {}: {}'.format(try_number + 1, checkname, locale, e))
+
+            if not errors and try_number == MAX_TRIES:
+                self.general_errors.append('Error checking *{}* for locale {}'.format(checkname, locale))
+                continue
+
+            for error in errors:
+                if error.startswith((self.excluded_products)):
+                    continue
+                error_msg = '{}: {}'.format(locale, error)
+                if error_msg in exceptions:
+                    continue
+                error_msg = error_msg.replace(locale, checkname, 1)
+                self.error_messages[locale].append(error_msg)
+                total_errors +=1
+
         if total_errors:
             self.error_summary[checkname] = total_errors
 
