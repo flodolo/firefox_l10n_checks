@@ -11,10 +11,12 @@ import urllib2
 
 MAX_TRIES = 5
 
+
 class QualityCheck():
 
     # Number of plural forms for each rule
-    # Reference: https://searchfox.org/mozilla-central/source/intl/locale/PluralForm.jsm
+    # Reference:
+    # https://searchfox.org/mozilla-central/source/intl/locale/PluralForm.jsm
     plural_rules = [
         # 0: Chinese
         1,
@@ -161,7 +163,8 @@ class QualityCheck():
 
     def getPluralForms(self):
         ''' Get the number of plural forms for each locale '''
-        url = '{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule'.format(self.api_url)
+        url = '{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule'.format(
+            self.api_url)
         print('Reading the list of plural forms')
         try:
             response = urllib2.urlopen(url)
@@ -200,7 +203,8 @@ class QualityCheck():
             print('\n----\nNo errors')
 
         if locales_with_errors:
-            print('\n----\nLocales with errors ({} locales):'.format(len(locales_with_errors)))
+            print(
+                '\n----\nLocales with errors ({} locales):'.format(len(locales_with_errors)))
             for locale, num in locales_with_errors.iteritems():
                 print('- {} ({})'.format(locale, num))
 
@@ -220,7 +224,8 @@ class QualityCheck():
         ''' Do a sanity check on JSON files, checking for duplicates '''
         for json_file in self.json_files:
             try:
-                checks = json.load(open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                checks = json.load(
+                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -239,7 +244,8 @@ class QualityCheck():
         self.sanityCheckJSON()
         if self.requested_check != 'all':
             if self.requested_check not in self.json_files:
-                print('ERROR: The requested check ({}) does not exist. Available checks:'.format(self.requested_check))
+                print('ERROR: The requested check ({}) does not exist. Available checks:'.format(
+                    self.requested_check))
                 for f in self.json_files:
                     print('- {}'.format(f))
                 sys.exit(1)
@@ -252,7 +258,8 @@ class QualityCheck():
             total_errors = 0
             print('CHECK: {}'.format(json_file))
             try:
-                checks = json.load(open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                checks = json.load(
+                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -263,14 +270,17 @@ class QualityCheck():
                     # print('Checking {}'.format(c['entity']))
                     for try_number in range(MAX_TRIES):
                         try:
-                            response = urllib2.urlopen(url.format(self.api_url, c['file'], c['entity']))
+                            response = urllib2.urlopen(url.format(
+                                self.api_url, c['file'], c['entity']))
                             json_data = json.load(response)
                             break
                         except Exception as e:
-                            print('Error #{} checking {}:{}: {}'.format(try_number + 1, c['file'], c['entity'], e))
+                            print('Error #{} checking {}:{}: {}'.format(
+                                try_number + 1, c['file'], c['entity'], e))
 
                     if not json_data and try_number == MAX_TRIES:
-                        self.general_errors.append('Error checking {}:{}'.format(c['file'], c['entity']))
+                        self.general_errors.append(
+                            'Error checking {}:{}'.format(c['file'], c['entity']))
                         continue
 
                     for locale, translation in json_data.iteritems():
@@ -285,31 +295,39 @@ class QualityCheck():
                             for t in c['checks']:
                                 pattern = re.compile(t, re.UNICODE)
                                 if not pattern.search(translation):
-                                    error_msg = u'Missing {} in {} ({})'.format(t, c['entity'], c['file'])
+                                    error_msg = u'Missing {} in {} ({})'.format(
+                                        t, c['entity'], c['file'])
                         elif c['type'] == 'include':
                             for t in c['checks']:
                                 if t not in translation:
-                                    error_msg = u'Missing {} in {} ({})'.format(t, c['entity'], c['file'])
+                                    error_msg = u'Missing {} in {} ({})'.format(
+                                        t, c['entity'], c['file'])
                         elif c['type'] == 'equal_to':
                             if c['value'].lower() != translation.lower():
-                                error_msg = u'{} is not equal to {} in {} ({})'.format(translation, c['value'], c['entity'], c['file'])
+                                error_msg = u'{} is not equal to {} in {} ({})'.format(
+                                    translation, c['value'], c['entity'], c['file'])
                         elif c['type'] == 'not_equal_to':
                             if c['value'] == translation:
-                                error_msg = u'{} is equal to {} in {} ({})'.format(translation, c['value'], c['entity'], c['file'])
+                                error_msg = u'{} is equal to {} in {} ({})'.format(
+                                    translation, c['value'], c['entity'], c['file'])
                         elif c['type'] == 'acceptable_values':
                             if translation not in c['values']:
-                                error_msg = u'{} is not an acceptable value for {} ({})'.format(translation, c['entity'], c['file'])
+                                error_msg = u'{} is not an acceptable value for {} ({})'.format(
+                                    translation, c['entity'], c['file'])
                         elif c['type'] == 'typeof':
                             if type(translation) != c['value']:
-                                error_msg = u'{} ({}) is not of type {}'.format(translation, c['file'], c['type'])
+                                error_msg = u'{} ({}) is not of type {}'.format(
+                                    translation, c['file'], c['type'])
                         elif c['type'] == 'bytes_length':
                             current_length = len(translation.encode('utf-8'))
                             if current_length > c['value']:
-                                error_msg = u'{} ({}) is longer than {} bytes (current length: {} bytes - current text: {})'.format(c['entity'], c['file'], c['value'], current_length, translation)
+                                error_msg = u'{} ({}) is longer than {} bytes (current length: {} bytes - current text: {})'.format(
+                                    c['entity'], c['file'], c['value'], current_length, translation)
                         elif c['type'] == 'plural_forms':
                             num_forms = len(translation.split(';'))
                             if num_forms != self.plural_forms[locale]:
-                                error_msg = u'{} ({}) has {} plural forms (requested: {})'.format(c['entity'], c['file'], num_forms, self.plural_forms[locale])
+                                error_msg = u'{} ({}) has {} plural forms (requested: {})'.format(
+                                    c['entity'], c['file'], num_forms, self.plural_forms[locale])
                         if error_msg:
                             self.error_messages[locale].append(error_msg)
                             total_errors += 1
@@ -327,7 +345,8 @@ class QualityCheck():
             print('CHECK: keyboard shortcuts')
             url = '{}/commandkeys/?locale={}&repo=gecko_strings&json'
 
-        f = open(os.path.join(self.script_folder, 'exceptions', '{}.txt'.format(checkname)), 'r')
+        f = open(os.path.join(self.script_folder, 'exceptions',
+                              '{}.txt'.format(checkname)), 'r')
         exceptions = []
         for l in f:
             exceptions.append(l.rstrip())
@@ -339,10 +358,12 @@ class QualityCheck():
                     errors = json.load(response)
                     break
                 except Exception as e:
-                    print('Error #{} checking *{}* for locale {}: {}'.format(try_number + 1, checkname, locale, e))
+                    print(
+                        'Error #{} checking *{}* for locale {}: {}'.format(try_number + 1, checkname, locale, e))
 
             if not errors and try_number == MAX_TRIES:
-                self.general_errors.append('Error checking *{}* for locale {}'.format(checkname, locale))
+                self.general_errors.append(
+                    'Error checking *{}* for locale {}'.format(checkname, locale))
                 continue
 
             for error in errors:
@@ -353,19 +374,22 @@ class QualityCheck():
                     continue
                 error_msg = error_msg.replace(locale, checkname, 1)
                 self.error_messages[locale].append(error_msg)
-                total_errors +=1
+                total_errors += 1
 
         if total_errors:
             self.error_summary[checkname] = total_errors
 
+
 def main():
     # Parse command line options
     cl_parser = argparse.ArgumentParser()
-    cl_parser.add_argument('check', help='Run a single check', default='all', nargs='?')
+    cl_parser.add_argument(
+        'check', help='Run a single check', default='all', nargs='?')
     args = cl_parser.parse_args()
 
     script_folder = os.path.dirname(os.path.realpath(__file__))
     checks = QualityCheck(script_folder, args.check)
+
 
 if __name__ == '__main__':
     main()
