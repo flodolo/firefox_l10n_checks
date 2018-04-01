@@ -9,8 +9,6 @@ import re
 import sys
 import urllib2
 
-MAX_TRIES = 5
-
 
 class QualityCheck():
 
@@ -90,6 +88,8 @@ class QualityCheck():
         self.domain = 'https://transvision.flod.org'
         self.api_url = '{}/api/v1'.format(self.domain)
 
+        self.general_errors = []
+
         # Get the list of supported locales
         self.getLocales()
 
@@ -97,12 +97,11 @@ class QualityCheck():
         self.plural_forms = {}
         self.getPluralForms()
 
-        # Initialize error messages
+        # Initialize other error messages
         self.error_messages = OrderedDict()
         self.error_summary = {}
         for locale in self.locales:
             self.error_messages[locale] = []
-        self.general_errors = []
 
         # Run checks
         self.checkAPI()
@@ -161,16 +160,33 @@ class QualityCheck():
         pickle.dump(current_errors, f)
         f.close()
 
+    def getJsonData(self, url, search_id):
+        '''
+        Return two values:
+        - Array of data
+        - If the request succeeded (boolean)
+        '''
+        for try_number in range(5):
+            try:
+                response = urllib2.urlopen(url)
+                json_data = json.load(response)
+                return (json_data, True)
+            except Exception as e:
+                continue
+
+        self.general_errors.append('Error reading {}'.format(search_id))
+        return ([], False)
+
     def getPluralForms(self):
         ''' Get the number of plural forms for each locale '''
         url = '{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule'.format(
             self.api_url)
         print('Reading the list of plural forms')
-        try:
-            response = urllib2.urlopen(url)
-            locales_plural_rules = json.load(response)
-        except Exception as e:
-            print(e)
+        locales_plural_rules, success = self.getJsonData(
+            url, 'list of plural forms')
+        if not success:
+            print('CRITICAL ERROR: List of plural forms not available')
+            sys.exit(1)
 
         for locale, rule_number in locales_plural_rules.iteritems():
             self.plural_forms[locale] = self.plural_rules[int(rule_number)]
@@ -178,12 +194,12 @@ class QualityCheck():
     def getLocales(self):
         ''' Get the list of supported locales '''
         print('Reading the list of supported locales')
-        url_locales = '{}/locales/gecko_strings/'.format(self.api_url)
-        try:
-            response = urllib2.urlopen(url_locales)
-            self.locales = json.load(response)
-        except Exception as e:
-            print(e)
+        url = '{}/locales/gecko_strings/'.format(self.api_url)
+        self.locales, success = self.getJsonData(
+            url, 'list of supported locales')
+        if not success:
+            print('CRITICAL ERROR: List of support locales not available')
+            sys.exit(1)
 
     def printErrors(self):
         ''' Print error messages '''
@@ -268,17 +284,10 @@ class QualityCheck():
             for c in checks:
                 try:
                     # print('Checking {}'.format(c['entity']))
-                    for try_number in range(MAX_TRIES):
-                        try:
-                            response = urllib2.urlopen(url.format(
-                                self.api_url, c['file'], c['entity']))
-                            json_data = json.load(response)
-                            break
-                        except Exception as e:
-                            print('Error #{} checking {}:{}: {}'.format(
-                                try_number + 1, c['file'], c['entity'], e))
+                    json_data, success = self.getJsonData(url.format(
+                        self.api_url, c['file'], c['entity']), '{}:{}'.format(c['file'], c['entity']))
 
-                    if not json_data and try_number == MAX_TRIES:
+                    if not success:
                         self.general_errors.append(
                             'Error checking {}:{}'.format(c['file'], c['entity']))
                         continue
@@ -352,16 +361,11 @@ class QualityCheck():
             exceptions.append(l.rstrip())
         total_errors = 0
         for locale in self.locales:
-            for try_number in range(MAX_TRIES):
-                try:
-                    response = urllib2.urlopen(url.format(self.domain, locale))
-                    errors = json.load(response)
-                    break
-                except Exception as e:
-                    print(
-                        'Error #{} checking *{}* for locale {}: {}'.format(try_number + 1, checkname, locale, e))
 
-            if not errors and try_number == MAX_TRIES:
+            errors, success = self.getJsonData(url.format(
+                self.domain, locale), '{} for {}'.format(checkname, locale))
+
+            if not success:
                 self.general_errors.append(
                     'Error checking *{}* for locale {}'.format(checkname, locale))
                 continue
