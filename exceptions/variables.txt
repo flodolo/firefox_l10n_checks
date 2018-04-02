@@ -217,9 +217,11 @@ pl: browser/chrome/browser/browser.dtd:syncSignIn.label
 pl: browser/chrome/browser/preferences/advanced.dtd:alwaysSubmitCrashReports1.label
 pl: browser/chrome/browser/preferences/advanced.dtd:collectBrowserErrors.label
 pl: browser/chrome/browser/preferences/advanced.dtd:enableHealthReport2.label
+pl: browser/chrome/browser/preferences/advanced.dtd:sendBackloggedCrashReports.label
 pl: browser/chrome/browser/preferences/clearSiteData.dtd:window.description
 pl: browser/chrome/browser/preferences/main.dtd:getStarted.configured.label
 pl: browser/chrome/browser/preferences/main.dtd:getStarted.notloggedin.label
+pl: browser/chrome/browser/preferences/preferences.properties:extensionControlled.proxyConfig
 pl: browser/chrome/browser/preferences/preferences.properties:okToRestartButton
 pl: browser/chrome/browser/preferences/preferences.properties:pauseNotifications.label
 pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.harmfulPage.learnMore
