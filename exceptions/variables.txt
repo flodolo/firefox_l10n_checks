@@ -1,4 +1,5 @@
 ach: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ar: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ar: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 ar: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ar: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -11,6 +12,7 @@ cak: browser/browser/preferences/preferences.ftl:use-firefox-sync
 cs: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/preferences/preferences.ftl:help-button-label
+cs: browser/browser/preferences/preferences.ftl:history-remember-label
 cs: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
@@ -77,6 +79,8 @@ et: mobile/overrides/netError.dtd:netOffline.longDesc3
 et: mobile/overrides/netError.dtd:notCached.longDesc
 eu: browser/chrome/browser/aboutDialog.dtd:community.start2
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
+fa: browser/browser/preferences/blocklists.ftl:blocklist-desc
+fa: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 fa: browser/browser/preferences/preferences.ftl:collection-health-report.label
 fa: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ff: browser/browser/preferences/preferences.ftl:collection-health-report.label
@@ -121,6 +125,7 @@ fi: browser/installer/override.properties:UninstallingText
 fi: mobile/android/base/android_strings.dtd:pref_restore_quit
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
+fr: browser/browser/preferences/preferences.ftl:history-remember-label
 fr: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 fr: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 fr: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
@@ -129,6 +134,7 @@ fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 gd: browser/browser/preferences/preferences.ftl:use-firefox-sync
 gn: browser/browser/preferences/preferences.ftl:sitedata-keep-until-closed.label
 gu-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+hi-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 hi-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 hi-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 hr: browser/browser/preferences/preferences.ftl:collection-health-report.label
@@ -139,6 +145,7 @@ hy-AM: browser/browser/preferences/preferences.ftl:use-firefox-sync
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
+it: browser/browser/preferences/preferences.ftl:history-remember-label
 it: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
 it: browser/chrome/browser/preferences/privacy.dtd:dontrememberDescription.label
@@ -154,6 +161,7 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja-JP-mac: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
@@ -175,6 +183,7 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
@@ -213,11 +222,15 @@ lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
 ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
+mai: browser/browser/preferences/blocklists.ftl:blocklist-desc
 mai: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ml: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ml: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ml: browser/browser/preferences/preferences.ftl:use-firefox-sync
 mr: browser/browser/preferences/preferences.ftl:use-firefox-sync
+my: browser/browser/preferences/blocklists.ftl:blocklist-desc
 or: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pa-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 pa-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
@@ -296,6 +309,7 @@ ru: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 si: browser/browser/preferences/preferences.ftl:use-firefox-sync
 sk: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 sk: browser/browser/preferences/preferences.ftl:collection-health-report.label
+sk: browser/browser/preferences/preferences.ftl:history-remember-label
 sk: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
 sk: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
@@ -311,14 +325,17 @@ sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 sl: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
+sl: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/override.properties:LicenseTextRB
 sl: toolkit/chrome/mozapps/update/updates.dtd:error.label
 sl: toolkit/chrome/mozapps/update/updates.dtd:errorManual.label
 sl: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+son: browser/browser/preferences/blocklists.ftl:blocklist-desc
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+ta: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ta: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ta: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
