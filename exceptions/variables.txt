@@ -234,6 +234,8 @@ or: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pa-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 pa-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
+pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
 pl: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 pl: browser/browser/preferences/preferences.ftl:collection-health-report.label
@@ -253,6 +255,7 @@ pl: browser/chrome/browser/browser.dtd:fxaSignInError.label
 pl: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
 pl: browser/chrome/browser/browser.dtd:syncReAuthItem.label
 pl: browser/chrome/browser/browser.dtd:syncSignIn.label
+pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt
 pl: browser/chrome/browser/preferences/advanced.dtd:alwaysSubmitCrashReports1.label
 pl: browser/chrome/browser/preferences/advanced.dtd:collectBrowserErrors.label
 pl: browser/chrome/browser/preferences/advanced.dtd:enableHealthReport2.label
@@ -271,7 +274,9 @@ pl: browser/chrome/browser/sanitize.dtd:clearDataSettings3.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserAlertConfirm.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserConfirm.label
 pl: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
+pl: browser/chrome/browser/tabbrowser.properties:tabs.openWarningPromptMeBranded
 pl: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
+pl: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
 pl: mobile/android/base/android_strings.dtd:firstrun_tabqueue_subtext_on
 pl: mobile/android/base/android_strings.dtd:pref_donottrack_summary
 pl: mobile/android/base/android_strings.dtd:pref_restore_quit
