@@ -85,28 +85,8 @@
 		"type": "plural_forms"
 	},
 	{
-		"file": "browser/chrome/browser/places/places.properties",
-		"entity": "cmd.deletePages.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/places/places.properties",
-		"entity": "cmd.bookmarkPages.label",
-		"type": "plural_forms"
-	},
-	{
 		"file": "browser/chrome/browser/preferences/preferences.properties",
 		"entity": "removeSelectedCookies.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/preferences/preferences.properties",
-		"entity": "disableContainersMsg",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/preferences/preferences.properties",
-		"entity": "disableContainersOkButton",
 		"type": "plural_forms"
 	},
 	{
@@ -176,12 +156,6 @@
 	{
 		"file": "devtools/client/jit-optimizations.properties",
 		"entity": "jit.samples",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "networkMenu.summary.requestsCount",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
