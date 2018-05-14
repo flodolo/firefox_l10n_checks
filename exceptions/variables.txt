@@ -239,6 +239,7 @@ pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
 pl: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 pl: browser/browser/preferences/preferences.ftl:collection-health-report.label
+pl: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
 pl: browser/browser/preferences/preferences.ftl:get-started-configured
 pl: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 pl: browser/browser/preferences/preferences.ftl:permissions-notification-pause.label
