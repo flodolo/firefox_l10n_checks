@@ -14,6 +14,7 @@ cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/preferences/preferences.ftl:help-button-label
 cs: browser/browser/preferences/preferences.ftl:history-remember-label
 cs: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
+cs: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
@@ -362,6 +363,9 @@ uk: browser/browser/preferences/preferences.ftl:get-started-configured
 uk: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 uk: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
+uk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
+uk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-heading
+uk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 uk: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
