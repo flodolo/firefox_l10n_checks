@@ -207,6 +207,8 @@ ja: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ka: browser/browser/preferences/preferences.ftl:get-started-configured
+ka: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 kk: browser/browser/preferences/preferences.ftl:use-firefox-sync
 km: browser/browser/preferences/preferences.ftl:use-firefox-sync
 kn: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -249,6 +251,8 @@ pl: browser/browser/preferences/preferences.ftl:permissions-notification-pause.l
 pl: browser/browser/preferences/preferences.ftl:should-restart-ok
 pl: browser/browser/preferences/preferences.ftl:sitedata-keep-until-closed.label
 pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
+pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 pl: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 pl: browser/chrome/browser/aboutDialog.dtd:update.updateButton.label3
 pl: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
@@ -329,6 +333,7 @@ si: browser/browser/preferences/preferences.ftl:use-firefox-sync
 sk: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 sk: browser/browser/preferences/preferences.ftl:collection-health-report.label
 sk: browser/browser/preferences/preferences.ftl:history-remember-label
+sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 sk: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
 sk: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
