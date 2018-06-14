@@ -19,6 +19,11 @@ cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
+da: devtools/client/sourceeditor.properties:indentLess.commandkey
+da: devtools/client/sourceeditor.properties:indentMore.commandkey
+da: devtools/client/sourceeditor.properties:toggleComment.commandkey
+da: devtools/client/toolbox.properties:toolbox.nextTool.key
+da: devtools/client/toolbox.properties:toolbox.previousTool.key
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
