@@ -46,11 +46,6 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonsGenericInstalledNeedsRestart",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
 		"entity": "popupWarning.message",
 		"type": "plural_forms"
 	},
@@ -82,16 +77,6 @@
 	{
 		"file": "browser/chrome/browser/places/places.properties",
 		"entity": "detailsPane.itemsCountLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/preferences/preferences.properties",
-		"entity": "removeSelectedCookies.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/preferences/preferences.properties",
-		"entity": "removeContainerMsg",
 		"type": "plural_forms"
 	},
 	{
@@ -197,12 +182,6 @@
 	},
 	{
 		"file": "devtools/client/webconsole.properties",
-		"entity": "emptySlotLabel",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
 		"entity": "webconsole.filteredMessages.label",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "ltg", "sr"]
@@ -300,26 +279,6 @@
 	{
 		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
 		"entity": "numReviews",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "details.experiment.time.daysRemaining",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "details.experiment.time.daysPassed",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "experiment.time.daysRemaining",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "experiment.time.daysPassed",
 		"type": "plural_forms"
 	},
 	{
