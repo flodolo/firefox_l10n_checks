@@ -1,6 +1,31 @@
 [
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.introPara1",
+		"type": "include_regex",
+		"checks": [
+			"<span class='hostname'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.expiredCert.whatCanYouDoAboutIt",
+		"type": "include_regex",
+		"checks": [
+			"<span id='wrongSystemTime_systemDate'(\\s)*/>",
+			"<span class='hostname'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.whatShouldIDo.badStsCertExplanation1",
+		"type": "include_regex",
+		"checks": [
+			"<span class='hostname'(\\s)*></span>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
 		"entity": "certerror.wrongSystemTime2",
 		"type": "include_regex",
 		"checks": [
