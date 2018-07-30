@@ -149,6 +149,7 @@ it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
 it: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
+it: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
 it: browser/chrome/browser/preferences/privacy.dtd:dontrememberDescription.label
 it: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
@@ -166,6 +167,8 @@ it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
+ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
+ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBlocked5
 ja-JP-mac: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja-JP-mac: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
 ja-JP-mac: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
@@ -188,6 +191,8 @@ ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.labe
 ja: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
+ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
+ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBlocked5
 ja: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
 ja: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
@@ -287,14 +292,19 @@ pl: browser/chrome/browser/sanitize.dtd:clearDataSettings3.label
 pl: browser/chrome/browser/sanitize.dtd:clearDataSettings4.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserAlertConfirm.label
 pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserConfirm.label
+pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserDontAsk
 pl: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
 pl: browser/chrome/browser/tabbrowser.properties:tabs.openWarningPromptMeBranded
 pl: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
+pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara
 pl: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
 pl: mobile/android/base/android_strings.dtd:firstrun_tabqueue_subtext_on
 pl: mobile/android/base/android_strings.dtd:pref_donottrack_summary
 pl: mobile/android/base/android_strings.dtd:pref_restore_quit
 pl: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+pl: security/manager/chrome/pipnss/pipnss.properties:certErrorMismatch1
+pl: security/manager/chrome/pipnss/pipnss.properties:certErrorMismatchMultiple1
+pl: security/manager/chrome/pipnss/pipnss.properties:certErrorMismatchSinglePrefix1
 pl: toolkit/chrome/alerts/alert.properties:pauseNotifications.label
 pl: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 pl: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
