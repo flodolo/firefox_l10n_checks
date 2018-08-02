@@ -18,6 +18,7 @@ cs: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-c
 cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
+cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
