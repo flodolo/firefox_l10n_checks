@@ -18,6 +18,24 @@
 	},
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.expiredCert.whatCanYouDoAboutIt2",
+		"type": "include_regex",
+		"checks": [
+			"<span id='wrongSystemTime_systemDate2'(\\s)*/>",
+			"<span class='hostname'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "clockSkewError.longDesc",
+		"type": "include_regex",
+		"checks": [
+			"<span id='wrongSystemTime_systemDate1'(\\s)*/>",
+			"<span class='hostname'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
 		"entity": "certerror.whatShouldIDo.badStsCertExplanation1",
 		"type": "include_regex",
 		"checks": [
