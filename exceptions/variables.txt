@@ -247,11 +247,13 @@ pa-IN: browser/browser/preferences/preferences.ftl:collection-health-report.labe
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:choose-browser-language-description
 pl: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
 pl: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 pl: browser/browser/preferences/preferences.ftl:collection-health-report.label
 pl: browser/browser/preferences/preferences.ftl:collection-studies-link
 pl: browser/browser/preferences/preferences.ftl:collection-studies.label
+pl: browser/browser/preferences/preferences.ftl:confirm-browser-language-change-description
 pl: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
 pl: browser/browser/preferences/preferences.ftl:get-started-configured
 pl: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
