@@ -1,7 +1,7 @@
 [
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.introPara1",
+		"entity": "certerror.introPara2",
 		"type": "include_regex",
 		"checks": [
 			"<span class='hostname'(\\s)*/>"
