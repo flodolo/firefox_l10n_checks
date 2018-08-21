@@ -28,6 +28,9 @@
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
 		"entity": "certerror.whatShouldIDo.badStsCertExplanation1",
+		"excluded_locales": [
+			"bg"
+		],
 		"type": "include_regex",
 		"checks": [
 			"<span class='hostname'(\\s)*></span>"

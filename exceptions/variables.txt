@@ -351,6 +351,7 @@ sk: browser/browser/preferences/preferences.ftl:history-remember-label
 sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 sk: browser/chrome/browser/aboutHome.dtd:abouthome.syncButton.label
 sk: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
+sk: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-library.message
 sk: browser/extensions/onboarding/onboarding.properties:onboarding.tour-singlesearch.description
