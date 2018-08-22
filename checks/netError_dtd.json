@@ -19,6 +19,9 @@
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
 		"entity": "clockSkewError.longDesc",
+		"excluded_locales": [
+			"bg"
+		],
 		"type": "include_regex",
 		"checks": [
 			"<span id='wrongSystemTime_systemDate1'(\\s)*/>",
