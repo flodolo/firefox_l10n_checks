@@ -52,11 +52,5 @@
 		"entity": "Fips140SlotDescription",
 		"type": "bytes_length",
 		"value": 64
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "InternalToken",
-		"type": "bytes_length",
-		"value": 32
 	}
 ]

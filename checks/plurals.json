@@ -163,18 +163,6 @@
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
 	{
-		"file": "devtools/client/toolbox.properties",
-		"entity": "toolboxToggleButton.errors",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/toolbox.properties",
-		"entity": "toolboxToggleButton.warnings",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
 		"file": "devtools/client/webconsole.properties",
 		"entity": "messageRepeats.tooltip2",
 		"type": "plural_forms",

@@ -302,6 +302,7 @@ pl: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
 pl: browser/chrome/browser/tabbrowser.properties:tabs.openWarningPromptMeBranded
 pl: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara
+pl: browser/chrome/overrides/netError.dtd:clockSkewError.longDesc
 pl: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
 pl: mobile/android/base/android_strings.dtd:firstrun_tabqueue_subtext_on
 pl: mobile/android/base/android_strings.dtd:pref_donottrack_summary
