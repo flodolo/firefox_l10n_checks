@@ -85,6 +85,41 @@
 		"type": "plural_forms"
 	},
 	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeTabs.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeSelectedTabs.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.muteAudio2.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.unmuteAudio2.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.muteAudio2.background.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.unmuteAudio2.background.tooltip",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.unblockAudio2.tooltip",
+		"type": "plural_forms"
+	},
+	{
 		"file": "browser/chrome/browser/webrtcIndicator.properties",
 		"entity": "webrtcIndicator.sharingCameraWithNTabs.menuitem",
 		"type": "plural_forms"
