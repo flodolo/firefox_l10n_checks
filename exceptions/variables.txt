@@ -11,6 +11,7 @@ bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cak: browser/browser/preferences/preferences.ftl:use-firefox-sync
 cs: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
+cs: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 cs: browser/browser/preferences/preferences.ftl:help-button-label
 cs: browser/browser/preferences/preferences.ftl:history-remember-label
 cs: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
