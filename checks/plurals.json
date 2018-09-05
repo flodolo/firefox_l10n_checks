@@ -21,6 +21,16 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
+		"entity": "sendTabsToDevice.label",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
+		"entity": "pageAction.sendTabsToDevice.label",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
 		"entity": "webextPerms.hostDescription.tooManySites",
 		"type": "plural_forms"
 	},
