@@ -169,7 +169,9 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
+ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
@@ -193,7 +195,9 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-desc
+ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
