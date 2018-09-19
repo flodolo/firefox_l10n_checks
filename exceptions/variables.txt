@@ -140,6 +140,7 @@ fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 gd: browser/browser/preferences/preferences.ftl:use-firefox-sync
 gn: browser/browser/preferences/preferences.ftl:sitedata-keep-until-closed.label
 gu-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hi-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 hi-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 hi-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -283,6 +284,8 @@ pl: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
 pl: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
 pl: browser/chrome/browser/browser.dtd:syncReAuthItem.label
 pl: browser/chrome/browser/browser.dtd:syncSignIn.label
+pl: browser/chrome/browser/browser.properties:contentBlocking.intro.title
+pl: browser/chrome/browser/browser.properties:contentBlocking.intro.v1.description
 pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt
 pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt2
 pl: browser/chrome/browser/preferences/advanced.dtd:alwaysSubmitCrashReports1.label
