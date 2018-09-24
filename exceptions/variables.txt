@@ -3,6 +3,11 @@ ar: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ar: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 ar: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ar: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
+ar: browser/pdfviewer/viewer.properties:find_match_count[one]
+ar: browser/pdfviewer/viewer.properties:find_match_count[two]
 bn-BD: browser/browser/preferences/preferences.ftl:use-firefox-sync
 bn-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
@@ -49,6 +54,7 @@ et: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
 et: browser/installer/custom.properties:SURVEY_TEXT
 et: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 et: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
+et: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
 et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
 et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
@@ -70,6 +76,8 @@ et: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE
 et: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
 et: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 et: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
+et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
+et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
