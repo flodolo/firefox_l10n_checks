@@ -25,6 +25,8 @@ cs: browser/chrome/browser/preferences/preferences.dtd:helpButton2.label
 cs: browser/chrome/browser/preferences/privacy.dtd:historyHeader2.pre.label
 cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+cs: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesUnix.label
+cs: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesWin.label
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
