@@ -31,6 +31,7 @@ cs: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 cs: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesUnix.label
 cs: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesWin.label
+cs: toolkit/toolkit/about/aboutAddons.ftl:preferences
 da: browser/extensions/formautofill/formautofill.properties:insecureFieldWarningDescription
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
@@ -42,6 +43,7 @@ de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.button.label
 de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
 de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 de: toolkit/chrome/mozapps/extensions/extensions.dtd:legacyExtensions.description
+de: toolkit/toolkit/about/aboutAddons.ftl:legacy-extensions-description
 dsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 el: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 el: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
@@ -100,6 +102,7 @@ fa: browser/browser/preferences/blocklists.ftl:blocklist-desc
 fa: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 fa: browser/browser/preferences/preferences.ftl:collection-health-report.label
 fa: browser/browser/preferences/preferences.ftl:use-firefox-sync
+fa: toolkit/toolkit/about/aboutPerformance.ftl:energy-impact-low
 ff: browser/browser/preferences/preferences.ftl:collection-health-report.label
 fi: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 fi: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
@@ -267,7 +270,10 @@ or: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pa-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 pa-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
+pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
+pl: browser/browser/preferences/languages.ftl:browser-languages-error
 pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:choose-browser-language-description
