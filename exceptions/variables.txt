@@ -360,6 +360,7 @@ pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
 pl: toolkit/chrome/mozapps/extensions/newaddon.dtd:restartButton
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 ro: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ru: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 ru: browser/browser/preferences/preferences.ftl:get-started-configured
