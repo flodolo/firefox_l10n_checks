@@ -405,6 +405,9 @@ sk: browser/extensions/onboarding/onboarding.properties:onboarding.tour-singlese
 sk: browser/installer/custom.properties:CREATE_ICONS_DESC
 sk: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
 sk: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
+sk: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesUnix.label
+sk: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesWin.label
+sk: toolkit/toolkit/about/aboutAddons.ftl:preferences
 sl: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 sl: browser/browser/preferences/preferences.ftl:collection-health-report.label
 sl: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
