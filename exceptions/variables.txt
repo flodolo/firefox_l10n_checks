@@ -167,6 +167,7 @@ hsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:
 hu: browser/browser/preferences/preferences.ftl:collection-health-report.label
 hy-AM: browser/browser/preferences/preferences.ftl:use-firefox-sync
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+it: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 it: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
