@@ -431,6 +431,8 @@ ta: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ta: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 tr: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
+uk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+uk: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 uk: browser/browser/preferences/preferences.ftl:get-started-configured
 uk: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 uk: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
