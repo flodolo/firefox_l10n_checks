@@ -96,6 +96,7 @@ et: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 et: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 et: mobile/overrides/netError.dtd:netOffline.longDesc3
 et: mobile/overrides/netError.dtd:notCached.longDesc
+eu: browser/browser/aboutDialog.ftl:community-2
 eu: browser/chrome/browser/aboutDialog.dtd:community.start2
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
 fa: browser/browser/preferences/blocklists.ftl:blocklist-desc
@@ -271,6 +272,7 @@ or: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pa-IN: browser/browser/preferences/blocklists.ftl:blocklist-desc
 pa-IN: browser/browser/preferences/preferences.ftl:collection-health-report.label
 pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/aboutDialog.ftl:update-updateButton.label
 pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
 pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
