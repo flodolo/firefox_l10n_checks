@@ -14,6 +14,7 @@ br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.
 bs: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cak: browser/browser/preferences/preferences.ftl:use-firefox-sync
+cs: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 cs: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 cs: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 cs: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
