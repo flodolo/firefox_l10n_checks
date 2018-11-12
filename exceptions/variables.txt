@@ -362,6 +362,8 @@ pl: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 pl: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
+pl: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesUnix.label
+pl: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesWin.label
 pl: toolkit/chrome/mozapps/extensions/newaddon.dtd:restartButton
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
