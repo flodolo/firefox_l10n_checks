@@ -400,6 +400,7 @@ ru: mobile/android/base/sync_strings.dtd:fxaccount_sync_sign_in_error_notificati
 ru: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 ru: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 si: browser/browser/preferences/preferences.ftl:use-firefox-sync
+sk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 sk: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 sk: browser/browser/preferences/preferences.ftl:collection-health-report.label
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
