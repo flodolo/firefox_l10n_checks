@@ -292,6 +292,7 @@ pl: browser/browser/preferences/preferences.ftl:get-started-configured
 pl: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 pl: browser/browser/preferences/preferences.ftl:permissions-notification-pause.label
 pl: browser/browser/preferences/preferences.ftl:should-restart-ok
+pl: browser/browser/preferences/preferences.ftl:sitedata-delete-on-close.label
 pl: browser/browser/preferences/preferences.ftl:sitedata-keep-until-closed.label
 pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
