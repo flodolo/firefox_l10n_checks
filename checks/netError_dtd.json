@@ -30,6 +30,34 @@
 	},
 	{
 		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.mitm.longDesc",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"<span class='hostname'(\\s)*></span>",
+			"<span class='mitm-name'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.mitm.whatCanYouDoAboutIt3",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"<span class='mitm-name'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
+		"entity": "certerror.mitm.sts.whatCanYouDoAboutIt3",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"<span class='mitm-name'(\\s)*/>"
+		]
+	},
+	{
+		"file": "browser/chrome/overrides/netError.dtd",
 		"entity": "certerror.whatShouldIDo.badStsCertExplanation1",
 		"excluded_locales": [
 			"bg"
