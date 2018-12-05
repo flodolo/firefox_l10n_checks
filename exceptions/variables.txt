@@ -191,6 +191,28 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja - variables: browser/browser/aboutSearchReset.ftl:page-info-outofdate
+ja - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+ja - variables: browser/extensions/formautofill/formautofill.properties:autofillDescription
+ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
+ja - variables: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
+ja-JP-mac - variables: browser/browser/aboutSearchReset.ftl:page-info-outofdate
+ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:autofillDescription
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
+ja-JP-mac - variables: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
