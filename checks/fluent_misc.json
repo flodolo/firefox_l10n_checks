@@ -1,0 +1,10 @@
+[
+	{
+		"file": "browser/browser/aboutSearchReset.ftl",
+		"entity": "page-info-new-search-engine",
+		"type": "include_regex",
+		"checks": [
+            "<span data-l10n-name=\"default-engine\">.*</span>"
+		]
+	}
+]

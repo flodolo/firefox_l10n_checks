@@ -58,12 +58,13 @@ class QualityCheck():
 
     json_files = [
         'abouttabcrashed_dtd',
-        'browser_dtd',
         'boolean_values',
+        'browser_dtd',
         'browser_installer_nsistr',
+        'fluent_misc',
         'intl_properties',
-        'mobile_phishing_dtd',
         'mobile_netError_dtd',
+        'mobile_phishing_dtd',
         'netError_dtd',
         'phishing-afterload-warning-message_dtd',
         'pipnss_properties',
