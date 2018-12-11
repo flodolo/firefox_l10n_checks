@@ -395,6 +395,7 @@ pl: browser/chrome/browser/translation.properties:translation.options.neverForLa
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+pl: browser/chrome/overrides/netError.dtd:certerror.mitm.title
 pl: browser/chrome/overrides/netError.dtd:clockSkewError.longDesc
 pl: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
 pl: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
