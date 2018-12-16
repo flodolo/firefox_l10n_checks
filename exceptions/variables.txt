@@ -21,6 +21,7 @@ cs: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-repo
 cs: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/preferences/preferences.ftl:collection-studies.label
+cs: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 cs: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 cs: browser/browser/preferences/preferences.ftl:help-button-label
 cs: browser/browser/preferences/preferences.ftl:history-remember-label
@@ -316,6 +317,7 @@ pl: browser/browser/preferences/preferences.ftl:collection-studies-link
 pl: browser/browser/preferences/preferences.ftl:collection-studies.label
 pl: browser/browser/preferences/preferences.ftl:confirm-browser-language-change-description
 pl: browser/browser/preferences/preferences.ftl:content-blocking-strict-desc
+pl: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 pl: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
 pl: browser/browser/preferences/preferences.ftl:feature-disable-requires-restart
 pl: browser/browser/preferences/preferences.ftl:feature-enable-requires-restart
@@ -337,6 +339,7 @@ pl: browser/browser/preferences/preferences.ftl:update-application-description
 pl: browser/browser/preferences/preferences.ftl:update-application-title
 pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/preferences/preferences.ftl:warn-on-open-many-tabs.label
+pl: browser/browser/preferences/siteDataSettings.ftl:site-data-removing-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
 pl: browser/browser/sanitize.ftl:clear-data-settings-label
