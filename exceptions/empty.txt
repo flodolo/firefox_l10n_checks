@@ -1,6 +1,5 @@
 af: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 an: browser/chrome/browser/aboutDialog.dtd:helpus.end
-an: toolkit/chrome/global-platform/mac/platformKeys.properties:MODIFIER_SEPARATOR
 ar: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.saved.before
 ar: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 ar: toolkit/crashreporter/crashreporter.ini:isRTL
@@ -28,7 +27,6 @@ de: browser/chrome/browser/sanitize.dtd:clearTimeDuration.accesskey
 de: browser/chrome/browser/sanitize.dtd:clearTimeDuration.label
 de: browser/chrome/browser/sanitize.dtd:clearTimeDuration.suffix
 de: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
-dsb: toolkit/chrome/global-platform/mac/platformKeys.properties:MODIFIER_SEPARATOR
 el: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 el: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 es-AR: toolkit/chrome/global/aboutRights.dtd:rights.intro-point4c-unbranded
@@ -67,7 +65,6 @@ he: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 he: toolkit/crashreporter/crashreporter.ini:isRTL
 hi-IN: browser/chrome/browser/aboutDialog.dtd:helpus.end
 hi-IN: browser/chrome/browser/aboutDialog.dtd:update.manual.end
-hsb: toolkit/chrome/global-platform/mac/platformKeys.properties:MODIFIER_SEPARATOR
 hu: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 hu: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 hu: browser/chrome/browser/browser.dtd:search.label
@@ -79,7 +76,6 @@ hy-AM: browser/chrome/browser/aboutDialog.dtd:helpus.end
 hy-AM: browser/chrome/browser/aboutDialog.dtd:update.downloading.end
 hy-AM: browser/chrome/browser/aboutDialog.dtd:update.failed.end
 hy-AM: browser/chrome/browser/sanitize.dtd:clearTimeDuration.suffix
-hy-AM: toolkit/chrome/global-platform/mac/platformKeys.properties:MODIFIER_SEPARATOR
 hy-AM: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 hy-AM: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 is: browser/chrome/browser/migration/migration.properties:sourceNameChromeDev
@@ -144,7 +140,6 @@ pl: browser/chrome/browser/aboutSessionRestore.dtd:welcomeback2.afterlink.pageIn
 pl: toolkit/chrome/global/dialog.properties:accesskey-disclosure
 pl: toolkit/chrome/global/dialog.properties:accesskey-help
 ro: browser/chrome/browser/aboutDialog.dtd:update.failed.end
-ru: toolkit/chrome/global-platform/mac/platformKeys.properties:MODIFIER_SEPARATOR
 ru: toolkit/chrome/global/intl.properties:intl.charset.detector
 ru: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 si: browser/chrome/browser/aboutSessionRestore.dtd:welcomeback2.afterlink.pageInfo2
