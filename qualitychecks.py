@@ -108,6 +108,7 @@ class QualityCheck():
         if requested_check == 'all':
             self.checkView('variables')
             self.checkView('shortcuts')
+            self.checkView('empty')
 
         # Print errors
         self.printErrors()
@@ -353,6 +354,9 @@ class QualityCheck():
         elif checkname == 'shortcuts':
             print('CHECK: keyboard shortcuts')
             url = '{}/commandkeys/?locale={}&repo=gecko_strings&json'
+        elif checkname == 'empty':
+            print('CHECK: empty strings')
+            url = '{}/empty-strings/?locale={}&json'
 
         f = open(os.path.join(self.script_folder, 'exceptions',
                               '{}.txt'.format(checkname)), 'r')
