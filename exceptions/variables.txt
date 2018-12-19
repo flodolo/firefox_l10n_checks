@@ -463,6 +463,7 @@ si: browser/browser/preferences/preferences.ftl:use-firefox-sync
 sk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 sk: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 sk: browser/browser/preferences/preferences.ftl:collection-health-report.label
+sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 sk: browser/browser/preferences/preferences.ftl:history-remember-label
 sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
