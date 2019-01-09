@@ -1,0 +1,184 @@
+[
+	{
+		"file": "browser/browser/policies/policies-descriptions.ftl",
+		"entity": "policy-DisablePocket",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "menu_action_archive_pocket",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "menu_action_delete_pocket",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "menu_action_save_to_pocket",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "pocket_cta_button",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "pocket_cta_text",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "prefs_highlights_options_pocket_label",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "section_disclaimer_topstories",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/activity-stream/newtab.properties",
+		"entity": "type_label_pocket",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "pocketButton.tooltiptext",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "pocketMenuitem.label",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "saveLinkToPocketCmd.label",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/browser.dtd",
+		"entity": "saveToPocketCmd.label",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "alreadyhaveacct",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "errorgeneric",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "mustbeconnected",
+		"excluded_locales": [
+			"de"
+		],
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "pagesaved",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "signuptosave",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "tagline",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "taglinestory_one",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "taglinestory_two",
+		"excluded_locales": [
+			"fy-NL", "nl"
+		],
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	},
+	{
+		"file": "browser/chrome/browser/pocket.properties",
+		"entity": "tos",
+		"type": "include",
+		"checks": [
+			"Pocket"
+		]
+	}
+]

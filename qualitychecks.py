@@ -69,6 +69,7 @@ class QualityCheck():
         'phishing-afterload-warning-message_dtd',
         'pipnss_properties',
         'plurals',
+        'pocket',
     ]
 
     excluded_products = (
