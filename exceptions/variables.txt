@@ -346,6 +346,8 @@ pl: browser/browser/preferences/preferences.ftl:warn-on-open-many-tabs.label
 pl: browser/browser/preferences/siteDataSettings.ftl:site-data-removing-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
+pl: browser/browser/safeMode.ftl:safe-mode-description
+pl: browser/browser/safeMode.ftl:safe-mode-description-details
 pl: browser/browser/sanitize.ftl:clear-data-settings-label
 pl: browser/chrome/browser/aboutAccounts.dtd:aboutAccounts.welcome
 pl: browser/chrome/browser/aboutDialog.dtd:update.updateButton.label3
