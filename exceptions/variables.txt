@@ -305,6 +305,7 @@ pa-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/aboutDialog.ftl:update-updateButton.label
 pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
 pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
+pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
 pl: browser/browser/preferences/languages.ftl:browser-languages-error
 pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
