@@ -10,6 +10,7 @@ ar: browser/pdfviewer/viewer.properties:find_match_count[one]
 ar: browser/pdfviewer/viewer.properties:find_match_count[two]
 bn-BD: browser/browser/preferences/preferences.ftl:use-firefox-sync
 bn-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
+br: browser/chrome/browser/newInstall.dtd:sync
 br: browser/extensions/onboarding/onboarding.properties:onboarding.notification.onboarding-tour-customize.message
 bs: browser/browser/preferences/preferences.ftl:collection-browser-errors.label
 bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
