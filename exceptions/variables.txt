@@ -49,6 +49,10 @@ de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
 de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 de: toolkit/chrome/mozapps/extensions/extensions.dtd:legacyExtensions.description
 de: toolkit/toolkit/about/aboutAddons.ftl:legacy-extensions-description
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-button
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog-button.label
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog.title
 dsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 el: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 el: browser/chrome/browser/preferences/sync.dtd:signedOut.accountBox.title
