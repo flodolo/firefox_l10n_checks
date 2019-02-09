@@ -221,6 +221,7 @@ ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:u
 ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
 ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
 ja-JP-mac - variables: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
+ja-JP-mac: browser/browser/aboutSearchReset.ftl:page-info-outofdate
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
@@ -232,14 +233,24 @@ ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBloc
 ja-JP-mac: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja-JP-mac: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
 ja-JP-mac: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.introPara
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.mitm.title
 ja-JP-mac: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:autofillDescription
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
 ja-JP-mac: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 ja-JP-mac: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 ja-JP-mac: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
 ja-JP-mac: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja-JP-mac: mobile/overrides/netError.dtd:netOffline.longDesc3
+ja-JP-mac: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
@@ -250,6 +261,7 @@ ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 ja-JP-mac: toolkit/toolkit/preferences/preferences.ftl:master-password-description
+ja: browser/browser/aboutSearchReset.ftl:page-info-outofdate
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-desc
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
@@ -261,14 +273,24 @@ ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBlocked5
 ja: browser/chrome/browser/preferences/advanced.dtd:connectionDesc.label
 ja: browser/chrome/browser/preferences/donottrack.dtd:doNotTrackTPInfo.description
 ja: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
+ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
 ja: browser/chrome/overrides/netError.dtd:certerror.introPara
 ja: browser/chrome/overrides/netError.dtd:certerror.mitm.title
 ja: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja: browser/extensions/formautofill/formautofill.properties:autofillDescription
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
 ja: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 ja: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 ja: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
 ja: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja: mobile/overrides/netError.dtd:netOffline.longDesc3
+ja: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
@@ -317,6 +339,7 @@ pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
 pl: browser/browser/preferences/languages.ftl:browser-languages-error
 pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
+pl: browser/browser/preferences/preferences.ftl:addon-recommendations.label
 pl: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
