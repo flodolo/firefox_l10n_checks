@@ -43,10 +43,6 @@ de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
 de: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 de: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
-de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.button.label
-de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.button.label
-de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
-de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 de: toolkit/chrome/mozapps/extensions/extensions.dtd:legacyExtensions.description
 de: toolkit/toolkit/about/aboutAddons.ftl:legacy-extensions-description
 de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile
