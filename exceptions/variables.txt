@@ -332,6 +332,11 @@ pl: browser/browser/aboutDialog.ftl:update-updateButton.label
 pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
 pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
 pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
+pl: browser/browser/newInstallPage.ftl:options-use-sync
+pl: browser/browser/newInstallPage.ftl:sync-first
+pl: browser/browser/newInstallPage.ftl:sync-header
+pl: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+pl: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
 pl: browser/browser/preferences/languages.ftl:browser-languages-error
 pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
@@ -402,6 +407,7 @@ pl: browser/chrome/browser/browser.properties:slowStartup.message
 pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt
 pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt2
 pl: browser/chrome/browser/browser.properties:webext.remove.confirmation.title
+pl: browser/chrome/browser/newInstall.dtd:sync
 pl: browser/chrome/browser/preferences/advanced.dtd:alwaysSubmitCrashReports1.label
 pl: browser/chrome/browser/preferences/advanced.dtd:collectBrowserErrors.label
 pl: browser/chrome/browser/preferences/advanced.dtd:enableHealthReport2.label
@@ -460,6 +466,7 @@ pl: toolkit/chrome/mozapps/extensions/extensions.dtd:discover.description2
 pl: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesUnix.label
 pl: toolkit/chrome/mozapps/extensions/extensions.dtd:preferencesWin.label
 pl: toolkit/chrome/mozapps/extensions/newaddon.dtd:restartButton
+pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
 pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
