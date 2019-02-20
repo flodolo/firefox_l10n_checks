@@ -472,6 +472,7 @@ pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
 pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 ro: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ru: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 ru: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 ru: browser/browser/preferences/preferences.ftl:get-started-configured
 ru: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
@@ -543,6 +544,8 @@ ta: browser/browser/preferences/preferences.ftl:collection-health-report.label
 ta: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 tr: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
+uk: browser/browser/newInstallPage.ftl:options-use-sync
+uk: browser/browser/newInstallPage.ftl:sync-first
 uk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 uk: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 uk: browser/browser/preferences/preferences.ftl:get-started-configured
