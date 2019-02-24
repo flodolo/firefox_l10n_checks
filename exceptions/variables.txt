@@ -43,6 +43,10 @@ de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
 de: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 de: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.button.label
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.button.label
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
 de: toolkit/chrome/mozapps/extensions/extensions.dtd:legacyExtensions.description
 de: toolkit/toolkit/about/aboutAddons.ftl:legacy-extensions-description
 de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile
@@ -169,6 +173,7 @@ hi-IN: browser/browser/preferences/preferences.ftl:collection-health-report.labe
 hi-IN: browser/browser/preferences/preferences.ftl:use-firefox-sync
 hr: browser/browser/preferences/preferences.ftl:collection-health-report.label
 hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
+hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 hsb: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 hu: browser/browser/preferences/preferences.ftl:collection-health-report.label
 hy-AM: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -314,6 +319,7 @@ lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 lt: mobile/android/chrome/about.dtd:aboutPage.telemetryEnd
 lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+lt: toolkit/toolkit/about/aboutRights.ftl:rights-intro-point-4
 ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
 lv: browser/browser/preferences/preferences.ftl:use-firefox-sync
@@ -471,6 +477,7 @@ pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
 pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
+pl: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 ro: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ru: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 ru: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
