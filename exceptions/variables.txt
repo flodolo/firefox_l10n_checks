@@ -344,6 +344,7 @@ pl: browser/browser/newInstallPage.ftl:sync-header
 pl: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 pl: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
+pl: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
 pl: browser/browser/preferences/languages.ftl:browser-languages-error
 pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
 pl: browser/browser/preferences/preferences.ftl:addon-recommendations.label
@@ -555,6 +556,7 @@ uk: browser/browser/newInstallPage.ftl:options-use-sync
 uk: browser/browser/newInstallPage.ftl:sync-first
 uk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 uk: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
+uk: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
 uk: browser/browser/preferences/preferences.ftl:get-started-configured
 uk: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 uk: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
