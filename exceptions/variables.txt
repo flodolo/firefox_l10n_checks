@@ -482,6 +482,7 @@ pl: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 ro: browser/browser/preferences/preferences.ftl:use-firefox-sync
 ru: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 ru: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
+ru: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
 ru: browser/browser/preferences/preferences.ftl:get-started-configured
 ru: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
 ru: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
