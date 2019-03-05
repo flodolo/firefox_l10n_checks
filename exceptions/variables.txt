@@ -223,11 +223,14 @@ ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:u
 ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
 ja-JP-mac - variables: security/manager/security/certificates/certManager.ftl:add-exception-branded-warning
 ja-JP-mac: browser/browser/aboutSearchReset.ftl:page-info-outofdate
+ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-desc
+ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja-JP-mac: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
 ja-JP-mac: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
 ja-JP-mac: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBlocked5
@@ -263,11 +266,14 @@ ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 ja-JP-mac: toolkit/toolkit/preferences/preferences.ftl:master-password-description
 ja: browser/browser/aboutSearchReset.ftl:page-info-outofdate
+ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-desc
+ja: browser/browser/preferences/blocklists.ftl:blocklist-description
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking.label
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
 ja: browser/chrome/browser/aboutSearchReset.dtd:searchreset.pageInfo1
 ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedException
 ja: browser/chrome/browser/browser.dtd:trackingProtection.detectedNotBlocked5
