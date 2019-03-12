@@ -54,6 +54,8 @@ class QualityCheck():
         2,
         # 18: Welsh
         6,
+        # 19: Slavic
+        3,
     ]
 
     json_files = [
