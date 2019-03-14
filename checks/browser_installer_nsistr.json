@@ -41,22 +41,6 @@
 	},
 	{
 		"file": "browser/installer/nsisstrings.properties",
-		"entity": "VERSION_32BIT",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "VERSION_64BIT",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
 		"entity": "WARN_MIN_SUPPORTED_OSVER_MSG",
 		"excluded_locales": ["it"],
 		"type": "include_regex",

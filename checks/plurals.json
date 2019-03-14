@@ -260,31 +260,6 @@
 		"type": "plural_forms"
 	},
 	{
-		"file": "toolkit/chrome/global/aboutSupport.properties",
-		"entity": "crashesTitle",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutSupport.properties",
-		"entity": "crashesTimeMinutes",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutSupport.properties",
-		"entity": "crashesTimeHours",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutSupport.properties",
-		"entity": "crashesTimeDays",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutSupport.properties",
-		"entity": "pendingReports",
-		"type": "plural_forms"
-	},
-	{
 		"file": "toolkit/chrome/global/findbar.properties",
 		"entity": "FoundMatches",
 		"type": "plural_forms"

@@ -63,7 +63,6 @@ class QualityCheck():
         'boolean_values',
         'browser_dtd',
         'browser_installer_nsistr',
-        'fluent_misc',
         'intl_properties',
         'mobile_netError_dtd',
         'mobile_phishing_dtd',
