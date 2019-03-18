@@ -121,7 +121,9 @@ fa: browser/browser/preferences/preferences.ftl:collection-health-report.label
 fa: browser/browser/preferences/preferences.ftl:use-firefox-sync
 fa: toolkit/toolkit/about/aboutPerformance.ftl:energy-impact-low
 ff: browser/browser/preferences/preferences.ftl:collection-health-report.label
+fi: browser/browser/newInstallPage.ftl:options-use-sync
 fi: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+fi: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 fi: browser/chrome/browser/preferences/search.dtd:urlBarSuggestionsPermanentPB.label
 fi: browser/installer/custom.properties:CONTEXT_OPTIONS
 fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
