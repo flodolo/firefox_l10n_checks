@@ -1,371 +1,380 @@
-ar - variables: browser/pdfviewer/viewer.properties:find_match_count[one]
-ar - variables: browser/pdfviewer/viewer.properties:find_match_count[two]
-ar - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
-ar - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
-ar - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
-br - variables: browser/chrome/browser/newInstall.dtd:sync
-bs - variables: browser/browser/preferences/preferences.ftl:collection-health-report.label
-cs - variables: browser/browser/newInstallPage.ftl:options-use-sync
-cs - variables: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
-cs - variables: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
-cs - variables: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
-cs - variables: browser/browser/preferences/preferences.ftl:collection-health-report.label
-cs - variables: browser/browser/preferences/preferences.ftl:collection-studies.label
-cs - variables: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
-cs - variables: browser/browser/preferences/preferences.ftl:help-button-label
-cs - variables: browser/browser/preferences/preferences.ftl:history-remember-label
-cs - variables: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
-cs - variables: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
-cs - variables: browser/chrome/browser/newInstall.dtd:sync
-cs - variables: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
-cs - variables: toolkit/toolkit/about/aboutAddons.ftl:preferences
-de - variables: browser/chrome/overrides/netError.dtd:notCached.longDesc
-de - variables: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
-de - variables: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
-de - variables: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
-de - variables: toolkit/chrome/global/resetProfile.dtd:refreshProfile.button.label
-de - variables: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.button.label
-de - variables: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
-de - variables: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
-de - variables: toolkit/toolkit/global/resetProfile.ftl:refresh-profile
-de - variables: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-button
-de - variables: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog-button.label
-de - variables: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog.title
-eo - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-et - variables: browser/chrome/overrides/netError.dtd:notCached.longDesc
-et - variables: browser/installer/custom.properties:CONTEXT_OPTIONS
-et - variables: browser/installer/custom.properties:CONTEXT_SAFE_MODE
-et - variables: browser/installer/custom.properties:CREATE_ICONS_DESC
-et - variables: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
-et - variables: browser/installer/custom.properties:STATUS_INSTALL_APP
-et - variables: browser/installer/custom.properties:STATUS_UNINSTALL_MAIN
-et - variables: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
-et - variables: browser/installer/custom.properties:SURVEY_TEXT
-et - variables: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
-et - variables: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
-et - variables: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
-et - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
-et - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
-et - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-et - variables: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL
-et - variables: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE
-et - variables: browser/installer/mui.properties:MUI_TEXT_ABORTWARNING
-et - variables: browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE
-et - variables: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT
-et - variables: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_TITLE
-et - variables: browser/installer/mui.properties:MUI_TEXT_INSTALLING_SUBTITLE
-et - variables: browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE
-et - variables: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TEXT
-et - variables: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TITLE
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_SUBTITLE
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_TITLE
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE
-et - variables: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
-et - variables: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
-et - variables: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
-et - variables: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
-et - variables: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
-et - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
-et - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
-et - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-et - variables: browser/installer/override.properties:DirText
-et - variables: browser/installer/override.properties:LicenseTextRB
-et - variables: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
-et - variables: mobile/android/base/sync_strings.dtd:sync.title.connect.label
-et - variables: mobile/overrides/netError.dtd:netOffline.longDesc3
-et - variables: mobile/overrides/netError.dtd:notCached.longDesc
-eu - variables: toolkit/crashreporter/crashreporter.ini:Quit2
-fi - variables: browser/installer/custom.properties:CONTEXT_OPTIONS
-fi - variables: browser/installer/custom.properties:CONTEXT_SAFE_MODE
-fi - variables: browser/installer/custom.properties:CREATE_ICONS_DESC
-fi - variables: browser/installer/custom.properties:REG_APP_DESC
-fi - variables: browser/installer/custom.properties:STATUS_UNINSTALL_MAIN
-fi - variables: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
-fi - variables: browser/installer/custom.properties:SUMMARY_TAKE_DEFAULTS
-fi - variables: browser/installer/custom.properties:SURVEY_TEXT
-fi - variables: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
-fi - variables: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
-fi - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
-fi - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
-fi - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-fi - variables: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL
-fi - variables: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE
-fi - variables: browser/installer/mui.properties:MUI_TEXT_ABORTWARNING
-fi - variables: browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE
-fi - variables: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT
-fi - variables: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_TITLE
-fi - variables: browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE
-fi - variables: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TEXT
-fi - variables: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TITLE
-fi - variables: browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING
-fi - variables: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT
-fi - variables: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE
-fi - variables: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
-fi - variables: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
-fi - variables: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
-fi - variables: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
-fi - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
-fi - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
-fi - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-fi - variables: browser/installer/override.properties:DirBrowseText
-fi - variables: browser/installer/override.properties:LicenseTextRB
-fi - variables: browser/installer/override.properties:SetupCaption
-fi - variables: browser/installer/override.properties:UninstallCaption
-fi - variables: browser/installer/override.properties:UninstallingText
-fi - variables: mobile/android/base/android_strings.dtd:pref_restore_quit
-fi - variables: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
-fi - variables: toolkit/chrome/mozapps/update/updates.dtd:error.label
-fr - variables: browser/browser/preferences/preferences.ftl:history-remember-label
-fr - variables: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
-fr - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-fr - variables: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
-fy-NL - variables: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
-fy-NL - variables: mobile/overrides/netError.dtd:cspBlocked.longDesc
-he - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
-hr - variables: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
-hr - variables: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
-id - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
-it - variables: browser/browser/preferences/languages.ftl:browser-languages-error
-it - variables: browser/browser/preferences/preferences.ftl:history-dontremember-description
-it - variables: browser/browser/preferences/preferences.ftl:history-remember-description
-it - variables: browser/browser/preferences/preferences.ftl:history-remember-label
-it - variables: browser/chrome/browser/browser.dtd:updateRestart.message2
-it - variables: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTime2
-it - variables: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTimeWithoutReference
-it - variables: mobile/android/base/android_strings.dtd:datareporting_notification_summary
-it - variables: mobile/android/base/android_strings.dtd:pref_donottrack_summary
-it - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-it - variables: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
-it - variables: mobile/overrides/netError.dtd:netOffline.longDesc3
-it - variables: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
-it - variables: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
-ja - variables: browser/browser/newInstallPage.ftl:options-do-nothing
-ja - variables: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
-ja - variables: browser/browser/preferences/blocklists.ftl:blocklist-description
-ja - variables: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
-ja - variables: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
-ja - variables: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
-ja - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
-ja - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
-ja - variables: browser/chrome/overrides/netError.dtd:certerror.introPara
-ja - variables: browser/chrome/overrides/netError.dtd:certerror.mitm.title
-ja - variables: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
-ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
-ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
-ja - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
-ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
-ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
-ja - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
-ja - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-ja - variables: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
-ja - variables: mobile/overrides/netError.dtd:cspBlocked.longDesc
-ja - variables: mobile/overrides/netError.dtd:netOffline.longDesc3
-ja - variables: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
-ja - variables: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
-ja - variables: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
-ja - variables: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.summary
-ja - variables: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
-ja - variables: toolkit/chrome/mozapps/update/updates.dtd:error.label
-ja - variables: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
-ja - variables: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
-ja-JP-mac - variables: browser/browser/newInstallPage.ftl:options-do-nothing
-ja-JP-mac - variables: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
-ja-JP-mac - variables: browser/browser/preferences/blocklists.ftl:blocklist-description
-ja-JP-mac - variables: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
-ja-JP-mac - variables: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
-ja-JP-mac - variables: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
-ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
-ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
-ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.introPara
-ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:certerror.mitm.title
-ja-JP-mac - variables: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
-ja-JP-mac - variables: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
-ja-JP-mac - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-ja-JP-mac - variables: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
-ja-JP-mac - variables: mobile/overrides/netError.dtd:cspBlocked.longDesc
-ja-JP-mac - variables: mobile/overrides/netError.dtd:netOffline.longDesc3
-ja-JP-mac - variables: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
-ja-JP-mac - variables: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
-ja-JP-mac - variables: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
-ja-JP-mac - variables: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.summary
-ja-JP-mac - variables: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
-ja-JP-mac - variables: toolkit/chrome/mozapps/update/updates.dtd:error.label
-ja-JP-mac - variables: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
-ja-JP-mac - variables: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
-ka - variables: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
-ko - variables: mobile/overrides/netError.dtd:cspBlocked.longDesc
-ko - variables: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
-ko - variables: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
-lt - variables: browser/chrome/browser/newInstall.dtd:mainText
-lt - variables: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
-lt - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-lt - variables: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
-lt - variables: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
-lt - variables: toolkit/toolkit/about/aboutRights.ftl:rights-intro-point-4
-ltg - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
-or - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
-pl - variables: browser/browser/aboutDialog.ftl:update-updateButton.label
-pl - variables: browser/browser/aboutRestartRequired.ftl:restart-button-label
-pl - variables: browser/browser/aboutRestartRequired.ftl:restart-required-intro
-pl - variables: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
-pl - variables: browser/browser/newInstallPage.ftl:options-use-sync
-pl - variables: browser/browser/newInstallPage.ftl:sync-first
-pl - variables: browser/browser/newInstallPage.ftl:sync-header
-pl - variables: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
-pl - variables: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
-pl - variables: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
-pl - variables: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
-pl - variables: browser/browser/preferences/languages.ftl:browser-languages-error
-pl - variables: browser/browser/preferences/languages.ftl:browser-languages-window.title
-pl - variables: browser/browser/preferences/preferences.ftl:addon-recommendations.label
-pl - variables: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
-pl - variables: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
-pl - variables: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
-pl - variables: browser/browser/preferences/preferences.ftl:category-search.tooltiptext
-pl - variables: browser/browser/preferences/preferences.ftl:category-sync.tooltiptext
-pl - variables: browser/browser/preferences/preferences.ftl:choose-browser-language-description
-pl - variables: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
-pl - variables: browser/browser/preferences/preferences.ftl:collection-health-report.label
-pl - variables: browser/browser/preferences/preferences.ftl:collection-studies-link
-pl - variables: browser/browser/preferences/preferences.ftl:collection-studies.label
-pl - variables: browser/browser/preferences/preferences.ftl:confirm-browser-language-change-description
-pl - variables: browser/browser/preferences/preferences.ftl:content-blocking-strict-desc
-pl - variables: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
-pl - variables: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
-pl - variables: browser/browser/preferences/preferences.ftl:feature-disable-requires-restart
-pl - variables: browser/browser/preferences/preferences.ftl:feature-enable-requires-restart
-pl - variables: browser/browser/preferences/preferences.ftl:get-started-configured
-pl - variables: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
-pl - variables: browser/browser/preferences/preferences.ftl:history-clear-on-close-option.label
-pl - variables: browser/browser/preferences/preferences.ftl:permissions-notification-pause.label
-pl - variables: browser/browser/preferences/preferences.ftl:search-results-help-link
-pl - variables: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
-pl - variables: browser/browser/preferences/preferences.ftl:should-restart-ok
-pl - variables: browser/browser/preferences/preferences.ftl:should-restart-title
-pl - variables: browser/browser/preferences/preferences.ftl:sitedata-delete-on-close.label
-pl - variables: browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message
-pl - variables: browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message
-pl - variables: browser/browser/preferences/preferences.ftl:sync-signedin-settings-desc
-pl - variables: browser/browser/preferences/preferences.ftl:update-application-allow-description
-pl - variables: browser/browser/preferences/preferences.ftl:update-application-description
-pl - variables: browser/browser/preferences/preferences.ftl:update-application-title
-pl - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
-pl - variables: browser/browser/preferences/preferences.ftl:warn-on-open-many-tabs.label
-pl - variables: browser/browser/preferences/siteDataSettings.ftl:site-data-removing-dialog.title
-pl - variables: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
-pl - variables: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
-pl - variables: browser/browser/safeMode.ftl:safe-mode-description
-pl - variables: browser/browser/safeMode.ftl:safe-mode-description-details
-pl - variables: browser/browser/sanitize.ftl:clear-data-settings-label
-pl - variables: browser/chrome/browser/aboutTabCrashed.dtd:tabCrashed.autoSubmit3
-pl - variables: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
-pl - variables: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
-pl - variables: browser/chrome/browser/browser.dtd:fxaSignIn.label
-pl - variables: browser/chrome/browser/browser.dtd:fxaSignInError.label
-pl - variables: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
-pl - variables: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
-pl - variables: browser/chrome/browser/browser.dtd:syncReAuthItem.label
-pl - variables: browser/chrome/browser/browser.dtd:syncSignIn.label
-pl - variables: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
-pl - variables: browser/chrome/browser/browser.dtd:updateManual.acceptButton.label
-pl - variables: browser/chrome/browser/browser.dtd:updateRestart.header.message2
-pl - variables: browser/chrome/browser/browser.dtd:updateRestart.panelUI.label2
-pl - variables: browser/chrome/browser/browser.properties:contentBlocking.intro.title
-pl - variables: browser/chrome/browser/browser.properties:contentBlocking.intro.v1.description
-pl - variables: browser/chrome/browser/browser.properties:slowStartup.message
-pl - variables: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt2
-pl - variables: browser/chrome/browser/browser.properties:webext.remove.confirmation.title
-pl - variables: browser/chrome/browser/newInstall.dtd:sync
-pl - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.harmfulPage.learnMore
-pl - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
-pl - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.phishingPage.learnMore
-pl - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
-pl - variables: browser/chrome/browser/shellservice.properties:setDefaultBrowserAlertConfirm.label
-pl - variables: browser/chrome/browser/shellservice.properties:setDefaultBrowserConfirm.label
-pl - variables: browser/chrome/browser/shellservice.properties:setDefaultBrowserDontAsk
-pl - variables: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
-pl - variables: browser/chrome/browser/tabbrowser.properties:tabs.openWarningPromptMeBranded
-pl - variables: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
-pl - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
-pl - variables: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
-pl - variables: browser/chrome/overrides/netError.dtd:certerror.mitm.title
-pl - variables: browser/chrome/overrides/netError.dtd:clockSkewError.longDesc
-pl - variables: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
-pl - variables: browser/pdfviewer/viewer.properties:find_match_count[one]
-pl - variables: browser/pdfviewer/viewer.properties:find_match_count[two]
-pl - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
-pl - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
-pl - variables: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
-pl - variables: mobile/android/base/android_strings.dtd:pref_donottrack_summary
-pl - variables: mobile/android/base/android_strings.dtd:pref_restore_quit
-pl - variables: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
-pl - variables: toolkit/chrome/alerts/alert.properties:pauseNotifications.label
-pl - variables: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
-pl - variables: toolkit/chrome/global/resetProfile.properties:refreshProfile.resetButton.label
-pl - variables: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
-pl - variables: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
-pl - variables: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
-pl - variables: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
-pl - variables: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
-pl - variables: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
-pl - variables: toolkit/toolkit/about/aboutAddons.ftl:preferences
-pl - variables: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
-ru - variables: browser/chrome/browser/browser.dtd:fxaSignIn.label
-ru - variables: browser/chrome/browser/browser.dtd:fxaSignInError.label
-ru - variables: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
-ru - variables: browser/chrome/browser/browser.dtd:syncReAuthItem.label
-ru - variables: browser/chrome/browser/browser.dtd:syncSignIn.label
-ru - variables: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_options_title
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_status_needs_master_sync_automatically_enabled
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_status_needs_master_sync_automatically_enabled_v21
-ru - variables: mobile/android/base/sync_strings.dtd:fxaccount_sync_sign_in_error_notification_title2
-ru - variables: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
-ru - variables: mobile/android/base/sync_strings.dtd:sync.title.connect.label
-sk - variables: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
-sk - variables: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
-sk - variables: browser/browser/preferences/preferences.ftl:history-remember-label
-sk - variables: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
-sk - variables: browser/chrome/browser/newInstall.dtd:sync
-sk - variables: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
-sk - variables: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
-sk - variables: toolkit/toolkit/about/aboutAddons.ftl:preferences
-sl - variables: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
-sl - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
-sl - variables: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-sl - variables: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
-sl - variables: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
-sl - variables: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
-sl - variables: browser/installer/override.properties:LicenseTextRB
-sl - variables: toolkit/chrome/mozapps/update/updates.dtd:error.label
-sl - variables: toolkit/chrome/mozapps/update/updates.dtd:errorManual.label
-sl - variables: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
-sl - variables: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
-sr - variables: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
-sr - variables: mobile/android/base/android_strings.dtd:pref_restore_quit
-sr - variables: mobile/android/base/android_strings.dtd:updater_permission_text
-ta - variables: browser/chrome/browser/browser.dtd:updateRestart.message2
-uk - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
-uk - variables: browser/chrome/browser/browser.dtd:fxaSignIn.label
-uk - variables: browser/chrome/browser/browser.dtd:fxaSignInError.label
-uk - variables: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
-uk - variables: browser/chrome/browser/browser.dtd:syncReAuthItem.label
-uk - variables: browser/chrome/browser/browser.dtd:syncSignIn.label
-uk - variables: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
-uk - variables: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
-uk - variables: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
-uk - variables: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
-uk - variables: mobile/android/base/sync_strings.dtd:fxaccount_options_title
-uz - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
-vi - variables: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
-xh - variables: browser/browser/preferences/preferences.ftl:use-firefox-sync
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
+ar: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
+ar: browser/pdfviewer/viewer.properties:find_match_count[one]
+ar: browser/pdfviewer/viewer.properties:find_match_count[two]
+br: browser/chrome/browser/newInstall.dtd:sync
+bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
+cs: browser/browser/newInstallPage.ftl:options-use-sync
+cs: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+cs: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
+cs: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
+cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
+cs: browser/browser/preferences/preferences.ftl:collection-studies.label
+cs: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+cs: browser/browser/preferences/preferences.ftl:help-button-label
+cs: browser/browser/preferences/preferences.ftl:history-remember-label
+cs: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
+cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+cs: browser/chrome/browser/newInstall.dtd:sync
+cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+cs: toolkit/toolkit/about/aboutAddons.ftl:preferences
+cy: devtools/client/aboutdebugging.ftl:about-debugging-runtime-version-too-old
+de: browser/chrome/overrides/netError.dtd:notCached.longDesc
+de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
+de: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
+de: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.button.label
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.button.label
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.dialog.title
+de: toolkit/chrome/global/resetProfile.dtd:refreshProfile.title
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-button
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog-button.label
+de: toolkit/toolkit/global/resetProfile.ftl:refresh-profile-dialog.title
+eo: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+et: browser/chrome/overrides/netError.dtd:notCached.longDesc
+et: browser/installer/custom.properties:CONTEXT_OPTIONS
+et: browser/installer/custom.properties:CONTEXT_SAFE_MODE
+et: browser/installer/custom.properties:CREATE_ICONS_DESC
+et: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
+et: browser/installer/custom.properties:STATUS_INSTALL_APP
+et: browser/installer/custom.properties:STATUS_UNINSTALL_MAIN
+et: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
+et: browser/installer/custom.properties:SURVEY_TEXT
+et: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
+et: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
+et: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
+et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
+et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
+et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+et: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL
+et: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE
+et: browser/installer/mui.properties:MUI_TEXT_ABORTWARNING
+et: browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE
+et: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT
+et: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_TITLE
+et: browser/installer/mui.properties:MUI_TEXT_INSTALLING_SUBTITLE
+et: browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE
+et: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TEXT
+et: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TITLE
+et: browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING
+et: browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_SUBTITLE
+et: browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_TITLE
+et: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT
+et: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE
+et: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
+et: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
+et: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
+et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
+et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
+et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
+et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
+et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+et: browser/installer/override.properties:DirText
+et: browser/installer/override.properties:LicenseTextRB
+et: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
+et: mobile/android/base/sync_strings.dtd:sync.title.connect.label
+et: mobile/overrides/netError.dtd:netOffline.longDesc3
+et: mobile/overrides/netError.dtd:notCached.longDesc
+eu: toolkit/crashreporter/crashreporter.ini:Quit2
+fi: browser/installer/custom.properties:CONTEXT_OPTIONS
+fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
+fi: browser/installer/custom.properties:CREATE_ICONS_DESC
+fi: browser/installer/custom.properties:REG_APP_DESC
+fi: browser/installer/custom.properties:STATUS_UNINSTALL_MAIN
+fi: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
+fi: browser/installer/custom.properties:SUMMARY_TAKE_DEFAULTS
+fi: browser/installer/custom.properties:SURVEY_TEXT
+fi: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
+fi: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
+fi: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
+fi: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
+fi: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+fi: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL
+fi: browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE
+fi: browser/installer/mui.properties:MUI_TEXT_ABORTWARNING
+fi: browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE
+fi: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT
+fi: browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_TITLE
+fi: browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE
+fi: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TEXT
+fi: browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TITLE
+fi: browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING
+fi: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT
+fi: browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE
+fi: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
+fi: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
+fi: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
+fi: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
+fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
+fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
+fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+fi: browser/installer/override.properties:DirBrowseText
+fi: browser/installer/override.properties:LicenseTextRB
+fi: browser/installer/override.properties:SetupCaption
+fi: browser/installer/override.properties:UninstallCaption
+fi: browser/installer/override.properties:UninstallingText
+fi: mobile/android/base/android_strings.dtd:pref_restore_quit
+fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
+fr: browser/browser/preferences/preferences.ftl:history-remember-label
+fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+fr: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+fr: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
+fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
+he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
+hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
+hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
+id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+it: browser/browser/preferences/languages.ftl:browser-languages-error
+it: browser/browser/preferences/preferences.ftl:history-dontremember-description
+it: browser/browser/preferences/preferences.ftl:history-remember-description
+it: browser/browser/preferences/preferences.ftl:history-remember-label
+it: browser/chrome/browser/browser.dtd:updateRestart.message2
+it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTime2
+it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTimeWithoutReference
+it: mobile/android/base/android_strings.dtd:datareporting_notification_summary
+it: mobile/android/base/android_strings.dtd:pref_donottrack_summary
+it: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
+it: mobile/overrides/netError.dtd:netOffline.longDesc3
+it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
+it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
+ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
+ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja-JP-mac: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.introPara
+ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.mitm.title
+ja-JP-mac: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja-JP-mac: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
+ja-JP-mac: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+ja-JP-mac: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
+ja-JP-mac: mobile/overrides/netError.dtd:cspBlocked.longDesc
+ja-JP-mac: mobile/overrides/netError.dtd:netOffline.longDesc3
+ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
+ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
+ja-JP-mac: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja-JP-mac: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.summary
+ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
+ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
+ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
+ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: browser/browser/newInstallPage.ftl:options-do-nothing
+ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
+ja: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
+ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+ja: browser/chrome/overrides/netError.dtd:certerror.introPara
+ja: browser/chrome/overrides/netError.dtd:certerror.mitm.title
+ja: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
+ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.linux
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.macosx
+ja: browser/extensions/formautofill/formautofill.properties:useCreditCardPasswordPrompt.win
+ja: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+ja: mobile/android/chrome/aboutCertError.dtd:certerror.introPara1
+ja: mobile/overrides/netError.dtd:cspBlocked.longDesc
+ja: mobile/overrides/netError.dtd:netOffline.longDesc3
+ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
+ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
+ja: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.summary
+ja: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
+ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
+ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
+ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ka: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
+ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
+ko: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
+lt: browser/chrome/browser/newInstall.dtd:mainText
+lt: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
+lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
+lt: toolkit/chrome/global/aboutRights.dtd:rights2.intro-point3a
+lt: toolkit/toolkit/about/aboutRights.ftl:rights-intro-point-4
+ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
+or: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/aboutDialog.ftl:update-updateButton.label
+pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
+pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
+pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
+pl: browser/browser/newInstallPage.ftl:options-use-sync
+pl: browser/browser/newInstallPage.ftl:sync-first
+pl: browser/browser/newInstallPage.ftl:sync-header
+pl: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+pl: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
+pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
+pl: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
+pl: browser/browser/preferences/languages.ftl:browser-languages-error
+pl: browser/browser/preferences/languages.ftl:browser-languages-window.title
+pl: browser/browser/preferences/preferences.ftl:addon-recommendations.label
+pl: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:category-search.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:category-sync.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:choose-browser-language-description
+pl: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
+pl: browser/browser/preferences/preferences.ftl:collection-health-report.label
+pl: browser/browser/preferences/preferences.ftl:collection-studies-link
+pl: browser/browser/preferences/preferences.ftl:collection-studies.label
+pl: browser/browser/preferences/preferences.ftl:confirm-browser-language-change-description
+pl: browser/browser/preferences/preferences.ftl:content-blocking-strict-desc
+pl: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+pl: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
+pl: browser/browser/preferences/preferences.ftl:feature-disable-requires-restart
+pl: browser/browser/preferences/preferences.ftl:feature-enable-requires-restart
+pl: browser/browser/preferences/preferences.ftl:get-started-configured
+pl: browser/browser/preferences/preferences.ftl:get-started-not-logged-in
+pl: browser/browser/preferences/preferences.ftl:history-clear-on-close-option.label
+pl: browser/browser/preferences/preferences.ftl:permissions-notification-pause.label
+pl: browser/browser/preferences/preferences.ftl:search-results-help-link
+pl: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+pl: browser/browser/preferences/preferences.ftl:should-restart-ok
+pl: browser/browser/preferences/preferences.ftl:should-restart-title
+pl: browser/browser/preferences/preferences.ftl:sitedata-delete-on-close.label
+pl: browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message
+pl: browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message
+pl: browser/browser/preferences/preferences.ftl:sync-signedin-settings-desc
+pl: browser/browser/preferences/preferences.ftl:update-application-allow-description
+pl: browser/browser/preferences/preferences.ftl:update-application-description
+pl: browser/browser/preferences/preferences.ftl:update-application-title
+pl: browser/browser/preferences/preferences.ftl:use-firefox-sync
+pl: browser/browser/preferences/preferences.ftl:warn-on-open-many-tabs.label
+pl: browser/browser/preferences/siteDataSettings.ftl:site-data-removing-dialog.title
+pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
+pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
+pl: browser/browser/safeMode.ftl:safe-mode-description
+pl: browser/browser/safeMode.ftl:safe-mode-description-details
+pl: browser/browser/sanitize.ftl:clear-data-settings-label
+pl: browser/chrome/browser/aboutTabCrashed.dtd:tabCrashed.autoSubmit3
+pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
+pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
+pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+pl: browser/chrome/browser/browser.dtd:fxa.signin.button.label
+pl: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
+pl: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
+pl: browser/chrome/browser/browser.dtd:fxaSignIn.label
+pl: browser/chrome/browser/browser.dtd:fxaSignInError.label
+pl: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
+pl: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
+pl: browser/chrome/browser/browser.dtd:syncReAuthItem.label
+pl: browser/chrome/browser/browser.dtd:syncSignIn.label
+pl: browser/chrome/browser/browser.dtd:updateManual.acceptButton.label
+pl: browser/chrome/browser/browser.dtd:updateRestart.header.message2
+pl: browser/chrome/browser/browser.dtd:updateRestart.panelUI.label2
+pl: browser/chrome/browser/browser.properties:contentBlocking.intro.title
+pl: browser/chrome/browser/browser.properties:contentBlocking.intro.v1.description
+pl: browser/chrome/browser/browser.properties:slowStartup.message
+pl: browser/chrome/browser/browser.properties:webauthn.registerDirectPrompt2
+pl: browser/chrome/browser/browser.properties:webext.remove.confirmation.title
+pl: browser/chrome/browser/newInstall.dtd:sync
+pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.harmfulPage.learnMore
+pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
+pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.phishingPage.learnMore
+pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserAlertConfirm.label
+pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserConfirm.label
+pl: browser/chrome/browser/shellservice.properties:setDefaultBrowserDontAsk
+pl: browser/chrome/browser/siteData.properties:clearSiteDataPromptText
+pl: browser/chrome/browser/tabbrowser.properties:tabs.openWarningPromptMeBranded
+pl: browser/chrome/browser/translation.properties:translation.options.neverForLanguage.label
+pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
+pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
+pl: browser/chrome/overrides/netError.dtd:certerror.mitm.title
+pl: browser/chrome/overrides/netError.dtd:clockSkewError.longDesc
+pl: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE
+pl: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
+pl: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
+pl: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
+pl: browser/pdfviewer/viewer.properties:find_match_count[one]
+pl: browser/pdfviewer/viewer.properties:find_match_count[two]
+pl: mobile/android/base/android_strings.dtd:pref_donottrack_summary
+pl: mobile/android/base/android_strings.dtd:pref_restore_quit
+pl: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
+pl: toolkit/chrome/alerts/alert.properties:pauseNotifications.label
+pl: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
+pl: toolkit/chrome/global/resetProfile.properties:refreshProfile.resetButton.label
+pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
+pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
+pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
+pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
+pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
+pl: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
+ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+ru: browser/chrome/browser/browser.dtd:fxa.signin.button.label
+ru: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
+ru: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
+ru: browser/chrome/browser/browser.dtd:fxaSignIn.label
+ru: browser/chrome/browser/browser.dtd:fxaSignInError.label
+ru: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
+ru: browser/chrome/browser/browser.dtd:syncReAuthItem.label
+ru: browser/chrome/browser/browser.dtd:syncSignIn.label
+ru: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
+ru: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
+ru: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
+ru: mobile/android/base/sync_strings.dtd:fxaccount_options_title
+ru: mobile/android/base/sync_strings.dtd:fxaccount_status_needs_master_sync_automatically_enabled
+ru: mobile/android/base/sync_strings.dtd:fxaccount_status_needs_master_sync_automatically_enabled_v21
+ru: mobile/android/base/sync_strings.dtd:fxaccount_sync_sign_in_error_notification_title2
+ru: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
+ru: mobile/android/base/sync_strings.dtd:sync.title.connect.label
+sk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+sk: browser/browser/preferences/preferences.ftl:history-remember-label
+sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
+sk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+sk: browser/chrome/browser/newInstall.dtd:sync
+sk: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+sk: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
+sk: toolkit/toolkit/about/aboutAddons.ftl:preferences
+sl: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
+sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
+sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
+sl: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
+sl: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
+sl: browser/installer/override.properties:LicenseTextRB
+sl: toolkit/chrome/mozapps/update/updates.dtd:error.label
+sl: toolkit/chrome/mozapps/update/updates.dtd:errorManual.label
+sl: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
+sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
+sr: mobile/android/base/android_strings.dtd:pref_restore_quit
+sr: mobile/android/base/android_strings.dtd:updater_permission_text
+ta: browser/chrome/browser/browser.dtd:updateRestart.message2
+th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
+uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
+uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
+uk: browser/chrome/browser/browser.dtd:fxaSignInError.label
+uk: browser/chrome/browser/browser.dtd:syncedTabs.sidebar.openprefs.label
+uk: browser/chrome/browser/browser.dtd:syncReAuthItem.label
+uk: browser/chrome/browser/browser.dtd:syncSignIn.label
+uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_old_firefox
+uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sync
+uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
+uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
+uz: browser/browser/preferences/preferences.ftl:use-firefox-sync
+vi: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
+xh: browser/browser/preferences/preferences.ftl:use-firefox-sync
