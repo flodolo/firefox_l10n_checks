@@ -128,6 +128,8 @@ he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
+it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
+it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
@@ -171,6 +173,12 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
+ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-description
@@ -213,6 +221,7 @@ lt: toolkit/toolkit/about/aboutRights.ftl:rights-intro-point-4
 ltg: browser/browser/preferences/preferences.ftl:use-firefox-sync
 or: browser/browser/preferences/preferences.ftl:use-firefox-sync
 pl: browser/browser/aboutDialog.ftl:update-updateButton.label
+pl: browser/browser/aboutPrivateBrowsing.ftl:content-blocking-description
 pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
 pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
 pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
