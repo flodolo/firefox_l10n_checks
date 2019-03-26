@@ -19,6 +19,7 @@ cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 cs: browser/chrome/browser/newInstall.dtd:sync
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 cs: toolkit/toolkit/about/aboutAddons.ftl:preferences
+cy: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 cy: devtools/client/aboutdebugging.ftl:about-debugging-runtime-version-too-old
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
@@ -144,6 +145,9 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
+ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
+ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
@@ -174,10 +178,7 @@ ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
-ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
-ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
-ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
