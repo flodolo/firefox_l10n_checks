@@ -128,6 +128,7 @@ fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
+id: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
@@ -272,6 +273,10 @@ pl: browser/browser/preferences/preferences.ftl:warn-on-open-many-tabs.label
 pl: browser/browser/preferences/siteDataSettings.ftl:site-data-removing-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-dialog.title
 pl: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
+pl: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-harmful-page-learn-more
+pl: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-malware-page-learn-more
+pl: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-phishing-page-learn-more
+pl: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 pl: browser/browser/safeMode.ftl:safe-mode-description
 pl: browser/browser/safeMode.ftl:safe-mode-description-details
 pl: browser/browser/sanitize.ftl:clear-data-settings-label
@@ -373,6 +378,7 @@ sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
+th: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
@@ -386,5 +392,6 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sy
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
 uz: browser/browser/preferences/preferences.ftl:use-firefox-sync
+vi: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-malware-page-learn-more
 vi: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
 xh: browser/browser/preferences/preferences.ftl:use-firefox-sync
