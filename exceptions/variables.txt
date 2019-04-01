@@ -280,6 +280,8 @@ pl: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-lea
 pl: browser/browser/safeMode.ftl:safe-mode-description
 pl: browser/browser/safeMode.ftl:safe-mode-description-details
 pl: browser/browser/sanitize.ftl:clear-data-settings-label
+pl: browser/browser/syncedTabs.ftl:fxa-sign-in
+pl: browser/browser/syncedTabs.ftl:synced-tabs-sidebar-openprefs
 pl: browser/chrome/browser/aboutTabCrashed.dtd:tabCrashed.autoSubmit3
 pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
 pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
@@ -336,6 +338,8 @@ pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
 pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 pl: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
+ru: browser/browser/syncedTabs.ftl:fxa-sign-in
+ru: browser/browser/syncedTabs.ftl:synced-tabs-sidebar-openprefs
 ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 ru: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 ru: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
@@ -381,6 +385,8 @@ ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 th: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
+uk: browser/browser/syncedTabs.ftl:fxa-sign-in
+uk: browser/browser/syncedTabs.ftl:synced-tabs-sidebar-openprefs
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
 uk: browser/chrome/browser/browser.dtd:fxaSignInError.label
