@@ -387,6 +387,9 @@ th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:s
 uk: browser/browser/preferences/preferences.ftl:use-firefox-sync
 uk: browser/browser/syncedTabs.ftl:fxa-sign-in
 uk: browser/browser/syncedTabs.ftl:synced-tabs-sidebar-openprefs
+uk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+uk: browser/chrome/browser/browser.dtd:fxa.signin.button.label
+uk: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
 uk: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
 uk: browser/chrome/browser/browser.dtd:fxaSignIn.label
 uk: browser/chrome/browser/browser.dtd:fxaSignInError.label
