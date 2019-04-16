@@ -132,6 +132,7 @@ id: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-lea
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
+it: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
 it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
@@ -227,6 +228,8 @@ pl: browser/browser/aboutPrivateBrowsing.ftl:content-blocking-description
 pl: browser/browser/aboutRestartRequired.ftl:restart-button-label
 pl: browser/browser/aboutRestartRequired.ftl:restart-required-intro
 pl: browser/browser/aboutTabCrashed.ftl:crashed-auto-submit-checkbox
+pl: browser/browser/appMenuNotifications.ftl:appmenu-update-manual.buttonlabel
+pl: browser/browser/appMenuNotifications.ftl:appmenu-update-restart.label
 pl: browser/browser/newInstallPage.ftl:options-use-sync
 pl: browser/browser/newInstallPage.ftl:sync-first
 pl: browser/browser/newInstallPage.ftl:sync-header
@@ -381,6 +384,7 @@ sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+ta: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
 th: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
