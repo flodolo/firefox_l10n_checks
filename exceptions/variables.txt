@@ -336,10 +336,12 @@ pl: toolkit/chrome/global/resetProfile.properties:refreshProfile.resetButton.lab
 pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
 pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
+pl: toolkit/chrome/mozapps/profile/profileSelection.properties:flushFailRestartButton
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/chrome/mozapps/update/updates.properties:restartNowButton
 pl: toolkit/chrome/mozapps/update/updates.properties:updateButton_minor
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
+pl: toolkit/toolkit/about/aboutProfiles.ftl:profiles-flush-restart-button
 pl: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 ru: browser/browser/syncedTabs.ftl:fxa-sign-in
 ru: browser/browser/syncedTabs.ftl:synced-tabs-sidebar-openprefs
