@@ -160,18 +160,6 @@
 		"type": "plural_forms"
 	},
 	{
-		"file": "devtools/client/canvasdebugger.properties",
-		"entity": "snapshotsList.drawCallsLabel",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/canvasdebugger.properties",
-		"entity": "snapshotsList.functionCallsLabel",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
 		"file": "devtools/client/debugger.properties",
 		"entity": "variablesViewMoreObjects",
 		"type": "plural_forms",

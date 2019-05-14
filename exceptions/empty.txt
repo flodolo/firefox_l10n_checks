@@ -90,7 +90,6 @@ ja-JP-mac: browser/chrome/browser/browser.dtd:search.label
 ja-JP-mac: browser/chrome/browser/browser.dtd:searchAfter.label
 ja-JP-mac: browser/chrome/browser/browser.dtd:searchFor.label
 ja-JP-mac: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
-ja-JP-mac: devtools/client/canvasdebugger.dtd:canvasDebuggerUI.emptyNotice1
 ja-JP-mac: devtools/client/performance.dtd:performanceUI.console.recordingNoticeEnd
 ja-JP-mac: devtools/client/performance.dtd:performanceUI.console.recordingNoticeStart
 ja-JP-mac: devtools/shared/csscoverage.dtd:csscoverage.optimize.body1
@@ -103,7 +102,6 @@ ja: browser/chrome/browser/browser.dtd:search.label
 ja: browser/chrome/browser/browser.dtd:searchAfter.label
 ja: browser/chrome/browser/browser.dtd:searchFor.label
 ja: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
-ja: devtools/client/canvasdebugger.dtd:canvasDebuggerUI.emptyNotice1
 ja: devtools/client/performance.dtd:performanceUI.console.recordingNoticeEnd
 ja: devtools/client/performance.dtd:performanceUI.console.recordingNoticeStart
 ja: devtools/shared/csscoverage.dtd:csscoverage.optimize.body1

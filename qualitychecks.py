@@ -59,7 +59,6 @@ class QualityCheck():
     ]
 
     json_files = [
-        'abouttabcrashed_dtd',
         'boolean_values',
         'browser_dtd',
         'browser_installer_nsistr',
