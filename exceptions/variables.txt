@@ -128,6 +128,7 @@ fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hr: toolkit/chrome/global/aboutRights.dtd:rights2.webservices-a
 hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
+hu: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
 id: browser/browser/safebrowsing/blockedSite.ftl:safeb-blocked-unwanted-page-learn-more
 id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
