@@ -235,8 +235,11 @@ pl: browser/browser/newInstallPage.ftl:options-use-sync
 pl: browser/browser/newInstallPage.ftl:sync-first
 pl: browser/browser/newInstallPage.ftl:sync-header
 pl: browser/browser/newtab/asrouter.ftl:cfr-doorhanger-bookmark-fxa-body
+pl: browser/browser/newtab/onboarding.ftl:onboarding-data-sync-button
+pl: browser/browser/newtab/onboarding.ftl:onboarding-data-sync-button2
 pl: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 pl: browser/browser/newtab/onboarding.ftl:onboarding-join-form-header
+pl: browser/browser/newtab/onboarding.ftl:onboarding-welcome-body
 pl: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxAccounts
 pl: browser/browser/preferences/clearSiteData.ftl:clear-site-data-description
 pl: browser/browser/preferences/fxaPairDevice.ftl:fxa-qrcode-heading-phase2
