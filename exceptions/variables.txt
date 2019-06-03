@@ -131,6 +131,7 @@ it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
+it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
 it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTime2
 it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTimeWithoutReference
