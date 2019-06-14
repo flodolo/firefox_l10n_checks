@@ -208,6 +208,18 @@
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
 	{
+		"file": "devtools/client/webconsole.properties",
+		"entity": "webconsole.filteredMessagesByText.label",
+		"type": "plural_forms",
+		"excluded_locales": []
+	},
+	{
+		"file": "devtools/client/webconsole.properties",
+		"entity": "webconsole.filteredMessagesByText.tooltip",
+		"type": "plural_forms",
+		"excluded_locales": []
+	},
+	{
 		"file": "dom/chrome/accessibility/AccessFu.properties",
 		"entity": "listItemsCount",
 		"type": "plural_forms"
