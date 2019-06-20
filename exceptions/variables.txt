@@ -64,6 +64,7 @@ et: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 et: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
 et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
 et: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
+et: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
