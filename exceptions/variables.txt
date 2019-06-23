@@ -104,6 +104,7 @@ fi: browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE
 fi: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 fi: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING
 fi: browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE
+fi: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
 fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 fi: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
