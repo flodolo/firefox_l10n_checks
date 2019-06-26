@@ -152,6 +152,7 @@ ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFire
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja-JP-mac: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja-JP-mac: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
@@ -184,6 +185,7 @@ ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStud
 ja: browser/browser/preferences/blocklists.ftl:blocklist-description
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
+ja: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja: browser/chrome/browser/aboutPrivateBrowsing.dtd:aboutPrivateBrowsing.info.description
 ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
@@ -291,6 +293,7 @@ sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 sl: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
+sl: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
 sl: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/override.properties:LicenseTextRB
 sl: toolkit/chrome/mozapps/update/updates.dtd:error.label
