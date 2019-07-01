@@ -60,13 +60,11 @@ class QualityCheck():
 
     json_files = [
         'boolean_values',
-        'browser_dtd',
         'browser_installer_nsistr',
         'intl_properties',
         'mobile_netError_dtd',
         'mobile_phishing_dtd',
         'netError_dtd',
-        'phishing-afterload-warning-message_dtd',
         'pipnss_properties',
         'plurals',
         'pocket',

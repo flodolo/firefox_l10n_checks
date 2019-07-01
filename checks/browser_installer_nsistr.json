@@ -9,7 +9,7 @@
 	},
 	{
 		"file": "browser/installer/nsisstrings.properties",
-		"entity": "STUB_CLEANUP_PAVEOVER_HEADER",
+		"entity": "STUB_CLEANUP_PAVEOVER_HEADER2",
 		"type": "include",
 		"checks": [
 			"$BrandShortName"
@@ -17,7 +17,7 @@
 	},
 	{
 		"file": "browser/installer/nsisstrings.properties",
-		"entity": "STUB_CLEANUP_REINSTALL_HEADER",
+		"entity": "STUB_CLEANUP_REINSTALL_HEADER2",
 		"type": "include",
 		"checks": [
 			"$BrandShortName"

@@ -125,7 +125,6 @@ fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 hu: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
-id: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 it: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
@@ -135,8 +134,6 @@ it: browser/browser/preferences/preferences.ftl:history-remember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message
 it: browser/chrome/browser/browser.dtd:updateRestart.message2
-it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTime2
-it: browser/chrome/overrides/netError.dtd:certerror.wrongSystemTimeWithoutReference
 it: mobile/android/base/android_strings.dtd:datareporting_notification_summary
 it: mobile/android/base/android_strings.dtd:pref_donottrack_summary
 it: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
@@ -238,10 +235,6 @@ pl: browser/chrome/browser/browser.dtd:updateManual.acceptButton.label
 pl: browser/chrome/browser/browser.dtd:updateRestart.header.message2
 pl: browser/chrome/browser/browser.dtd:updateRestart.panelUI.label2
 pl: browser/chrome/browser/newInstall.dtd:sync
-pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.harmfulPage.learnMore
-pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
-pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.phishingPage.learnMore
-pl: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
 pl: browser/chrome/overrides/netError.dtd:certerror.mitm.title
@@ -305,7 +298,6 @@ sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
 ta: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
 ta: browser/chrome/browser/browser.dtd:updateRestart.message2
-th: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.unwantedPage.learnMore
 uk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 uk: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 uk: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
@@ -320,5 +312,4 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_getting_started_welcome_to_sy
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
 uz: browser/browser/preferences/preferences.ftl:use-firefox-sync
-vi: browser/chrome/browser/safebrowsing/phishing-afterload-warning-message.dtd:safeb.blocked.malwarePage.learnMore
 xh: browser/browser/preferences/preferences.ftl:use-firefox-sync
