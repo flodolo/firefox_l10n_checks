@@ -80,6 +80,11 @@
 		"type": "plural_forms"
 	},
 	{
+		"file": "browser/chrome/browser/browser.properties",
+		"entity": "protections.footer.blockedTrackerCounter.description",
+		"type": "plural_forms"
+	},
+	{
 		"file": "browser/chrome/browser/downloads/downloads.properties",
 		"entity": "otherDownloads3",
 		"type": "plural_forms"
