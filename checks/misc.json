@@ -3,12 +3,22 @@
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "login-item-origin.placeholder",
 		"type": "equal_to",
+		"excluded_locales": [
+			"da",
+			"et",
+			"eu"
+		],
 		"value": "https://www.example.com"
 	},
 	{
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "login-item-username.placeholder",
-        "type": "include",
+		"type": "include",
+		"excluded_locales": [
+			"da",
+			"et",
+			"eu"
+		],
         "checks": [
             "@example.com"
         ]
