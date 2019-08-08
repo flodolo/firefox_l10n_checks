@@ -2,6 +2,8 @@
 
 import argparse
 from collections import OrderedDict
+import codecs
+import locale
 import datetime
 import json
 import os
@@ -10,6 +12,7 @@ import re
 import sys
 import urllib2
 
+sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 
 class QualityCheck():
 
