@@ -2,6 +2,7 @@
 
 import argparse
 from collections import OrderedDict
+import datetime
 import json
 import os
 import pickle
@@ -80,15 +81,18 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, requested_check):
+    def __init__(self, script_folder, requested_check, verbose_mode):
         ''' Initialize object '''
         self.script_folder = script_folder
         self.requested_check = requested_check
+        self.verbose = verbose_mode
 
         self.domain = 'https://transvision.flod.org'
         self.api_url = '{}/api/v1'.format(self.domain)
 
         self.general_errors = []
+
+        print('\n--------\nRun: {}\n'.format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
 
         # Get the list of supported locales
         self.getLocales()
@@ -111,7 +115,8 @@ class QualityCheck():
             self.checkView('empty')
 
         # Print errors
-        self.printErrors()
+        if self.verbose:
+            self.printErrors()
 
         # Compare with previous run
         if requested_check == 'all':
@@ -182,7 +187,8 @@ class QualityCheck():
         ''' Get the number of plural forms for each locale '''
         url = '{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule'.format(
             self.api_url)
-        print('Reading the list of plural forms')
+        if self.verbose:
+            print('Reading the list of plural forms')
         locales_plural_rules, success = self.getJsonData(
             url, 'list of plural forms')
         if not success:
@@ -194,7 +200,8 @@ class QualityCheck():
 
     def getLocales(self):
         ''' Get the list of supported locales '''
-        print('Reading the list of supported locales')
+        if self.verbose:
+            print('Reading the list of supported locales')
         url = '{}/locales/gecko_strings/'.format(self.api_url)
         self.locales, success = self.getJsonData(
             url, 'list of supported locales')
@@ -273,7 +280,8 @@ class QualityCheck():
 
         for json_file in self.json_files:
             total_errors = 0
-            print('CHECK: {}'.format(json_file))
+            if self.verbose:
+                print('CHECK: {}'.format(json_file))
             try:
                 checks = json.load(
                     open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
@@ -349,13 +357,16 @@ class QualityCheck():
     def checkView(self, checkname):
         ''' Check views for access keys and keyboard shortcuts '''
         if checkname == 'variables':
-            print('CHECK: variables')
+            if self.verbose:
+                print('CHECK: variables')
             url = '{}/variables/?locale={}&repo=gecko_strings&json'
         elif checkname == 'shortcuts':
-            print('CHECK: keyboard shortcuts')
+            if self.verbose:
+                print('CHECK: keyboard shortcuts')
             url = '{}/commandkeys/?locale={}&repo=gecko_strings&json'
         elif checkname == 'empty':
-            print('CHECK: empty strings')
+            if self.verbose:
+                print('CHECK: empty strings')
             url = '{}/empty-strings/?locale={}&json'
 
         f = open(os.path.join(self.script_folder, 'exceptions',
@@ -393,10 +404,11 @@ def main():
     cl_parser = argparse.ArgumentParser()
     cl_parser.add_argument(
         'check', help='Run a single check', default='all', nargs='?')
+    cl_parser.add_argument('--verbose', dest='verbose', action='store_true')
     args = cl_parser.parse_args()
 
     script_folder = os.path.dirname(os.path.realpath(__file__))
-    checks = QualityCheck(script_folder, args.check)
+    checks = QualityCheck(script_folder, args.check, args.verbose)
 
 
 if __name__ == '__main__':
