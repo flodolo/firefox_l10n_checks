@@ -152,17 +152,17 @@ class QualityCheck():
         new_errors = diff(current_errors, previous_errors)
         if new_errors:
             changes = True
-            print('\n----\nNew errors ({}):'.format(len(new_errors)))
+            print('\nNew errors ({}):'.format(len(new_errors)))
             print('\n'.join(new_errors))
 
         fixed_errors = diff(previous_errors, current_errors)
         if fixed_errors:
             changes = True
-            print('\n----\nFixed errors ({}):'.format(len(fixed_errors)))
+            print('\nFixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
 
         if not changes:
-            print('\n----\nThere are no changes from previous run.')
+            print('\nThere are no changes from previous run.')
 
         # Write back the current list of errors
         f = open(file_name, 'wb')
