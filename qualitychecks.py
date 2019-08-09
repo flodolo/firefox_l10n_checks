@@ -2,8 +2,6 @@
 
 import argparse
 from collections import OrderedDict
-import codecs
-import locale
 import datetime
 import json
 import os
@@ -12,7 +10,6 @@ import re
 import sys
 import urllib2
 
-sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 
 class QualityCheck():
 
@@ -84,18 +81,31 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, requested_check, verbose_mode):
+    def __init__(self, script_folder, requested_check, verbose_mode, output_file):
         ''' Initialize object '''
         self.script_folder = script_folder
         self.requested_check = requested_check
         self.verbose = verbose_mode
+        self.output_file = output_file
+
+        if self.output_file != '':
+            # Read existing content
+            self.archive_data = {}
+            if os.path.exists(output_file):
+                try:
+                    self.archive_data = json.load(open(output_file))
+                except Exception as e:
+                    print('Error loading JSON file {}'.format(output_file))
+                    print(e)
+
 
         self.domain = 'https://transvision.flod.org'
         self.api_url = '{}/api/v1'.format(self.domain)
 
         self.general_errors = []
 
-        print('\n--------\nRun: {}\n'.format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+        self.date_key = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+        print('\n--------\nRun: {}\n'.format(self.date_key))
 
         # Get the list of supported locales
         self.getLocales()
@@ -150,19 +160,30 @@ class QualityCheck():
 
         changes = False
         new_errors = diff(current_errors, previous_errors)
+        output = {}
+        savetofile = self.output_file != ''
         if new_errors:
             changes = True
-            print('\nNew errors ({}):'.format(len(new_errors)))
+            print('New errors ({}):'.format(len(new_errors)))
             print('\n'.join(new_errors))
+            output['new'] = new_errors
 
         fixed_errors = diff(previous_errors, current_errors)
         if fixed_errors:
             changes = True
-            print('\nFixed errors ({}):'.format(len(fixed_errors)))
+            print('Fixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
+            output['fixed'] = new_errors
 
         if not changes:
-            print('\nThere are no changes from previous run.')
+            print('There are no changes from previous run.')
+            if savetofile:
+                output['message'] = 'There are no changes from previous run.'
+
+        if savetofile:
+            self.archive_data[self.date_key] = output
+            with open(self.output_file, 'w') as outfile:
+                json.dump(self.archive_data, outfile, sort_keys=True, indent=4)
 
         # Write back the current list of errors
         f = open(file_name, 'wb')
@@ -408,10 +429,13 @@ def main():
     cl_parser.add_argument(
         'check', help='Run a single check', default='all', nargs='?')
     cl_parser.add_argument('--verbose', dest='verbose', action='store_true')
+    cl_parser.add_argument(
+        '-output', nargs='?', help='Store output in a JSON file',
+        default='')
     args = cl_parser.parse_args()
 
     script_folder = os.path.dirname(os.path.realpath(__file__))
-    checks = QualityCheck(script_folder, args.check, args.verbose)
+    checks = QualityCheck(script_folder, args.check, args.verbose, args.output)
 
 
 if __name__ == '__main__':
