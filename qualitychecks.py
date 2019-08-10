@@ -173,7 +173,7 @@ class QualityCheck():
             changes = True
             print('Fixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
-            output['fixed'] = new_errors
+            output['fixed'] = fixed_errors
 
         if not changes:
             print('There are no changes from previous run.')
