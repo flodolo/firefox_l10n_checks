@@ -216,6 +216,7 @@ pl: browser/browser/preferences/preferences.ftl:category-sync2.tooltiptext
 pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
 pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+pl: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 pl: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 pl: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
 pl: browser/chrome/browser/browser.dtd:fxaSignedIn.tooltip
