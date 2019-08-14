@@ -195,6 +195,12 @@
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
 	{
+		"file": "devtools/client/netmonitor.properties",
+		"entity": "netmonitor.ws.truncated-messages.warning",
+		"type": "plural_forms",
+		"excluded_locales": ["gd", "ltg", "sr"]
+	},
+	{
 		"file": "devtools/client/styleeditor.properties",
 		"entity": "ruleCount.label",
 		"type": "plural_forms",
