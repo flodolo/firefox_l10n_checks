@@ -167,6 +167,7 @@ class QualityCheck():
             print('New errors ({}):'.format(len(new_errors)))
             print('\n'.join(new_errors))
             output['new'] = new_errors
+            output['message'] = 'Total errors: {}'.format(len(current_errors))
 
         fixed_errors = diff(previous_errors, current_errors)
         if fixed_errors:
@@ -174,11 +175,12 @@ class QualityCheck():
             print('Fixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
             output['fixed'] = fixed_errors
+            output['message'] = 'Total errors: {}'.format(len(current_errors))
 
         if not changes:
             print('There are no changes from previous run.')
             if savetofile:
-                output['message'] = 'There are no changes from previous run.'
+                output['message'] = 'There are no changes from previous run ({}).'.format(len(current_errors))
 
         if savetofile:
             self.archive_data[self.date_key] = output
