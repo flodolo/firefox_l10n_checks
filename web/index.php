@@ -40,7 +40,7 @@ foreach ($error_log as $day => $day_info) {
     $html_detail_body .= "<tr>\n";
 
     // Day
-    $html_detail_body .= "\t<td>{$day}</td>\n";
+    $html_detail_body .= "\t<td>" . str_replace(' ', ' ', $day) . "</td>\n";
 
     // Message
     $html_detail_body .= "\t<td>";
