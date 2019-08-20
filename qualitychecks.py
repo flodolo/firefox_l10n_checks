@@ -178,9 +178,9 @@ class QualityCheck():
             output['message'] = 'Total errors: {}'.format(len(current_errors))
 
         if not changes:
-            print('There are no changes from previous run.')
+            print('No changes.')
             if savetofile:
-                output['message'] = 'There are no changes from previous run ({}).'.format(len(current_errors))
+                output['message'] = 'No changes ({}).'.format(len(current_errors))
 
         if savetofile:
             self.archive_data[self.date_key] = output
@@ -339,39 +339,39 @@ class QualityCheck():
                             for t in c['checks']:
                                 pattern = re.compile(t, re.UNICODE)
                                 if not pattern.search(translation):
-                                    error_msg = u'Missing {} in {} ({})'.format(
-                                        t, c['entity'], c['file'])
+                                    error_msg = u'Missing {} ({}:{})'.format(
+                                        t, c['file'], c['entity'])
                         elif c['type'] == 'include':
                             for t in c['checks']:
                                 if t not in translation:
-                                    error_msg = u'Missing {} in {} ({})'.format(
-                                        t, c['entity'], c['file'])
+                                    error_msg = u'Missing {} ({}:{})'.format(
+                                        t, c['file'], c['entity'])
                         elif c['type'] == 'equal_to':
                             if c['value'].lower() != translation.lower():
-                                error_msg = u'{} is not equal to {} in {} ({})'.format(
-                                    translation, c['value'], c['entity'], c['file'])
+                                error_msg = u'{} is not equal to {} ({}:{})'.format(
+                                    translation, c['value'], c['file'], c['entity'])
                         elif c['type'] == 'not_equal_to':
                             if c['value'] == translation:
-                                error_msg = u'{} is equal to {} in {} ({})'.format(
-                                    translation, c['value'], c['entity'], c['file'])
+                                error_msg = u'{} is equal to {} ({}:{})'.format(
+                                    translation, c['value'], c['file'], c['entity'])
                         elif c['type'] == 'acceptable_values':
                             if translation not in c['values']:
-                                error_msg = u'{} is not an acceptable value for {} ({})'.format(
-                                    translation, c['entity'], c['file'])
+                                error_msg = u'{} is not an acceptable value ({}:{})'.format(
+                                    translation, c['file'], c['entity'])
                         elif c['type'] == 'typeof':
                             if type(translation) != c['value']:
-                                error_msg = u'{} ({}) is not of type {}'.format(
-                                    translation, c['file'], c['type'])
+                                error_msg = u'{} is not of type {} ({}:{})'.format(
+                                    translation, c['type'], c['file'], c['entity'])
                         elif c['type'] == 'bytes_length':
                             current_length = len(translation.encode('utf-8'))
                             if current_length > c['value']:
-                                error_msg = u'{} ({}) is longer than {} bytes (current length: {} bytes - current text: {})'.format(
-                                    c['entity'], c['file'], c['value'], current_length, translation)
+                                error_msg = u'String longer than {} bytes. Current length: {} bytes. Current text: {}. ({}:{})'.format(
+                                    c['value'], current_length, translation, c['file'], c['entity'])
                         elif c['type'] == 'plural_forms':
                             num_forms = len(translation.split(';'))
                             if num_forms != self.plural_forms[locale]:
-                                error_msg = u'{} ({}) has {} plural forms (requested: {})'.format(
-                                    c['entity'], c['file'], num_forms, self.plural_forms[locale])
+                                error_msg = u'String has {} plural forms, requested: {} ({}:{})'.format(
+                                    num_forms, self.plural_forms[locale], c['file'], c['entity'])
                         if error_msg:
                             self.error_messages[locale].append(error_msg)
                             total_errors += 1
