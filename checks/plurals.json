@@ -208,6 +208,12 @@
 	},
 	{
 		"file": "devtools/client/webconsole.properties",
+		"entity": "webconsole.warningGroup.messageCount.tooltip",
+		"type": "plural_forms",
+		"excluded_locales": ["gd", "ltg", "sr"]
+	},
+	{
+		"file": "devtools/client/webconsole.properties",
 		"entity": "messageRepeats.tooltip2",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "ltg", "sr"]
