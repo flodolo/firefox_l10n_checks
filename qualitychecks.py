@@ -81,16 +81,17 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, requested_check, verbose_mode, output_file):
+    def __init__(self, script_folder, requested_check, verbose_mode, output_path):
         ''' Initialize object '''
         self.script_folder = script_folder
         self.requested_check = requested_check
         self.verbose = verbose_mode
-        self.output_file = output_file
+        self.output_path = output_path
 
-        if self.output_file != '':
+        if self.output_path != '':
             # Read existing content
             self.archive_data = {}
+            output_file = os.path.join(output_path, 'checks.json')
             if os.path.exists(output_file):
                 try:
                     self.archive_data = json.load(open(output_file))
@@ -142,13 +143,12 @@ class QualityCheck():
             return [aa for aa in a if aa not in b]
 
         # Read the list of errors from a previous run (if available)
-        file_name = os.path.join(self.script_folder, 'previous_errors.dump')
+        pickle_file = os.path.join(self.script_folder, 'previous_errors.dump')
         previous_errors = []
-        if os.path.exists(file_name):
+        if os.path.exists(pickle_file):
             try:
-                f = open(file_name, 'rb')
-                previous_errors = pickle.load(f)
-                f.close()
+                with open(pickle_file, 'rb') as f:
+                    previous_errors = pickle.load(f)
             except Exception as e:
                 print(e)
 
@@ -161,7 +161,7 @@ class QualityCheck():
         changes = False
         new_errors = diff(current_errors, previous_errors)
         output = {}
-        savetofile = self.output_file != ''
+        savetofile = self.output_path != ''
         if new_errors:
             changes = True
             print('New errors ({}):'.format(len(new_errors)))
@@ -184,13 +184,17 @@ class QualityCheck():
 
         if savetofile:
             self.archive_data[self.date_key] = output
-            with open(self.output_file, 'w') as outfile:
-                json.dump(self.archive_data, outfile, sort_keys=True, indent=4)
+            checks_file = os.path.join(self.output_path, 'checks.json')
+            with open(checks_file, 'w') as outfile:
+                json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
+            errors_file = os.path.join(self.output_path, 'errors.json')
+            with open(errors_file, 'w') as outfile:
+                json.dump(current_errors, outfile,
+                          sort_keys=True, indent=2)
 
         # Write back the current list of errors
-        f = open(file_name, 'wb')
-        pickle.dump(current_errors, f)
-        f.close()
+        with open(pickle_file, 'wb') as f:
+            pickle.dump(current_errors, f)
 
     def getJsonData(self, url, search_id):
         '''
@@ -432,7 +436,7 @@ def main():
         'check', help='Run a single check', default='all', nargs='?')
     cl_parser.add_argument('--verbose', dest='verbose', action='store_true')
     cl_parser.add_argument(
-        '-output', nargs='?', help='Store output in a JSON file',
+        '-output', nargs='?', help='Path to folder where to store output in JSON format',
         default='')
     args = cl_parser.parse_args()
 

@@ -1,12 +1,11 @@
 <?php
 
 $root_folder = realpath(__DIR__ . '/../');
-if (! file_exists("{$root_folder}/checks.json")) {
-    exit('File checks.json does not exist.');
+if (! file_exists("{$root_folder}/errors.json")) {
+    exit('File errors.json does not exist.');
 }
-$json_file = file_get_contents("{$root_folder}/checks.json");
+$json_file = file_get_contents("{$root_folder}/errors.json");
 $error_log = json_decode($json_file, true);
-$error_log = array_reverse($error_log, true);
 
 $tranvision_link = function($msg) {
     // URL
@@ -36,38 +35,10 @@ $tranvision_link = function($msg) {
 };
 
 $html_detail_body = '';
-foreach ($error_log as $day => $day_info) {
+foreach ($error_log as $error_message) {
     $html_detail_body .= "<tr>\n";
-
-    // Day
-    $html_detail_body .= "\t<td>" . str_replace(' ', ' ', $day) . "</td>\n";
-
     // Message
-    $html_detail_body .= "\t<td>";
-    $html_detail_body .= isset($day_info['message'])
-        ? $day_info['message']
-        : ' ';
-    $html_detail_body .= "</td>\n";
-
-    // Details
-    $html_detail_body .= "\t<td>";
-    if (isset($day_info['new'])) {
-        $html_detail_body .= '<p class="new_errors">New errors (' . count($day_info['new']) . "):</p>\n";
-        $html_detail_body .= "<ul>\n";
-        foreach ($day_info['new'] as $error) {
-            $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
-        }
-        $html_detail_body .= "</ul>\n";
-    }
-    if (isset($day_info['fixed'])) {
-        $html_detail_body .= '<p class="fixed_errors">Fixed errors (' . count($day_info['fixed']) . "):</p>\n";
-        $html_detail_body .= "<ul>\n";
-        foreach ($day_info['fixed'] as $error) {
-            $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
-        }
-        $html_detail_body .= "</ul>\n";
-    }
-    $html_detail_body .= "</td>\n";
+    $html_detail_body .= "\t<td><a href=\"" . $tranvision_link($error_message) . "\">{$error_message}</li>\n</td>\n";
     $html_detail_body .= "</tr>\n";
 }
 ?>
@@ -97,13 +68,11 @@ foreach ($error_log as $day => $day_info) {
 </head>
 <body>
     <div class="container">
-        <p><a href="/errors.php">List of current errors</a></p>
+        <p><a href="/">Back to main index</a></p>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Message</th>
-                    <th>Details</th>
+                    <th>Current Errors</th>
                 </tr>
             </thead>
         <tbody>
