@@ -97,7 +97,7 @@ foreach ($error_log as $day => $day_info) {
 </head>
 <body>
     <div class="container">
-        <p><a href="/errors.php">List of current errors</a></p>
+        <p><a href="errors.php">List of current errors</a></p>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

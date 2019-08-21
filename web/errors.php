@@ -68,7 +68,7 @@ foreach ($error_log as $error_message) {
 </head>
 <body>
     <div class="container">
-        <p><a href="/">Back to main index</a></p>
+        <p><a href="index.php">Back to main index</a></p>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
