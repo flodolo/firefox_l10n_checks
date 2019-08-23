@@ -75,6 +75,15 @@ et: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 et: mobile/overrides/netError.dtd:netOffline.longDesc3
 et: mobile/overrides/netError.dtd:notCached.longDesc
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
+fi: browser/browser/aboutDialog.ftl:community-2
+fi: browser/browser/aboutDialog.ftl:update-otherInstanceHandlingUpdates
+fi: browser/browser/menubar.ftl:menu-help-product.label
+fi: browser/browser/menubar.ftl:menu-help-show-tour.label
+fi: browser/browser/preferences/preferences.ftl:extension-controlled-proxy-config
+fi: browser/browser/preferences/preferences.ftl:network-proxy-connection-description
+fi: browser/browser/preferences/preferences.ftl:update-application-title
+fi: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
+fi: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
 fi: browser/installer/custom.properties:CONTEXT_OPTIONS
 fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
 fi: browser/installer/custom.properties:CREATE_ICONS_DESC
@@ -113,7 +122,11 @@ fi: browser/installer/override.properties:LicenseTextRB
 fi: browser/installer/override.properties:SetupCaption
 fi: browser/installer/override.properties:UninstallCaption
 fi: browser/installer/override.properties:UninstallingText
+fi: mobile/android/base/android_strings.dtd:home_homepage_radio_default
+fi: mobile/android/base/android_strings.dtd:home_title
 fi: mobile/android/base/android_strings.dtd:pref_restore_quit
+fi: mobile/android/chrome/aboutHome.dtd:abouthome.title
+fi: toolkit/chrome/global/wizard.properties:default-first-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
