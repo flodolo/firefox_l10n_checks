@@ -82,7 +82,8 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, tmx_path, requested_check, verbose_mode, output_path):
+    def __init__(self, script_folder, tmx_path,
+                 requested_check, verbose_mode, output_path):
         ''' Initialize object '''
         self.script_folder = script_folder
         self.tmx_path = tmx_path
@@ -100,7 +101,6 @@ class QualityCheck():
                 except Exception as e:
                     print('Error loading JSON file {}'.format(output_file))
                     print(e)
-
 
         self.domain = 'https://transvision.flod.org'
         self.api_url = '{}/api/v1'.format(self.domain)
@@ -129,6 +129,10 @@ class QualityCheck():
             self.checkView('variables')
             self.checkView('shortcuts')
             self.checkView('empty')
+
+        # Check local TMX for FTL issues if available
+        if self.tmx_path != '':
+            self.checkFTL()
 
         # Print errors
         if self.verbose:
@@ -182,7 +186,8 @@ class QualityCheck():
         if not changes:
             print('No changes.')
             if savetofile:
-                output['message'] = 'No changes ({}).'.format(len(current_errors))
+                output['message'] = 'No changes ({}).'.format(
+                    len(current_errors))
 
         if savetofile:
             self.archive_data[self.date_key] = output
@@ -209,7 +214,7 @@ class QualityCheck():
                 response = urlopen(url)
                 json_data = json.load(response)
                 return (json_data, True)
-            except Exception as e:
+            except:
                 continue
 
         self.general_errors.append('Error reading {}'.format(search_id))
@@ -431,6 +436,118 @@ class QualityCheck():
             self.error_summary[checkname] = total_errors
 
 
+    def checkFTL (self):
+        '''Check local TMX for FTL issues'''
+
+        if self.verbose:
+            print('Reading TMX data from Transvision')
+
+        datal10n_pattern = re.compile(
+            'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE)
+
+        strings_to_ignore = [
+            'browser/browser/aboutDialog.ftl:channel-description',
+            'browser/browser/sanitize.ftl:clear-time-duration-prefix.value',
+            'browser/browser/sanitize.ftl:clear-time-duration-suffix.value',
+        ]
+
+        locale_exceptions = {
+            'de': [
+                'browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey',
+            ],
+        }
+
+        # Read source data (en-US)
+        ref_tmx_path = os.path.join(self.tmx_path, 'en-US',
+                                    'cache_en-US_gecko_strings.json')
+        with open(ref_tmx_path) as f:
+            reference_data = json.load(f)
+
+        ftl_ids = []
+        data_l10n_ids = {}
+        for id, text in reference_data.items():
+            message_id = id.split(':')[0]
+
+            # Ignore non ftl strings
+            if not message_id.endswith('.ftl'):
+                continue
+
+            # Ignore strings from Thunderbird or Seamonkey
+            for folder in ['mail/', 'suite/']:
+                if message_id.startswith(folder):
+                    continue
+
+            ftl_ids.append(id)
+
+            matches = datal10n_pattern.search(text)
+            if matches:
+                data_l10n_ids[id] = sorted(matches.groups())
+
+        for locale in self.locales:
+            tmx_path = os.path.join(
+                self.tmx_path, locale,
+                'cache_{}_gecko_strings.json'.format(locale))
+            with open(tmx_path) as f:
+                locale_data = json.load(f)
+
+            for string_id in ftl_ids:
+                # Ignore untranslated strings
+                if string_id not in locale_data:
+                    continue
+
+                # Ignore exceptions
+                if string_id in strings_to_ignore:
+                    continue
+                if locale in locale_exceptions and string_id in locale_exceptions[locale]:
+                    continue
+
+                translation = locale_data[string_id]
+
+                # Check for stray spaces
+                if '{ "' in translation:
+                    error_msg = 'Fluent literal in string ({})'.format(
+                        string_id)
+                    self.error_messages[locale].append(error_msg)
+
+                # Check for DTD variables, e.g. '&something;'
+                pattern = re.compile('&.*;', re.UNICODE)
+                if pattern.search(translation):
+                    error_msg = 'XML entity in Fluent string ({})'.format(
+                        string_id)
+                    self.error_messages[locale].append(error_msg)
+
+                    # Check for properties variables '%S' or '%1$S'
+                pattern = re.compile(
+                    '(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))', re.UNICODE)
+                if pattern.search(translation):
+                    error_msg = 'printf variables in Fluent string ({})'.format(
+                        string_id)
+                    self.error_messages[locale].append(error_msg)
+
+            # Check data-l10n-names
+            for string_id, groups in data_l10n_ids.items():
+                if string_id not in locale_data:
+                    continue
+
+                pattern = re.compile(
+                    'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE)
+
+                translation = locale_data[string_id]
+                matches = pattern.search(translation)
+                if matches:
+                    translated_groups = sorted(matches.groups())
+                    if translated_groups.sort() != groups.sort():
+                        # Groups are not matching
+                        error_msg = 'data-l10n-name mismatch in Fluent string ({})'.format(
+                            string_id)
+                        self.error_messages[locale].append(error_msg)
+                else:
+                    # There are no data-l10n-name
+                    error_msg = 'data-l10n-name missing in Fluent string ({})'.format(
+                        string_id)
+                    self.error_messages[locale].append(error_msg)
+
+
 def main():
     # Parse command line options
     cl_parser = argparse.ArgumentParser()
@@ -438,7 +555,8 @@ def main():
         'check', help='Run a single check', default='all', nargs='?')
     cl_parser.add_argument('--verbose', dest='verbose', action='store_true')
     cl_parser.add_argument(
-        '-output', nargs='?', help='Path to folder where to store output in JSON format',
+        '-output', nargs='?',
+        help='Path to folder where to store output in JSON format',
         default='')
     args = cl_parser.parse_args()
 
@@ -451,12 +569,12 @@ def main():
         config_parser.read(config_file)
         try:
             tmx_path = os.path.join(config_parser.get('config', 'tmx_path'), '')
-        except Exception as e:
+        except:
             print('tmx_path not found in config.ini')
         if not os.path.exists(tmx_path):
             print('Path to TMX is not valid')
 
-    checks = QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
+    QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
 
 
 if __name__ == '__main__':
