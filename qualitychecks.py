@@ -1,14 +1,15 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
-import argparse
 from collections import OrderedDict
+from urllib.request import urlopen
+from configparser import ConfigParser
+import argparse
 import datetime
 import json
 import os
 import pickle
 import re
 import sys
-import urllib2
 
 
 class QualityCheck():
@@ -81,9 +82,10 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, requested_check, verbose_mode, output_path):
+    def __init__(self, script_folder, tmx_path, requested_check, verbose_mode, output_path):
         ''' Initialize object '''
         self.script_folder = script_folder
+        self.tmx_path = tmx_path
         self.requested_check = requested_check
         self.verbose = verbose_mode
         self.output_path = output_path
@@ -153,7 +155,7 @@ class QualityCheck():
                 print(e)
 
         current_errors = []
-        for locale, errors in self.error_messages.iteritems():
+        for locale, errors in self.error_messages.items():
             for e in errors:
                 current_errors.append(u'{} - {}'.format(locale, e))
         current_errors.sort()
@@ -204,7 +206,7 @@ class QualityCheck():
         '''
         for try_number in range(5):
             try:
-                response = urllib2.urlopen(url)
+                response = urlopen(url)
                 json_data = json.load(response)
                 return (json_data, True)
             except Exception as e:
@@ -225,7 +227,7 @@ class QualityCheck():
             print('CRITICAL ERROR: List of plural forms not available')
             sys.exit(1)
 
-        for locale, rule_number in locales_plural_rules.iteritems():
+        for locale, rule_number in locales_plural_rules.items():
             self.plural_forms[locale] = self.plural_rules[int(rule_number)]
 
     def getLocales(self):
@@ -243,7 +245,7 @@ class QualityCheck():
         ''' Print error messages '''
         error_count = 0
         locales_with_errors = OrderedDict()
-        for locale, errors in self.error_messages.iteritems():
+        for locale, errors in self.error_messages.items():
             if errors:
                 num_errors = len(errors)
                 print('\n----\nLocale: {} ({})'.format(locale, num_errors))
@@ -259,13 +261,13 @@ class QualityCheck():
         if locales_with_errors:
             print(
                 '\n----\nLocales with errors ({} locales):'.format(len(locales_with_errors)))
-            for locale, num in locales_with_errors.iteritems():
+            for locale, num in locales_with_errors.items():
                 print('- {} ({})'.format(locale, num))
 
         # Error summary
         if self.error_summary:
             print('\n----\nErrors summary by type:')
-            for check, count in self.error_summary.iteritems():
+            for check, count in self.error_summary.items():
                 print ('- {}: {}'.format(check, count))
 
         # General error (e.g. invalid API calls)
@@ -331,7 +333,7 @@ class QualityCheck():
                             'Error checking {}:{}'.format(c['file'], c['entity']))
                         continue
 
-                    for locale, translation in json_data.iteritems():
+                    for locale, translation in json_data.items():
                         # Ignore some locales if exclusions are defined
                         if 'excluded_locales' in c and locale in c['excluded_locales']:
                             continue
@@ -440,8 +442,21 @@ def main():
         default='')
     args = cl_parser.parse_args()
 
+    # Check if there's a config file (optional)
     script_folder = os.path.dirname(os.path.realpath(__file__))
-    checks = QualityCheck(script_folder, args.check, args.verbose, args.output)
+    config_file = os.path.join(script_folder, 'config', 'config.ini')
+    tmx_path = ''
+    if os.path.isfile(config_file):
+        config_parser = ConfigParser()
+        config_parser.read(config_file)
+        try:
+            tmx_path = os.path.join(config_parser.get('config', 'tmx_path'), '')
+        except Exception as e:
+            print('tmx_path not found in config.ini')
+        if not os.path.exists(tmx_path):
+            print('Path to TMX is not valid')
+
+    checks = QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
 
 
 if __name__ == '__main__':

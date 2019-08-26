@@ -1,3 +1,4 @@
+config/php.ini
 checks.json
 errors.json
 php.ini
