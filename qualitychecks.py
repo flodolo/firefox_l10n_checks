@@ -573,6 +573,7 @@ def main():
             print('tmx_path not found in config.ini')
         if not os.path.exists(tmx_path):
             print('Path to TMX is not valid')
+            tmx_path = ''
 
     QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
 
