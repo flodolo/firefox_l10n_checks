@@ -1,0 +1,5 @@
+[config]
+
+; Path to Tranvision's TMX folder
+tmx_path = /srv/transvision/data/TMX/
+
