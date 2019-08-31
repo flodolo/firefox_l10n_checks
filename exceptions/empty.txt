@@ -94,6 +94,7 @@ te: browser/chrome/browser/browser.dtd:search.label
 te: browser/chrome/browser/browser.dtd:searchAfter.label
 te: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 th: devtools/client/connection-screen.dtd:remoteHelpSuffix
+tl: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 tr: browser/chrome/browser/browser.dtd:searchAfter.label
 tr: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 uk: toolkit/chrome/global/intl.properties:intl.charset.detector
