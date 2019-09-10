@@ -3,6 +3,7 @@ da: devtools/client/sourceeditor.properties:indentMore.commandkey
 da: devtools/client/sourceeditor.properties:toggleComment.commandkey
 da: devtools/client/toolbox.properties:toolbox.nextTool.key
 da: devtools/client/toolbox.properties:toolbox.previousTool.key
+it: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 it: devtools/client/sourceeditor.properties:indentLess.commandkey
 it: devtools/client/sourceeditor.properties:indentMore.commandkey
 it: devtools/client/toolbox.properties:toolbox.nextTool.key
