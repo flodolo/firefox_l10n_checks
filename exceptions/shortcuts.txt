@@ -1,3 +1,4 @@
+ca: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 da: devtools/client/sourceeditor.properties:indentLess.commandkey
 da: devtools/client/sourceeditor.properties:indentMore.commandkey
 da: devtools/client/sourceeditor.properties:toggleComment.commandkey
