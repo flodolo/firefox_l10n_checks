@@ -234,6 +234,8 @@ pl: browser/browser/preferences/preferences.ftl:category-search.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-sync2.tooltiptext
 pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
 pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
+pl: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
+pl: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 pl: browser/chrome/browser/browser.dtd:fxa.signin.button.label
@@ -265,6 +267,8 @@ pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
 pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
+ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
+ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 ru: browser/chrome/browser/browser.dtd:fxa.signin.button.label
@@ -307,6 +311,8 @@ sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
+uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 uk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 uk: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 uk: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
