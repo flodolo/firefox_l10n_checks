@@ -444,6 +444,7 @@ class QualityCheck():
 
         datal10n_pattern = re.compile(
             'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE)
+        css_pattern = re.compile('[^\d]*', re.UNICODE)
 
         strings_to_ignore = [
             'browser/browser/aboutDialog.ftl:channel-description',
@@ -463,18 +464,24 @@ class QualityCheck():
         with open(ref_tmx_path) as f:
             reference_data = json.load(f)
 
+        '''
+        Addictional FTL checks:
+        - Strings with data-l10n-names
+        - Strings with .style attributes
+        '''
         ftl_ids = []
         data_l10n_ids = {}
+        CSS_strings = {}
         for id, text in reference_data.items():
-            message_id = id.split(':')[0]
+            file_id, message_id = id.split(':')
 
             # Ignore non ftl strings
-            if not message_id.endswith('.ftl'):
+            if not file_id.endswith('.ftl'):
                 continue
 
             # Ignore strings from Thunderbird or Seamonkey
             for folder in ['mail/', 'suite/']:
-                if message_id.startswith(folder):
+                if file_id.startswith(folder):
                     continue
 
             ftl_ids.append(id)
@@ -482,6 +489,12 @@ class QualityCheck():
             matches = datal10n_pattern.search(text)
             if matches:
                 data_l10n_ids[id] = sorted(matches.groups())
+
+            if message_id.endswith('.style'):
+                matches = css_pattern.findall(text)
+                # Drop empty elements, ignore period for decimals
+                matches = [m for m in matches if m not in ['', '.']]
+                CSS_strings[id] = matches
 
         for locale in self.locales:
             tmx_path = os.path.join(
@@ -537,11 +550,8 @@ class QualityCheck():
                 if string_id not in locale_data:
                     continue
 
-                pattern = re.compile(
-                    'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE)
-
                 translation = locale_data[string_id]
-                matches = pattern.search(translation)
+                matches = datal10n_pattern.search(translation)
                 if matches:
                     translated_groups = sorted(matches.groups())
                     if translated_groups.sort() != groups.sort():
@@ -552,6 +562,22 @@ class QualityCheck():
                 else:
                     # There are no data-l10n-name
                     error_msg = 'data-l10n-name missing in Fluent string ({})'.format(
+                        string_id)
+                    self.error_messages[locale].append(error_msg)
+
+
+            # Check for CSS mismatches
+            for string_id, cleaned_source in CSS_strings.items():
+                if string_id not in locale_data:
+                    continue
+
+                translation = locale_data[string_id]
+                matches = css_pattern.findall(translation)
+                # Drop empty elements, ignore period for decimals
+                cleaned_translation = [m for m in matches if m not in ['', '.']]
+                if cleaned_translation != cleaned_source:
+                    # Groups are not matching
+                    error_msg = 'CSS mismatch in Fluent string ({})'.format(
                         string_id)
                     self.error_messages[locale].append(error_msg)
 
