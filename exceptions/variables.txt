@@ -3,6 +3,8 @@ ar: browser/pdfviewer/viewer.properties:find_match_count_limit[two]
 ar: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
 ar: browser/pdfviewer/viewer.properties:find_match_count[one]
 ar: browser/pdfviewer/viewer.properties:find_match_count[two]
+be: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
+be: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 br: browser/chrome/browser/newInstall.dtd:sync
 bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/newInstallPage.ftl:options-use-sync
