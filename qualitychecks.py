@@ -132,7 +132,7 @@ class QualityCheck():
 
         # Check local TMX for FTL issues if available
         if self.tmx_path != '':
-            self.checkFTL()
+            self.checkTMX()
 
         # Print errors
         if self.verbose:
@@ -436,8 +436,8 @@ class QualityCheck():
             self.error_summary[checkname] = total_errors
 
 
-    def checkFTL (self):
-        '''Check local TMX for FTL issues'''
+    def checkTMX (self):
+        '''Check local TMX for issues, mostly on FTL files'''
 
         if self.verbose:
             print('Reading TMX data from Transvision')
@@ -458,11 +458,61 @@ class QualityCheck():
             ],
         }
 
+        excluded_folders = (
+            'calendar',
+            'chat',
+            'editor',
+            'extensions',
+            'mail',
+            'other-licenses',
+            'suite'
+        )
+
+        exceptions_http = [
+            'browser/browser/aboutLogins.ftl:login-item-origin.placeholder',
+            'browser/chrome/browser/browser.properties:certImminentDistrust.message',
+            'devtools/client/scratchpad.properties:help.openDocumentationPage',
+            'dom/chrome/dom/dom.properties:ImplicitMetaViewportTagFallback',
+            'dom/chrome/dom/dom.properties:MediaWMFNeeded',
+            'dom/chrome/dom/dom.properties:MediaWidevineNoWMF',
+            'dom/chrome/dom/dom.properties:PushMessageBadCryptoError',
+            'dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader',
+            'dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader',
+            'dom/chrome/dom/dom.properties:PushMessageBadEncryptionHeader',
+            'dom/chrome/dom/dom.properties:PushMessageBadEncryptionKeyHeader',
+            'dom/chrome/dom/dom.properties:PushMessageBadPaddingError',
+            'dom/chrome/dom/dom.properties:PushMessageBadRecordSize',
+            'dom/chrome/dom/dom.properties:PushMessageBadSalt',
+            'dom/chrome/dom/dom.properties:PushMessageBadSenderKey',
+            'dom/chrome/dom/dom.properties:ShowModalDialogWarning',
+            'dom/chrome/dom/dom.properties:SpeculationFailed',
+            'dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning',
+            'dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning',
+            'dom/chrome/dom/dom.properties:UseOfDOM3LoadMethodWarning',
+            'dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning',
+            'dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2',
+            'dom/chrome/plugins.properties:cdm_description2',
+            'dom/chrome/plugins.properties:openH264_description2',
+            'dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent',
+            'dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe',
+            'dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage',
+            'mobile/overrides/netError.dtd:malformedURI.longDesc2',
+        ]
+
         # Read source data (en-US)
         ref_tmx_path = os.path.join(self.tmx_path, 'en-US',
                                     'cache_en-US_gecko_strings.json')
         with open(ref_tmx_path) as f:
             reference_data = json.load(f)
+
+        # Remove strings from other products and irrelevant files
+        reference_ids =[]
+        for id in reference_data.keys():
+            if 'region.properties' in id:
+                continue
+
+            if not id.startswith(excluded_folders):
+                reference_ids.append(id)
 
         '''
         Addictional FTL checks:
@@ -479,10 +529,9 @@ class QualityCheck():
             if not file_id.endswith('.ftl'):
                 continue
 
-            # Ignore strings from Thunderbird or Seamonkey
-            for folder in ['mail/', 'suite/']:
-                if file_id.startswith(folder):
-                    continue
+            # Ignore strings from other products
+            if file_id.startswith(excluded_folders):
+                continue
 
             ftl_ids.append(id)
 
@@ -503,6 +552,28 @@ class QualityCheck():
             with open(tmx_path) as f:
                 locale_data = json.load(f)
 
+            # General checks (all strings)
+            for string_id in reference_ids:
+                # Ignore untranslated strings
+                if string_id not in locale_data:
+                    continue
+
+                # Ignore exceptions
+                if string_id in strings_to_ignore:
+                    continue
+                if locale in locale_exceptions and string_id in locale_exceptions[locale]:
+                    continue
+
+                translation = locale_data[string_id]
+
+                # Check for links in strings
+                if string_id not in exceptions_http:
+                    pattern = re.compile('http(s)*:\/\/', re.UNICODE)
+                    if pattern.search(translation):
+                        error_msg = 'Link in string ({})'.format(string_id)
+                        self.error_messages[locale].append(error_msg)
+
+            # FTL checks
             for string_id in ftl_ids:
                 # Ignore untranslated strings
                 if string_id not in locale_data:

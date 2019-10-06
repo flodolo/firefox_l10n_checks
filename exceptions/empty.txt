@@ -4,6 +4,10 @@ ar: toolkit/crashreporter/crashreporter.ini:isRTL
 az: browser/chrome/browser/browser.dtd:searchAfter.label
 az: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 be: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
+bo: browser/chrome/browser/browser.dtd:search.label
+bo: browser/chrome/browser/browser.dtd:searchAfter.label
+bo: browser/chrome/browser/browser.dtd:searchFor.label
+bo: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 crh: browser/chrome/browser/browser.dtd:search.label
 crh: browser/chrome/browser/browser.dtd:searchAfter.label
 crh: browser/chrome/browser/translation.dtd:translation.options.attribution.afterLogo
