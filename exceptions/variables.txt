@@ -238,7 +238,9 @@ pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
 pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
 pl: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 pl: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
+pl: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 pl: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 pl: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
@@ -271,7 +273,9 @@ pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
+ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 ru: browser/chrome/browser/browser.dtd:fxa.signin.button.label
 ru: browser/chrome/browser/browser.dtd:fxa.unverified.button.label
