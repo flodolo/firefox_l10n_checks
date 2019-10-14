@@ -242,6 +242,8 @@ class QualityCheck():
         url = '{}/locales/gecko_strings/'.format(self.api_url)
         self.locales, success = self.getJsonData(
             url, 'list of supported locales')
+        # Remove en-US from locales
+        self.locales.remove('en-US')
         if not success:
             print('CRITICAL ERROR: List of support locales not available')
             sys.exit(1)
@@ -413,7 +415,6 @@ class QualityCheck():
             exceptions.append(l.rstrip())
         total_errors = 0
         for locale in self.locales:
-
             errors, success = self.getJsonData(url.format(
                 self.domain, locale), '{} for {}'.format(checkname, locale))
 
@@ -473,8 +474,8 @@ class QualityCheck():
             'browser/chrome/browser/browser.properties:certImminentDistrust.message',
             'devtools/client/scratchpad.properties:help.openDocumentationPage',
             'dom/chrome/dom/dom.properties:ImplicitMetaViewportTagFallback',
-            'dom/chrome/dom/dom.properties:MediaWMFNeeded',
             'dom/chrome/dom/dom.properties:MediaWidevineNoWMF',
+            'dom/chrome/dom/dom.properties:MediaWMFNeeded',
             'dom/chrome/dom/dom.properties:PushMessageBadCryptoError',
             'dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader',
             'dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader',
@@ -490,6 +491,7 @@ class QualityCheck():
             'dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning',
             'dom/chrome/dom/dom.properties:UseOfDOM3LoadMethodWarning',
             'dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning',
+            'dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning',
             'dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2',
             'dom/chrome/plugins.properties:cdm_description2',
             'dom/chrome/plugins.properties:openH264_description2',
@@ -515,7 +517,7 @@ class QualityCheck():
                 reference_ids.append(id)
 
         '''
-        Addictional FTL checks:
+        Store specific English strings for addictional FTL checks:
         - Strings with data-l10n-names
         - Strings with .style attributes
         '''
