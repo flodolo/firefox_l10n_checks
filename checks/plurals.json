@@ -16,6 +16,11 @@
 	},
 	{
 		"file": "browser/chrome/browser/browser.properties",
+		"entity": "protections.milestone.description",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/browser.properties",
 		"entity": "webextPerms.hostDescription.tooManyWildcards",
 		"type": "plural_forms"
 	},
