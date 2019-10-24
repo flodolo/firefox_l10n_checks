@@ -215,6 +215,7 @@ class QualityCheck():
                 json_data = json.load(response)
                 return (json_data, True)
             except:
+                # print('Error reading URL: {}'.format(url))
                 continue
 
         self.general_errors.append('Error reading {}'.format(search_id))
@@ -341,6 +342,10 @@ class QualityCheck():
                         continue
 
                     for locale, translation in json_data.items():
+                        # Ignore en-US
+                        if locale == 'en-US':
+                            continue
+
                         # Ignore some locales if exclusions are defined
                         if 'excluded_locales' in c and locale in c['excluded_locales']:
                             continue
@@ -358,6 +363,11 @@ class QualityCheck():
                             for t in c['checks']:
                                 if t not in translation:
                                     error_msg = u'Missing {} ({}:{})'.format(
+                                        t, c['file'], c['entity'])
+                        elif c['type'] == 'not_include':
+                            for t in c['checks']:
+                                if t in translation:
+                                    error_msg = u'Not expected text {} ({}:{})'.format(
                                         t, c['file'], c['entity'])
                         elif c['type'] == 'equal_to':
                             if c['value'].lower() != translation.lower():
@@ -501,6 +511,14 @@ class QualityCheck():
             'mobile/overrides/netError.dtd:malformedURI.longDesc2',
         ]
 
+        # Some keys need to be defined
+        mandatory_keys = [
+            "toolkit/defines.inc:MOZ_LANG_TITLE",
+            "toolkit/chrome/global/intl.properties:intl.accept_languages",
+            "toolkit/chrome/global/intl.properties:font.language.group",
+            "toolkit/chrome/global/intl.properties:pluralRule",
+        ]
+
         # Read source data (en-US)
         ref_tmx_path = os.path.join(self.tmx_path, 'en-US',
                                     'cache_en-US_gecko_strings.json')
@@ -553,6 +571,12 @@ class QualityCheck():
                 'cache_{}_gecko_strings.json'.format(locale))
             with open(tmx_path) as f:
                 locale_data = json.load(f)
+
+            # Check for untranslated mandatory keys
+            for string_id in mandatory_keys:
+                if string_id not in locale_data:
+                    error_msg = 'Missing translation for mandatory key ({})'.format(string_id)
+                    self.error_messages[locale].append(error_msg)
 
             # General checks (all strings)
             for string_id in reference_ids:

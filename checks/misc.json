@@ -11,16 +11,11 @@
 		"value": "https://www.example.com"
 	},
 	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "login-item-username.placeholder",
-		"type": "include",
-		"excluded_locales": [
-			"da",
-			"et",
-			"eu"
-		],
-        "checks": [
-            "@example.com"
+		"file": "toolkit/defines.inc",
+		"entity": "MOZ_LANG_TITLE",
+		"type": "not_include",
+		"checks": [
+            "(US)"
         ]
 	}
 ]
