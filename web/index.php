@@ -1,39 +1,9 @@
 <?php
 
-$root_folder = realpath(__DIR__ . '/../');
-if (! file_exists("{$root_folder}/checks.json")) {
-    exit('File checks.json does not exist.');
-}
-$json_file = file_get_contents("{$root_folder}/checks.json");
+$file_name = 'checks.json';
+include('shared.php');
 $error_log = json_decode($json_file, true);
 $error_log = array_reverse($error_log, true);
-
-$tranvision_link = function($msg) {
-    // URL
-    $url = 'https://transvision.flod.org/?repo=gecko_strings&sourcelocale=en-US&search_type=entities';
-
-    // Extract the locale code
-    $locale = explode(' - ', $msg)[0];
-    $url .= "&locale={$locale}";
-
-    // Variables, shortcuts, empty string errors
-    $needles = [
-        'empty: ',
-        'shortcuts: ',
-        'variables: ',
-    ];
-    foreach ($needles as $needle) {
-        if (mb_strpos($msg, $needle) !== false) {
-            $start = (mb_strpos($msg, $needle));
-            $key = mb_substr($msg, $start + strlen($needle), mb_strlen($msg) - 1);
-
-            return $url . "&recherche={$key}";
-        }
-    }
-
-    $key = mb_substr($msg, mb_strpos($msg, '(') + 1, mb_strpos($msg, ')') - mb_strpos($msg, '(') - 1);
-    return $url . "&recherche={$key}";
-};
 
 $html_detail_body = '';
 foreach ($error_log as $day => $day_info) {
