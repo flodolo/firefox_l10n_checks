@@ -1,4 +1,5 @@
 ca: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
+ca-valencia: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 cs: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 da: devtools/client/sourceeditor.properties:indentLess.commandkey
 da: devtools/client/sourceeditor.properties:indentMore.commandkey
