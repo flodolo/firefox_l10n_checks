@@ -18,6 +18,7 @@ cs: browser/browser/preferences/preferences.ftl:help-button-label
 cs: browser/browser/preferences/preferences.ftl:history-remember-label
 cs: browser/browser/preferences/preferences.ftl:sync-signedout-account-title
 cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
+cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 cs: browser/chrome/browser/newInstall.dtd:sync
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 cs: toolkit/toolkit/about/aboutAddons.ftl:preferences
