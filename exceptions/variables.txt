@@ -130,6 +130,7 @@ fi: mobile/android/base/android_strings.dtd:home_title
 fi: mobile/android/base/android_strings.dtd:pref_restore_quit
 fi: mobile/android/chrome/aboutHome.dtd:abouthome.title
 fi: toolkit/chrome/global/wizard.properties:default-first-title
+fi: toolkit/chrome/global/wizard.properties:default-last-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
@@ -172,6 +173,7 @@ ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPar
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.mitm.title
 ja-JP-mac: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja-JP-mac: browser/chrome/overrides/netError.dtd:xfoBlocked.longDesc
 ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
 ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
 ja-JP-mac: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
@@ -206,6 +208,7 @@ ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
 ja: browser/chrome/overrides/netError.dtd:certerror.mitm.title
 ja: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
+ja: browser/chrome/overrides/netError.dtd:xfoBlocked.longDesc
 ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.linux
 ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.macosx
 ja: browser/extensions/formautofill/formautofill.properties:editCreditCardPasswordPrompt.win
