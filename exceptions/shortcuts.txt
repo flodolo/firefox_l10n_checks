@@ -11,5 +11,10 @@ it: devtools/client/sourceeditor.properties:indentLess.commandkey
 it: devtools/client/sourceeditor.properties:indentMore.commandkey
 it: devtools/client/toolbox.properties:toolbox.nextTool.key
 it: devtools/client/toolbox.properties:toolbox.previousTool.key
+scn: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
+scn: devtools/client/sourceeditor.properties:indentLess.commandkey
+scn: devtools/client/sourceeditor.properties:indentMore.commandkey
+scn: devtools/client/toolbox.properties:toolbox.nextTool.key
+scn: devtools/client/toolbox.properties:toolbox.previousTool.key
 sv-SE: devtools/client/sourceeditor.properties:indentLess.commandkey
 sv-SE: devtools/client/sourceeditor.properties:indentMore.commandkey
