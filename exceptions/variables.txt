@@ -347,3 +347,4 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
 uz: browser/browser/preferences/preferences.ftl:use-firefox-sync
 xh: browser/browser/preferences/preferences.ftl:use-firefox-sync
+hr: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
