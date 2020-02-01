@@ -12,7 +12,11 @@ da: devtools/client/sourceeditor.properties:indentMore.commandkey
 da: devtools/client/sourceeditor.properties:toggleComment.commandkey
 da: devtools/client/toolbox.properties:toolbox.nextTool.key
 da: devtools/client/toolbox.properties:toolbox.previousTool.key
+de: browser/browser/browserSets.ftl:nav-back-shortcut-alt.key
+de: browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key
 de: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
+fi: browser/browser/browserSets.ftl:nav-back-shortcut-alt.key
+fi: browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 it: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
@@ -20,6 +24,10 @@ it: devtools/client/sourceeditor.properties:indentLess.commandkey
 it: devtools/client/sourceeditor.properties:indentMore.commandkey
 it: devtools/client/toolbox.properties:toolbox.nextTool.key
 it: devtools/client/toolbox.properties:toolbox.previousTool.key
+ja-JP-mac: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ja: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+lt: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+lt: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 scn: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
