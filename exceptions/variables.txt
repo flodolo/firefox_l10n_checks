@@ -146,6 +146,7 @@ fr: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
 fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
+hr: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
 hr: toolkit/toolkit/about/aboutRights.ftl:rights-webservices
 hu: browser/installer/nsisstrings.properties:STUB_INSTALLING_HEADLINE
 it: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
@@ -234,6 +235,7 @@ ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
+ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
 lt: browser/chrome/browser/newInstall.dtd:mainText
 lt: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
@@ -347,4 +349,3 @@ uk: mobile/android/base/sync_strings.dtd:fxaccount_options_configure_title
 uk: mobile/android/base/sync_strings.dtd:fxaccount_options_title
 uz: browser/browser/preferences/preferences.ftl:use-firefox-sync
 xh: browser/browser/preferences/preferences.ftl:use-firefox-sync
-hr: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
