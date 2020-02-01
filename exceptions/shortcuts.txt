@@ -4,6 +4,8 @@ ca-valencia: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 ca: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
+cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
+cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 cs: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 da: devtools/client/sourceeditor.properties:indentLess.commandkey
 da: devtools/client/sourceeditor.properties:indentMore.commandkey
@@ -13,8 +15,6 @@ da: devtools/client/toolbox.properties:toolbox.previousTool.key
 de: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
-cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
-cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 it: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
 it: devtools/client/sourceeditor.properties:indentLess.commandkey
 it: devtools/client/sourceeditor.properties:indentMore.commandkey
