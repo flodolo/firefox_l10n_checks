@@ -310,6 +310,7 @@ sk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 sk: browser/browser/preferences/preferences.ftl:history-remember-label
 sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
+sk: browser/browser/protections.ftl:graph-week-summary-private-window
 sk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 sk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 sk: browser/chrome/browser/newInstall.dtd:sync
