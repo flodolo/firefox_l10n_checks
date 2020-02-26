@@ -83,6 +83,8 @@ et: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 et: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 et: mobile/overrides/netError.dtd:netOffline.longDesc3
 et: mobile/overrides/netError.dtd:notCached.longDesc
+eu: browser/browser/newtab/asrouter.ftl:cfr-doorhanger-cryptominers-heading
+eu: browser/browser/newtab/asrouter.ftl:cfr-doorhanger-fingerprinters-heading
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
 fi: browser/browser/aboutDialog.ftl:community-2
 fi: browser/browser/aboutDialog.ftl:update-otherInstanceHandlingUpdates
