@@ -515,6 +515,10 @@ class QualityCheck():
             'mobile/overrides/netError.dtd:malformedURI.longDesc2',
         ]
 
+        exceptions_xml = [
+            'toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported',
+        ]
+
         # Some keys need to be defined
         mandatory_keys = [
             "toolkit/defines.inc:MOZ_LANG_TITLE",
@@ -626,6 +630,8 @@ class QualityCheck():
                 # Check for DTD variables, e.g. '&something;'
                 pattern = re.compile('&.*;', re.UNICODE)
                 if pattern.search(translation):
+                    if string_id in exceptions_xml:
+                        continue
                     error_msg = 'XML entity in Fluent string ({})'.format(
                         string_id)
                     self.error_messages[locale].append(error_msg)
