@@ -563,9 +563,14 @@ class QualityCheck():
 
             ftl_ids.append(id)
 
-            matches = datal10n_pattern.search(text)
+            matches_iterator = datal10n_pattern.finditer(text)
+            matches = []
+            for m in matches_iterator:
+                matches.append(m.group(1))
             if matches:
-                data_l10n_ids[id] = sorted(matches.groups())
+                # Remove duplicates
+                matches = list(set(matches))
+                data_l10n_ids[id] = sorted(matches)
 
             if message_id.endswith('.style'):
                 matches = css_pattern.findall(text)
@@ -658,10 +663,15 @@ class QualityCheck():
                     continue
 
                 translation = locale_data[string_id]
-                matches = datal10n_pattern.search(translation)
+                matches_iterator = datal10n_pattern.finditer(translation)
+                matches = []
+                for m in matches_iterator:
+                    matches.append(m.group(1))
+                # Remove duplicates
+                matches = list(set(matches))
                 if matches:
-                    translated_groups = sorted(matches.groups())
-                    if translated_groups.sort() != groups.sort():
+                    translated_groups = sorted(matches)
+                    if translated_groups != groups:
                         # Groups are not matching
                         error_msg = 'data-l10n-name mismatch in Fluent string ({})'.format(
                             string_id)
