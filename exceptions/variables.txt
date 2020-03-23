@@ -201,6 +201,7 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: toolkit/toolkit/global/profileSelection.ftl:profile-manager-description
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
@@ -236,6 +237,7 @@ ja: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: toolkit/toolkit/global/profileSelection.ftl:profile-manager-description
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
