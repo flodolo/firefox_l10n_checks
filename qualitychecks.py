@@ -573,7 +573,8 @@ class QualityCheck():
                 data_l10n_ids[id] = sorted(matches)
 
             if message_id.endswith('.style'):
-                matches = css_pattern.findall(text)
+                # Alway strip the closing ';', to avoid errors on mismatches
+                matches = css_pattern.findall(text.rstrip(';'))
                 # Drop empty elements, ignore period for decimals
                 matches = [m for m in matches if m not in ['', '.']]
                 CSS_strings[id] = matches
@@ -688,7 +689,8 @@ class QualityCheck():
                 if string_id not in locale_data:
                     continue
 
-                translation = locale_data[string_id]
+                # Alway strip the closing ';', to avoid errors on mismatches
+                translation = locale_data[string_id].rstrip(';')
                 matches = css_pattern.findall(translation)
                 # Drop empty elements, ignore period for decimals
                 cleaned_translation = [m for m in matches if m not in ['', '.']]
