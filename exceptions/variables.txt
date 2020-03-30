@@ -166,6 +166,7 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 it: mobile/overrides/netError.dtd:netOffline.longDesc3
 it: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 it: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
@@ -201,7 +202,9 @@ ja-JP-mac: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.lab
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja-JP-mac: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja-JP-mac: toolkit/toolkit/extensions/blocklist.ftl:blocklist-label-summary
 ja-JP-mac: toolkit/toolkit/global/profileSelection.ftl:profile-manager-description
+ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-notsaved
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
@@ -237,6 +240,7 @@ ja: toolkit/chrome/mozapps/profile/profileSelection.dtd:pmDescription.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:error.label
 ja: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 ja: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+ja: toolkit/toolkit/extensions/blocklist.ftl:blocklist-label-summary
 ja: toolkit/toolkit/global/profileSelection.ftl:profile-manager-description
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
@@ -246,6 +250,7 @@ lt: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 lt: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
 lt: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 oc: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+pl: browser/browser/aboutCertError.ftl:certerror-mitm-title
 pl: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
@@ -288,6 +293,7 @@ pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
 pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
+pl: toolkit/toolkit/extensions/blocklist.ftl:blocklist-accept.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
