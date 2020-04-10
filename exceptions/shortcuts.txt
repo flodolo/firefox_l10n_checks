@@ -12,6 +12,7 @@ da: devtools/client/sourceeditor.properties:indentMore.commandkey
 da: devtools/client/sourceeditor.properties:toggleComment.commandkey
 da: devtools/client/toolbox.properties:toolbox.nextTool.key
 da: devtools/client/toolbox.properties:toolbox.previousTool.key
+de: browser/browser/browserSets.ftl:location-open-shortcut-alt.key
 de: browser/browser/browserSets.ftl:nav-back-shortcut-alt.key
 de: browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key
 de: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
