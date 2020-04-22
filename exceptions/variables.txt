@@ -343,6 +343,7 @@ sl: toolkit/chrome/mozapps/update/updates.dtd:error.label
 sl: toolkit/chrome/mozapps/update/updates.dtd:errorManual.label
 sl: toolkit/chrome/mozapps/update/updates.dtd:errorpatching.intro
 sl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+sl: toolkit/toolkit/updates/elevation.ftl:elevation-error-manual
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
