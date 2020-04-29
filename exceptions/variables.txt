@@ -177,6 +177,7 @@ ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-defau
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja-JP-mac: browser/browser/protections.ftl:graph-week-summary
+ja-JP-mac: browser/browser/protectionsPanel.ftl:protections-panel-no-trackers-found
 ja-JP-mac: browser/chrome/browser/browser.dtd:protections.noTrackersFound.description
 ja-JP-mac: browser/chrome/browser/browser.properties:contentBlocking.socialblock.title
 ja-JP-mac: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
@@ -215,6 +216,7 @@ ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-cont
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja: browser/browser/protections.ftl:graph-week-summary
+ja: browser/browser/protectionsPanel.ftl:protections-panel-no-trackers-found
 ja: browser/chrome/browser/browser.dtd:protections.noTrackersFound.description
 ja: browser/chrome/browser/browser.properties:contentBlocking.socialblock.title
 ja: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
