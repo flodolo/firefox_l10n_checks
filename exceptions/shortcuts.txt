@@ -29,6 +29,7 @@ ja-JP-mac: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 ja: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 lt: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 lt: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+ru: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 scn: browser/chrome/browser/browser.dtd:togglePictureInPicture.key
