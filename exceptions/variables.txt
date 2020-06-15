@@ -334,6 +334,7 @@ sk: toolkit/toolkit/about/aboutAddons.ftl:preferences
 sk: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 sk: toolkit/toolkit/global/profileDowngrade.ftl:profiledowngrade-sync
 sl: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
+sl: browser/installer/custom.properties:UN_REFRESH_PAGE_EXPLANATION
 sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
