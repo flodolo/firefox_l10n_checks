@@ -173,7 +173,10 @@ ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-
 ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja-JP-mac: browser/browser/preferences/preferences.ftl:category-experimental.tooltiptext
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+ja-JP-mac: browser/browser/preferences/preferences.ftl:pane-experimental-search-results-header
+ja-JP-mac: browser/browser/preferences/preferences.ftl:pane-experimental-title
 ja-JP-mac: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja-JP-mac: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja-JP-mac: browser/browser/protections.ftl:graph-week-summary
@@ -212,7 +215,10 @@ ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-saved
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja: browser/browser/preferences/preferences.ftl:category-experimental.tooltiptext
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
+ja: browser/browser/preferences/preferences.ftl:pane-experimental-search-results-header
+ja: browser/browser/preferences/preferences.ftl:pane-experimental-title
 ja: browser/browser/preferences/preferences.ftl:search-suggestions-cant-show
 ja: browser/browser/preferences/preferences.ftl:update-in-progress-message
 ja: browser/browser/protections.ftl:graph-week-summary
