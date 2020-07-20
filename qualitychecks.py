@@ -513,6 +513,7 @@ class QualityCheck():
             'dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe',
             'dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage',
             'mobile/overrides/netError.dtd:malformedURI.longDesc2',
+            'toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description',
         ]
 
         exceptions_xml = [
