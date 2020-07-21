@@ -519,6 +519,8 @@ class QualityCheck():
 
         exceptions_xml = [
             'toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported',
+            'toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description',
+            'toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description',
         ]
 
         # Some keys need to be defined
