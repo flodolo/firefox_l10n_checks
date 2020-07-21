@@ -327,6 +327,7 @@ ru: mobile/android/base/sync_strings.dtd:sync.subtitle.connect.label
 ru: mobile/android/base/sync_strings.dtd:sync.title.connect.label
 sk: browser/browser/aboutLogins.ftl:enable-password-sync-notification-message
 sk: browser/browser/newtab/onboarding.ftl:onboarding-fxa-text
+sk: browser/browser/newtab/onboarding.ftl:onboarding-multistage-import-subtitle
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 sk: browser/browser/preferences/preferences.ftl:history-remember-label
 sk: browser/browser/preferences/syncDisconnect.ftl:sync-disconnect-remove-sync-caption
