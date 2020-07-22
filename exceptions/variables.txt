@@ -357,6 +357,7 @@ sl: toolkit/toolkit/updates/elevation.ftl:elevation-error-manual
 sr: mobile/android/base/android_strings.dtd:datareporting_wifi_title2
 sr: mobile/android/base/android_strings.dtd:pref_restore_quit
 sr: mobile/android/base/android_strings.dtd:updater_permission_text
+szl: browser/chrome/browser/newInstall.dtd:sync
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 uk: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
