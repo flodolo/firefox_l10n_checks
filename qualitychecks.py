@@ -460,10 +460,11 @@ class QualityCheck():
         strings_to_ignore = [
             'browser/browser/aboutDialog.ftl:channel-description',
             'browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key',
-            'browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key',
             'browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key',
+            'browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key',
             'browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key',
             'browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key',
+            'browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name',
             'browser/browser/sanitize.ftl:clear-time-duration-prefix.value',
             'browser/browser/sanitize.ftl:clear-time-duration-suffix.value',
         ]

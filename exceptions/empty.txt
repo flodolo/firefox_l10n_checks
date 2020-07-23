@@ -48,6 +48,7 @@ hu: browser/chrome/browser/browser.dtd:searchFor.label
 hu: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 hy-AM: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 hy-AM: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
+it: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 it: devtools/client/styleeditor.dtd:noStyleSheet-tip-start.label
 ja-JP-mac: browser/chrome/browser/browser.dtd:fullZoomEnlargeCmd.commandkey3
 ja-JP-mac: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
