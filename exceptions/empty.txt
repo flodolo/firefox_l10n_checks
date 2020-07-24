@@ -91,6 +91,7 @@ cy: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 cy: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 cy: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 cy: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+cy: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 cy: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 da: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 da: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
@@ -221,6 +222,7 @@ he: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 he: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 he: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 he: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+he: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 he: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 he: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 he: toolkit/crashreporter/crashreporter.ini:isRTL
