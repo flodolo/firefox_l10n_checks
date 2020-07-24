@@ -495,6 +495,7 @@ sv-SE: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 sv-SE: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 sv-SE: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 sv-SE: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+sv-SE: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 sv-SE: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 szl: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 szl: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
@@ -526,6 +527,7 @@ tr: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 tr: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 tr: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 tr: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+tr: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 tr: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 tr: browser/chrome/browser/browser.dtd:searchAfter.label
 tr: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
