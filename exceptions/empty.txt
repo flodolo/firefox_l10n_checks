@@ -84,6 +84,7 @@ ko: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 lo: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 lt: browser/chrome/browser/browser.dtd:fullZoomEnlargeCmd.commandkey3
 lt: browser/chrome/browser/browser.dtd:fullZoomResetCmd.commandkey2
+nb-NO: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 nl: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 nl: devtools/client/performance.dtd:performanceUI.console.recordingNoticeEnd
 nl: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
@@ -103,7 +104,9 @@ tl: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 tr: browser/chrome/browser/browser.dtd:searchAfter.label
 tr: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 uk: toolkit/chrome/global/intl.properties:intl.charset.detector
+zh-CN: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 zh-CN: browser/chrome/browser/browser.dtd:searchAfter.label
 zh-CN: browser/chrome/browser/translation.dtd:translation.options.attribution.afterLogo
+zh-TW: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 zh-TW: browser/chrome/browser/translation.dtd:translation.options.attribution.afterLogo
 zh-TW: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
