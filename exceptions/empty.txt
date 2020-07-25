@@ -114,6 +114,7 @@ dsb: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 el: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 el: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 el: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+el: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 el: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 el: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 el: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
@@ -337,6 +338,7 @@ ko: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 ko: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ko: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ko: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+ko: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 ko: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ko: browser/chrome/browser/browser.dtd:search.label
 ko: browser/chrome/browser/browser.dtd:searchAfter.label
