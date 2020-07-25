@@ -439,6 +439,7 @@ pl: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 pl: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 pl: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 pl: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+pl: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 pl: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 pl: toolkit/chrome/global/dialog.properties:accesskey-disclosure
 pl: toolkit/chrome/global/dialog.properties:accesskey-help
@@ -558,6 +559,7 @@ vi: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 vi: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 vi: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 vi: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+vi: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 vi: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 wo: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 wo: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
