@@ -27,6 +27,7 @@ cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings.label
 cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 cs: browser/chrome/browser/newInstall.dtd:sync
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+cs: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-recent-updates.tooltiptext
 cs: toolkit/toolkit/about/aboutAddons.ftl:preferences
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
@@ -141,6 +142,9 @@ fi: toolkit/chrome/global/wizard.properties:default-first-title
 fi: toolkit/chrome/global/wizard.properties:default-last-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
+fi: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-recent-updates.tooltiptext
+fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header
+fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
 fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 fr: mobile/android/base/sync_strings.dtd:fxaccount_remove_account
@@ -300,6 +304,9 @@ pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 pl: toolkit/chrome/mozapps/extensions/blocklist.dtd:blocklist.accept.label
 pl: toolkit/chrome/mozapps/profile/profileDowngrade.dtd:window.sync
 pl: toolkit/chrome/mozapps/update/updates.dtd:verificationFailedText.label
+pl: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-available-updates.tooltiptext
+pl: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-discopane.tooltiptext
+pl: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-recent-updates.tooltiptext
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 pl: toolkit/toolkit/extensions/blocklist.ftl:blocklist-accept.label
