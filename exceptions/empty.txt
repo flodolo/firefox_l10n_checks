@@ -453,6 +453,7 @@ pt-BR: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 pt-BR: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 pt-BR: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 pt-PT: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+pt-PT: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 pt-PT: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 pt-PT: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 pt-PT: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -481,6 +482,7 @@ si: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 sk: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 sk: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 sk: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+sk: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 sk: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 sl: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 sl: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key

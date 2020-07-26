@@ -142,6 +142,7 @@ fi: toolkit/chrome/global/wizard.properties:default-first-title
 fi: toolkit/chrome/global/wizard.properties:default-last-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/chrome/mozapps/update/updates.dtd:error.label
+fi: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-available-updates.tooltiptext
 fi: toolkit/toolkit/about/aboutAddons.ftl:extensions-view-recent-updates.tooltiptext
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header
