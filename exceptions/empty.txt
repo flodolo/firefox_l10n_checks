@@ -86,6 +86,7 @@ crh: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 cs: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 cs: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 cs: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+cs: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 cs: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 cs: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 cy: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
