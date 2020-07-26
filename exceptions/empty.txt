@@ -66,6 +66,7 @@ ca-valencia: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ca-valencia: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ca-valencia: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ca: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ca: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ca: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ca: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ca: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -467,8 +468,10 @@ ro: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ro: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ro: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ru: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ru: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ru: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ru: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+ru: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 ru: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ru: toolkit/chrome/global/intl.properties:intl.charset.detector
 ru: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
