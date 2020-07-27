@@ -71,6 +71,7 @@ ca: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ca: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ca: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 cak: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+cak: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 cak: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 cak: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 cak: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -171,6 +172,7 @@ eu: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 eu: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 eu: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 fa: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+fa: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 fa: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 fa: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 fa: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -239,6 +241,7 @@ hi-IN: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 hi-IN: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 hi-IN: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 hr: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+hr: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 hr: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 hr: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 hr: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -322,8 +325,10 @@ ka: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 ka: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ka: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ka: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+ka: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 ka: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 kab: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+kab: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 kab: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 kab: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 kab: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
@@ -433,6 +438,7 @@ nn-NO: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 nn-NO: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 nn-NO: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 oc: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+oc: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 oc: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 oc: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 oc: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
