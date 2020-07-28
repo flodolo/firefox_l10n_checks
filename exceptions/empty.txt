@@ -470,6 +470,7 @@ rm: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 rm: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 rm: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ro: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ro: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ro: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ro: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ro: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
