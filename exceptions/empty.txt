@@ -62,6 +62,7 @@ bs: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 bs: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 bs: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ca-valencia: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ca-valencia: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ca-valencia: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ca-valencia: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ca-valencia: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
