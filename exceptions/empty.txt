@@ -151,6 +151,7 @@ es-ES: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 es-ES: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 es-ES: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 es-ES: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
+es-ES: browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name
 es-ES: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 es-MX: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 es-MX: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
