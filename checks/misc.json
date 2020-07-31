@@ -17,5 +17,32 @@
 		"checks": [
             "(US)"
         ]
+	},
+	{
+		"file": "toolkit/toolkit/featuregates/features.ftl",
+		"entity": "experimental-features-cookie-samesite-schemeful-description",
+		"type": "include",
+		"excluded_locales": [
+			"da",
+			"et",
+			"eu"
+		],
+		"checks": [
+			"http://example.com",
+			"https://example.com"
+        ]
+	},
+	{
+		"file": "toolkit/chrome/global/extensions.properties",
+		"entity": "csp.error.illegal-host-wildcard",
+		"type": "include",
+		"excluded_locales": [
+			"da",
+			"et",
+			"eu"
+		],
+		"checks": [
+			"*.example.com"
+        ]
 	}
 ]
