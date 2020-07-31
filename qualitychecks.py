@@ -733,8 +733,20 @@ def main():
             print('Path to TMX is not valid')
             tmx_path = ''
 
+    # Check if checks are already running for some reason
+    semaphore = os.path.join(script_folder, '.running')
+    if os.path.isfile(semaphore):
+        sys.exit('Checks are already running')
+    else:
+        try:
+            open(semaphore, 'w')
+        except:
+            sys.exit('Can\'t create semaphore file')
+
     QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
 
+    # Remove semaphore file
+    os.remove(semaphore)
 
 if __name__ == '__main__':
     main()
