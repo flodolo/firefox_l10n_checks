@@ -529,11 +529,11 @@ szl: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 szl: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 szl: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 ta: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
-te: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 ta: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 ta: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ta: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
 te: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+te: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key
 te: browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key
 te: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 te: browser/browser/sanitize.ftl:clear-time-duration-suffix.value
