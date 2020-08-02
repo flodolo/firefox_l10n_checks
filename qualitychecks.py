@@ -131,7 +131,7 @@ class QualityCheck():
             self.checkView('empty')
 
         # Check local TMX for FTL issues if available
-        if self.tmx_path != '':
+        if requested_check == 'all' and self.tmx_path != '':
             self.checkTMX()
 
         # Print errors

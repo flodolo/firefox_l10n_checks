@@ -276,7 +276,7 @@
 	},
 	{
 		"file": "devtools/client/netmonitor.properties",
-		"entity": "netmonitor.ws.truncated",
+		"entity": "netmonitor.ws.truncated-messages.warning",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
@@ -367,11 +367,6 @@
 	{
 		"file": "mobile/android/chrome/aboutDownloads.properties",
 		"entity": "downloadMessage.deleteAll",
-		"type": "plural_forms"
-	},
-	{
-		"file": "mobile/android/chrome/aboutDownloads.properties",
-		"entity": "otherDownloads3",
 		"type": "plural_forms"
 	},
 	{
