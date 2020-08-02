@@ -418,11 +418,23 @@ class QualityCheck():
                 print('CHECK: empty strings')
             url = '{}/empty-strings/?locale={}&json'
 
-        f = open(os.path.join(self.script_folder, 'exceptions',
-                              '{}.txt'.format(checkname)), 'r')
+        # Load individual locale exceptions
         exceptions = []
-        for l in f:
-            exceptions.append(l.rstrip())
+        exceptions_file = os.path.join(
+            self.script_folder, 'exceptions', '{}.txt'.format(checkname))
+        with open(exceptions_file) as f:
+            for l in f:
+                exceptions.append(l.rstrip())
+
+        # Load general exclusions
+        exclusions = []
+        exclusions_file = os.path.join(
+            self.script_folder, 'exceptions', 'exclusions.json')
+        with open(exclusions_file) as f:
+            json_data = json.load(f)
+            if checkname in json_data:
+                exclusions = json_data[checkname]
+
         total_errors = 0
         for locale in self.locales:
             errors, success = self.getJsonData(url.format(
@@ -435,6 +447,8 @@ class QualityCheck():
 
             for error in errors:
                 if error.startswith((self.excluded_products)):
+                    continue
+                if error in exclusions:
                     continue
                 error_msg = '{}: {}'.format(locale, error)
                 if error_msg in exceptions:
