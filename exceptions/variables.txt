@@ -269,6 +269,7 @@ pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-search.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-sync2.tooltiptext
+pl: browser/browser/preferences/preferences.ftl:pane-experimental-title
 pl: browser/chrome/browser/baseMenuOverlay.dtd:helpShowTour2.label
 pl: browser/chrome/browser/baseMenuOverlay.dtd:hideThisAppCmdMac2.label
 pl: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
