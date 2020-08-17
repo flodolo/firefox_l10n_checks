@@ -15,11 +15,6 @@
 		"type": "plural_forms"
 	},
 	{
-		"file": "browser/chrome/browser/activity-stream/newtab.properties",
-		"entity": "prefs_section_rows_option",
-		"type": "plural_forms"
-	},
-	{
 		"file": "browser/chrome/browser/browser.properties",
 		"entity": "addonConfirmInstall.message",
 		"type": "plural_forms"
@@ -100,23 +95,8 @@
 		"type": "plural_forms"
 	},
 	{
-		"file": "browser/chrome/browser/fxmonitor.properties",
-		"entity": "fxmonitor.popupText",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/fxmonitor.properties",
-		"entity": "fxmonitor.popupTextRounded",
-		"type": "plural_forms"
-	},
-	{
 		"file": "browser/chrome/browser/places/places.properties",
 		"entity": "detailsPane.itemsCountLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeSelectedTabs.tooltip",
 		"type": "plural_forms"
 	},
 	{
@@ -202,16 +182,6 @@
 	{
 		"file": "browser/chrome/browser/webrtcIndicator.properties",
 		"entity": "webrtcIndicator.sharingWindowWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/extensions/fxmonitor/fxmonitor.properties",
-		"entity": "fxmonitor.popupText",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/extensions/fxmonitor/fxmonitor.properties",
-		"entity": "fxmonitor.popupTextRounded",
 		"type": "plural_forms"
 	},
 	{
@@ -301,12 +271,6 @@
 	{
 		"file": "devtools/client/webconsole.properties",
 		"entity": "messageRepeats.tooltip2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "webconsole.filteredMessages.label",
 		"type": "plural_forms",
 		"excluded_locales": ["gd", "ltg", "sr"]
 	},
@@ -417,11 +381,6 @@
 	{
 		"file": "toolkit/chrome/mozapps/downloads/downloads.properties",
 		"entity": "shortSeconds",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/extensions/extensions.properties",
-		"entity": "numReviews",
 		"type": "plural_forms"
 	}
 ]

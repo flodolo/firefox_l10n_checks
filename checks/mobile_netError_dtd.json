@@ -27,14 +27,6 @@
 	},
 	{
 		"file": "mobile/overrides/netError.dtd",
-		"entity": "netOffline.longDesc3",
-		"type": "include_regex",
-		"checks": [
-			"<button id='wifi'>"
-		]
-	},
-	{
-		"file": "mobile/overrides/netError.dtd",
 		"entity": "proxyResolveFailure.longDesc3",
 		"type": "include_regex",
 		"checks": [
