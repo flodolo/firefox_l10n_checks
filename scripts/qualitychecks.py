@@ -82,10 +82,10 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, tmx_path,
+    def __init__(self, root_folder, tmx_path,
                  requested_check, verbose_mode, output_path):
         ''' Initialize object '''
-        self.script_folder = script_folder
+        self.root_folder = root_folder
         self.tmx_path = tmx_path
         self.requested_check = requested_check
         self.verbose = verbose_mode
@@ -149,7 +149,7 @@ class QualityCheck():
             return [aa for aa in a if aa not in b]
 
         # Read the list of errors from a previous run (if available)
-        pickle_file = os.path.join(self.script_folder, 'previous_errors.dump')
+        pickle_file = os.path.join(self.root_folder, 'previous_errors.dump')
         previous_errors = []
         if os.path.exists(pickle_file):
             try:
@@ -289,7 +289,7 @@ class QualityCheck():
         for json_file in self.json_files:
             try:
                 checks = json.load(
-                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                    open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -324,7 +324,7 @@ class QualityCheck():
                 print('CHECK: {}'.format(json_file))
             try:
                 checks = json.load(
-                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                    open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -421,7 +421,7 @@ class QualityCheck():
         # Load individual locale exceptions
         exceptions = []
         exceptions_file = os.path.join(
-            self.script_folder, 'exceptions', '{}.txt'.format(checkname))
+            self.root_folder, 'exceptions', '{}.txt'.format(checkname))
         with open(exceptions_file) as f:
             for l in f:
                 exceptions.append(l.rstrip())
@@ -429,7 +429,7 @@ class QualityCheck():
         # Load general exclusions
         exclusions = []
         exclusions_file = os.path.join(
-            self.script_folder, 'exceptions', 'exclusions.json')
+            self.root_folder, 'exceptions', 'exclusions.json')
         with open(exclusions_file) as f:
             json_data = json.load(f)
             if checkname in json_data:
@@ -733,8 +733,9 @@ def main():
     args = cl_parser.parse_args()
 
     # Check if there's a config file (optional)
-    script_folder = os.path.dirname(os.path.realpath(__file__))
-    config_file = os.path.join(script_folder, 'config', 'config.ini')
+    root_folder = os.path.join(os.path.dirname(
+        os.path.realpath(__file__)), os.pardir)
+    config_file = os.path.join(root_folder, 'config', 'config.ini')
     tmx_path = ''
     if os.path.isfile(config_file):
         config_parser = ConfigParser()
@@ -748,7 +749,7 @@ def main():
             tmx_path = ''
 
     # Check if checks are already running for some reason
-    semaphore = os.path.join(script_folder, '.running')
+    semaphore = os.path.join(root_folder, '.running')
     if os.path.isfile(semaphore):
         sys.exit('Checks are already running')
     else:
@@ -757,7 +758,7 @@ def main():
         except:
             sys.exit('Can\'t create semaphore file')
 
-    QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
+    QualityCheck(root_folder, tmx_path, args.check, args.verbose, args.output)
 
     # Remove semaphore file
     os.remove(semaphore)
