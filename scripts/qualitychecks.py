@@ -191,6 +191,35 @@ class QualityCheck():
             output['fixed'] = fixed_errors
             output['message'] = 'Total errors: {}'.format(len(current_errors))
 
+        if 'compare-locales' in self.error_summary:
+            if self.error_summary['compare-locales'] != previous_errors['summary']['compare-locales']:
+                changes = True
+                warnings_change = self.error_summary['compare-locales']['warnings'] - \
+                    previous_errors['summary']['compare-locales']['warnings']
+                if warnings_change > 0:
+                    print('Number of warnings increased: {} (+{})'.format(
+                        self.error_summary['compare-locales']['warnings'],
+                        warnings_change
+                    ))
+                elif warnings_change < 0:
+                    print('Number of warnings decreased: {} (-{})'.format(
+                        self.error_summary['compare-locales']['warnings'],
+                        warnings_change
+                    ))
+
+                errors_change = self.error_summary['compare-locales']['errors'] - \
+                    previous_errors['summary']['compare-locales']['errors']
+                if errors_change > 0:
+                    print('Number of errors increased: {} (+{})'.format(
+                        self.error_summary['compare-locales']['errors'],
+                        errors_change
+                    ))
+                elif errors_change < 0:
+                    print('Number of errors decreased: {} (-{})'.format(
+                        self.error_summary['compare-locales']['errors'],
+                        errors_change
+                    ))
+
         if not changes:
             print('No changes.')
             if savetofile:
@@ -508,8 +537,10 @@ class QualityCheck():
             if locale_data['warnings'] > 0:
                 total_warnings += 1
 
-        self.errors_summary['compare-locales-errors'] = total_errors
-        self.errors_summary['compare-locales-warnings'] = total_warnings
+        self.error_summary['compare-locales'] = {
+            'errors': total_errors,
+            'warnings': total_warnings
+        }
 
 
     def checkTMX (self):
