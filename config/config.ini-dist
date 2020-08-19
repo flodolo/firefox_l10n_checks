@@ -1,5 +1,7 @@
 [config]
 
-; Path to Tranvision's TMX folder
+;Path to Tranvision's TMX folder
 tmx_path = /srv/transvision/data/TMX/
 
+;Path to folder containing l10n clones
+l10nrepos_path = /srv/transvision/data/hg/gecko_strings/

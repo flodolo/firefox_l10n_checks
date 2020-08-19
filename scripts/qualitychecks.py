@@ -1,8 +1,10 @@
 #! /usr/bin/env python3
 
 from collections import OrderedDict
-from urllib.request import urlopen
+from compare_locales.compare import compareProjects
+from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
+from urllib.request import urlopen
 import argparse
 import datetime
 import json
@@ -82,7 +84,7 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, root_folder, tmx_path,
+    def __init__(self, root_folder, tmx_path, l10nrepos_path,
                  requested_check, verbose_mode, output_path):
         ''' Initialize object '''
         self.root_folder = root_folder
@@ -747,6 +749,13 @@ def main():
         if not os.path.exists(tmx_path):
             print('Path to TMX is not valid')
             tmx_path = ''
+        try:
+            l10nrepos_path = os.path.join(config_parser.get('config', 'l10nrepos_path'), '')
+        except:
+            print('l10nrepos_path not found in config.ini')
+        if not os.path.exists(tmx_path):
+            print('Path to l10n clones is not valid')
+            l10nrepos_path = ''
 
     # Check if checks are already running for some reason
     semaphore = os.path.join(root_folder, '.running')
@@ -758,7 +767,9 @@ def main():
         except:
             sys.exit('Can\'t create semaphore file')
 
-    QualityCheck(root_folder, tmx_path, args.check, args.verbose, args.output)
+    QualityCheck(
+        root_folder, tmx_path, l10nrepos_path,
+        args.check, args.verbose, args.output)
 
     # Remove semaphore file
     os.remove(semaphore)
