@@ -1,8 +1,10 @@
 #! /usr/bin/env python3
 
 from collections import OrderedDict
-from urllib.request import urlopen
+from compare_locales.compare import compareProjects
+from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
+from urllib.request import urlopen
 import argparse
 import datetime
 import json
@@ -82,11 +84,13 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, script_folder, tmx_path,
+    def __init__(self, root_folder, tmx_path, l10nrepos_path, toml_path,
                  requested_check, verbose_mode, output_path):
         ''' Initialize object '''
-        self.script_folder = script_folder
+        self.root_folder = root_folder
         self.tmx_path = tmx_path
+        self.l10nrepos_path = l10nrepos_path
+        self.toml_path = toml_path
         self.requested_check = requested_check
         self.verbose = verbose_mode
         self.output_path = output_path
@@ -134,6 +138,10 @@ class QualityCheck():
         if requested_check == 'all' and self.tmx_path != '':
             self.checkTMX()
 
+        # Run compare-locales checks if repos are available
+        if requested_check == 'all' and self.l10nrepos_path != '':
+            self.checkRepos()
+
         # Print errors
         if self.verbose:
             self.printErrors()
@@ -149,8 +157,11 @@ class QualityCheck():
             return [aa for aa in a if aa not in b]
 
         # Read the list of errors from a previous run (if available)
-        pickle_file = os.path.join(self.script_folder, 'previous_errors.dump')
-        previous_errors = []
+        pickle_file = os.path.join(self.root_folder, 'previous_errors.dump')
+        previous_errors = {
+            'errors': [],
+            'summary': {}
+        }
         if os.path.exists(pickle_file):
             try:
                 with open(pickle_file, 'rb') as f:
@@ -165,43 +176,98 @@ class QualityCheck():
         current_errors.sort()
 
         changes = False
-        new_errors = diff(current_errors, previous_errors)
-        output = {}
+        new_errors = diff(current_errors, previous_errors['errors'])
+
+        # Initialize output
+        output = {
+            'new': [],
+            'fixed':  [],
+            'message': [],
+        }
+
         savetofile = self.output_path != ''
         if new_errors:
             changes = True
             print('New errors ({}):'.format(len(new_errors)))
             print('\n'.join(new_errors))
             output['new'] = new_errors
-            output['message'] = 'Total errors: {}'.format(len(current_errors))
+            output['message'].append('Total errors: {}'.format(len(current_errors)))
 
-        fixed_errors = diff(previous_errors, current_errors)
+        fixed_errors = diff(previous_errors['errors'], current_errors)
         if fixed_errors:
             changes = True
             print('Fixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
             output['fixed'] = fixed_errors
-            output['message'] = 'Total errors: {}'.format(len(current_errors))
+            if not output['message']:
+                output['message'].append('Total errors: {}'.format(len(current_errors)))
+
+        if 'compare-locales' in self.error_summary:
+            # Create a starting point if the previous run doesn't have
+            # compare-locales data
+            if not 'compare-locales' in previous_errors['summary']:
+                previous_errors['summary']['compare-locales'] = {
+                    'errors': 0,
+                    'warnings': 0
+                }
+
+            if self.error_summary['compare-locales'] != previous_errors['summary']['compare-locales']:
+                changes = True
+                warnings_change = self.error_summary['compare-locales']['warnings'] - \
+                    previous_errors['summary']['compare-locales']['warnings']
+                if warnings_change > 0:
+                    output['message'].append('compare-locales warnings increased: {} ({})'.format(
+                        self.error_summary['compare-locales']['warnings'],
+                        warnings_change
+                    ))
+                elif warnings_change < 0:
+                    output['message'].append('compare-locales warnings decreased: {} ({})'.format(
+                        self.error_summary['compare-locales']['warnings'],
+                        warnings_change
+                    ))
+
+                errors_change = self.error_summary['compare-locales']['errors'] - \
+                    previous_errors['summary']['compare-locales']['errors']
+                if errors_change > 0:
+                    output['message'].append('compare-locales errors increased: {} ({})'.format(
+                        self.error_summary['compare-locales']['errors'],
+                        errors_change
+                    ))
+                elif errors_change < 0:
+                    output['message'].append('compare-locales errors decreased: {} ({})'.format(
+                        self.error_summary['compare-locales']['errors'],
+                        errors_change
+                    ))
 
         if not changes:
             print('No changes.')
             if savetofile:
-                output['message'] = 'No changes ({}).'.format(
-                    len(current_errors))
+                output['message'].append('No changes ({}).'.format(
+                    len(current_errors)))
+
+        for key in ['new', 'fixed']:
+            if not output[key]:
+                del output[key]
 
         if savetofile:
+            if output['message']:
+                output['message'] = '\n'.join(output['message'])
             self.archive_data[self.date_key] = output
             checks_file = os.path.join(self.output_path, 'checks.json')
             with open(checks_file, 'w') as outfile:
                 json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
             errors_file = os.path.join(self.output_path, 'errors.json')
+            output_data = {
+                'errors': current_errors,
+                'summary': self.error_summary
+            }
             with open(errors_file, 'w') as outfile:
-                json.dump(current_errors, outfile,
+                json.dump(output_data, outfile,
                           sort_keys=True, indent=2)
 
         # Write back the current list of errors
         with open(pickle_file, 'wb') as f:
-            pickle.dump(current_errors, f)
+            pickle.dump(output_data, f)
 
     def getJsonData(self, url, search_id):
         '''
@@ -230,8 +296,7 @@ class QualityCheck():
         locales_plural_rules, success = self.getJsonData(
             url, 'list of plural forms')
         if not success:
-            print('CRITICAL ERROR: List of plural forms not available')
-            sys.exit(1)
+            sys.exit('CRITICAL ERROR: List of plural forms not available')
 
         for locale, rule_number in locales_plural_rules.items():
             self.plural_forms[locale] = self.plural_rules[int(rule_number)]
@@ -246,8 +311,7 @@ class QualityCheck():
         # Remove en-US from locales
         self.locales.remove('en-US')
         if not success:
-            print('CRITICAL ERROR: List of support locales not available')
-            sys.exit(1)
+            sys.exit('CRITICAL ERROR: List of support locales not available')
 
     def printErrors(self):
         ''' Print error messages '''
@@ -289,7 +353,7 @@ class QualityCheck():
         for json_file in self.json_files:
             try:
                 checks = json.load(
-                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                    open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -324,7 +388,7 @@ class QualityCheck():
                 print('CHECK: {}'.format(json_file))
             try:
                 checks = json.load(
-                    open(os.path.join(self.script_folder, 'checks', json_file + '.json')))
+                    open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
                 print(e)
@@ -421,7 +485,7 @@ class QualityCheck():
         # Load individual locale exceptions
         exceptions = []
         exceptions_file = os.path.join(
-            self.script_folder, 'exceptions', '{}.txt'.format(checkname))
+            self.root_folder, 'exceptions', '{}.txt'.format(checkname))
         with open(exceptions_file) as f:
             for l in f:
                 exceptions.append(l.rstrip())
@@ -429,7 +493,7 @@ class QualityCheck():
         # Load general exclusions
         exclusions = []
         exclusions_file = os.path.join(
-            self.script_folder, 'exceptions', 'exclusions.json')
+            self.root_folder, 'exceptions', 'exclusions.json')
         with open(exclusions_file) as f:
             json_data = json.load(f)
             if checkname in json_data:
@@ -459,6 +523,49 @@ class QualityCheck():
 
         if total_errors:
             self.error_summary[checkname] = total_errors
+
+    def checkRepos(self):
+        '''Run compare-locales against repos'''
+
+        # Get the available locales
+        locales = next(os.walk(self.l10nrepos_path))[1]
+        locales.sort()
+
+        configs = []
+        config_env = {
+            'l10n_base': self.l10nrepos_path
+        }
+
+        try:
+            config = TOMLParser().parse(self.toml_path, env=config_env)
+        except ConfigNotFound as e:
+            print(e)
+        configs.append(config)
+
+        try:
+            observers = compareProjects(
+                configs,
+                locales,
+                self.l10nrepos_path)
+        except (OSError, IOError) as exc:
+            sys.exit('Error running compare-locales checks: ' + str(exc))
+
+        data = [observer.toJSON() for observer in observers]
+
+        total_errors = 0
+        total_warnings = 0
+        for locale, locale_data in data[0]['summary'].items():
+            if locale_data['errors'] > 0:
+                error_msg = 'compare-locales errors'
+                total_errors += locale_data['errors']
+                self.error_messages[locale].append(error_msg)
+            if locale_data['warnings'] > 0:
+                total_warnings += locale_data['warnings']
+
+        self.error_summary['compare-locales'] = {
+            'errors': total_errors,
+            'warnings': total_warnings
+        }
 
 
     def checkTMX (self):
@@ -733,22 +840,34 @@ def main():
     args = cl_parser.parse_args()
 
     # Check if there's a config file (optional)
-    script_folder = os.path.dirname(os.path.realpath(__file__))
-    config_file = os.path.join(script_folder, 'config', 'config.ini')
+    root_folder = os.path.join(os.path.dirname(
+        os.path.realpath(__file__)), os.pardir)
+    config_file = os.path.join(root_folder, 'config', 'config.ini')
+
     tmx_path = ''
     if os.path.isfile(config_file):
         config_parser = ConfigParser()
         config_parser.read(config_file)
-        try:
-            tmx_path = os.path.join(config_parser.get('config', 'tmx_path'), '')
-        except:
-            print('tmx_path not found in config.ini')
-        if not os.path.exists(tmx_path):
-            print('Path to TMX is not valid')
-            tmx_path = ''
+
+        def getConfig(key):
+            try:
+                value = config_parser.get('config', key)
+                if key != 'toml_path':
+                    value = os.path.join(value, '')
+            except:
+                print('{key} not found in config.ini')
+            if not os.path.exists(value):
+                print(f'Path in {key} is not valid: {value}')
+                value = ''
+
+            return value
+
+        tmx_path = getConfig('tmx_path')
+        l10nrepos_path = getConfig('l10nrepos_path')
+        toml_path = getConfig('toml_path')
 
     # Check if checks are already running for some reason
-    semaphore = os.path.join(script_folder, '.running')
+    semaphore = os.path.join(root_folder, '.running')
     if os.path.isfile(semaphore):
         sys.exit('Checks are already running')
     else:
@@ -757,7 +876,9 @@ def main():
         except:
             sys.exit('Can\'t create semaphore file')
 
-    QualityCheck(script_folder, tmx_path, args.check, args.verbose, args.output)
+    QualityCheck(
+        root_folder, tmx_path, l10nrepos_path, toml_path,
+        args.check, args.verbose, args.output)
 
     # Remove semaphore file
     os.remove(semaphore)
