@@ -26,4 +26,4 @@ setupVirtualEnv
 source $root_path/python-venv/bin/activate || exit 1
 
 # Running main script
-python $script_path/qualitychecks.py
+python $script_path/qualitychecks.py $@

@@ -173,7 +173,7 @@ class QualityCheck():
         current_errors.sort()
 
         changes = False
-        new_errors = diff(current_errors, previous_errors)
+        new_errors = diff(current_errors, previous_errors['errors'])
         output = {}
         savetofile = self.output_path != ''
         if new_errors:
@@ -183,7 +183,7 @@ class QualityCheck():
             output['new'] = new_errors
             output['message'] = 'Total errors: {}'.format(len(current_errors))
 
-        fixed_errors = diff(previous_errors, current_errors)
+        fixed_errors = diff(previous_errors['errors'], current_errors)
         if fixed_errors:
             changes = True
             print('Fixed errors ({}):'.format(len(fixed_errors)))
@@ -203,6 +203,10 @@ class QualityCheck():
             with open(checks_file, 'w') as outfile:
                 json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
             errors_file = os.path.join(self.output_path, 'errors.json')
+            data = {
+                'errors': current_errors,
+                'summary': self.error_summary
+            }
             with open(errors_file, 'w') as outfile:
                 json.dump(current_errors, outfile,
                           sort_keys=True, indent=2)
@@ -238,8 +242,7 @@ class QualityCheck():
         locales_plural_rules, success = self.getJsonData(
             url, 'list of plural forms')
         if not success:
-            print('CRITICAL ERROR: List of plural forms not available')
-            sys.exit(1)
+            sys.exit('CRITICAL ERROR: List of plural forms not available')
 
         for locale, rule_number in locales_plural_rules.items():
             self.plural_forms[locale] = self.plural_rules[int(rule_number)]
@@ -254,8 +257,7 @@ class QualityCheck():
         # Remove en-US from locales
         self.locales.remove('en-US')
         if not success:
-            print('CRITICAL ERROR: List of support locales not available')
-            sys.exit(1)
+            sys.exit('CRITICAL ERROR: List of support locales not available')
 
     def printErrors(self):
         ''' Print error messages '''
@@ -492,10 +494,23 @@ class QualityCheck():
                 locales,
                 self.l10nrepos_path)
         except (OSError, IOError) as exc:
-            sys.exit('FAIL: ' + str(exc))
+            sys.exit('Error running compare-locales checks: ' + str(exc))
 
         data = [observer.toJSON() for observer in observers]
-        print(json.dumps(data[0]['summary'], indent=2))
+
+        total_errors = 0
+        total_warnings = 0
+        for locale, locale_data in data[0]['summary'].items():
+            if locale_data['errors'] > 0:
+                error_msg = '{}: compare-locales errors ({})'.format(locale, locale_data['errors'])
+                total_errors += 1
+                self.error_messages[locale].append(error_msg)
+            if locale_data['warnings'] > 0:
+                total_warnings += 1
+
+        self.errors_summary['compare-locales-errors'] = total_errors
+        self.errors_summary['compare-locales-warnings'] = total_warnings
+
 
     def checkTMX (self):
         '''Check local TMX for issues, mostly on FTL files'''
