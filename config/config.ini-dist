@@ -5,3 +5,6 @@ tmx_path = /srv/transvision/data/TMX/
 
 ;Path to folder containing l10n clones
 l10nrepos_path = /srv/transvision/data/hg/gecko_strings/
+
+;Path to browser l10n.toml
+toml_path = /srv/transvision/data/hg/gecko_strings/en-US/_configs/browser.toml

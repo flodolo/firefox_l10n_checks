@@ -84,11 +84,13 @@ class QualityCheck():
         'suite/',
     )
 
-    def __init__(self, root_folder, tmx_path, l10nrepos_path,
+    def __init__(self, root_folder, tmx_path, l10nrepos_path, toml_path,
                  requested_check, verbose_mode, output_path):
         ''' Initialize object '''
         self.root_folder = root_folder
         self.tmx_path = tmx_path
+        self.l10nrepos_path = l10nrepos_path
+        self.toml_path = toml_path
         self.requested_check = requested_check
         self.verbose = verbose_mode
         self.output_path = output_path
@@ -135,6 +137,10 @@ class QualityCheck():
         # Check local TMX for FTL issues if available
         if requested_check == 'all' and self.tmx_path != '':
             self.checkTMX()
+
+        # Run compare-locales checks if repos are available
+        if requested_check == 'all' and self.l10nrepos_path != '':
+            self.checkRepos()
 
         # Print errors
         if self.verbose:
@@ -462,6 +468,34 @@ class QualityCheck():
         if total_errors:
             self.error_summary[checkname] = total_errors
 
+    def checkRepos(self):
+        '''Run compare-locales against repos'''
+
+        # Get the available locales
+        locales = next(os.walk(self.l10nrepos_path))[1]
+        locales.sort()
+
+        configs = []
+        config_env = {
+            'l10n_base': self.l10nrepos_path
+        }
+
+        try:
+            config = TOMLParser().parse(self.toml_path, env=config_env)
+        except ConfigNotFound as e:
+            print(e)
+        configs.append(config)
+
+        try:
+            observers = compareProjects(
+                configs,
+                locales,
+                self.l10nrepos_path)
+        except (OSError, IOError) as exc:
+            sys.exit('FAIL: ' + str(exc))
+
+        data = [observer.toJSON() for observer in observers]
+        print(json.dumps(data[0]['summary'], indent=2))
 
     def checkTMX (self):
         '''Check local TMX for issues, mostly on FTL files'''
@@ -738,24 +772,28 @@ def main():
     root_folder = os.path.join(os.path.dirname(
         os.path.realpath(__file__)), os.pardir)
     config_file = os.path.join(root_folder, 'config', 'config.ini')
+
     tmx_path = ''
     if os.path.isfile(config_file):
         config_parser = ConfigParser()
         config_parser.read(config_file)
-        try:
-            tmx_path = os.path.join(config_parser.get('config', 'tmx_path'), '')
-        except:
-            print('tmx_path not found in config.ini')
-        if not os.path.exists(tmx_path):
-            print('Path to TMX is not valid')
-            tmx_path = ''
-        try:
-            l10nrepos_path = os.path.join(config_parser.get('config', 'l10nrepos_path'), '')
-        except:
-            print('l10nrepos_path not found in config.ini')
-        if not os.path.exists(tmx_path):
-            print('Path to l10n clones is not valid')
-            l10nrepos_path = ''
+
+        def getConfig(key):
+            try:
+                value = config_parser.get('config', key)
+                if key != 'toml_path':
+                    value = os.path.join(value, '')
+            except:
+                print('{key} not found in config.ini')
+            if not os.path.exists(value):
+                print(f'Path in {key} is not valid: {value}')
+                value = ''
+
+            return value
+
+        tmx_path = getConfig('tmx_path')
+        l10nrepos_path = getConfig('l10nrepos_path')
+        toml_path = getConfig('toml_path')
 
     # Check if checks are already running for some reason
     semaphore = os.path.join(root_folder, '.running')
@@ -768,7 +806,7 @@ def main():
             sys.exit('Can\'t create semaphore file')
 
     QualityCheck(
-        root_folder, tmx_path, l10nrepos_path,
+        root_folder, tmx_path, l10nrepos_path, toml_path,
         args.check, args.verbose, args.output)
 
     # Remove semaphore file
