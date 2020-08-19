@@ -158,7 +158,10 @@ class QualityCheck():
 
         # Read the list of errors from a previous run (if available)
         pickle_file = os.path.join(self.root_folder, 'previous_errors.dump')
-        previous_errors = []
+        previous_errors = {
+            'errors': [],
+            'summary': {}
+        }
         if os.path.exists(pickle_file):
             try:
                 with open(pickle_file, 'rb') as f:
@@ -174,14 +177,21 @@ class QualityCheck():
 
         changes = False
         new_errors = diff(current_errors, previous_errors['errors'])
-        output = {}
+
+        # Initialize output
+        output = {
+            'new': [],
+            'fixed':  [],
+            'message': [],
+        }
+
         savetofile = self.output_path != ''
         if new_errors:
             changes = True
             print('New errors ({}):'.format(len(new_errors)))
             print('\n'.join(new_errors))
             output['new'] = new_errors
-            output['message'] = 'Total errors: {}'.format(len(current_errors))
+            output['message'].append('Total errors: {}'.format(len(current_errors)))
 
         fixed_errors = diff(previous_errors['errors'], current_errors)
         if fixed_errors:
@@ -189,20 +199,29 @@ class QualityCheck():
             print('Fixed errors ({}):'.format(len(fixed_errors)))
             print('\n'.join(fixed_errors))
             output['fixed'] = fixed_errors
-            output['message'] = 'Total errors: {}'.format(len(current_errors))
+            if not output['message']:
+                output['message'].append('Total errors: {}'.format(len(current_errors)))
 
         if 'compare-locales' in self.error_summary:
+            # Create a starting point if the previous run doesn't have
+            # compare-locales data
+            if not 'compare-locales' in previous_errors['summary']:
+                previous_errors['summary']['compare-locales'] = {
+                    'errors': 0,
+                    'warnings': 0
+                }
+
             if self.error_summary['compare-locales'] != previous_errors['summary']['compare-locales']:
                 changes = True
                 warnings_change = self.error_summary['compare-locales']['warnings'] - \
                     previous_errors['summary']['compare-locales']['warnings']
                 if warnings_change > 0:
-                    print('Number of warnings increased: {} (+{})'.format(
+                    output['message'].append('compare-locales warnings increased: {} ({})'.format(
                         self.error_summary['compare-locales']['warnings'],
                         warnings_change
                     ))
                 elif warnings_change < 0:
-                    print('Number of warnings decreased: {} (-{})'.format(
+                    output['message'].append('compare-locales warnings decreased: {} ({})'.format(
                         self.error_summary['compare-locales']['warnings'],
                         warnings_change
                     ))
@@ -210,12 +229,12 @@ class QualityCheck():
                 errors_change = self.error_summary['compare-locales']['errors'] - \
                     previous_errors['summary']['compare-locales']['errors']
                 if errors_change > 0:
-                    print('Number of errors increased: {} (+{})'.format(
+                    output['message'].append('compare-locales errors increased: {} ({})'.format(
                         self.error_summary['compare-locales']['errors'],
                         errors_change
                     ))
                 elif errors_change < 0:
-                    print('Number of errors decreased: {} (-{})'.format(
+                    output['message'].append('compare-locales errors decreased: {} ({})'.format(
                         self.error_summary['compare-locales']['errors'],
                         errors_change
                     ))
@@ -223,26 +242,32 @@ class QualityCheck():
         if not changes:
             print('No changes.')
             if savetofile:
-                output['message'] = 'No changes ({}).'.format(
-                    len(current_errors))
+                output['message'].append('No changes ({}).'.format(
+                    len(current_errors)))
+
+        for key in ['new', 'fixed']:
+            if not output[key]:
+                del output[key]
 
         if savetofile:
+            if output['message']:
+                output['message'] = '\n'.join(output['message'])
             self.archive_data[self.date_key] = output
             checks_file = os.path.join(self.output_path, 'checks.json')
             with open(checks_file, 'w') as outfile:
                 json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
             errors_file = os.path.join(self.output_path, 'errors.json')
-            data = {
+            output_data = {
                 'errors': current_errors,
                 'summary': self.error_summary
             }
             with open(errors_file, 'w') as outfile:
-                json.dump(current_errors, outfile,
+                json.dump(output_data, outfile,
                           sort_keys=True, indent=2)
 
         # Write back the current list of errors
         with open(pickle_file, 'wb') as f:
-            pickle.dump(current_errors, f)
+            pickle.dump(output_data, f)
 
     def getJsonData(self, url, search_id):
         '''
@@ -531,11 +556,11 @@ class QualityCheck():
         total_warnings = 0
         for locale, locale_data in data[0]['summary'].items():
             if locale_data['errors'] > 0:
-                error_msg = '{}: compare-locales errors ({})'.format(locale, locale_data['errors'])
-                total_errors += 1
+                error_msg = 'compare-locales errors'
+                total_errors += locale_data['errors']
                 self.error_messages[locale].append(error_msg)
             if locale_data['warnings'] > 0:
-                total_warnings += 1
+                total_warnings += locale_data['warnings']
 
         self.error_summary['compare-locales'] = {
             'errors': total_errors,

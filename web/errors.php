@@ -1,14 +1,17 @@
 <?php
 
-$file_name = 'errors.json';
 include('shared.php');
-$error_log = json_decode($json_file, true);
+$error_log = json_decode($json_file_errors, true);
 
 $html_detail_body = '';
-foreach ($error_log as $error_message) {
+foreach ($error_log['errors'] as $error_message) {
     $html_detail_body .= "<tr>\n";
     // Message
-    $html_detail_body .= "\t<td><a href=\"" . $tranvision_link($error_message) . "\">{$error_message}</li>\n</td>\n";
+    if (strpos($error_message, 'compare-locales') !== false) {
+        $html_detail_body .= "\t<td>{$error_message}</td>\n";
+    } else {
+        $html_detail_body .= "\t<td><a href=\"" . $tranvision_link($error_message) . "\">{$error_message}</li>\n</td>\n";
+    }
     $html_detail_body .= "</tr>\n";
 }
 ?>

@@ -1,10 +1,20 @@
 <?php
 
 $root_folder = realpath(__DIR__ . '/../');
+
+# Load checks.json
+$file_name = 'checks.json';
 if (! file_exists("{$root_folder}/{$file_name}")) {
     exit("File {$file_name} does not exist.");
 }
-$json_file = file_get_contents("{$root_folder}/{$file_name}");
+$json_file_checks = file_get_contents("{$root_folder}/{$file_name}");
+
+# Load errors.json
+$file_name = 'errors.json';
+if (! file_exists("{$root_folder}/{$file_name}")) {
+    exit("File {$file_name} does not exist.");
+}
+$json_file_errors = file_get_contents("{$root_folder}/{$file_name}");
 
 $tranvision_link = function($msg) {
     // URL

@@ -1,9 +1,10 @@
 <?php
 
-$file_name = 'checks.json';
 include('shared.php');
-$error_log = json_decode($json_file, true);
+$error_log = json_decode($json_file_checks, true);
 $error_log = array_reverse($error_log, true);
+
+$errors_list = json_decode($json_file_errors, true);
 
 $html_detail_body = '';
 foreach ($error_log as $day => $day_info) {
@@ -15,7 +16,7 @@ foreach ($error_log as $day => $day_info) {
     // Message
     $html_detail_body .= "\t<td>";
     $html_detail_body .= isset($day_info['message'])
-        ? $day_info['message']
+        ? str_replace("\n", '<br/>', $day_info['message'])
         : ' ';
     $html_detail_body .= "</td>\n";
 
@@ -25,7 +26,11 @@ foreach ($error_log as $day => $day_info) {
         $html_detail_body .= '<p class="new_errors">New errors (' . count($day_info['new']) . "):</p>\n";
         $html_detail_body .= "<ul>\n";
         foreach ($day_info['new'] as $error) {
-            $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+            if (strpos($error, 'compare-locales') !== false) {
+                $html_detail_body .= "<li>{$error}</li>\n";
+            } else {
+                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+            }
         }
         $html_detail_body .= "</ul>\n";
     }
@@ -33,20 +38,36 @@ foreach ($error_log as $day => $day_info) {
         $html_detail_body .= '<p class="fixed_errors">Fixed errors (' . count($day_info['fixed']) . "):</p>\n";
         $html_detail_body .= "<ul>\n";
         foreach ($day_info['fixed'] as $error) {
-            $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+            if (strpos($error, 'compare-locales') !== false) {
+                $html_detail_body .= "<li>{$error}</li>\n";
+            } else {
+                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+            }
         }
         $html_detail_body .= "</ul>\n";
     }
     $html_detail_body .= "</td>\n";
     $html_detail_body .= "</tr>\n";
 }
+
+// Summary table
+foreach ($errors_list['summary'] as $check_name => $check_value) {
+    $html_summary_body .= "<tr>\n";
+    if ($check_name == 'compare-locales') {
+        $html_summary_body .= "\t<td>{$check_name}</td>\n\t<td>{$check_value['errors']} ({$check_value['warnings']} warnings)</td>\n";
+    } else {
+        $html_summary_body .= "\t<td>{$check_name}</td>\n\t<td>{$check_value}</td>\n";
+    }
+    $html_summary_body .= "</tr>\n";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset=utf-8>
     <title>Firefox Error Checks</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style type="text/css">
         body {
             font-size: 13px;
@@ -68,6 +89,21 @@ foreach ($error_log as $day => $day_info) {
 <body>
     <div class="container">
         <p><a href="errors.php">List of current errors</a></p>
+
+        <h1>Summary</h1>
+        <table class="table w-auto table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Check</th>
+                    <th>Errors</th>
+                </tr>
+            </thead>
+        <tbody>
+<?php echo $html_summary_body; ?>
+        </tbody>
+        </table>
+
+        <h1>Changelog</h1>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
