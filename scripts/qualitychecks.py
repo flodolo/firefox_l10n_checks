@@ -7,6 +7,7 @@ from configparser import ConfigParser
 from urllib.request import urlopen
 import argparse
 import datetime
+import glob
 import json
 import os
 import pickle
@@ -15,19 +16,6 @@ import sys
 
 
 class QualityCheck():
-
-    json_files = [
-        'boolean_values',
-        'browser_installer_nsistr',
-        'intl_properties',
-        'misc',
-        'mobile_netError_dtd',
-        'mobile_phishing_dtd',
-        'netError_dtd',
-        'pipnss_properties',
-        'plurals',
-        'pocket',
-    ]
 
     excluded_products = (
         'calendar/',
@@ -67,6 +55,13 @@ class QualityCheck():
 
         self.date_key = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         print('\n--------\nRun: {}\n'.format(self.date_key))
+
+        # Create a list of available checks in JSON format
+        self.json_files = []
+        for check in glob.glob('{}/*.json'.format(os.path.join(root_folder, 'checks'))):
+            check = os.path.basename(check)
+            self.json_files.append(os.path.splitext(check)[0])
+        self.json_files.sort()
 
         # Get the list of supported locales
         self.getLocales()
