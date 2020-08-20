@@ -1,0 +1,57 @@
+{
+    "ignore": [
+        "browser/browser/aboutDialog.ftl:channel-description",
+        "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key",
+        "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key",
+        "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
+        "browser/browser/sanitize.ftl:clear-time-duration-prefix.value",
+        "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
+    ],
+    "locales": {
+        "de": [
+            "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
+        ]
+    },
+    "http": [
+        "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
+        "browser/chrome/browser/browser.properties:certImminentDistrust.message",
+        "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
+        "dom/chrome/dom/dom.properties:MediaWMFNeeded",
+        "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
+        "dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader",
+        "dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader",
+        "dom/chrome/dom/dom.properties:PushMessageBadEncryptionHeader",
+        "dom/chrome/dom/dom.properties:PushMessageBadEncryptionKeyHeader",
+        "dom/chrome/dom/dom.properties:PushMessageBadPaddingError",
+        "dom/chrome/dom/dom.properties:PushMessageBadRecordSize",
+        "dom/chrome/dom/dom.properties:PushMessageBadSalt",
+        "dom/chrome/dom/dom.properties:PushMessageBadSenderKey",
+        "dom/chrome/dom/dom.properties:SpeculationFailed",
+        "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
+        "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
+        "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
+        "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
+        "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2",
+        "dom/chrome/plugins.properties:cdm_description2",
+        "dom/chrome/plugins.properties:openH264_description2",
+        "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
+        "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
+        "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
+        "mobile/overrides/netError.dtd:malformedURI.longDesc2",
+        "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
+    ],
+    "xml": [
+        "toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported",
+        "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description",
+        "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description"
+    ],
+    "mandatory": [
+        "toolkit/defines.inc:MOZ_LANG_TITLE",
+        "toolkit/chrome/global/intl.properties:intl.accept_languages",
+        "toolkit/chrome/global/intl.properties:font.language.group",
+        "toolkit/chrome/global/intl.properties:pluralRule"
+    ]
+}

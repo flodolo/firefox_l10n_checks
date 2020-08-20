@@ -18,12 +18,13 @@ import sys
 class QualityCheck():
 
     excluded_products = (
-        'calendar/',
-        'chat/',
-        'editor/',
-        'extensions/',
-        'mail/',
-        'suite/',
+        'calendar',
+        'chat',
+        'editor',
+        'extensions',
+        'mail',
+        'other-licenses',
+        'suite'
     )
 
     def __init__(self, root_folder, tmx_path, l10nrepos_path, toml_path,
@@ -540,80 +541,12 @@ class QualityCheck():
             'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE)
         css_pattern = re.compile('[^\d]*', re.UNICODE)
 
-        strings_to_ignore = [
-            'browser/browser/aboutDialog.ftl:channel-description',
-            'browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key',
-            'browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key',
-            'browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key',
-            'browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key',
-            'browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key',
-            'browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name',
-            'browser/browser/sanitize.ftl:clear-time-duration-prefix.value',
-            'browser/browser/sanitize.ftl:clear-time-duration-suffix.value',
-        ]
-
-        locale_exceptions = {
-            'de': [
-                'browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey',
-            ],
-        }
-
-        excluded_folders = (
-            'calendar',
-            'chat',
-            'editor',
-            'extensions',
-            'mail',
-            'other-licenses',
-            'suite'
-        )
-
-        exceptions_http = [
-            'browser/browser/aboutLogins.ftl:login-item-origin.placeholder',
-            'browser/chrome/browser/browser.properties:certImminentDistrust.message',
-            'devtools/client/scratchpad.properties:help.openDocumentationPage',
-            'dom/chrome/dom/dom.properties:ImplicitMetaViewportTagFallback',
-            'dom/chrome/dom/dom.properties:MediaWidevineNoWMF',
-            'dom/chrome/dom/dom.properties:MediaWMFNeeded',
-            'dom/chrome/dom/dom.properties:PushMessageBadCryptoError',
-            'dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader',
-            'dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader',
-            'dom/chrome/dom/dom.properties:PushMessageBadEncryptionHeader',
-            'dom/chrome/dom/dom.properties:PushMessageBadEncryptionKeyHeader',
-            'dom/chrome/dom/dom.properties:PushMessageBadPaddingError',
-            'dom/chrome/dom/dom.properties:PushMessageBadRecordSize',
-            'dom/chrome/dom/dom.properties:PushMessageBadSalt',
-            'dom/chrome/dom/dom.properties:PushMessageBadSenderKey',
-            'dom/chrome/dom/dom.properties:ShowModalDialogWarning',
-            'dom/chrome/dom/dom.properties:SpeculationFailed',
-            'dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning',
-            'dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning',
-            'dom/chrome/dom/dom.properties:UseOfDOM3LoadMethodWarning',
-            'dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning',
-            'dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning',
-            'dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2',
-            'dom/chrome/plugins.properties:cdm_description2',
-            'dom/chrome/plugins.properties:openH264_description2',
-            'dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent',
-            'dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe',
-            'dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage',
-            'mobile/overrides/netError.dtd:malformedURI.longDesc2',
-            'toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description',
-        ]
-
-        exceptions_xml = [
-            'toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported',
-            'toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description',
-            'toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description',
-        ]
-
-        # Some keys need to be defined
-        mandatory_keys = [
-            "toolkit/defines.inc:MOZ_LANG_TITLE",
-            "toolkit/chrome/global/intl.properties:intl.accept_languages",
-            "toolkit/chrome/global/intl.properties:font.language.group",
-            "toolkit/chrome/global/intl.properties:pluralRule",
-        ]
+        # Load TMX exclusions
+        exclusions = {}
+        exclusions_file = os.path.join(
+            self.root_folder, 'exceptions', 'exclusions_tmx.json')
+        with open(exclusions_file) as f:
+            exclusions = json.load(f)
 
         # Read source data (en-US)
         ref_tmx_path = os.path.join(self.tmx_path, 'en-US',
@@ -627,8 +560,23 @@ class QualityCheck():
             if 'region.properties' in id:
                 continue
 
-            if not id.startswith(excluded_folders):
+            if not id.startswith(self.excluded_products):
                 reference_ids.append(id)
+
+        # Verify if there are non existing strings in the exclusions file,
+        # report as error if there are
+        for key, ids in exclusions.items():
+            if key == 'locales':
+                for locale, locale_ids in ids.items():
+                    for locale_id in locale_ids:
+                        if locale_id not in reference_data:
+                            self.general_errors.append(
+                                'Non existing strings in exclusions_tmx.json ({}): {}'.format(key, locale_id))
+            else:
+                for id in ids:
+                    if id not in reference_data:
+                        self.general_errors.append(
+                            'Non existing strings in exclusions_tmx.json ({}): {}'.format(key, id))
 
         '''
         Store specific English strings for addictional FTL checks:
@@ -646,7 +594,7 @@ class QualityCheck():
                 continue
 
             # Ignore strings from other products
-            if file_id.startswith(excluded_folders):
+            if file_id.startswith(self.excluded_products):
                 continue
 
             ftl_ids.append(id)
@@ -675,7 +623,7 @@ class QualityCheck():
                 locale_data = json.load(f)
 
             # Check for untranslated mandatory keys
-            for string_id in mandatory_keys:
+            for string_id in exclusions['mandatory']:
                 if string_id not in locale_data:
                     error_msg = 'Missing translation for mandatory key ({})'.format(string_id)
                     self.error_messages[locale].append(error_msg)
@@ -686,16 +634,16 @@ class QualityCheck():
                 if string_id not in locale_data:
                     continue
 
-                # Ignore exceptions
-                if string_id in strings_to_ignore:
+                # Ignore excluded strings
+                if string_id in exclusions['ignore']:
                     continue
-                if locale in locale_exceptions and string_id in locale_exceptions[locale]:
+                if locale in exclusions['locales'] and string_id in exclusions['locales'][locale]:
                     continue
 
                 translation = locale_data[string_id]
 
                 # Check for links in strings
-                if string_id not in exceptions_http:
+                if string_id not in exclusions['http']:
                     pattern = re.compile('http(s)*:\/\/', re.UNICODE)
                     if pattern.search(translation):
                         error_msg = 'Link in string ({})'.format(string_id)
@@ -707,10 +655,10 @@ class QualityCheck():
                 if string_id not in locale_data:
                     continue
 
-                # Ignore exceptions
-                if string_id in strings_to_ignore:
+                # Ignore excluded strings
+                if string_id in exclusions['ignore']:
                     continue
-                if locale in locale_exceptions and string_id in locale_exceptions[locale]:
+                if locale in exclusions['locales'] and string_id in exclusions['locales'][locale]:
                     continue
 
                 translation = locale_data[string_id]
@@ -724,7 +672,7 @@ class QualityCheck():
                 # Check for DTD variables, e.g. '&something;'
                 pattern = re.compile('&.*;', re.UNICODE)
                 if pattern.search(translation):
-                    if string_id in exceptions_xml:
+                    if string_id in exclusions['xml']:
                         continue
                     error_msg = 'XML entity in Fluent string ({})'.format(
                         string_id)
