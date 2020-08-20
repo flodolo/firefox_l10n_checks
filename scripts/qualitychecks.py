@@ -16,52 +16,6 @@ import sys
 
 class QualityCheck():
 
-    # Number of plural forms for each rule
-    # Reference:
-    # https://searchfox.org/mozilla-central/source/intl/locale/PluralForm.jsm
-    plural_rules = [
-        # 0: Chinese
-        1,
-        # 1: English
-        2,
-        # 2: French
-        2,
-        # 3: Latvian
-        3,
-        # 4: Scottish Gaelic
-        4,
-        # 5: Romanian
-        3,
-        # 6: Lithuanian
-        3,
-        # 7: Russian
-        3,
-        # 8: Slovak
-        3,
-        # 9: Polish
-        3,
-        # 10: Slovenian
-        4,
-        # 11: Irish Gaeilge
-        5,
-        # 12: Arabic
-        6,
-        # 13: Maltese
-        4,
-        # 14: Unused
-        3,
-        # 15: Icelandic, Macedonian
-        2,
-        # 16: Breton
-        5,
-        # 17: Shuar
-        2,
-        # 18: Welsh
-        6,
-        # 19: Slavic
-        3,
-    ]
-
     json_files = [
         'boolean_values',
         'browser_installer_nsistr',
@@ -289,6 +243,9 @@ class QualityCheck():
 
     def getPluralForms(self):
         ''' Get the number of plural forms for each locale '''
+
+        from compare_locales.plurals import get_plural
+
         url = '{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule'.format(
             self.api_url)
         if self.verbose:
@@ -299,7 +256,17 @@ class QualityCheck():
             sys.exit('CRITICAL ERROR: List of plural forms not available')
 
         for locale, rule_number in locales_plural_rules.items():
-            self.plural_forms[locale] = self.plural_rules[int(rule_number)]
+            num_plurals = get_plural(locale)
+            if num_plurals == None:
+                # Temporary fix for szl
+                if locale == 'szl':
+                    num_plurals = 3
+                else:
+                    # Fall back to English
+                    num_plurals = 2
+            else:
+                num_plurals = len(get_plural(locale))
+            self.plural_forms[locale] = num_plurals
 
     def getLocales(self):
         ''' Get the list of supported locales '''
