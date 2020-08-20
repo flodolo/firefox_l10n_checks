@@ -18,12 +18,13 @@ import sys
 class QualityCheck():
 
     excluded_products = (
-        'calendar/',
-        'chat/',
-        'editor/',
-        'extensions/',
-        'mail/',
-        'suite/',
+        'calendar',
+        'chat',
+        'editor',
+        'extensions',
+        'mail',
+        'other-licenses',
+        'suite'
     )
 
     def __init__(self, root_folder, tmx_path, l10nrepos_path, toml_path,
@@ -558,16 +559,6 @@ class QualityCheck():
             ],
         }
 
-        excluded_folders = (
-            'calendar',
-            'chat',
-            'editor',
-            'extensions',
-            'mail',
-            'other-licenses',
-            'suite'
-        )
-
         exceptions_http = [
             'browser/browser/aboutLogins.ftl:login-item-origin.placeholder',
             'browser/chrome/browser/browser.properties:certImminentDistrust.message',
@@ -627,7 +618,7 @@ class QualityCheck():
             if 'region.properties' in id:
                 continue
 
-            if not id.startswith(excluded_folders):
+            if not id.startswith(self.excluded_products):
                 reference_ids.append(id)
 
         '''
@@ -646,7 +637,7 @@ class QualityCheck():
                 continue
 
             # Ignore strings from other products
-            if file_id.startswith(excluded_folders):
+            if file_id.startswith(self.excluded_products):
                 continue
 
             ftl_ids.append(id)
