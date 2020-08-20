@@ -1,7 +1,8 @@
-config/config.ini
+.running
+.vscode
 checks.json
+config/config.ini
 errors.json
 php.ini
 previous_errors.dump
 python-venv
-.running
