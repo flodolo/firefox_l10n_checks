@@ -29,7 +29,7 @@ foreach ($error_log as $day => $day_info) {
             if (strpos($error, 'compare-locales') !== false) {
                 $html_detail_body .= "<li>{$error}</li>\n";
             } else {
-                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</a></li>\n";
             }
         }
         $html_detail_body .= "</ul>\n";
@@ -41,7 +41,7 @@ foreach ($error_log as $day => $day_info) {
             if (strpos($error, 'compare-locales') !== false) {
                 $html_detail_body .= "<li>{$error}</li>\n";
             } else {
-                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</li>\n";
+                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</a></li>\n";
             }
         }
         $html_detail_body .= "</ul>\n";
@@ -68,23 +68,7 @@ foreach ($errors_list['summary'] as $check_name => $check_value) {
     <meta charset=utf-8>
     <title>Firefox Error Checks</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <style type="text/css">
-        body {
-            font-size: 13px;
-        }
-
-        .container {
-            margin-top: 20px;
-        }
-
-        .new_errors {
-            color: red;
-        }
-
-        .fixed_errors {
-            color: green;
-        }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
     <div class="container">

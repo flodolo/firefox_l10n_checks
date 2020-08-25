@@ -1,0 +1,16 @@
+body {
+    font-size: 13px;
+    background: #eee;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.new_errors {
+    color: red;
+}
+
+.fixed_errors {
+    color: green;
+}
