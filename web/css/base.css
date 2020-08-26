@@ -1,5 +1,4 @@
 body {
-    font-size: 14px;
     background: #1e1f20;
     color: #d2d3d4;
 }
@@ -18,12 +17,16 @@ a {
 
 .table-bordered td,
 .table-bordered th {
-    border-color: c8c9ca;
+    border-color: #c8c9ca;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(46, 45, 45, 0.7);
 }
 
 th {
-    background: #28292a;
-    color: #aaabac;
+    background: #4b4e52;
+    color: #dee1e4;
 }
 
 .new_errors {
