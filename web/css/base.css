@@ -1,16 +1,35 @@
 body {
-    font-size: 13px;
-    background: #eee;
+    font-size: 14px;
+    background: #1e1f20;
+    color: #d2d3d4;
 }
 
 .container {
     margin-top: 20px;
 }
 
+a {
+    color: #1897db;
+}
+
+.table {
+    color: #d2d3d4;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border-color: c8c9ca;
+}
+
+th {
+    background: #28292a;
+    color: #aaabac;
+}
+
 .new_errors {
-    color: red;
+    color: #ea3c3d;
 }
 
 .fixed_errors {
-    color: green;
+    color: #2aba27;
 }
