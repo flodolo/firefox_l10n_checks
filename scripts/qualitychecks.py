@@ -679,12 +679,13 @@ class QualityCheck():
                     self.error_messages[locale].append(error_msg)
 
                 # Check for properties variables '%S' or '%1$S'
-                pattern = re.compile(
-                    '(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))', re.UNICODE)
-                if pattern.search(translation):
-                    error_msg = 'printf variables in Fluent string ({})'.format(
-                        string_id)
-                    self.error_messages[locale].append(error_msg)
+                if string_id not in exclusions['printf']:
+                    pattern = re.compile(
+                        '(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))', re.UNICODE)
+                    if pattern.search(translation):
+                        error_msg = 'printf variables in Fluent string ({})'.format(
+                            string_id)
+                        self.error_messages[locale].append(error_msg)
 
                 # Check for the message ID repeated in the translation
                 message_id = string_id.split(':')[1]

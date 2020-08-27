@@ -11,6 +11,14 @@
 		"value": "https://www.example.com"
 	},
 	{
+		"file": "browser/browser/preferences/addEngine.ftl",
+		"entity": "add-engine-url",
+		"type": "include",
+		"checks": [
+			"%s"
+		]
+	},
+	{
 		"file": "toolkit/defines.inc",
 		"entity": "MOZ_LANG_TITLE",
 		"type": "not_include",

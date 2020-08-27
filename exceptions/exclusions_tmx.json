@@ -43,6 +43,9 @@
         "mobile/overrides/netError.dtd:malformedURI.longDesc2",
         "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
     ],
+    "printf": [
+        "browser/browser/preferences/addEngine.ftl:add-engine-url"
+    ],
     "xml": [
         "toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported",
         "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description",
