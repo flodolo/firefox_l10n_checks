@@ -21,6 +21,8 @@ it: devtools/client/sourceeditor.properties:indentLess.commandkey
 it: devtools/client/sourceeditor.properties:indentMore.commandkey
 it: devtools/client/toolbox.properties:toolbox.nextTool.key
 it: devtools/client/toolbox.properties:toolbox.previousTool.key
+ja-JP-mac: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
+ja: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 lij: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 lt: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 lt: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
