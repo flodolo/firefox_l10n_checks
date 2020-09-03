@@ -23,6 +23,7 @@ ff: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 fi: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
 fi: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 fr: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
+fy-NL: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 fy-NL: devtools/client/performance.dtd:performanceUI.console.recordingNoticeEnd
 fy-NL: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 ga-IE: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
