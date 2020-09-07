@@ -14,6 +14,14 @@ foreach ($error_log['errors'] as $error_message) {
     }
     $html_detail_body .= "</tr>\n";
 }
+
+$html_cl_body = '';
+foreach ($error_log['compare-locales'] as $error_message) {
+    $html_cl_body .= "<tr>\n";
+    // Message
+    $html_cl_body .= "\t<td>{$error_message}</td>\n";
+    $html_cl_body .= "</tr>\n";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -34,6 +42,16 @@ foreach ($error_log['errors'] as $error_message) {
             </thead>
         <tbody>
 <?php echo $html_detail_body; ?>
+        </tbody>
+        </table>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>compare-locales output</th>
+                </tr>
+            </thead>
+        <tbody>
+<?php echo $html_cl_body; ?>
         </tbody>
         </table>
     </div>
