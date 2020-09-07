@@ -49,8 +49,8 @@ class QualityCheck():
                     print('Error loading JSON file {}'.format(output_file))
                     print(e)
 
-        self.domain = 'https://transvision.flod.org'
-        self.api_url = '{}/api/v1'.format(self.domain)
+        self.transvision_url = 'https://transvision.flod.org'
+        self.api_url = '{}/api/v1'.format(self.transvision_url)
 
         self.general_errors = []
 
@@ -115,19 +115,20 @@ class QualityCheck():
             new = diff(current, previous)
             if new:
                 changes = True
+                output['new'] += new
                 print('New {} ({}):'.format(type, len(new)))
                 print('\n'.join(new))
-                output['message'].append(
-                    'Total {}: {}'.format(type, len(current)))
 
             fixed = diff(previous, current)
             if fixed:
                 changes = True
+                output['fixed'] += fixed
                 print('Fixed {} ({}):'.format(type, len(fixed)))
                 print('\n'.join(fixed))
-                if not output['message']:
-                    output['message'].append(
-                        'Total {}: {}'.format(type, len(current_errors)))
+
+            if changes:
+                output['message'].append(
+                    'Total {}: {}'.format(type, len(current)))
 
             return changes
 
@@ -152,13 +153,17 @@ class QualityCheck():
         current_errors.sort()
 
         changes = False
+        changes_cl = False
         # Initialize output
         output = {
+            'new': [],
+            'fixed': [],
             'message': [],
         }
         savetofile = self.output_path != ''
 
-        changes = findDifferences('errors', current_errors, previous_errors['errors'], output)
+        changes = findDifferences(
+            'errors', current_errors, previous_errors['errors'], output)
 
         flattened_cl = []
         for locale, warnings in self.output_cl['warnings'].items():
@@ -169,50 +174,18 @@ class QualityCheck():
                 flattened_cl.append(f'{locale} (compare-locales error): {e}')
         flattened_cl.sort()
         previous_cl_output = previous_errors.get('compare-locales', [])
-        changes = findDifferences('compare-locale errors', flattened_cl, previous_cl_output, output)
+        changes_cl = findDifferences(
+            'compare-locale errors', flattened_cl, previous_cl_output, output)
 
-        if 'compare-locales' in self.error_summary:
-            # Create a starting point if the previous run doesn't have
-            # compare-locales data
-            if not 'compare-locales' in previous_errors['summary']:
-                previous_errors['summary']['compare-locales'] = {
-                    'errors': 0,
-                    'warnings': 0
-                }
-
-            if self.error_summary['compare-locales'] != previous_errors['summary']['compare-locales']:
-                changes = True
-                warnings_change = self.error_summary['compare-locales']['warnings'] - \
-                    previous_errors['summary']['compare-locales']['warnings']
-                if warnings_change > 0:
-                    output['message'].append('compare-locales warnings increased: {} ({})'.format(
-                        self.error_summary['compare-locales']['warnings'],
-                        warnings_change
-                    ))
-                elif warnings_change < 0:
-                    output['message'].append('compare-locales warnings decreased: {} ({})'.format(
-                        self.error_summary['compare-locales']['warnings'],
-                        warnings_change
-                    ))
-
-                errors_change = self.error_summary['compare-locales']['errors'] - \
-                    previous_errors['summary']['compare-locales']['errors']
-                if errors_change > 0:
-                    output['message'].append('compare-locales errors increased: {} ({})'.format(
-                        self.error_summary['compare-locales']['errors'],
-                        errors_change
-                    ))
-                elif errors_change < 0:
-                    output['message'].append('compare-locales errors decreased: {} ({})'.format(
-                        self.error_summary['compare-locales']['errors'],
-                        errors_change
-                    ))
-
-        if not changes:
+        if not changes and not changes_cl:
             print('No changes.')
             if savetofile:
                 output['message'].append('No changes ({}).'.format(
                     len(current_errors)))
+
+        for key in ['new', 'fixed']:
+            if not output[key]:
+                del output[key]
 
         if savetofile:
             if output['message']:
@@ -335,8 +308,7 @@ class QualityCheck():
                     open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
-                print(e)
-                sys.exit(1)
+                sys.exit(e)
 
             available_checks = []
             for c in checks:
@@ -370,8 +342,7 @@ class QualityCheck():
                     open(os.path.join(self.root_folder, 'checks', json_file + '.json')))
             except Exception as e:
                 print('Error loading JSON file {}'.format(json_file))
-                print(e)
-                sys.exit(1)
+                sys.exit(e)
 
             for c in checks:
                 try:
@@ -481,7 +452,7 @@ class QualityCheck():
         total_errors = 0
         for locale in self.locales:
             errors, success = self.getJsonData(url.format(
-                self.domain, locale), '{} for {}'.format(checkname, locale))
+                self.transvision_url, locale), '{} for {}'.format(checkname, locale))
 
             if not success:
                 self.general_errors.append(
@@ -519,7 +490,6 @@ class QualityCheck():
                 else:
                     extractCompareLocalesMessages(node_data, cl_output)
 
-
         # Get the available locales
         locales = next(os.walk(self.l10nrepos_path))[1]
         locales.sort()
@@ -550,7 +520,8 @@ class QualityCheck():
 
         '''
         There's no guarantee that a "locale" key is present, it could
-        be "it/browser". I create a mapping between locale code and first key.
+        be "it/browser". Create a mapping between locale code and their
+        first key.
         '''
         details_keys = list(data[0]['details'].keys())
         keys_mapping = {}
@@ -588,8 +559,7 @@ class QualityCheck():
             'warnings': total_warnings
         }
 
-
-    def checkTMX (self):
+    def checkTMX(self):
         '''Check local TMX for issues, mostly on FTL files'''
 
         if self.verbose:
@@ -613,7 +583,7 @@ class QualityCheck():
             reference_data = json.load(f)
 
         # Remove strings from other products and irrelevant files
-        reference_ids =[]
+        reference_ids = []
         for id in reference_data.keys():
             if 'region.properties' in id:
                 continue
@@ -683,7 +653,8 @@ class QualityCheck():
             # Check for untranslated mandatory keys
             for string_id in exclusions['mandatory']:
                 if string_id not in locale_data:
-                    error_msg = 'Missing translation for mandatory key ({})'.format(string_id)
+                    error_msg = 'Missing translation for mandatory key ({})'.format(
+                        string_id)
                     self.error_messages[locale].append(error_msg)
 
             # General checks (all strings)
@@ -747,7 +718,8 @@ class QualityCheck():
 
                 # Check for the message ID repeated in the translation
                 message_id = string_id.split(':')[1]
-                pattern = re.compile(re.escape(message_id) + '\s*=', re.UNICODE)
+                pattern = re.compile(
+                    re.escape(message_id) + '\s*=', re.UNICODE)
                 if pattern.search(translation):
                     error_msg = 'Message ID is repeated in the Fluent string ({})'.format(
                         string_id)
@@ -778,7 +750,6 @@ class QualityCheck():
                         string_id)
                     self.error_messages[locale].append(error_msg)
 
-
             # Check for CSS mismatches
             for string_id, cleaned_source in CSS_strings.items():
                 if string_id not in locale_data:
@@ -788,7 +759,8 @@ class QualityCheck():
                 translation = locale_data[string_id].rstrip(';')
                 matches = css_pattern.findall(translation)
                 # Drop empty elements, ignore period for decimals
-                cleaned_translation = [m for m in matches if m not in ['', '.']]
+                cleaned_translation = [
+                    m for m in matches if m not in ['', '.']]
                 if cleaned_translation != cleaned_source:
                     # Groups are not matching
                     error_msg = 'CSS mismatch in Fluent string ({})'.format(
@@ -851,6 +823,7 @@ def main():
 
     # Remove semaphore file
     os.remove(semaphore)
+
 
 if __name__ == '__main__':
     main()
