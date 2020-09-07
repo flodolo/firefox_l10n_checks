@@ -74,6 +74,10 @@ class QualityCheck():
         # Initialize other error messages
         self.error_messages = OrderedDict()
         self.error_summary = {}
+        self.output_cl = {
+            'errors': {},
+            'warnings': {}
+        }
         for locale in self.locales:
             self.error_messages[locale] = []
 
@@ -106,10 +110,32 @@ class QualityCheck():
             b = set(b)
             return [aa for aa in a if aa not in b]
 
+        def findDifferences(type, current, previous, output):
+            changes = False
+            new = diff(current, previous)
+            if new:
+                changes = True
+                print('New {} ({}):'.format(type, len(new)))
+                print('\n'.join(new))
+                output['message'].append(
+                    'Total {}: {}'.format(type, len(current)))
+
+            fixed = diff(previous, current)
+            if fixed:
+                changes = True
+                print('Fixed {} ({}):'.format(type, len(fixed)))
+                print('\n'.join(fixed))
+                if not output['message']:
+                    output['message'].append(
+                        'Total {}: {}'.format(type, len(current_errors)))
+
+            return changes
+
         # Read the list of errors from a previous run (if available)
         pickle_file = os.path.join(self.root_folder, 'previous_errors.dump')
         previous_errors = {
             'errors': [],
+            'compare-locales': [],
             'summary': {}
         }
         if os.path.exists(pickle_file):
@@ -126,31 +152,24 @@ class QualityCheck():
         current_errors.sort()
 
         changes = False
-        new_errors = diff(current_errors, previous_errors['errors'])
-
         # Initialize output
         output = {
-            'new': [],
-            'fixed':  [],
             'message': [],
         }
-
         savetofile = self.output_path != ''
-        if new_errors:
-            changes = True
-            print('New errors ({}):'.format(len(new_errors)))
-            print('\n'.join(new_errors))
-            output['new'] = new_errors
-            output['message'].append('Total errors: {}'.format(len(current_errors)))
 
-        fixed_errors = diff(previous_errors['errors'], current_errors)
-        if fixed_errors:
-            changes = True
-            print('Fixed errors ({}):'.format(len(fixed_errors)))
-            print('\n'.join(fixed_errors))
-            output['fixed'] = fixed_errors
-            if not output['message']:
-                output['message'].append('Total errors: {}'.format(len(current_errors)))
+        changes = findDifferences('errors', current_errors, previous_errors['errors'], output)
+
+        flattened_cl = []
+        for locale, warnings in self.output_cl['warnings'].items():
+            for w in warnings:
+                flattened_cl.append(f'{locale} (compare-locales warning): {w}')
+        for locale, errors in self.output_cl['errors'].items():
+            for e in errors:
+                flattened_cl.append(f'{locale} (compare-locales error): {e}')
+        flattened_cl.sort()
+        previous_cl_output = previous_errors.get('compare-locales', [])
+        changes = findDifferences('compare-locale errors', flattened_cl, previous_cl_output, output)
 
         if 'compare-locales' in self.error_summary:
             # Create a starting point if the previous run doesn't have
@@ -195,10 +214,6 @@ class QualityCheck():
                 output['message'].append('No changes ({}).'.format(
                     len(current_errors)))
 
-        for key in ['new', 'fixed']:
-            if not output[key]:
-                del output[key]
-
         if savetofile:
             if output['message']:
                 output['message'] = '\n'.join(output['message'])
@@ -209,6 +224,7 @@ class QualityCheck():
             errors_file = os.path.join(self.output_path, 'errors.json')
             output_data = {
                 'errors': current_errors,
+                'compare-locales': flattened_cl,
                 'summary': self.error_summary
             }
             with open(errors_file, 'w') as outfile:
@@ -490,6 +506,20 @@ class QualityCheck():
     def checkRepos(self):
         '''Run compare-locales against repos'''
 
+        def extractCompareLocalesMessages(data, cl_output):
+            '''Traverse JSON results to extract warnings and errors'''
+
+            for node, node_data in data.items():
+                if isinstance(node_data, list):
+                    for l in node_data:
+                        if 'warning' in l:
+                            cl_output['warnings'].append(l['warning'])
+                        if 'error' in l:
+                            cl_output['errors'].append(l['error'])
+                else:
+                    extractCompareLocalesMessages(node_data, cl_output)
+
+
         # Get the available locales
         locales = next(os.walk(self.l10nrepos_path))[1]
         locales.sort()
@@ -517,13 +547,41 @@ class QualityCheck():
 
         total_errors = 0
         total_warnings = 0
+
+        '''
+        There's no guarantee that a "locale" key is present, it could
+        be "it/browser". I create a mapping between locale code and first key.
+        '''
+        details_keys = list(data[0]['details'].keys())
+        keys_mapping = {}
+        for k in details_keys:
+            if os.path.sep in k:
+                keys_mapping[k.split(os.path.sep)[0]] = k
+
         for locale, locale_data in data[0]['summary'].items():
+            if locale_data['errors'] + locale_data['warnings'] == 0:
+                continue
+
+            # Extract all warning and error messages
+            cl_output = {
+                'errors': [],
+                'warnings': []
+            }
+
+            locale_key = keys_mapping.get(locale, locale)
+            extractCompareLocalesMessages(
+                data[0]['details'][locale_key], cl_output)
+
             if locale_data['errors'] > 0:
-                error_msg = 'compare-locales errors'
+                if not locale in self.output_cl['errors']:
+                    self.output_cl['errors'][locale] = []
                 total_errors += locale_data['errors']
-                self.error_messages[locale].append(error_msg)
+                self.output_cl['errors'][locale] = cl_output['errors']
             if locale_data['warnings'] > 0:
+                if not locale in self.output_cl['warnings']:
+                    self.output_cl['warnings'][locale] = []
                 total_warnings += locale_data['warnings']
+                self.output_cl['warnings'][locale] = cl_output['warnings']
 
         self.error_summary['compare-locales'] = {
             'errors': total_errors,
