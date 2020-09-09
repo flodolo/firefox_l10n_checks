@@ -26,11 +26,7 @@ foreach ($error_log as $day => $day_info) {
         $html_detail_body .= '<p class="new_errors">New errors (' . count($day_info['new']) . "):</p>\n";
         $html_detail_body .= "<ul>\n";
         foreach ($day_info['new'] as $error) {
-            if (strpos($error, 'compare-locales') !== false) {
-                $html_detail_body .= "<li>{$error}</li>\n";
-            } else {
-                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</a></li>\n";
-            }
+            $html_detail_body .= '<li>' . $tranvision_link($error) . "</li>\n";
         }
         $html_detail_body .= "</ul>\n";
     }
@@ -38,11 +34,7 @@ foreach ($error_log as $day => $day_info) {
         $html_detail_body .= '<p class="fixed_errors">Fixed errors (' . count($day_info['fixed']) . "):</p>\n";
         $html_detail_body .= "<ul>\n";
         foreach ($day_info['fixed'] as $error) {
-            if (strpos($error, 'compare-locales') !== false) {
-                $html_detail_body .= "<li>{$error}</li>\n";
-            } else {
-                $html_detail_body .= '<li><a href="' . $tranvision_link($error) . "\">{$error}</a></li>\n";
-            }
+            $html_detail_body .= '<li>' . $tranvision_link($error) . "</li>\n";
         }
         $html_detail_body .= "</ul>\n";
     }

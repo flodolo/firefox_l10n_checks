@@ -20,6 +20,20 @@ $tranvision_link = function($msg) {
     // URL
     $url = 'https://transvision.flod.org/?repo=gecko_strings&sourcelocale=en-US&search_type=entities';
 
+    /*
+        compare-locales errors have a fixed structure:
+            LOCALE (compare-locales TYPE): DESCRIPTION for ENTITY
+    */
+    if (strpos($msg, 'compare-locales') !== false) {
+        $locale = explode(' ', $msg)[0];
+        $matches = [];
+        preg_match('/ for (.*)$/', $msg, $matches);
+        $key = $matches[1];
+        $url .= "&locale={$locale}&recherche={$key}";
+
+        return str_replace($key, "<a href=\"{$url}\">{$key}</a>", $msg);
+    }
+
     // Extract the locale code
     $locale = explode(' - ', $msg)[0];
     $url .= "&locale={$locale}";
@@ -35,7 +49,9 @@ $tranvision_link = function($msg) {
             $start = (mb_strpos($msg, $needle));
             $key = mb_substr($msg, $start + strlen($needle), mb_strlen($msg) - 1);
 
-            return $url . "&recherche={$key}";
+            $url .= "&recherche={$key}";
+
+            return str_replace($key, "<a href=\"{$url}\">{$key}</a>", $msg);
         }
     }
 
@@ -45,5 +61,7 @@ $tranvision_link = function($msg) {
         mb_strrpos($msg, '(') + 1,
         mb_strlen($msg) - mb_strrpos($msg, '(') - 2
     );
-    return $url . "&recherche={$key}";
+    $url .= "&recherche={$key}";
+
+    return str_replace($key, "<a href=\"{$url}\">{$key}</a>", $msg);
 };

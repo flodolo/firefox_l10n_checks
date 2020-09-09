@@ -10,7 +10,7 @@ foreach ($error_log['errors'] as $error_message) {
     if (strpos($error_message, 'compare-locales') !== false) {
         $html_detail_body .= "\t<td>{$error_message}</td>\n";
     } else {
-        $html_detail_body .= "\t<td><a href=\"" . $tranvision_link($error_message) . "\">{$error_message}</li>\n</td>\n";
+        $html_detail_body .= "\t<td>" . $tranvision_link($error_message) . "</li>\n</td>\n";
     }
     $html_detail_body .= "</tr>\n";
 }
@@ -19,7 +19,7 @@ $html_cl_body = '';
 foreach ($error_log['compare-locales'] as $error_message) {
     $html_cl_body .= "<tr>\n";
     // Message
-    $html_cl_body .= "\t<td>{$error_message}</td>\n";
+    $html_cl_body .= "\t<td>" . $tranvision_link($error_message) . "</td>\n";
     $html_cl_body .= "</tr>\n";
 }
 ?>
