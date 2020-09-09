@@ -483,10 +483,14 @@ class QualityCheck():
             for node, node_data in data.items():
                 if isinstance(node_data, list):
                     for l in node_data:
+                        # Store the message without line and column, since
+                        # those change frequently.
                         if 'warning' in l:
-                            cl_output['warnings'].append(l['warning'])
+                            msg = re.sub(' at line [\d]+, column [\d]+', '', l['warning'])
+                            cl_output['warnings'].append(msg)
                         if 'error' in l:
-                            cl_output['errors'].append(l['error'])
+                            msg = re.sub(' at line [\d]+, column [\d]+', '', l['error'])
+                            cl_output['errors'].append(msg)
                 else:
                     extractCompareLocalesMessages(node_data, cl_output)
 
