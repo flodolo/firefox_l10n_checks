@@ -61,6 +61,7 @@ foreach ($errors_list['summary'] as $check_name => $check_value) {
     <title>Firefox Error Checks</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="icon" type="image/png" sizes="196x196" href="img/favicon.png">
 </head>
 <body>
     <div class="container">
