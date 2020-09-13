@@ -6,5 +6,8 @@
         "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
         "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
         "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
+    ],
+    "shortcuts": [
+        "picture-in-picture-toggle-shortcut-mac-alt.key"
     ]
 }
