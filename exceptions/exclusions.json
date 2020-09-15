@@ -8,6 +8,6 @@
         "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
     ],
     "shortcuts": [
-        "picture-in-picture-toggle-shortcut-mac-alt.key"
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key"
     ]
 }
