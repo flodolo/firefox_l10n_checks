@@ -37,3 +37,4 @@ scn: devtools/client/toolbox.properties:toolbox.nextTool.key
 scn: devtools/client/toolbox.properties:toolbox.previousTool.key
 sv-SE: devtools/client/sourceeditor.properties:indentLess.commandkey
 sv-SE: devtools/client/sourceeditor.properties:indentMore.commandkey
+uk: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
