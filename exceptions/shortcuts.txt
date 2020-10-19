@@ -6,6 +6,8 @@ ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
+da: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
+da: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
 da: devtools/client/sourceeditor.properties:indentLess.commandkey
 da: devtools/client/sourceeditor.properties:indentMore.commandkey
 da: devtools/client/sourceeditor.properties:toggleComment.commandkey
