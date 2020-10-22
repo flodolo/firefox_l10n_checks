@@ -144,6 +144,7 @@ ja-JP-mac: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja-JP-mac: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
 ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
@@ -173,6 +174,7 @@ ja: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
