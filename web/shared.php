@@ -28,6 +28,9 @@ $tranvision_link = function($msg) {
         $locale = explode(' ', $msg)[0];
         $matches = [];
         preg_match('/ for (.*)$/', $msg, $matches);
+        if (empty($matches)) {
+            return $msg;
+        }
         $key = $matches[1];
         $url .= "&locale={$locale}&recherche={$key}";
 
@@ -48,7 +51,6 @@ $tranvision_link = function($msg) {
         if (mb_strpos($msg, $needle) !== false) {
             $start = (mb_strpos($msg, $needle));
             $key = mb_substr($msg, $start + strlen($needle), mb_strlen($msg) - 1);
-
             $url .= "&recherche={$key}";
 
             return str_replace($key, "<a href=\"{$url}\">{$key}</a>", $msg);

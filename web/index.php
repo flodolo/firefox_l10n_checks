@@ -43,6 +43,7 @@ foreach ($error_log as $day => $day_info) {
 }
 
 // Summary table
+$html_summary_body = '';
 foreach ($errors_list['summary'] as $check_name => $check_value) {
     $html_summary_body .= "<tr>\n";
     if ($check_name == 'compare-locales') {
