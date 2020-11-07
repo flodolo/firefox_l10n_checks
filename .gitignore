@@ -1,3 +1,4 @@
+.php_cs.cache
 .running
 .vscode
 checks.json
@@ -6,3 +7,4 @@ errors.json
 php.ini
 previous_errors.dump
 python-venv
+vendor
