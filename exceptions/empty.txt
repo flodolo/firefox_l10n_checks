@@ -4,6 +4,7 @@ ar: toolkit/crashreporter/crashreporter.ini:isRTL
 az: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 be: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 bo: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
+ckb: toolkit/crashreporter/crashreporter.ini:isRTL
 cs: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
 de: browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey
 de: browser/browser/sanitize.ftl:clear-time-duration-prefix.value
