@@ -1,0 +1,65 @@
+[
+	{
+		"file": "toolkit/toolkit/about/aboutAddons.ftl",
+		"entity": "five-star-rating.title",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$rating,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-cpu-user-and-kernel",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-cpu-user-and-kernel",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-cpu-user-and-kernel-idle",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-total-memory-size",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-total-memory-size",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    },
+	{
+		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
+		"entity": "about-processes-total-memory-size-no-change",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+		]
+    }
+]

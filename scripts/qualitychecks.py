@@ -204,9 +204,9 @@ class QualityCheck():
                 json.dump(output_data, outfile,
                           sort_keys=True, indent=2)
 
-        # Write back the current list of errors
-        with open(pickle_file, 'wb') as f:
-            pickle.dump(output_data, f)
+            # Write back the current list of errors
+            with open(pickle_file, 'wb') as f:
+                pickle.dump(output_data, f)
 
     def getJsonData(self, url, search_id):
         '''
@@ -314,7 +314,7 @@ class QualityCheck():
             for c in checks:
                 id = '{}-{}-{}'.format(c['file'], c['entity'], c['type'])
                 if id in available_checks:
-                    print('ERROR: check {} is duplicated'.format(id))
+                    print('WARNING: check {} is duplicated'.format(id))
                     continue
                 available_checks.append(id)
 
