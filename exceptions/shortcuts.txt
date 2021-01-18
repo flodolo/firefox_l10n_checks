@@ -1,11 +1,11 @@
 ca-valencia: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 ca-valencia: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
+ca-valencia: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
 ca-valencia: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
 ca: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
-ca-valencia: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
 cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 cs: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 da: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
@@ -22,6 +22,8 @@ de: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 de: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
 fi: browser/browser/browserSets.ftl:nav-back-shortcut-alt.key
 fi: browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key
+it: browser/browser/browserSets.ftl:nav-back-shortcut-alt.key
+it: browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
 it: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
