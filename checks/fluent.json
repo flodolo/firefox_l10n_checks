@@ -14,15 +14,7 @@
 		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
-			"NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-cpu-user-and-kernel",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
+			"NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)",
 			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
 		]
     },
@@ -41,15 +33,7 @@
 		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
-			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-total-memory-size",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
+			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)",
 			"NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)"
 		]
     },

@@ -800,7 +800,7 @@ def main():
                 if key != 'toml_path':
                     value = os.path.join(value, '')
             except:
-                print('{key} not found in config.ini')
+                sys.exit(f'{key} not found in config.ini')
             if not os.path.exists(value):
                 print(f'Path in {key} is not valid: {value}')
                 value = ''
