@@ -1,5 +1,14 @@
 [
 	{
+		"file": "devtools/client/perftools.ftl",
+		"entity": "perftools-range-interval-milliseconds",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$interval,\\s*maxFractionalUnits:\\s*\\d\\)"
+		]
+    },
+	{
 		"file": "toolkit/toolkit/about/aboutAddons.ftl",
 		"entity": "five-star-rating.title",
 		"excluded_locales": [],

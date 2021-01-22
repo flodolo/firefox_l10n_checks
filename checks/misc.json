@@ -19,6 +19,24 @@
 		]
 	},
 	{
+		"file": "browser/browser/appmenu.ftl",
+		"entity": "profiler-popup-start-shortcut",
+		"type": "include",
+		"checks": [
+			"⌃⇧1",
+			"Ctrl+Shift+1"
+		]
+	},
+	{
+		"file": "browser/browser/appmenu.ftl",
+		"entity": "profiler-popup-capture-shortcut",
+		"type": "include",
+		"checks": [
+			"⌃⇧2",
+			"Ctrl+Shift+2"
+		]
+	},
+	{
 		"file": "toolkit/defines.inc",
 		"entity": "MOZ_LANG_TITLE",
 		"type": "not_include",
