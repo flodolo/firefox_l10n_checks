@@ -54,5 +54,32 @@
 		"checks": [
 			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
 		]
-    }
+	},
+	{
+		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+		"entity": "about-webrtc-sdp-set-at-timestamp-local",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$timestamp,\\s*useGrouping:\"false\")"
+		]
+	},
+	{
+		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+		"entity": "about-webrtc-sdp-set-at-timestamp-remote",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$timestamp,\\s*useGrouping:\"false\")"
+		]
+	},
+	{
+		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+		"entity": "about-webrtc-sdp-set-timestamp",
+		"excluded_locales": [],
+		"type": "include_regex",
+		"checks": [
+			"NUMBER\\(\\$timestamp,\\s*useGrouping:\"false\")"
+		]
+	}
 ]
