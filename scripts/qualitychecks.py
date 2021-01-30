@@ -54,16 +54,16 @@ class QualityCheck:
                 try:
                     self.archive_data = json.load(open(output_file))
                 except Exception as e:
-                    print("Error loading JSON file {}".format(output_file))
+                    print(f"Error loading JSON file {output_file}")
                     print(e)
 
         self.transvision_url = "https://transvision.flod.org"
-        self.api_url = "{}/api/v1".format(self.transvision_url)
+        self.api_url = f"{self.transvision_url}/api/v1"
 
         self.general_errors = []
 
         self.date_key = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-        print("\n--------\nRun: {}\n".format(self.date_key))
+        print(f"\n--------\nRun: {self.date_key}\n")
 
         # Create a list of available checks in JSON format
         self.json_files = []
@@ -120,18 +120,18 @@ class QualityCheck:
             if new:
                 changes = True
                 output["new"] += new
-                print("New {} ({}):".format(type, len(new)))
+                print(f"New {type} ({len(new)}):")
                 print("\n".join(new))
 
             fixed = diff(previous, current)
             if fixed:
                 changes = True
                 output["fixed"] += fixed
-                print("Fixed {} ({}):".format(type, len(fixed)))
+                print(f"Fixed {type} ({len(fixed)}):")
                 print("\n".join(fixed))
 
             if changes:
-                output["message"].append("Total {}: {}".format(type, len(current)))
+                output["message"].append(f"Total {type}: {len(current)}")
 
             return changes
 
@@ -148,7 +148,7 @@ class QualityCheck:
         current_errors = []
         for locale, errors in self.error_messages.items():
             for e in errors:
-                current_errors.append("{} - {}".format(locale, e))
+                current_errors.append(f"{locale} - {e}")
         current_errors.sort()
 
         changes = False
@@ -181,7 +181,7 @@ class QualityCheck:
         if not changes and not changes_cl:
             print("No changes.")
             if savetofile:
-                output["message"].append("No changes ({}).".format(len(current_errors)))
+                output["message"].append(f"No changes ({len(current_errors)}).")
 
         for key in ["new", "fixed"]:
             if not output[key]:
@@ -219,10 +219,10 @@ class QualityCheck:
                 json_data = json.load(response)
                 return (json_data, True)
             except:
-                # print('Error reading URL: {}'.format(url))
+                # print(f"Error reading URL: {url}")
                 continue
 
-        self.general_errors.append("Error reading {}".format(search_id))
+        self.general_errors.append(f"Error reading {search_id}")
         return ([], False)
 
     def getPluralForms(self):
@@ -230,9 +230,7 @@ class QualityCheck:
 
         from compare_locales.plurals import get_plural
 
-        url = "{}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule".format(
-            self.api_url
-        )
+        url = f"{self.api_url}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule"
         if self.verbose:
             print("Reading the list of plural forms")
         locales_plural_rules, success = self.getJsonData(url, "list of plural forms")
@@ -256,7 +254,7 @@ class QualityCheck:
         """ Get the list of supported locales """
         if self.verbose:
             print("Reading the list of supported locales")
-        url = "{}/locales/gecko_strings/".format(self.api_url)
+        url = f"{self.api_url}/locales/gecko_strings/"
         self.locales, success = self.getJsonData(url, "list of supported locales")
         # Remove en-US from locales
         self.locales.remove("en-US")
@@ -270,36 +268,30 @@ class QualityCheck:
         for locale, errors in self.error_messages.items():
             if errors:
                 num_errors = len(errors)
-                print("\n----\nLocale: {} ({})".format(locale, num_errors))
+                print(f"\n----\nLocale: {locale} ({num_errors})")
                 locales_with_errors[locale] = num_errors
                 error_count += num_errors
                 for e in errors:
-                    print("- {}".format(e))
+                    print(f"- {e}")
         if error_count:
-            print("\n----\nTotal errors: {}".format(error_count))
+            print(f"\n----\nTotal errors: {error_count}")
         else:
             print("\n----\nNo errors")
 
         if locales_with_errors:
-            print(
-                "\n----\nLocales with errors ({} locales):".format(
-                    len(locales_with_errors)
-                )
-            )
+            print(f"\n----\nLocales with errors ({len(locales_with_errors)} locales):")
             for locale, num in locales_with_errors.items():
-                print("- {} ({})".format(locale, num))
+                print(f"- {locale} ({num})")
 
         # Error summary
         if self.error_summary:
             print("\n----\nErrors summary by type:")
             for check, count in self.error_summary.items():
-                print("- {}: {}".format(check, count))
+                print(f"- {check}: {count}")
 
         # General error (e.g. invalid API calls)
         if self.general_errors:
-            print(
-                "\n----\nGeneral errors ({} errors):".format(len(self.general_errors))
-            )
+            print(f"\n----\nGeneral errors ({len(self.general_errors)} errors):")
             self.general_errors.sort()
             print("\n".join(self.general_errors))
 
@@ -311,14 +303,14 @@ class QualityCheck:
                     open(os.path.join(self.root_folder, "checks", json_file + ".json"))
                 )
             except Exception as e:
-                print("Error loading JSON file {}".format(json_file))
+                print(f"Error loading JSON file {json_file}")
                 sys.exit(e)
 
             available_checks = []
             for c in checks:
-                id = "{}-{}-{}".format(c["file"], c["entity"], c["type"])
+                id = f"{c['file']}-{c['entity']}-{c['type']}"
                 if id in available_checks:
-                    print("WARNING: check {} is duplicated".format(id))
+                    print(f"WARNING: check {id} is duplicated")
                     continue
                 available_checks.append(id)
 
@@ -328,12 +320,10 @@ class QualityCheck:
         if self.requested_check != "all":
             if self.requested_check not in self.json_files:
                 print(
-                    "ERROR: The requested check ({}) does not exist. Available checks:".format(
-                        self.requested_check
-                    )
+                    f"ERROR: The requested check ({self.requested_check}) does not exist. Available checks:"
                 )
                 for f in self.json_files:
-                    print("- {}".format(f))
+                    print(f"- {f}")
                 sys.exit(1)
             else:
                 self.json_files = [self.requested_check]
@@ -343,26 +333,26 @@ class QualityCheck:
         for json_file in self.json_files:
             total_errors = 0
             if self.verbose:
-                print("CHECK: {}".format(json_file))
+                print(f"CHECK: {json_file}")
             try:
                 checks = json.load(
                     open(os.path.join(self.root_folder, "checks", json_file + ".json"))
                 )
             except Exception as e:
-                print("Error loading JSON file {}".format(json_file))
+                print(f"Error loading JSON file {json_file}")
                 sys.exit(e)
 
             for c in checks:
                 try:
-                    # print('Checking {}'.format(c['entity']))
+                    # print(f"Checking {c['entity']}")
                     json_data, success = self.getJsonData(
                         url.format(self.api_url, c["file"], c["entity"]),
-                        "{}:{}".format(c["file"], c["entity"]),
+                        f"{c['file']}:{c['entity']}",
                     )
 
                     if not success:
                         self.general_errors.append(
-                            "Error checking {}:{}".format(c["file"], c["entity"])
+                            f"Error checking {c['file']}:{c['entity']}"
                         )
                         continue
 
@@ -458,7 +448,7 @@ class QualityCheck:
         # Load individual locale exceptions
         exceptions = []
         exceptions_file = os.path.join(
-            self.root_folder, "exceptions", "{}.txt".format(checkname)
+            self.root_folder, "exceptions", f"{checkname}.txt"
         )
         with open(exceptions_file) as f:
             for l in f:
@@ -478,12 +468,12 @@ class QualityCheck:
         for locale in self.locales:
             errors, success = self.getJsonData(
                 url.format(self.transvision_url, locale),
-                "{} for {}".format(checkname, locale),
+                f"{checkname} for {locale}",
             )
 
             if not success:
                 self.general_errors.append(
-                    "Error checking *{}* for locale {}".format(checkname, locale)
+                    f"Error checking *{checkname}* for locale {locale}"
                 )
                 continue
 
@@ -492,7 +482,7 @@ class QualityCheck:
                     continue
                 if error in exclusions:
                     continue
-                error_msg = "{}: {}".format(locale, error)
+                error_msg = f"{locale}: {error}"
                 if error_msg in exceptions:
                     continue
                 error_msg = error_msg.replace(locale, checkname, 1)
@@ -627,17 +617,13 @@ class QualityCheck:
                     for locale_id in locale_ids:
                         if locale_id not in reference_data:
                             self.general_errors.append(
-                                "Non existing strings in exclusions_tmx.json ({}): {}".format(
-                                    key, locale_id
-                                )
+                                f"Non existing strings in exclusions_tmx.json ({key}): {locale_id}"
                             )
             else:
                 for id in ids:
                     if id not in reference_data:
                         self.general_errors.append(
-                            "Non existing strings in exclusions_tmx.json ({}): {}".format(
-                                key, id
-                            )
+                            f"Non existing strings in exclusions_tmx.json ({key}): {locale_id}"
                         )
 
         """
@@ -679,7 +665,7 @@ class QualityCheck:
 
         for locale in self.locales:
             tmx_path = os.path.join(
-                self.tmx_path, locale, "cache_{}_gecko_strings.json".format(locale)
+                self.tmx_path, locale, f"cache_{locale}_gecko_strings.json"
             )
             with open(tmx_path) as f:
                 locale_data = json.load(f)
@@ -687,9 +673,7 @@ class QualityCheck:
             # Check for untranslated mandatory keys
             for string_id in exclusions["mandatory"]:
                 if string_id not in locale_data:
-                    error_msg = "Missing translation for mandatory key ({})".format(
-                        string_id
-                    )
+                    error_msg = f"Missing translation for mandatory key ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
             # General checks (all strings)
@@ -713,7 +697,7 @@ class QualityCheck:
                 if string_id not in exclusions["http"]:
                     pattern = re.compile("http(s)*:\/\/", re.UNICODE)
                     if pattern.search(translation):
-                        error_msg = "Link in string ({})".format(string_id)
+                        error_msg = f"Link in string ({string_id})"
                         self.error_messages[locale].append(error_msg)
 
             # FTL checks
@@ -735,7 +719,7 @@ class QualityCheck:
 
                 # Check for stray spaces
                 if '{ "' in translation:
-                    error_msg = "Fluent literal in string ({})".format(string_id)
+                    error_msg = f"Fluent literal in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
                 # Check for DTD variables, e.g. '&something;'
@@ -743,7 +727,7 @@ class QualityCheck:
                 if pattern.search(translation):
                     if string_id in exclusions["xml"]:
                         continue
-                    error_msg = "XML entity in Fluent string ({})".format(string_id)
+                    error_msg = f"XML entity in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
                 # Check for properties variables '%S' or '%1$S'
@@ -752,9 +736,7 @@ class QualityCheck:
                         "(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
                     )
                     if pattern.search(translation):
-                        error_msg = "printf variables in Fluent string ({})".format(
-                            string_id
-                        )
+                        error_msg = f"printf variables in Fluent string ({string_id})"
                         self.error_messages[locale].append(error_msg)
 
                 # Check for the message ID repeated in the translation
@@ -762,9 +744,7 @@ class QualityCheck:
                 pattern = re.compile(re.escape(message_id) + "\s*=", re.UNICODE)
                 if pattern.search(translation):
                     error_msg = (
-                        "Message ID is repeated in the Fluent string ({})".format(
-                            string_id
-                        )
+                        f"Message ID is repeated in the Fluent string ({string_id})"
                     )
                     self.error_messages[locale].append(error_msg)
 
@@ -785,16 +765,12 @@ class QualityCheck:
                     if translated_groups != groups:
                         # Groups are not matching
                         error_msg = (
-                            "data-l10n-name mismatch in Fluent string ({})".format(
-                                string_id
-                            )
+                            f"data-l10n-name mismatch in Fluent string ({string_id})"
                         )
                         self.error_messages[locale].append(error_msg)
                 else:
                     # There are no data-l10n-name
-                    error_msg = "data-l10n-name missing in Fluent string ({})".format(
-                        string_id
-                    )
+                    error_msg = f"data-l10n-name missing in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
             # Check for CSS mismatches
@@ -809,7 +785,7 @@ class QualityCheck:
                 cleaned_translation = [m for m in matches if m not in ["", "."]]
                 if cleaned_translation != cleaned_source:
                     # Groups are not matching
-                    error_msg = "CSS mismatch in Fluent string ({})".format(string_id)
+                    error_msg = f"CSS mismatch in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
 
