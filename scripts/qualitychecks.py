@@ -366,51 +366,42 @@ class QualityCheck():
                         if 'included_locales' in c and locale not in c['included_locales']:
                             continue
 
-                        error_msg = ''
+                        error_msg = []
                         if c['type'] == 'include_regex':
                             for t in c['checks']:
                                 pattern = re.compile(t, re.UNICODE)
                                 if not pattern.search(translation):
-                                    error_msg = u'Missing {} ({}:{})'.format(
-                                        t, c['file'], c['entity'])
+                                    error_msg.append(f"Missing {t} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'include':
                             for t in c['checks']:
                                 if t not in translation:
-                                    error_msg = u'Missing {} ({}:{})'.format(
-                                        t, c['file'], c['entity'])
+                                    error_msg.append(f"Missing {t} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'not_include':
                             for t in c['checks']:
                                 if t in translation:
-                                    error_msg = u'Not expected text {} ({}:{})'.format(
-                                        t, c['file'], c['entity'])
+                                    error_msg.append(f"Not expected text {t} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'equal_to':
                             if c['value'].lower() != translation.lower():
-                                error_msg = u'{} is not equal to {} ({}:{})'.format(
-                                    translation, c['value'], c['file'], c['entity'])
+                                error_msg.append(f"{translation} is not equal to {c['value']} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'not_equal_to':
                             if c['value'] == translation:
-                                error_msg = u'{} is equal to {} ({}:{})'.format(
-                                    translation, c['value'], c['file'], c['entity'])
+                                error_msg.append(f"{translation} is equal to {c['value']} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'acceptable_values':
                             if translation not in c['values']:
-                                error_msg = u'{} is not an acceptable value ({}:{})'.format(
-                                    translation, c['file'], c['entity'])
+                                error_msg.append(f"{translation} is not an acceptable value ({c['file']}:{c['entity']})")
                         elif c['type'] == 'typeof':
                             if type(translation) != c['value']:
-                                error_msg = u'{} is not of type {} ({}:{})'.format(
-                                    translation, c['type'], c['file'], c['entity'])
+                                error_msg.append(f"{translation} is not of type {c['type']} ({c['file']}:{c['entity']})")
                         elif c['type'] == 'bytes_length':
                             current_length = len(translation.encode('utf-8'))
                             if current_length > c['value']:
-                                error_msg = u'String longer than {} bytes. Current length: {} bytes. Current text: {}. ({}:{})'.format(
-                                    c['value'], current_length, translation, c['file'], c['entity'])
+                                error_msg.append(f"String longer than {c['value']} bytes. Current length: {current_length} bytes. Current text: {translation}. ({c['file']}:{c['entity']})")
                         elif c['type'] == 'plural_forms':
                             num_forms = len(translation.split(';'))
                             if num_forms != self.plural_forms[locale]:
-                                error_msg = u'String has {} plural forms, requested: {} ({}:{})'.format(
-                                    num_forms, self.plural_forms[locale], c['file'], c['entity'])
+                                error_msg.append(f"String has {num_forms} plural forms, requested: {self.plural_forms[locale]} ({c['file']}:{c['entity']})")
                         if error_msg:
-                            self.error_messages[locale].append(error_msg)
+                            self.error_messages[locale] += error_msg
                             total_errors += 1
                 except Exception as e:
                     print(e)
