@@ -86,8 +86,6 @@
 		"file": "browser/browser/newtab/asrouter.ftl",
 		"entity": "cfr-whatsnew-tracking-blocked-subtitle",
 		"excluded_locales": [
-			"ja",
-			"ja-JP-mac",
 			"pl"
 		],
 		"type": "include_regex",
@@ -107,10 +105,7 @@
 	{
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "about-logins-breach-alert-date",
-		"excluded_locales": [
-			"ja",
-			"ja-JP-mac"
-		],
+		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
 			"DATETIME\\(\\$date,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
@@ -119,10 +114,7 @@
 	{
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "login-item-time-changed",
-		"excluded_locales": [
-			"ja",
-			"ja-JP-mac"
-		],
+		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
 			"DATETIME\\(\\$timeChanged,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
@@ -131,10 +123,7 @@
 	{
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "login-item-time-created",
-		"excluded_locales": [
-			"ja",
-			"ja-JP-mac"
-		],
+		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
 			"DATETIME\\(\\$timeCreated,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
@@ -143,10 +132,7 @@
 	{
 		"file": "browser/browser/aboutLogins.ftl",
 		"entity": "login-item-time-used",
-		"excluded_locales": [
-			"ja",
-			"ja-JP-mac"
-		],
+		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
 			"DATETIME\\(\\$timeUsed,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
@@ -155,10 +141,7 @@
 	{
 		"file": "browser/browser/protections.ftl",
 		"entity": "graph-total-tracker-summary",
-		"excluded_locales": [
-			"ja",
-			"ja-JP-mac"
-		],
+		"excluded_locales": [],
 		"type": "include_regex",
 		"checks": [
 			"DATETIME\\(\\$earliestDate,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
