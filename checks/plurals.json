@@ -126,6 +126,26 @@
 	},
 	{
 		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeWarningMultipleTabs",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeWarningMultipleTabsSessionRestore",
+		"type": "plural_forms"
+	},
+		{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeWarningMultipleWindows2",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
+		"entity": "tabs.closeWarningMultipleWindowsSessionRestore3",
+		"type": "plural_forms"
+	},
+	{
+		"file": "browser/chrome/browser/tabbrowser.properties",
 		"entity": "tabs.closeWarningMultipleWindowsTabSnippet",
 		"type": "plural_forms"
 	},
