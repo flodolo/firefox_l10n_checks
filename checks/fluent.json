@@ -152,7 +152,9 @@
       "-fxaccount-brand-name\\([a-z]*:\\s?\""
     ],
     "entity": "fxa-signout-dialog2-title",
-    "excluded_locales": [],
+    "excluded_locales": [
+      "he"
+    ],
     "file": "browser/browser/sync.ftl",
     "type": "not_include_regex"
   }

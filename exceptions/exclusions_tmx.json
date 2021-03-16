@@ -17,6 +17,7 @@
     "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
     "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
     "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
+    "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
     "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
     "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2",
     "dom/chrome/plugins.properties:cdm_description2",
