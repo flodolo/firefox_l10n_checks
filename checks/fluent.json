@@ -146,5 +146,14 @@
     "excluded_locales": [],
     "file": "browser/browser/protections.ftl",
     "type": "include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "fxa-signout-dialog2-title",
+    "excluded_locales": [],
+    "file": "browser/browser/sync.ftl",
+    "type": "not_include_regex"
   }
 ]

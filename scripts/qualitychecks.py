@@ -378,6 +378,13 @@ class QualityCheck:
                                     error_msg.append(
                                         f"Missing {t} ({c['file']}:{c['entity']})"
                                     )
+                        if c["type"] == "not_include_regex":
+                            for t in c["checks"]:
+                                pattern = re.compile(t, re.UNICODE)
+                                if pattern.search(translation):
+                                    error_msg.append(
+                                        f"String includes {t} ({c['file']}:{c['entity']})"
+                                    )
                         elif c["type"] == "include":
                             for t in c["checks"]:
                                 if t not in translation:
