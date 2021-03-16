@@ -1,406 +1,482 @@
 [
-	{
-		"file": "browser/chrome/browser/accounts.properties",
-		"entity": "unnamedTabsArrivingNotification2.body",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/accounts.properties",
-		"entity": "unnamedTabsArrivingNotificationMultiple2.body",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/accounts.properties",
-		"entity": "unnamedTabsArrivingNotificationNoDevice.body",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonConfirmInstall.message",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonConfirmInstallSomeUnsigned.message",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonDownloadingAndVerifying",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "addonsGenericInstalled",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "ctrlTab.listAllTabs.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "editBookmark.removeBookmarks.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "getUserMedia.shareApplicationWindowCount.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "menuUndoCloseWindowLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "pendingCrashReports2.label",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "popupShowBlockedPopupsIndicatorText",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "popupWarning.exceeded.message",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "popupWarning.message",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "protections.footer.blockedTrackerCounter.description",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "protections.milestone.description",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "webextPerms.hostDescription.tooManySites",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/browser.properties",
-		"entity": "webextPerms.hostDescription.tooManyWildcards",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/places/places.properties",
-		"entity": "detailsPane.itemsCountLabel",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeTabs.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultiple",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleSessionRestore2",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleWindows",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleWindowsSessionRestore2",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleTabs",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleTabsSessionRestore",
-		"type": "plural_forms"
-	},
-		{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleWindows2",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleWindowsSessionRestore3",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.closeWarningMultipleWindowsTabSnippet",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.muteAudio2.background.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.muteAudio2.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.unblockAudio2.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.unmuteAudio2.background.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/tabbrowser.properties",
-		"entity": "tabs.unmuteAudio2.tooltip",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingApplicationWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingBrowserWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingCameraWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingMicrophoneWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingScreenWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "browser/chrome/browser/webrtcIndicator.properties",
-		"entity": "webrtcIndicator.sharingWindowWithNTabs.menuitem",
-		"type": "plural_forms"
-	},
-	{
-		"file": "devtools/client/accessibility.properties",
-		"entity": "accessibility.progress.progressbar",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/debugger.properties",
-		"entity": "editor.searchResults1",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/debugger.properties",
-		"entity": "sourceSearch.resultsSummary2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/debugger.properties",
-		"entity": "variablesViewMoreObjects",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/inspector.properties",
-		"entity": "markupView.more.showAll2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/jit-optimizations.properties",
-		"entity": "jit.samples",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "charts.totalSeconds",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "charts.totalSecondsNonBlocking",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "netmonitor.search.status.labels.fileCount",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "netmonitor.search.status.labels.matchingLines",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "netmonitor.ws.truncated-messages.warning",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "networkMenu.summary.requestsCount2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/netmonitor.properties",
-		"entity": "networkMenu.ws.summary.framesCount2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/styleeditor.properties",
-		"entity": "ruleCount.label",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "messageRepeats.tooltip2",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "webconsole.filteredMessagesByText.label",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "webconsole.filteredMessagesByText.tooltip",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "webconsole.reverseSearch.results",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "devtools/client/webconsole.properties",
-		"entity": "webconsole.warningGroup.messageCount.tooltip",
-		"type": "plural_forms",
-		"excluded_locales": ["gd", "ltg", "sr"]
-	},
-	{
-		"file": "dom/chrome/accessibility/AccessFu.properties",
-		"entity": "listItemsCount",
-		"type": "plural_forms"
-	},
-	{
-		"file": "dom/chrome/accessibility/AccessFu.properties",
-		"entity": "tblColumnInfo",
-		"type": "plural_forms"
-	},
-	{
-		"file": "dom/chrome/accessibility/AccessFu.properties",
-		"entity": "tblColumnInfoAbbr",
-		"type": "plural_forms"
-	},
-	{
-		"file": "dom/chrome/accessibility/AccessFu.properties",
-		"entity": "tblRowInfo",
-		"type": "plural_forms"
-	},
-	{
-		"file": "dom/chrome/accessibility/AccessFu.properties",
-		"entity": "tblRowInfoAbbr",
-		"type": "plural_forms"
-	},
-	{
-		"file": "dom/chrome/layout/HtmlForm.properties",
-		"entity": "AndNMoreFiles",
-		"type": "plural_forms"
-	},
-	{
-		"file": "mobile/android/chrome/aboutDownloads.properties",
-		"entity": "downloadMessage.deleteAll",
-		"type": "plural_forms"
-	},
-	{
-		"file": "mobile/android/chrome/browser.properties",
-		"entity": "newtabpopup.opened",
-		"type": "plural_forms"
-	},
-	{
-		"file": "mobile/android/chrome/browser.properties",
-		"entity": "webextPerms.hostDescription.tooManySites",
-		"type": "plural_forms"
-	},
-	{
-		"file": "mobile/android/chrome/browser.properties",
-		"entity": "webextPerms.hostDescription.tooManyWildcards",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutReader.properties",
-		"entity": "aboutReader.estimatedReadTimeRange1",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/aboutReader.properties",
-		"entity": "aboutReader.estimatedReadTimeValue1",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/global/findbar.properties",
-		"entity": "FoundMatchesCountLimit",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/downloads/downloads.properties",
-		"entity": "shortDays",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/downloads/downloads.properties",
-		"entity": "shortHours",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/downloads/downloads.properties",
-		"entity": "shortMinutes",
-		"type": "plural_forms"
-	},
-	{
-		"file": "toolkit/chrome/mozapps/downloads/downloads.properties",
-		"entity": "shortSeconds",
-		"type": "plural_forms"
-	}
+  {
+    "entity": "unnamedTabsArrivingNotification2.body",
+    "file": "browser/chrome/browser/accounts.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "unnamedTabsArrivingNotificationMultiple2.body",
+    "file": "browser/chrome/browser/accounts.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "unnamedTabsArrivingNotificationNoDevice.body",
+    "file": "browser/chrome/browser/accounts.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "addonConfirmInstall.message",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "addonConfirmInstallSomeUnsigned.message",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "addonDownloadingAndVerifying",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "addonsGenericInstalled",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "ctrlTab.listAllTabs.label",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "editBookmark.removeBookmarks.label",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "getUserMedia.shareApplicationWindowCount.label",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "menuUndoCloseWindowLabel",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "pendingCrashReports2.label",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "popupShowBlockedPopupsIndicatorText",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "popupWarning.exceeded.message",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "popupWarning.message",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "protections.footer.blockedTrackerCounter.description",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "protections.milestone.description",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webextPerms.hostDescription.tooManySites",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webextPerms.hostDescription.tooManyWildcards",
+    "file": "browser/chrome/browser/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "detailsPane.itemsCountLabel",
+    "file": "browser/chrome/browser/places/places.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeTabs.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultiple",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleSessionRestore2",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleWindows",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleWindowsSessionRestore2",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleTabs",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleTabsSessionRestore",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleWindows2",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleWindowsSessionRestore3",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWarningMultipleWindowsTabSnippet",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.muteAudio2.background.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.muteAudio2.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.unblockAudio2.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.unmuteAudio2.background.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.unmuteAudio2.tooltip",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingApplicationWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingBrowserWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingCameraWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingMicrophoneWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingScreenWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webrtcIndicator.sharingWindowWithNTabs.menuitem",
+    "file": "browser/chrome/browser/webrtcIndicator.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "accessibility.progress.progressbar",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/accessibility.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "editor.searchResults1",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/debugger.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "sourceSearch.resultsSummary2",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/debugger.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "variablesViewMoreObjects",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/debugger.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "markupView.more.showAll2",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/inspector.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "jit.samples",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/jit-optimizations.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "charts.totalSeconds",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "charts.totalSecondsNonBlocking",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "netmonitor.search.status.labels.fileCount",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "netmonitor.search.status.labels.matchingLines",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "netmonitor.ws.truncated-messages.warning",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "networkMenu.summary.requestsCount2",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "networkMenu.ws.summary.framesCount2",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/netmonitor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "ruleCount.label",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/styleeditor.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "messageRepeats.tooltip2",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/webconsole.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webconsole.filteredMessagesByText.label",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/webconsole.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webconsole.filteredMessagesByText.tooltip",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/webconsole.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webconsole.reverseSearch.results",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/webconsole.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webconsole.warningGroup.messageCount.tooltip",
+    "excluded_locales": [
+      "gd",
+      "ltg",
+      "sr"
+    ],
+    "file": "devtools/client/webconsole.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "listItemsCount",
+    "file": "dom/chrome/accessibility/AccessFu.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tblColumnInfo",
+    "file": "dom/chrome/accessibility/AccessFu.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tblColumnInfoAbbr",
+    "file": "dom/chrome/accessibility/AccessFu.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tblRowInfo",
+    "file": "dom/chrome/accessibility/AccessFu.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tblRowInfoAbbr",
+    "file": "dom/chrome/accessibility/AccessFu.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "AndNMoreFiles",
+    "file": "dom/chrome/layout/HtmlForm.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "downloadMessage.deleteAll",
+    "file": "mobile/android/chrome/aboutDownloads.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "newtabpopup.opened",
+    "file": "mobile/android/chrome/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webextPerms.hostDescription.tooManySites",
+    "file": "mobile/android/chrome/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "webextPerms.hostDescription.tooManyWildcards",
+    "file": "mobile/android/chrome/browser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "aboutReader.estimatedReadTimeRange1",
+    "file": "toolkit/chrome/global/aboutReader.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "aboutReader.estimatedReadTimeValue1",
+    "file": "toolkit/chrome/global/aboutReader.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "FoundMatchesCountLimit",
+    "file": "toolkit/chrome/global/findbar.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "shortDays",
+    "file": "toolkit/chrome/mozapps/downloads/downloads.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "shortHours",
+    "file": "toolkit/chrome/mozapps/downloads/downloads.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "shortMinutes",
+    "file": "toolkit/chrome/mozapps/downloads/downloads.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "shortSeconds",
+    "file": "toolkit/chrome/mozapps/downloads/downloads.properties",
+    "type": "plural_forms"
+  }
 ]

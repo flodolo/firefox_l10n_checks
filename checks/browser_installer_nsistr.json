@@ -1,69 +1,75 @@
 [
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "INSTALLER_WIN_CAPTION",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "STUB_CLEANUP_PAVEOVER_HEADER2",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "STUB_CLEANUP_REINSTALL_HEADER2",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "STUB_BLURB_FIRST1",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "ERROR_DOWNLOAD_CONT",
-		"type": "include",
-		"checks": [
-			"$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "WARN_MIN_SUPPORTED_OSVER_MSG",
-		"excluded_locales": ["it"],
-		"type": "include_regex",
-		"checks": [
-			"\\$BrandShortName.*\\$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "WARN_MIN_SUPPORTED_CPU_MSG",
-		"excluded_locales": ["it"],
-		"type": "include_regex",
-		"checks": [
-			"\\$BrandShortName.*\\$BrandShortName"
-		]
-	},
-	{
-		"file": "browser/installer/nsisstrings.properties",
-		"entity": "WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
-		"excluded_locales": ["it"],
-		"type": "include_regex",
-		"checks": [
-			"\\$BrandShortName.*\\$BrandShortName"
-		]
-	}
+  {
+    "checks": [
+      "$BrandShortName"
+    ],
+    "entity": "INSTALLER_WIN_CAPTION",
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "$BrandShortName"
+    ],
+    "entity": "STUB_CLEANUP_PAVEOVER_HEADER2",
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "$BrandShortName"
+    ],
+    "entity": "STUB_CLEANUP_REINSTALL_HEADER2",
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "$BrandShortName"
+    ],
+    "entity": "STUB_BLURB_FIRST1",
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "$BrandShortName"
+    ],
+    "entity": "ERROR_DOWNLOAD_CONT",
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "\\$BrandShortName.*\\$BrandShortName"
+    ],
+    "entity": "WARN_MIN_SUPPORTED_OSVER_MSG",
+    "excluded_locales": [
+      "it"
+    ],
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "\\$BrandShortName.*\\$BrandShortName"
+    ],
+    "entity": "WARN_MIN_SUPPORTED_CPU_MSG",
+    "excluded_locales": [
+      "it"
+    ],
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "\\$BrandShortName.*\\$BrandShortName"
+    ],
+    "entity": "WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+    "excluded_locales": [
+      "it"
+    ],
+    "file": "browser/installer/nsisstrings.properties",
+    "type": "include_regex"
+  }
 ]

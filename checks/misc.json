@@ -1,74 +1,74 @@
 [
-	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "login-item-origin.placeholder",
-		"type": "equal_to",
-		"excluded_locales": [
-			"da",
-			"et",
-			"eu"
-		],
-		"value": "https://www.example.com"
-	},
-	{
-		"file": "browser/browser/preferences/addEngine.ftl",
-		"entity": "add-engine-url",
-		"type": "include",
-		"checks": [
-			"%s"
-		]
-	},
-	{
-		"file": "browser/browser/appmenu.ftl",
-		"entity": "profiler-popup-start-shortcut",
-		"type": "include",
-		"checks": [
-			"⌃⇧1",
-			"+1"
-		]
-	},
-	{
-		"file": "browser/browser/appmenu.ftl",
-		"entity": "profiler-popup-capture-shortcut",
-		"type": "include",
-		"checks": [
-			"⌃⇧2",
-			"+2"
-		]
-	},
-	{
-		"file": "toolkit/defines.inc",
-		"entity": "MOZ_LANG_TITLE",
-		"type": "not_include",
-		"checks": [
-            "(US)"
-        ]
-	},
-	{
-		"file": "toolkit/toolkit/featuregates/features.ftl",
-		"entity": "experimental-features-cookie-samesite-schemeful-description",
-		"type": "include",
-		"excluded_locales": [
-			"da",
-			"et",
-			"eu"
-		],
-		"checks": [
-			"http://example.com",
-			"https://example.com"
-        ]
-	},
-	{
-		"file": "toolkit/chrome/global/extensions.properties",
-		"entity": "csp.error.illegal-host-wildcard",
-		"type": "include",
-		"excluded_locales": [
-			"da",
-			"et",
-			"eu"
-		],
-		"checks": [
-			"*.example.com"
-        ]
-	}
+  {
+    "entity": "login-item-origin.placeholder",
+    "excluded_locales": [
+      "da",
+      "et",
+      "eu"
+    ],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "equal_to",
+    "value": "https://www.example.com"
+  },
+  {
+    "checks": [
+      "%s"
+    ],
+    "entity": "add-engine-url",
+    "file": "browser/browser/preferences/addEngine.ftl",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "\u2303\u21e71",
+      "+1"
+    ],
+    "entity": "profiler-popup-start-shortcut",
+    "file": "browser/browser/appmenu.ftl",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "\u2303\u21e72",
+      "+2"
+    ],
+    "entity": "profiler-popup-capture-shortcut",
+    "file": "browser/browser/appmenu.ftl",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "(US)"
+    ],
+    "entity": "MOZ_LANG_TITLE",
+    "file": "toolkit/defines.inc",
+    "type": "not_include"
+  },
+  {
+    "checks": [
+      "http://example.com",
+      "https://example.com"
+    ],
+    "entity": "experimental-features-cookie-samesite-schemeful-description",
+    "excluded_locales": [
+      "da",
+      "et",
+      "eu"
+    ],
+    "file": "toolkit/toolkit/featuregates/features.ftl",
+    "type": "include"
+  },
+  {
+    "checks": [
+      "*.example.com"
+    ],
+    "entity": "csp.error.illegal-host-wildcard",
+    "excluded_locales": [
+      "da",
+      "et",
+      "eu"
+    ],
+    "file": "toolkit/chrome/global/extensions.properties",
+    "type": "include"
+  }
 ]

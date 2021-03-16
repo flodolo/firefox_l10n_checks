@@ -1,72 +1,79 @@
 [
-	{
-		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "intl.accept_languages",
-		"type": "not_equal_to",
-		"excluded_locales": ["en-US"],
-		"value": "en-US,en"
-	},
-	{
-		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "font.language.group",
-		"type": "acceptable_values",
-		"values": [
-			"ar",
-			"x-armn",
-			"x-beng",
-			"zh-CN",
-			"zh-HK",
-			"zh-TW",
-			"x-cyrillic",
-			"x-devanagari",
-			"x-ethi",
-			"x-geor",
-			"el",
-			"x-gujr",
-			"x-guru",
-			"he",
-			"ja",
-			"x-knda",
-			"x-khmr",
-			"ko",
-			"x-western",
-			"x-mlym",
-			"x-math",
-			"x-orya",
-			"x-sinh",
-			"x-tamil",
-			"x-telu",
-			"th",
-			"x-tibt",
-			"x-cans",
-			"x-unicode"
-		]
-	},
-	{
-		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "intl.charset.detector",
-		"type": "equal_to",
-		"value": "",
-		"excluded_locales": ["ja", "ja-JP-mac", "ru", "uk"]
-	},
-	{
-		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "intl.menuitems.alwaysappendaccesskeys",
-		"type": "acceptable_values",
-		"values": [
-			"true",
-			"false",
-			""
-		]
-	},
-	{
-		"file": "toolkit/chrome/global/intl.properties",
-		"entity": "intl.menuitems.insertseparatorbeforeaccesskeys",
-		"type": "acceptable_values",
-		"values": [
-			"true",
-			"false",
-			""
-		]
-	}
+  {
+    "entity": "intl.accept_languages",
+    "excluded_locales": [
+      "en-US"
+    ],
+    "file": "toolkit/chrome/global/intl.properties",
+    "type": "not_equal_to",
+    "value": "en-US,en"
+  },
+  {
+    "entity": "font.language.group",
+    "file": "toolkit/chrome/global/intl.properties",
+    "type": "acceptable_values",
+    "values": [
+      "ar",
+      "x-armn",
+      "x-beng",
+      "zh-CN",
+      "zh-HK",
+      "zh-TW",
+      "x-cyrillic",
+      "x-devanagari",
+      "x-ethi",
+      "x-geor",
+      "el",
+      "x-gujr",
+      "x-guru",
+      "he",
+      "ja",
+      "x-knda",
+      "x-khmr",
+      "ko",
+      "x-western",
+      "x-mlym",
+      "x-math",
+      "x-orya",
+      "x-sinh",
+      "x-tamil",
+      "x-telu",
+      "th",
+      "x-tibt",
+      "x-cans",
+      "x-unicode"
+    ]
+  },
+  {
+    "entity": "intl.charset.detector",
+    "excluded_locales": [
+      "ja",
+      "ja-JP-mac",
+      "ru",
+      "uk"
+    ],
+    "file": "toolkit/chrome/global/intl.properties",
+    "type": "equal_to",
+    "value": ""
+  },
+  {
+    "entity": "intl.menuitems.alwaysappendaccesskeys",
+    "file": "toolkit/chrome/global/intl.properties",
+    "type": "acceptable_values",
+    "values": [
+      "true",
+      "false",
+      ""
+    ]
+  },
+  {
+    "entity": "intl.menuitems.insertseparatorbeforeaccesskeys",
+    "file": "toolkit/chrome/global/intl.properties",
+    "type": "acceptable_values",
+    "values": [
+      "true",
+      "false",
+      ""
+    ]
+  }
 ]

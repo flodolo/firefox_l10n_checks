@@ -1,150 +1,150 @@
 [
-	{
-		"file": "devtools/client/perftools.ftl",
-		"entity": "perftools-range-interval-milliseconds",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$interval,\\s*maxFractionalUnits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutAddons.ftl",
-		"entity": "five-star-rating.title",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$rating,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-cpu-user-and-kernel",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)",
-			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-cpu-user-and-kernel-idle",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-total-memory-size",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)",
-			"NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-    },
-	{
-		"file": "toolkit/toolkit/about/aboutProcesses.ftl",
-		"entity": "about-processes-total-memory-size-no-change",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-		]
-	},
-	{
-		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
-		"entity": "about-webrtc-sdp-set-at-timestamp-local",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
-		]
-	},
-	{
-		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
-		"entity": "about-webrtc-sdp-set-at-timestamp-remote",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
-		]
-	},
-	{
-		"file": "toolkit/toolkit/about/aboutWebrtc.ftl",
-		"entity": "about-webrtc-sdp-set-timestamp",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/newtab/asrouter.ftl",
-		"entity": "cfr-whatsnew-tracking-blocked-subtitle",
-		"excluded_locales": [
-			"pl"
-		],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$earliestDate,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/newtab/asrouter.ftl",
-		"entity": "cfr-doorhanger-milestone-heading2",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$date,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "about-logins-breach-alert-date",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$date,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "login-item-time-changed",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$timeChanged,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "login-item-time-created",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$timeCreated,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/aboutLogins.ftl",
-		"entity": "login-item-time-used",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$timeUsed,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	},
-	{
-		"file": "browser/browser/protections.ftl",
-		"entity": "graph-total-tracker-summary",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"DATETIME\\(\\$earliestDate,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-		]
-	}
+  {
+    "checks": [
+      "NUMBER\\(\\$interval,\\s*maxFractionalUnits:\\s*\\d\\)"
+    ],
+    "entity": "perftools-range-interval-milliseconds",
+    "excluded_locales": [],
+    "file": "devtools/client/perftools.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$rating,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "five-star-rating.title",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutAddons.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)",
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-cpu-user-and-kernel",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-cpu-user-and-kernel-idle",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)",
+      "NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-total-memory-size",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-total-memory-size-no-change",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
+    ],
+    "entity": "about-webrtc-sdp-set-at-timestamp-local",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
+    ],
+    "entity": "about-webrtc-sdp-set-at-timestamp-remote",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
+    ],
+    "entity": "about-webrtc-sdp-set-timestamp",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutWebrtc.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$earliestDate,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "cfr-whatsnew-tracking-blocked-subtitle",
+    "excluded_locales": [
+      "pl"
+    ],
+    "file": "browser/browser/newtab/asrouter.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "cfr-doorhanger-milestone-heading2",
+    "excluded_locales": [],
+    "file": "browser/browser/newtab/asrouter.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "about-logins-breach-alert-date",
+    "excluded_locales": [],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$timeChanged,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "login-item-time-changed",
+    "excluded_locales": [],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$timeCreated,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "login-item-time-created",
+    "excluded_locales": [],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$timeUsed,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "login-item-time-used",
+    "excluded_locales": [],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$earliestDate,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "graph-total-tracker-summary",
+    "excluded_locales": [],
+    "file": "browser/browser/protections.ftl",
+    "type": "include_regex"
+  }
 ]

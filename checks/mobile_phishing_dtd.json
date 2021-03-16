@@ -1,26 +1,26 @@
 [
-	{
-		"file": "mobile/android/chrome/phishing.dtd",
-		"entity": "safeb.blocked.malwarePage.shortDesc",
-		"type": "include_regex",
-		"checks": [
-			"<span id='malware_sitename'(\\s)*/>"
-		]
-	},
-	{
-		"file": "mobile/android/chrome/phishing.dtd",
-		"entity": "safeb.blocked.phishingPage.shortDesc3",
-		"type": "include_regex",
-		"checks": [
-			"<span id='phishing_sitename'(\\s)*/>"
-		]
-	},
-	{
-		"file": "mobile/android/chrome/phishing.dtd",
-		"entity": "safeb.blocked.unwantedPage.shortDesc",
-		"type": "include_regex",
-		"checks": [
-			"<span id='unwanted_sitename'(\\s)*/>"
-		]
-	}
+  {
+    "checks": [
+      "<span id='malware_sitename'(\\s)*/>"
+    ],
+    "entity": "safeb.blocked.malwarePage.shortDesc",
+    "file": "mobile/android/chrome/phishing.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span id='phishing_sitename'(\\s)*/>"
+    ],
+    "entity": "safeb.blocked.phishingPage.shortDesc3",
+    "file": "mobile/android/chrome/phishing.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span id='unwanted_sitename'(\\s)*/>"
+    ],
+    "entity": "safeb.blocked.unwantedPage.shortDesc",
+    "file": "mobile/android/chrome/phishing.dtd",
+    "type": "include_regex"
+  }
 ]

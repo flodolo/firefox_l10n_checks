@@ -1,56 +1,56 @@
 [
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "RootCertModuleName",
-		"type": "bytes_length",
-		"value": 64
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "ManufacturerID",
-		"type": "bytes_length",
-		"value": 32
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "LibraryDescription",
-		"type": "bytes_length",
-		"value": 32
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "TokenDescription",
-		"type": "bytes_length",
-		"value": 32
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "PrivateTokenDescription",
-		"type": "bytes_length",
-		"value": 32
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "SlotDescription",
-		"type": "bytes_length",
-		"value": 64
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "PrivateSlotDescription",
-		"type": "bytes_length",
-		"value": 64
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "Fips140TokenDescription",
-		"type": "bytes_length",
-		"value": 32
-	},
-	{
-		"file": "security/manager/chrome/pipnss/pipnss.properties",
-		"entity": "Fips140SlotDescription",
-		"type": "bytes_length",
-		"value": 64
-	}
+  {
+    "entity": "RootCertModuleName",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 64
+  },
+  {
+    "entity": "ManufacturerID",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 32
+  },
+  {
+    "entity": "LibraryDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 32
+  },
+  {
+    "entity": "TokenDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 32
+  },
+  {
+    "entity": "PrivateTokenDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 32
+  },
+  {
+    "entity": "SlotDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 64
+  },
+  {
+    "entity": "PrivateSlotDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 64
+  },
+  {
+    "entity": "Fips140TokenDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 32
+  },
+  {
+    "entity": "Fips140SlotDescription",
+    "file": "security/manager/chrome/pipnss/pipnss.properties",
+    "type": "bytes_length",
+    "value": 64
+  }
 ]

@@ -1,70 +1,70 @@
 [
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.introPara2",
-		"type": "include_regex",
-		"checks": [
-			"<span class='hostname'(\\s)*/>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.expiredCert.whatCanYouDoAboutIt2",
-		"type": "include_regex",
-		"checks": [
-			"<span id='wrongSystemTime_systemDate2'(\\s)*/>",
-			"<span class='hostname'(\\s)*/>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "clockSkewError.longDesc",
-		"excluded_locales": [
-			"bg"
-		],
-		"type": "include_regex",
-		"checks": [
-			"<span id='wrongSystemTime_systemDate1'(\\s)*/>",
-			"<span class='hostname'(\\s)*></span>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.mitm.longDesc",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"<span class='hostname'(\\s)*></span>",
-			"<span class='mitm-name'(\\s)*/>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.mitm.whatCanYouDoAboutIt3",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"<span class='mitm-name'(\\s)*/>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.mitm.sts.whatCanYouDoAboutIt3",
-		"excluded_locales": [],
-		"type": "include_regex",
-		"checks": [
-			"<span class='mitm-name'(\\s)*/>"
-		]
-	},
-	{
-		"file": "browser/chrome/overrides/netError.dtd",
-		"entity": "certerror.whatShouldIDo.badStsCertExplanation1",
-		"excluded_locales": [
-			"bg"
-		],
-		"type": "include_regex",
-		"checks": [
-			"<span class='hostname'(\\s)*></span>"
-		]
-	}
+  {
+    "checks": [
+      "<span class='hostname'(\\s)*/>"
+    ],
+    "entity": "certerror.introPara2",
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span id='wrongSystemTime_systemDate2'(\\s)*/>",
+      "<span class='hostname'(\\s)*/>"
+    ],
+    "entity": "certerror.expiredCert.whatCanYouDoAboutIt2",
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span id='wrongSystemTime_systemDate1'(\\s)*/>",
+      "<span class='hostname'(\\s)*></span>"
+    ],
+    "entity": "clockSkewError.longDesc",
+    "excluded_locales": [
+      "bg"
+    ],
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span class='hostname'(\\s)*></span>",
+      "<span class='mitm-name'(\\s)*/>"
+    ],
+    "entity": "certerror.mitm.longDesc",
+    "excluded_locales": [],
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span class='mitm-name'(\\s)*/>"
+    ],
+    "entity": "certerror.mitm.whatCanYouDoAboutIt3",
+    "excluded_locales": [],
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span class='mitm-name'(\\s)*/>"
+    ],
+    "entity": "certerror.mitm.sts.whatCanYouDoAboutIt3",
+    "excluded_locales": [],
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "<span class='hostname'(\\s)*></span>"
+    ],
+    "entity": "certerror.whatShouldIDo.badStsCertExplanation1",
+    "excluded_locales": [
+      "bg"
+    ],
+    "file": "browser/chrome/overrides/netError.dtd",
+    "type": "include_regex"
+  }
 ]
