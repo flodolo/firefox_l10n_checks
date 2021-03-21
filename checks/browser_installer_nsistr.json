@@ -45,7 +45,8 @@
     ],
     "entity": "WARN_MIN_SUPPORTED_OSVER_MSG",
     "excluded_locales": [
-      "it"
+      "it",
+      "sr"
     ],
     "file": "browser/installer/nsisstrings.properties",
     "type": "include_regex"
@@ -56,7 +57,8 @@
     ],
     "entity": "WARN_MIN_SUPPORTED_CPU_MSG",
     "excluded_locales": [
-      "it"
+      "it",
+      "sr"
     ],
     "file": "browser/installer/nsisstrings.properties",
     "type": "include_regex"
@@ -67,7 +69,8 @@
     ],
     "entity": "WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
     "excluded_locales": [
-      "it"
+      "it",
+      "sr"
     ],
     "file": "browser/installer/nsisstrings.properties",
     "type": "include_regex"
