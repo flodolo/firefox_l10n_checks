@@ -155,7 +155,8 @@
     "excluded_locales": [
       "he",
       "uk",
-      "rm"
+      "rm",
+      "sk"
     ],
     "file": "browser/browser/sync.ftl",
     "type": "not_include_regex"
