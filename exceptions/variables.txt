@@ -234,6 +234,9 @@ sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 sl: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
 sl: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/override.properties:LicenseTextRB
+sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
+sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
+sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 szl: browser/chrome/browser/newInstall.dtd:sync
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
