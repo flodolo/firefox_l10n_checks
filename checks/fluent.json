@@ -153,10 +153,12 @@
     ],
     "entity": "fxa-signout-dialog2-title",
     "excluded_locales": [
+      "en-CA",
       "he",
-      "uk",
       "rm",
-      "sk"
+      "sk",
+      "sr",
+      "uk"
     ],
     "file": "browser/browser/sync.ftl",
     "type": "not_include_regex"
