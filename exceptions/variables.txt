@@ -111,6 +111,7 @@ it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message
+it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message2
 it: browser/browser/search.ftl:opensearch-error-download-desc
 it: browser/browser/search.ftl:opensearch-error-duplicate-desc
 it: browser/browser/search.ftl:opensearch-error-format-desc

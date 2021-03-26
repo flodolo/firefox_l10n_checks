@@ -153,6 +153,7 @@
     ],
     "entity": "fxa-signout-dialog2-title",
     "excluded_locales": [
+      "cs",
       "en-CA",
       "en-GB",
       "he",
