@@ -4,8 +4,8 @@
     "file": "browser/chrome/browser/browser.properties",
     "type": "acceptable_values",
     "values": [
-      "true",
-      "false"
+      "false",
+      "true"
     ]
   },
   {
@@ -13,8 +13,8 @@
     "file": "mobile/android/chrome/browser.properties",
     "type": "acceptable_values",
     "values": [
-      "true",
-      "false"
+      "false",
+      "true"
     ]
   }
 ]

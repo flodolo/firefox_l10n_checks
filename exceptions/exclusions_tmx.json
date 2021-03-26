@@ -2,8 +2,9 @@
   "http": [
     "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
     "browser/chrome/browser/browser.properties:certImminentDistrust.message",
-    "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
+    "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
     "dom/chrome/dom/dom.properties:MediaWMFNeeded",
+    "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
     "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
     "dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader",
     "dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader",
@@ -17,7 +18,6 @@
     "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
     "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
     "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
-    "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
     "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
     "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2",
     "dom/chrome/plugins.properties:cdm_description2",
@@ -46,17 +46,17 @@
     ]
   },
   "mandatory": [
-    "toolkit/defines.inc:MOZ_LANG_TITLE",
-    "toolkit/chrome/global/intl.properties:intl.accept_languages",
     "toolkit/chrome/global/intl.properties:font.language.group",
-    "toolkit/chrome/global/intl.properties:pluralRule"
+    "toolkit/chrome/global/intl.properties:intl.accept_languages",
+    "toolkit/chrome/global/intl.properties:pluralRule",
+    "toolkit/defines.inc:MOZ_LANG_TITLE"
   ],
   "printf": [
     "browser/browser/preferences/addEngine.ftl:add-engine-url"
   ],
   "xml": [
     "toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported",
-    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description",
-    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description"
+    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description",
+    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description"
   ]
 }

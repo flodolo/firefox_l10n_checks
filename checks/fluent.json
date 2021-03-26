@@ -38,8 +38,8 @@
   },
   {
     "checks": [
-      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)",
-      "NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)"
+      "NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)",
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
     ],
     "entity": "about-processes-total-memory-size",
     "excluded_locales": [],

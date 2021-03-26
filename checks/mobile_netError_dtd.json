@@ -1,12 +1,12 @@
 [
   {
     "checks": [
-      "<strong>ww</strong>.example.com",
-      "<strong>www</strong>.example.com",
+      "<button id='searchbutton'>",
+      "<button id='wifi'>",
       "<div id='searchbox'>",
       "<input id='searchtext' type='search'>\\s*</input>",
-      "<button id='searchbutton'>",
-      "<button id='wifi'>"
+      "<strong>ww</strong>.example.com",
+      "<strong>www</strong>.example.com"
     ],
     "entity": "dnsNotFound.longDesc4",
     "excluded_locales": [
@@ -19,10 +19,10 @@
   },
   {
     "checks": [
-      "<strong>http://www.example.com/*</strong>",
+      "<button id='searchbutton'>",
       "<div id='searchbox'>",
       "<input id='searchtext' type='search'>\\s*</input>",
-      "<button id='searchbutton'>"
+      "<strong>http://www.example.com/*</strong>"
     ],
     "entity": "malformedURI.longDesc2",
     "excluded_locales": [
@@ -51,8 +51,8 @@
   },
   {
     "checks": [
-      "<button id='getMeOutOfHereButton'>&securityOverride.getMeOutOfHereButton;</button>",
-      "<button id='exceptionDialogButton'>&securityOverride.exceptionButtonLabel;</button>"
+      "<button id='exceptionDialogButton'>&securityOverride.exceptionButtonLabel;</button>",
+      "<button id='getMeOutOfHereButton'>&securityOverride.getMeOutOfHereButton;</button>"
     ],
     "entity": "securityOverride.warningContent",
     "file": "mobile/overrides/netError.dtd",

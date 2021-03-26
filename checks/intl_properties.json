@@ -14,34 +14,34 @@
     "type": "acceptable_values",
     "values": [
       "ar",
+      "el",
+      "he",
+      "ja",
+      "ko",
+      "th",
       "x-armn",
       "x-beng",
-      "zh-CN",
-      "zh-HK",
-      "zh-TW",
+      "x-cans",
       "x-cyrillic",
       "x-devanagari",
       "x-ethi",
       "x-geor",
-      "el",
       "x-gujr",
       "x-guru",
-      "he",
-      "ja",
-      "x-knda",
       "x-khmr",
-      "ko",
-      "x-western",
-      "x-mlym",
+      "x-knda",
       "x-math",
+      "x-mlym",
       "x-orya",
       "x-sinh",
       "x-tamil",
       "x-telu",
-      "th",
       "x-tibt",
-      "x-cans",
-      "x-unicode"
+      "x-unicode",
+      "x-western",
+      "zh-CN",
+      "zh-HK",
+      "zh-TW"
     ]
   },
   {
@@ -61,9 +61,9 @@
     "file": "toolkit/chrome/global/intl.properties",
     "type": "acceptable_values",
     "values": [
-      "true",
+      "",
       "false",
-      ""
+      "true"
     ]
   },
   {
@@ -71,9 +71,9 @@
     "file": "toolkit/chrome/global/intl.properties",
     "type": "acceptable_values",
     "values": [
-      "true",
+      "",
       "false",
-      ""
+      "true"
     ]
   }
 ]

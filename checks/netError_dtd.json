@@ -9,8 +9,8 @@
   },
   {
     "checks": [
-      "<span id='wrongSystemTime_systemDate2'(\\s)*/>",
-      "<span class='hostname'(\\s)*/>"
+      "<span class='hostname'(\\s)*/>",
+      "<span id='wrongSystemTime_systemDate2'(\\s)*/>"
     ],
     "entity": "certerror.expiredCert.whatCanYouDoAboutIt2",
     "file": "browser/chrome/overrides/netError.dtd",
@@ -18,8 +18,8 @@
   },
   {
     "checks": [
-      "<span id='wrongSystemTime_systemDate1'(\\s)*/>",
-      "<span class='hostname'(\\s)*></span>"
+      "<span class='hostname'(\\s)*></span>",
+      "<span id='wrongSystemTime_systemDate1'(\\s)*/>"
     ],
     "entity": "clockSkewError.longDesc",
     "excluded_locales": [

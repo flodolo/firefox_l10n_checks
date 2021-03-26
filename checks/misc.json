@@ -20,8 +20,8 @@
   },
   {
     "checks": [
-      "\u2303\u21e71",
-      "+1"
+      "+1",
+      "\u2303\u21e71"
     ],
     "entity": "profiler-popup-start-shortcut",
     "file": "browser/browser/appmenu.ftl",
@@ -29,8 +29,8 @@
   },
   {
     "checks": [
-      "\u2303\u21e72",
-      "+2"
+      "+2",
+      "\u2303\u21e72"
     ],
     "entity": "profiler-popup-capture-shortcut",
     "file": "browser/browser/appmenu.ftl",
