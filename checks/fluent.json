@@ -165,5 +165,24 @@
     ],
     "file": "browser/browser/sync.ftl",
     "type": "not_include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "login-intro-instructions-fxa",
+    "excluded_locales": [
+      "cs",
+      "en-CA",
+      "en-GB",
+      "he",
+      "rm",
+      "ru",
+      "sk",
+      "sr",
+      "uk"
+    ],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "not_include_regex"
   }
 ]
