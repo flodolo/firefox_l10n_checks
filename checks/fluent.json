@@ -184,5 +184,81 @@
     ],
     "file": "browser/browser/aboutLogins.ftl",
     "type": "not_include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "toolbar-button-fxaccount.label",
+    "excluded_locales": [
+      "cs",
+      "en-CA",
+      "en-GB",
+      "he",
+      "rm",
+      "ru",
+      "sk",
+      "sr",
+      "uk"
+    ],
+    "file": "browser/browser/browserContext.ftl",
+    "type": "not_include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "toolbar-button-fxaccount.tooltiptext",
+    "excluded_locales": [
+      "cs",
+      "en-CA",
+      "en-GB",
+      "he",
+      "rm",
+      "ru",
+      "sk",
+      "sr",
+      "uk"
+    ],
+    "file": "browser/browser/browserContext.ftl",
+    "type": "not_include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "options-use-sync",
+    "excluded_locales": [
+      "cs",
+      "en-CA",
+      "en-GB",
+      "he",
+      "rm",
+      "ru",
+      "sk",
+      "sr",
+      "uk"
+    ],
+    "file": "browser/browser/newInstallPage.ftl",
+    "type": "not_include_regex"
+  },
+  {
+    "checks": [
+      "-fxaccount-brand-name\\([a-z]*:\\s?\""
+    ],
+    "entity": "sync-header",
+    "excluded_locales": [
+      "cs",
+      "en-CA",
+      "en-GB",
+      "he",
+      "rm",
+      "ru",
+      "sk",
+      "sr",
+      "uk"
+    ],
+    "file": "browser/browser/newInstallPage.ftl",
+    "type": "not_include_regex"
   }
 ]
