@@ -209,8 +209,10 @@ pl: browser/pdfviewer/viewer.properties:find_match_count_limit[zero]
 pl: browser/pdfviewer/viewer.properties:find_match_count[one]
 pl: browser/pdfviewer/viewer.properties:find_match_count[two]
 pl: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+pl: toolkit/toolkit/about/aboutAddons.ftl:addons-settings-button
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
+pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-settings-button-title.title
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label

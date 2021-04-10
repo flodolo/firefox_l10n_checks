@@ -154,6 +154,7 @@
     "entity": "fxa-signout-dialog2-title",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
@@ -177,6 +178,7 @@
     "entity": "login-intro-instructions-fxa",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
@@ -200,6 +202,7 @@
     "entity": "toolbar-button-fxaccount.label",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
@@ -223,6 +226,7 @@
     "entity": "toolbar-button-fxaccount.tooltiptext",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
@@ -246,6 +250,7 @@
     "entity": "options-use-sync",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
@@ -269,6 +274,7 @@
     "entity": "sync-header",
     "excluded_locales": [
       "cs",
+      "el",
       "en-CA",
       "en-GB",
       "fi",
