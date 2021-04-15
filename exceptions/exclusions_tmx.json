@@ -43,7 +43,8 @@
   "locales": {
     "cs": [
       "browser/browser/appmenu.ftl:appmenuitem-update-banner.label-update-downloading",
-      "browser/browser/appmenu.ftl:appmenuitem-update-banner2.label-update-downloading"
+      "browser/browser/appmenu.ftl:appmenuitem-update-banner2.label-update-downloading",
+      "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading"
     ],
     "de": [
       "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
