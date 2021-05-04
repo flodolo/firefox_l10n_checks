@@ -2,7 +2,10 @@
   "http": [
     "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
     "browser/chrome/browser/browser.properties:certImminentDistrust.message",
+    "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
     "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
+    "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
+    "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
     "dom/chrome/dom/dom.properties:MediaWMFNeeded",
     "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
     "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
