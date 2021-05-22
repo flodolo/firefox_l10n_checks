@@ -199,6 +199,7 @@ pl: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 pl: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 pl: browser/chrome/browser/browser.dtd:homeButton.defaultPage.tooltip
 pl: browser/chrome/browser/browser.dtd:updateRestart.panelUI.label2
+pl: browser/chrome/browser/browser.properties:troubleshootModeRestartPromptTitle
 pl: browser/chrome/browser/newInstall.dtd:sync
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.secondPara2
 pl: browser/chrome/overrides/netError.dtd:certerror.expiredCert.sts.secondPara
@@ -214,6 +215,7 @@ pl: toolkit/toolkit/about/aboutAddons.ftl:addons-settings-button
 pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-settings-button-title.title
+pl: toolkit/toolkit/about/aboutSupport.ftl:startup-cache-dialog-title2
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
