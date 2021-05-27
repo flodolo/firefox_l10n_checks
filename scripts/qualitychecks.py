@@ -707,6 +707,11 @@ class QualityCheck:
                         error_msg = f"Link in string ({string_id})"
                         self.error_messages[locale].append(error_msg)
 
+                # Check for pilcrow character
+                if "¶" in translation:
+                    error_msg = f"Pilcrow character in string ({string_id})"
+                    self.error_messages[locale].append(error_msg)
+
             # FTL checks
             for string_id in ftl_ids:
                 # Ignore untranslated strings
