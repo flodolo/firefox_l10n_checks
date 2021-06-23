@@ -240,6 +240,10 @@ sl: browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT
 sl: browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION
 sl: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 sl: browser/installer/override.properties:LicenseTextRB
+sr: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports-with-link
+sr: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
+sr: browser/browser/preferences/preferences.ftl:collection-health-report.label
+sr: browser/browser/preferences/preferences.ftl:collection-studies.label
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
