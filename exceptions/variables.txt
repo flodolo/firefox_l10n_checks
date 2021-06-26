@@ -244,6 +244,11 @@ sr: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-repo
 sr: browser/browser/preferences/preferences.ftl:collection-backlogged-crash-reports.label
 sr: browser/browser/preferences/preferences.ftl:collection-health-report.label
 sr: browser/browser/preferences/preferences.ftl:collection-studies.label
+sr: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
+sr: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
+sr: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
+sr: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
+sr: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
