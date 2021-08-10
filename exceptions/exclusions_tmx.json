@@ -25,6 +25,9 @@
         "browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message2",
         "browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message2"
       ],
+      "szl": [
+        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+      ],
       "tr": [
         "browser/browser/newtab/onboarding.ftl:onboarding-welcome-body",
         "browser/browser/newtab/onboarding.ftl:onboarding-welcome-modal-get-body"
