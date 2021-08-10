@@ -4,6 +4,8 @@ from collections import OrderedDict
 from compare_locales.compare import compareProjects
 from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
+from fluent.syntax import parse, visitor, serialize
+from fluent.syntax.serializer import FluentSerializer
 from html.parser import HTMLParser
 from urllib.request import urlopen
 import argparse
@@ -33,6 +35,18 @@ class MyHTMLParser(HTMLParser):
     def get_tags(self):
         self.tags.sort()
         return self.tags
+
+
+class flattenSelectExpression(visitor.Transformer):
+    def visit_SelectExpression(self, node):
+        for variant in node.variants:
+            if variant.default:
+                default_variant = variant
+                break
+
+        node.variants = [default_variant]
+
+        return node
 
 
 class QualityCheck:
@@ -699,9 +713,12 @@ class QualityCheck:
         html_parser = MyHTMLParser()
         html_strings = {}
         for id, text in reference_data.items():
-            # TODO: check at least the default form for plurals
             if "*[" in text:
-                continue
+                resource = parse(f"temp_id = {text}")
+                flattener = flattenSelectExpression()
+                serializer = FluentSerializer()
+                text = serializer.serialize(flattener.visit(resource))
+
             html_parser.clear()
             html_parser.feed(text)
 
@@ -768,6 +785,12 @@ class QualityCheck:
                     continue
 
                 translation = locale_data[string_id]
+                if "*[" in translation:
+                    resource = parse(f"temp_id = {translation}")
+                    flattener = flattenSelectExpression()
+                    serializer = FluentSerializer()
+                    translation = serializer.serialize(flattener.visit(resource))
+
                 html_parser.clear()
                 html_parser.feed(translation)
                 tags = html_parser.get_tags()
