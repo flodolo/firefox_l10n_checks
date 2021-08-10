@@ -4,6 +4,7 @@ from collections import OrderedDict
 from compare_locales.compare import compareProjects
 from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
+from html.parser import HTMLParser
 from urllib.request import urlopen
 import argparse
 import datetime
@@ -13,6 +14,25 @@ import os
 import pickle
 import re
 import sys
+
+
+class MyHTMLParser(HTMLParser):
+    def __init__(self):
+        self.clear()
+        super().__init__(convert_charrefs=True)
+
+    def clear(self):
+        self.tags = []
+
+    def handle_starttag(self, tag, attrs):
+        self.tags.append(tag)
+
+    def handle_endtag(self, tag):
+        self.tags.append(tag)
+
+    def get_tags(self):
+        self.tags.sort()
+        return self.tags
 
 
 class QualityCheck:
@@ -34,7 +54,7 @@ class QualityCheck:
         l10nrepos_path,
         toml_path,
         requested_check,
-        verbose_mode,
+        cli_options,
         output_path,
     ):
         """ Initialize object """
@@ -43,7 +63,7 @@ class QualityCheck:
         self.l10nrepos_path = l10nrepos_path
         self.toml_path = toml_path
         self.requested_check = requested_check
-        self.verbose = verbose_mode
+        self.verbose = cli_options["verbose"]
         self.output_path = output_path
 
         if self.output_path != "":
@@ -87,18 +107,23 @@ class QualityCheck:
             self.error_messages[locale] = []
 
         # Run checks
-        self.checkAPI()
-        if requested_check == "all":
-            self.checkView("variables")
-            self.checkView("shortcuts")
-            self.checkView("empty")
+        if not cli_options["tmx"]:
+            self.checkAPI()
+            if requested_check == "all":
+                self.checkView("variables")
+                self.checkView("shortcuts")
+                self.checkView("empty")
 
         # Check local TMX for FTL issues if available
         if requested_check == "all" and self.tmx_path != "":
             self.checkTMX()
 
         # Run compare-locales checks if repos are available
-        if requested_check == "all" and self.l10nrepos_path != "":
+        if (
+            not cli_options["tmx"]
+            and requested_check == "all"
+            and self.l10nrepos_path != ""
+        ):
             self.checkRepos()
 
         # Print errors
@@ -618,19 +643,19 @@ class QualityCheck:
 
         # Verify if there are non existing strings in the exclusions file,
         # report as error if there are
-        for key, ids in exclusions.items():
-            if key == "locales":
-                for locale, locale_ids in ids.items():
+        for key, grp in exclusions.items():
+            if grp == "locales":
+                for locale, locale_ids in grp.items():
                     for locale_id in locale_ids:
                         if locale_id not in reference_data:
                             self.general_errors.append(
                                 f"Non existing strings in exclusions_tmx.json ({key}): {locale_id}"
                             )
             else:
-                for id in ids:
+                for id in grp:
                     if id not in reference_data:
                         self.general_errors.append(
-                            f"Non existing strings in exclusions_tmx.json ({key}): {locale_id}"
+                            f"Non existing strings in exclusions_tmx.json ({key}):"
                         )
 
         """
@@ -670,6 +695,20 @@ class QualityCheck:
                 matches = [m for m in matches if m not in ["", "."]]
                 CSS_strings[id] = matches
 
+        # Store strings with HTML elements
+        html_parser = MyHTMLParser()
+        html_strings = {}
+        for id, text in reference_data.items():
+            # TODO: check at least the default form for plurals
+            if "*[" in text:
+                continue
+            html_parser.clear()
+            html_parser.feed(text)
+
+            tags = html_parser.get_tags()
+            if tags:
+                html_strings[id] = tags
+
         for locale in self.locales:
             tmx_path = os.path.join(
                 self.tmx_path, locale, f"cache_{locale}_gecko_strings.json"
@@ -678,7 +717,7 @@ class QualityCheck:
                 locale_data = json.load(f)
 
             # Check for untranslated mandatory keys
-            for string_id in exclusions["mandatory"]:
+            for string_id in exclusions["mandatory"]["strings"]:
                 if string_id not in locale_data:
                     error_msg = f"Missing translation for mandatory key ({string_id})"
                     self.error_messages[locale].append(error_msg)
@@ -690,18 +729,18 @@ class QualityCheck:
                     continue
 
                 # Ignore excluded strings
-                if string_id in exclusions["ignore"]:
+                if string_id in exclusions["ignore"]["strings"]:
                     continue
                 if (
-                    locale in exclusions["locales"]
-                    and string_id in exclusions["locales"][locale]
+                    locale in exclusions["ignore"]["locales"]
+                    and string_id in exclusions["ignore"]["locales"][locale]
                 ):
                     continue
 
                 translation = locale_data[string_id]
 
                 # Check for links in strings
-                if string_id not in exclusions["http"]:
+                if string_id not in exclusions["http"]["strings"]:
                     pattern = re.compile("http(s)*:\/\/", re.UNICODE)
                     if pattern.search(translation):
                         error_msg = f"Link in string ({string_id})"
@@ -712,6 +751,31 @@ class QualityCheck:
                     error_msg = f"Pilcrow character in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
+            # Check for HTML elements mismatch
+            html_parser = MyHTMLParser()
+            for string_id, ref_tags in html_strings.items():
+                # Ignore untranslated strings
+                if string_id not in locale_data:
+                    continue
+
+                # Ignore excluded strings
+                if string_id in exclusions["HTML"]["strings"]:
+                    continue
+                if (
+                    locale in exclusions["HTML"]["locales"]
+                    and string_id in exclusions["HTML"]["locales"][locale]
+                ):
+                    continue
+
+                translation = locale_data[string_id]
+                html_parser.clear()
+                html_parser.feed(translation)
+                tags = html_parser.get_tags()
+
+                if tags != ref_tags:
+                    error_msg = f"Mismatched HTML elements in string ({string_id})"
+                    self.error_messages[locale].append(error_msg)
+
             # FTL checks
             for string_id in ftl_ids:
                 # Ignore untranslated strings
@@ -719,11 +783,11 @@ class QualityCheck:
                     continue
 
                 # Ignore excluded strings
-                if string_id in exclusions["ignore"]:
+                if string_id in exclusions["ignore"]["strings"]:
                     continue
                 if (
-                    locale in exclusions["locales"]
-                    and string_id in exclusions["locales"][locale]
+                    locale in exclusions["ignore"]["locales"]
+                    and string_id in exclusions["ignore"]["locales"][locale]
                 ):
                     continue
 
@@ -737,13 +801,13 @@ class QualityCheck:
                 # Check for DTD variables, e.g. '&something;'
                 pattern = re.compile("&.*;", re.UNICODE)
                 if pattern.search(translation):
-                    if string_id in exclusions["xml"]:
+                    if string_id in exclusions["xml"]["strings"]:
                         continue
                     error_msg = f"XML entity in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
 
                 # Check for properties variables '%S' or '%1$S'
-                if string_id not in exclusions["printf"]:
+                if string_id not in exclusions["printf"]["strings"]:
                     pattern = re.compile(
                         "(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
                     )
@@ -806,6 +870,7 @@ def main():
     cl_parser = argparse.ArgumentParser()
     cl_parser.add_argument("check", help="Run a single check", default="all", nargs="?")
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
+    cl_parser.add_argument("--tmx", dest="tmx", action="store_true")
     cl_parser.add_argument(
         "-output",
         nargs="?",
@@ -850,13 +915,18 @@ def main():
         except:
             sys.exit("Can't create semaphore file")
 
+    cli_options = {
+        "verbose": args.verbose,
+        "tmx": args.tmx,
+    }
+
     QualityCheck(
         root_folder,
         tmx_path,
         l10nrepos_path,
         toml_path,
         args.check,
-        args.verbose,
+        cli_options,
         args.output,
     )
 

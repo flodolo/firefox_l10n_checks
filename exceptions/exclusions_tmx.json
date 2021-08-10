@@ -1,70 +1,128 @@
 {
-  "http": [
-    "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
-    "browser/chrome/browser/browser.properties:certImminentDistrust.message",
-    "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
-    "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
-    "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
-    "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
-    "dom/chrome/dom/dom.properties:MediaWMFNeeded",
-    "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
-    "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
-    "dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader",
-    "dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader",
-    "dom/chrome/dom/dom.properties:PushMessageBadEncryptionHeader",
-    "dom/chrome/dom/dom.properties:PushMessageBadEncryptionKeyHeader",
-    "dom/chrome/dom/dom.properties:PushMessageBadPaddingError",
-    "dom/chrome/dom/dom.properties:PushMessageBadRecordSize",
-    "dom/chrome/dom/dom.properties:PushMessageBadSalt",
-    "dom/chrome/dom/dom.properties:PushMessageBadSenderKey",
-    "dom/chrome/dom/dom.properties:SpeculationFailed",
-    "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
-    "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
-    "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
-    "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
-    "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2",
-    "dom/chrome/plugins.properties:cdm_description2",
-    "dom/chrome/plugins.properties:openH264_description2",
-    "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
-    "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
-    "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
-    "mobile/overrides/netError.dtd:malformedURI.longDesc2",
-    "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
-  ],
-  "ignore": [
-    "browser/browser/aboutDialog.ftl:channel-description",
-    "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key",
-    "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key",
-    "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key",
-    "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
-    "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
-    "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
-    "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
-    "browser/browser/sanitize.ftl:clear-time-duration-prefix.value",
-    "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
-  ],
-  "locales": {
-    "cs": [
-      "browser/browser/appmenu.ftl:appmenuitem-update-banner.label-update-downloading",
-      "browser/browser/appmenu.ftl:appmenuitem-update-banner2.label-update-downloading",
-      "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading"
-    ],
-    "de": [
-      "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
+  "HTML": {
+    "locales": {
+      "ast": [
+        "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle",
+        "browser/browser/newtab/onboarding.ftl:onboarding-welcome-body",
+        "browser/browser/newtab/onboarding.ftl:onboarding-welcome-modal-get-body"
+      ],
+      "cs": [
+        "browser/browser/aboutDialog.ftl:community-2",
+        "browser/browser/newtab/onboarding.ftl:onboarding-multistage-pin-default-header",
+        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+      ],
+      "de": [
+        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+      ],
+      "pl": [
+        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+      ],
+      "sq": [
+        "browser/browser/protections.ftl:fingerprinter-tab-content",
+        "devtools/client/aboutdebugging.ftl:about-debugging-setup-this-firefox2"
+      ],
+      "sr": [
+        "browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message2",
+        "browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message2"
+      ],
+      "tr": [
+        "browser/browser/newtab/onboarding.ftl:onboarding-welcome-body",
+        "browser/browser/newtab/onboarding.ftl:onboarding-welcome-modal-get-body"
+      ],
+      "zh-CN": [
+        "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
+      ]
+    },
+    "strings": [
+      "browser/browser/newtab/onboarding.ftl:onboarding-multistage-import-header",
+      "browser/chrome/overrides/appstrings.properties:externalProtocolUnknown",
+      "devtools/client/debugger.properties:anonymousFunction",
+      "devtools/client/markers.properties:marker.value.unknownFrame",
+      "devtools/client/netmonitor.properties:netmonitor.security.notAvailable",
+      "devtools/client/styleeditor.properties:inlineStyleSheet",
+      "devtools/client/webconsole.properties:noCounterLabel",
+      "devtools/client/webconsole.properties:noGroupLabel",
+      "devtools/client/webconsole.properties:stacktrace.anonymousFunction"
     ]
   },
-  "mandatory": [
-    "toolkit/chrome/global/intl.properties:font.language.group",
-    "toolkit/chrome/global/intl.properties:intl.accept_languages",
-    "toolkit/chrome/global/intl.properties:pluralRule",
-    "toolkit/defines.inc:MOZ_LANG_TITLE"
-  ],
-  "printf": [
-    "browser/browser/preferences/addEngine.ftl:add-engine-url"
-  ],
-  "xml": [
-    "toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported",
-    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description",
-    "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description"
-  ]
+  "http": {
+    "locales": {},
+    "strings": [
+      "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
+      "browser/chrome/browser/browser.properties:certImminentDistrust.message",
+      "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
+      "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
+      "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
+      "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
+      "dom/chrome/dom/dom.properties:MediaWMFNeeded",
+      "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
+      "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
+      "dom/chrome/dom/dom.properties:PushMessageBadCryptoKeyHeader",
+      "dom/chrome/dom/dom.properties:PushMessageBadEncodingHeader",
+      "dom/chrome/dom/dom.properties:PushMessageBadEncryptionHeader",
+      "dom/chrome/dom/dom.properties:PushMessageBadEncryptionKeyHeader",
+      "dom/chrome/dom/dom.properties:PushMessageBadPaddingError",
+      "dom/chrome/dom/dom.properties:PushMessageBadRecordSize",
+      "dom/chrome/dom/dom.properties:PushMessageBadSalt",
+      "dom/chrome/dom/dom.properties:PushMessageBadSenderKey",
+      "dom/chrome/dom/dom.properties:SpeculationFailed",
+      "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
+      "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
+      "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
+      "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
+      "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound2",
+      "dom/chrome/plugins.properties:cdm_description2",
+      "dom/chrome/plugins.properties:openH264_description2",
+      "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
+      "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
+      "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
+      "mobile/overrides/netError.dtd:malformedURI.longDesc2",
+      "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
+    ]
+  },
+  "ignore": {
+    "locales": {
+      "cs": [
+        "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading"
+      ],
+      "de": [
+        "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
+      ]
+    },
+    "strings": [
+      "browser/browser/aboutDialog.ftl:channel-description",
+      "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key",
+      "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key",
+      "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key",
+      "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
+      "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+      "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+      "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
+      "browser/browser/sanitize.ftl:clear-time-duration-prefix.value",
+      "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
+    ]
+  },
+  "mandatory": {
+    "locales": {},
+    "strings": [
+      "toolkit/chrome/global/intl.properties:font.language.group",
+      "toolkit/chrome/global/intl.properties:intl.accept_languages",
+      "toolkit/chrome/global/intl.properties:pluralRule",
+      "toolkit/defines.inc:MOZ_LANG_TITLE"
+    ]
+  },
+  "printf": {
+    "locales": {},
+    "strings": [
+      "browser/browser/preferences/addEngine.ftl:add-engine-url"
+    ]
+  },
+  "xml": {
+    "locales": {},
+    "strings": [
+      "toolkit/toolkit/about/certviewer.ftl:certificate-viewer-unsupported",
+      "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-beforeinput-description",
+      "toolkit/toolkit/featuregates/features.ftl:experimental-features-web-api-link-preload-description"
+    ]
+  }
 }
