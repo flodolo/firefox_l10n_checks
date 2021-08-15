@@ -143,7 +143,9 @@
       "DATETIME\\(\\$date,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "cfr-doorhanger-milestone-heading2",
-    "excluded_locales": [],
+    "excluded_locales": [
+      "pl"
+    ],
     "file": "browser/browser/newtab/asrouter.ftl",
     "type": "include_regex"
   },
