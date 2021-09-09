@@ -105,6 +105,16 @@
     "type": "plural_forms"
   },
   {
+    "entity": "tabs.closeTabsTitle",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
+    "entity": "tabs.closeWindowsTitle",
+    "file": "browser/chrome/browser/tabbrowser.properties",
+    "type": "plural_forms"
+  },
+  {
     "entity": "tabs.closeWarningMultiple",
     "file": "browser/chrome/browser/tabbrowser.properties",
     "type": "plural_forms"
