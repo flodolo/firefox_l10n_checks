@@ -67,6 +67,7 @@ pl: toolkit/chrome/global/dialog.properties:accesskey-disclosure
 pl: toolkit/chrome/global/dialog.properties:accesskey-help
 ru: toolkit/chrome/global/intl.properties:intl.charset.detector
 ru: toolkit/chrome/pluginproblem/pluginproblem.dtd:reloadPlugin.pre
+sat: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 sl: browser/chrome/browser/browser.dtd:fullscreenWarning.beforeDomain.label
 sr: toolkit/chrome/global/dialog.properties:accesskey-help
 te: browser/chrome/browser/browser.dtd:pointerlockWarning.beforeDomain.label
