@@ -14,6 +14,9 @@
       "de": [
         "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
       ],
+      "hy-AM": [
+        "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
+      ],
       "pl": [
         "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
       ],
