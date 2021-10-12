@@ -65,6 +65,24 @@
   },
   {
     "checks": [
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-cpu-fully-idle.title",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "about-processes-cpu-almost-idle.title",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)",
       "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
     ],
