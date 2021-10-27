@@ -91,7 +91,8 @@
   "ignore": {
     "locales": {
       "cs": [
-        "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading"
+        "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading",
+        "browser/browser/appmenu.ftl:appmenuitem-banner-update-downloading.label"
       ],
       "de": [
         "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
