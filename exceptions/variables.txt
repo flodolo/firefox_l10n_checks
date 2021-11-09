@@ -98,6 +98,7 @@ fi: toolkit/chrome/global/wizard.properties:default-last-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header
+fi: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
 fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
@@ -146,6 +147,7 @@ ja-JP-mac: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja-JP-mac: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja-JP-mac: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 ja-JP-mac: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
 ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
@@ -177,10 +179,12 @@ ja: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangeOptions.label
 ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreferences.label
 ja: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
+ja: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 ja: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
+ko: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 lt: browser/chrome/browser/newInstall.dtd:mainText
 oc: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 pl: browser/browser/browser.ftl:navbar-home.tooltiptext
@@ -217,6 +221,7 @@ pl: toolkit/toolkit/about/aboutAddons.ftl:preferences
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 pl: toolkit/toolkit/about/aboutAddons.ftl:sidebar-settings-button-title.title
 pl: toolkit/toolkit/about/aboutSupport.ftl:startup-cache-dialog-title2
+pl: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label

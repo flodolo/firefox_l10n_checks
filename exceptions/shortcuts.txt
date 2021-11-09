@@ -38,6 +38,10 @@ lij: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 lt: browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key
 lt: browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key
 ru: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
+sc: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
+sc: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key
+sc: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key
+sc: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key
 scn: browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key
 scn: devtools/client/sourceeditor.properties:indentLess.commandkey
