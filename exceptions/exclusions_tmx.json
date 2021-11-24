@@ -85,14 +85,16 @@
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
       "mobile/overrides/netError.dtd:malformedURI.longDesc2",
+      "toolkit/toolkit/about/aboutPlugins.ftl:plugins-openh264-description",
+      "toolkit/toolkit/about/aboutPlugins.ftl:plugins-widevine-description",
       "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
     ]
   },
   "ignore": {
     "locales": {
       "cs": [
-        "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading",
-        "browser/browser/appmenu.ftl:appmenuitem-banner-update-downloading.label"
+        "browser/browser/appmenu.ftl:appmenuitem-banner-update-downloading.label",
+        "browser/browser/appmenu.ftl:appmenuitem-update-banner3.label-update-downloading"
       ],
       "de": [
         "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
