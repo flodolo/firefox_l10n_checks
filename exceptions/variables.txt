@@ -30,6 +30,7 @@ et: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
 et: browser/installer/custom.properties:SURVEY_TEXT
 et: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 et: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
+et: browser/installer/custom.properties:UN_REFRESH_PAGE_EXPLANATION
 et: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
 et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
 et: browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
