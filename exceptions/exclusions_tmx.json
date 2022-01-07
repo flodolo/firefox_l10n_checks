@@ -48,7 +48,9 @@
       "devtools/client/styleeditor.properties:inlineStyleSheet",
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
-      "devtools/client/webconsole.properties:stacktrace.anonymousFunction"
+      "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
+      "dom/chrome/dom/dom.properties:IDBDatabaseCreateMutableFileWarning",
+      "dom/chrome/dom/dom.properties:IDBMutableFileOpenWarning"
     ]
   },
   "http": {
