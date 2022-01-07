@@ -48,9 +48,7 @@
       "devtools/client/styleeditor.properties:inlineStyleSheet",
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
-      "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
-      "dom/chrome/dom/dom.properties:IDBDatabaseCreateMutableFileWarning",
-      "dom/chrome/dom/dom.properties:IDBMutableFileOpenWarning"
+      "devtools/client/webconsole.properties:stacktrace.anonymousFunction"
     ]
   },
   "http": {
@@ -62,6 +60,8 @@
       "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
       "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
       "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
+      "dom/chrome/dom/dom.properties:IDBDatabaseCreateMutableFileWarning",
+      "dom/chrome/dom/dom.properties:IDBMutableFileOpenWarning",
       "dom/chrome/dom/dom.properties:MediaWMFNeeded",
       "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
       "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
