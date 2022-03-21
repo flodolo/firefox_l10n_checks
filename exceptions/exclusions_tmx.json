@@ -62,6 +62,7 @@
       "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
       "dom/chrome/dom/dom.properties:IDBDatabaseCreateMutableFileWarning",
       "dom/chrome/dom/dom.properties:IDBMutableFileOpenWarning",
+      "dom/chrome/dom/dom.properties:InstallTriggerInstallDeprecatedWarning",
       "dom/chrome/dom/dom.properties:MediaWMFNeeded",
       "dom/chrome/dom/dom.properties:MediaWidevineNoWMF",
       "dom/chrome/dom/dom.properties:PushMessageBadCryptoError",
