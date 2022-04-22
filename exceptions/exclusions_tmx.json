@@ -17,6 +17,12 @@
       "hy-AM": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
       ],
+      "ja": [
+        "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
+      ],
+      "ja-JP-mac": [
+        "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
+      ],
       "pl": [
         "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
       ],
