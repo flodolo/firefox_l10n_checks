@@ -71,7 +71,7 @@ class QualityCheck:
         cli_options,
         output_path,
     ):
-        """ Initialize object """
+        """Initialize object"""
         self.root_folder = root_folder
         self.tmx_path = tmx_path
         self.l10nrepos_path = l10nrepos_path
@@ -96,8 +96,8 @@ class QualityCheck:
 
         self.general_errors = []
 
-        self.date_key = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-        print(f"\n--------\nRun: {self.date_key}\n")
+        start_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        print(f"\n--------\nRun: {start_datetime}\n")
 
         # Create a list of available checks in JSON format
         self.json_files = []
@@ -229,7 +229,8 @@ class QualityCheck:
         if savetofile:
             if output["message"]:
                 output["message"] = "\n".join(output["message"])
-            self.archive_data[self.date_key] = output
+            end_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+            self.archive_data[end_datetime] = output
             checks_file = os.path.join(self.output_path, "checks.json")
             with open(checks_file, "w") as outfile:
                 json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
@@ -265,7 +266,7 @@ class QualityCheck:
         return ([], False)
 
     def getPluralForms(self):
-        """ Get the number of plural forms for each locale """
+        """Get the number of plural forms for each locale"""
 
         from compare_locales.plurals import get_plural
 
@@ -290,7 +291,7 @@ class QualityCheck:
             self.plural_forms[locale] = num_plurals
 
     def getLocales(self):
-        """ Get the list of supported locales """
+        """Get the list of supported locales"""
         if self.verbose:
             print("Reading the list of supported locales")
         url = f"{self.api_url}/locales/gecko_strings/"
@@ -301,7 +302,7 @@ class QualityCheck:
             sys.exit("CRITICAL ERROR: List of support locales not available")
 
     def printErrors(self):
-        """ Print error messages """
+        """Print error messages"""
         error_count = 0
         locales_with_errors = OrderedDict()
         for locale, errors in self.error_messages.items():
@@ -335,7 +336,7 @@ class QualityCheck:
             print("\n".join(self.general_errors))
 
     def sanityCheckJSON(self):
-        """ Do a sanity check on JSON files, checking for duplicates """
+        """Do a sanity check on JSON files, checking for duplicates"""
         for json_file in self.json_files:
             try:
                 checks = json.load(
@@ -354,7 +355,7 @@ class QualityCheck:
                 available_checks.append(id)
 
     def checkAPI(self):
-        """ Check strings via API requests """
+        """Check strings via API requests"""
         self.sanityCheckJSON()
         if self.requested_check != "all":
             if self.requested_check not in self.json_files:
@@ -477,7 +478,7 @@ class QualityCheck:
                 self.error_summary[json_file] = total_errors
 
     def checkView(self, checkname):
-        """ Check views for access keys and keyboard shortcuts """
+        """Check views for access keys and keyboard shortcuts"""
         if checkname == "variables":
             if self.verbose:
                 print("CHECK: variables")
