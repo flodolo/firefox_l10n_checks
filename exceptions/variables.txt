@@ -237,6 +237,7 @@ sk: browser/browser/protections.ftl:graph-week-summary-private-window
 sk: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 sk: browser/chrome/browser/newInstall.dtd:sync
 sk: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+sk: browser/installer/custom.properties:PRIVATE_BROWSING_SHORTCUT_TITLE
 sk: toolkit/toolkit/about/aboutAddons.ftl:preferences
 sk: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 sk: toolkit/toolkit/global/profileDowngrade.ftl:profiledowngrade-sync
