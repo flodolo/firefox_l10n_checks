@@ -158,6 +158,22 @@
   },
   {
     "checks": [
+      "DATETIME\\(\\$expiryDate,\\s*month:\\s*\"long\",\\s*day:\\s*\"numeric\"\\)"
+    ],
+    "entity": "colorway-collection-expiry-label",
+    "file": "browser/browser/colorwaycloset.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$expiryDate,\\s*month:\\s*\"long\",\\s*day:\\s*\"numeric\"\\)"
+    ],
+    "entity": "colorway-collection-expiry-label",
+    "file": "toolkit/toolkit/about/aboutAddons.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "DATETIME\\(\\$date,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "cfr-doorhanger-milestone-heading2",
