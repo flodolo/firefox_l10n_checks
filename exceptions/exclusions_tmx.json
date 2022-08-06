@@ -14,6 +14,9 @@
       "de": [
         "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
       ],
+      "gd": [
+        "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
+      ],
       "hy-AM": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
       ],
