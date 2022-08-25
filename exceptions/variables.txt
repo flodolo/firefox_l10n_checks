@@ -229,6 +229,7 @@ ru: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 ru: browser/chrome/browser/browser.dtd:fxa.menu.turnOnSync.label
+si: browser/browser/preferences/preferences.ftl:collection-health-report.label
 sk: browser/browser/aboutLogins.ftl:enable-password-sync-notification-message
 sk: browser/browser/newtab/onboarding.ftl:onboarding-multistage-import-subtitle
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
