@@ -125,6 +125,7 @@ ja-JP-mac: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instanc
 ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja-JP-mac: browser/browser/preferences/formAutofill.ftl:autofill-edit-card-password-prompt
 ja-JP-mac: browser/browser/preferences/preferences.ftl:category-experimental.tooltiptext
 ja-JP-mac: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja-JP-mac: browser/browser/preferences/preferences.ftl:pane-experimental-search-results-header
@@ -157,6 +158,7 @@ ja: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.butto
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-description
+ja: browser/browser/preferences/formAutofill.ftl:autofill-edit-card-password-prompt
 ja: browser/browser/preferences/preferences.ftl:category-experimental.tooltiptext
 ja: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 ja: browser/browser/preferences/preferences.ftl:pane-experimental-search-results-header

@@ -5,6 +5,7 @@
     "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key",
     "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
     "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
-    "browser/browser/sanitize.ftl:clear-time-duration-suffix.value"
+    "browser/browser/sanitize.ftl:clear-time-duration-suffix.value",
+    "browser/browser/translationNotification.ftl:translation-notification-translated-to-suffix.value"
   ]
 }
