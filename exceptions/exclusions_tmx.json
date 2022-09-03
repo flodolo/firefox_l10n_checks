@@ -110,6 +110,9 @@
       ],
       "de": [
         "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey"
+      ],
+      "ko": [
+        "browser/browser/translationNotification.ftl:translation-notification-this-page-is-in.value"
       ]
     },
     "strings": [
