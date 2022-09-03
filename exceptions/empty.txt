@@ -50,6 +50,7 @@ ja: devtools/client/performance.dtd:performanceUI.console.recordingNoticeStart
 ja: toolkit/chrome/global/intl.properties:intl.charset.detector
 ja: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
 kk: toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys
+ko: browser/browser/translationNotification.ftl:translation-notification-this-page-is-in.value
 ko: browser/chrome/browser/translation.dtd:translation.thisPageIsIn.label
 ko: browser/chrome/browser/translation.dtd:translation.translatedToSuffix.label
 ko: devtools/client/performance.dtd:performanceUI.console.recordingNoticeEnd
