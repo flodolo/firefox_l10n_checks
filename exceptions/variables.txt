@@ -193,6 +193,7 @@ lt: browser/chrome/browser/newInstall.dtd:mainText
 oc: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 pl: browser/browser/browser.ftl:navbar-home.tooltiptext
 pl: browser/browser/menubar.ftl:menu-application-hide-this.label
+pl: browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in
 pl: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext
