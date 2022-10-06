@@ -99,7 +99,9 @@ fi: toolkit/chrome/global/wizard.properties:default-first-title
 fi: toolkit/chrome/global/wizard.properties:default-last-title
 fi: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header
+fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header2
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header
+fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header2
 fi: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
 fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
