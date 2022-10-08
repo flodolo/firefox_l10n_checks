@@ -211,6 +211,7 @@ oc: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExpl
 oc: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
 pl: browser/browser/browser.ftl:navbar-home.tooltiptext
 pl: browser/browser/menubar.ftl:menu-application-hide-this.label
+pl: browser/browser/newtab/asrouter.ftl:mr2022-background-update-toast-primary-button-label
 pl: browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in
 pl: browser/browser/preferences/preferences.ftl:category-general.tooltiptext
 pl: browser/browser/preferences/preferences.ftl:category-home.tooltiptext
