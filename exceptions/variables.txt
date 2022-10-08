@@ -17,9 +17,13 @@ cs: browser/browser/preferences/preferences.ftl:preferences-colors-description
 cs: browser/chrome/browser/browser.dtd:fxa.menu.syncSettings2.label
 cs: browser/chrome/browser/newInstall.dtd:sync
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+cs: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
+da: toolkit/toolkit/neterror/netError.ftl:neterror-not-cached-intro
 de: browser/chrome/overrides/netError.dtd:notCached.longDesc
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE
 de: browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE
+de: toolkit/toolkit/neterror/netError.ftl:neterror-not-cached-intro
+de: toolkit/toolkit/neterror/netError.ftl:neterror-not-cached-sensitive
 et: browser/chrome/overrides/netError.dtd:notCached.longDesc
 et: browser/installer/custom.properties:CONTEXT_OPTIONS
 et: browser/installer/custom.properties:CONTEXT_SAFE_MODE
@@ -62,6 +66,8 @@ et: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 et: browser/installer/override.properties:DirText
 et: browser/installer/override.properties:LicenseTextRB
 et: mobile/overrides/netError.dtd:notCached.longDesc
+et: toolkit/toolkit/neterror/netError.ftl:neterror-not-cached-intro
+et: toolkit/toolkit/neterror/netError.ftl:neterror-not-cached-sensitive
 eu: toolkit/crashreporter/crashreporter.ini:Quit2
 fi: browser/installer/custom.properties:CONTEXT_OPTIONS
 fi: browser/installer/custom.properties:CONTEXT_SAFE_MODE
@@ -105,6 +111,7 @@ fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-head
 fi: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
 fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+fr: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
 fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
 fy-NL: mobile/overrides/netError.dtd:cspBlocked.longDesc
 he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
@@ -154,6 +161,10 @@ ja-JP-mac: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePre
 ja-JP-mac: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ja-JP-mac: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 ja-JP-mac: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
+ja-JP-mac: toolkit/toolkit/neterror/certError.ftl:certerror-mitm-title
+ja-JP-mac: toolkit/toolkit/neterror/netError.ftl:certerror-expired-cert-second-para
+ja-JP-mac: toolkit/toolkit/neterror/netError.ftl:certerror-expired-cert-sts-second-para
+ja-JP-mac: toolkit/toolkit/neterror/netError.ftl:neterror-error-reporting-automatic
 ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.buttonlabel
@@ -187,12 +198,17 @@ ja: toolkit/chrome/mozapps/downloads/settingsChange.dtd:settingsChangePreference
 ja: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ja: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 ja: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-settingschange.value
+ja: toolkit/toolkit/neterror/certError.ftl:certerror-mitm-title
+ja: toolkit/toolkit/neterror/netError.ftl:certerror-expired-cert-second-para
+ja: toolkit/toolkit/neterror/netError.ftl:certerror-expired-cert-sts-second-para
+ja: toolkit/toolkit/neterror/netError.ftl:neterror-error-reporting-automatic
 ko: mobile/overrides/netError.dtd:cspBlocked.longDesc
 ko: toolkit/chrome/mozapps/downloads/unknownContentType.dtd:actionQuestion.label
 ko: toolkit/crashreporter/crashreporter.ini:CheckAllowEmail
 ko: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 lt: browser/chrome/browser/newInstall.dtd:mainText
 oc: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
+oc: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
 pl: browser/browser/browser.ftl:navbar-home.tooltiptext
 pl: browser/browser/menubar.ftl:menu-application-hide-this.label
 pl: browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in
@@ -248,6 +264,7 @@ sk: browser/installer/custom.properties:PRIVATE_BROWSING_SHORTCUT_TITLE
 sk: toolkit/toolkit/about/aboutAddons.ftl:preferences
 sk: toolkit/toolkit/about/aboutAddons.ftl:sidebar-preferences-button-title.title
 sk: toolkit/toolkit/global/profileDowngrade.ftl:profiledowngrade-sync
+sk: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
 sl: browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE
 sl: browser/installer/custom.properties:UN_REFRESH_PAGE_EXPLANATION
 sl: browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG
@@ -269,6 +286,7 @@ sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG
 sr: browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG
 szl: browser/chrome/browser/newInstall.dtd:sync
+szl: toolkit/toolkit/neterror/netError.ftl:neterror-error-reporting-automatic
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.signintosync.label
 uk: browser/chrome/browser/browser.dtd:appMenuRemoteTabs.turnonsync.label
 uk: browser/chrome/browser/browser.dtd:fxa.menu.setupSync.label
