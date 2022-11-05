@@ -624,6 +624,26 @@ class QualityCheck:
     def checkTMX(self):
         """Check local TMX for issues, mostly on FTL files"""
 
+        def ignoreString(string_id, locale_data, exclusion_type):
+            # Ignore untranslated strings
+            if string_id not in locale_data:
+                return True
+
+            # Ignore strings from other products
+            if string_id.startswith(self.excluded_products):
+                return True
+
+            # Ignore excluded strings
+            if string_id in exclusions[exclusion_type]["strings"]:
+                return True
+            if (
+                locale in exclusions[exclusion_type]["locales"]
+                and string_id in exclusions[exclusion_type]["locales"][locale]
+            ):
+                return True
+
+            return True
+
         if self.verbose:
             print("Reading TMX data from Transvision")
 
@@ -742,17 +762,8 @@ class QualityCheck:
 
             # General checks (all strings)
             for string_id in reference_ids:
-                # Ignore untranslated strings
-                if string_id not in locale_data:
-                    continue
-
-                # Ignore excluded strings
-                if string_id in exclusions["ignore"]["strings"]:
-                    continue
-                if (
-                    locale in exclusions["ignore"]["locales"]
-                    and string_id in exclusions["ignore"]["locales"][locale]
-                ):
+                # Ignore strings
+                if ignoreString(string_id, locale_data, "ignore"):
                     continue
 
                 translation = locale_data[string_id]
@@ -772,17 +783,8 @@ class QualityCheck:
             # Check for HTML elements mismatch
             html_parser = MyHTMLParser()
             for string_id, ref_tags in html_strings.items():
-                # Ignore untranslated strings
-                if string_id not in locale_data:
-                    continue
-
-                # Ignore excluded strings
-                if string_id in exclusions["HTML"]["strings"]:
-                    continue
-                if (
-                    locale in exclusions["HTML"]["locales"]
-                    and string_id in exclusions["HTML"]["locales"][locale]
-                ):
+                # Ignore strings
+                if ignoreString(string_id, locale_data, "HTML"):
                     continue
 
                 translation = locale_data[string_id]
@@ -802,17 +804,8 @@ class QualityCheck:
 
             # FTL checks
             for string_id in ftl_ids:
-                # Ignore untranslated strings
-                if string_id not in locale_data:
-                    continue
-
-                # Ignore excluded strings
-                if string_id in exclusions["ignore"]["strings"]:
-                    continue
-                if (
-                    locale in exclusions["ignore"]["locales"]
-                    and string_id in exclusions["ignore"]["locales"][locale]
-                ):
+                # Ignore strings
+                if ignoreString(string_id, locale_data, "ignore"):
                     continue
 
                 translation = locale_data[string_id]
