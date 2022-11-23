@@ -131,6 +131,8 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 ja-JP-mac: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja-JP-mac: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.buttonlabel
+ja-JP-mac: browser/browser/browser.ftl:refresh-blocked-redirect-label
+ja-JP-mac: browser/browser/browser.ftl:refresh-blocked-refresh-label
 ja-JP-mac: browser/browser/newInstallPage.ftl:options-do-nothing
 ja-JP-mac: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja-JP-mac: browser/browser/preferences/blocklists.ftl:blocklist-description
@@ -168,6 +170,8 @@ ja-JP-mac: toolkit/toolkit/neterror/netError.ftl:neterror-error-reporting-automa
 ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.buttonlabel
+ja: browser/browser/browser.ftl:refresh-blocked-redirect-label
+ja: browser/browser/browser.ftl:refresh-blocked-refresh-label
 ja: browser/browser/newInstallPage.ftl:options-do-nothing
 ja: browser/browser/policies/policies-descriptions.ftl:policy-DisableFirefoxStudies
 ja: browser/browser/preferences/blocklists.ftl:blocklist-description
