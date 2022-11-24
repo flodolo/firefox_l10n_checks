@@ -678,20 +678,21 @@ class QualityCheck:
 
         # Verify if there are non existing strings in the exclusions file,
         # report as error if there are
-        for key, grp in exclusions.items():
-            if grp == "locales":
-                for locale, locale_ids in grp.items():
-                    for locale_id in locale_ids:
-                        if locale_id not in reference_data:
+        for key, key_data in exclusions.items():
+            for grp, grp_data in key_data.items():
+                if grp == "locales":
+                    for locale, locale_ids in grp_data.items():
+                        for locale_id in locale_ids:
+                            if locale_id not in reference_data:
+                                self.general_errors.append(
+                                    f"Non existing strings in exclusions_tmx.json ({key}, {grp}): {locale_id}"
+                                )
+                else:
+                    for id in grp_data:
+                        if id not in reference_data:
                             self.general_errors.append(
-                                f"Non existing strings in exclusions_tmx.json ({key}): {locale_id}"
+                                f"Non existing strings in exclusions_tmx.json ({key}, {grp}): {id}"
                             )
-            else:
-                for id in grp:
-                    if id not in reference_data:
-                        self.general_errors.append(
-                            f"Non existing strings in exclusions_tmx.json ({key}):"
-                        )
 
         """
         Store specific English strings for addictional FTL checks:

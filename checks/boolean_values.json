@@ -7,14 +7,5 @@
       "false",
       "true"
     ]
-  },
-  {
-    "entity": "browser.menu.showCharacterEncoding",
-    "file": "mobile/android/chrome/browser.properties",
-    "type": "acceptable_values",
-    "values": [
-      "false",
-      "true"
-    ]
   }
 ]

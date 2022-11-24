@@ -19,16 +19,6 @@
   },
   {
     "checks": [
-      "NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)",
-      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-    ],
-    "entity": "about-processes-cpu-user-and-kernel",
-    "excluded_locales": [],
-    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
-    "type": "include_regex"
-  },
-  {
-    "checks": [
       "NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)"
     ],
     "entity": "about-processes-cpu",
@@ -49,24 +39,6 @@
     "checks": [
       "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
     ],
-    "entity": "about-processes-cpu-user-and-kernel-idle",
-    "excluded_locales": [],
-    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
-    "type": "include_regex"
-  },
-  {
-    "checks": [
-      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-    ],
-    "entity": "about-processes-cpu-idle.title",
-    "excluded_locales": [],
-    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
-    "type": "include_regex"
-  },
-  {
-    "checks": [
-      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-    ],
     "entity": "about-processes-cpu-fully-idle.title",
     "excluded_locales": [],
     "file": "toolkit/toolkit/about/aboutProcesses.ftl",
@@ -77,16 +49,6 @@
       "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
     ],
     "entity": "about-processes-cpu-almost-idle.title",
-    "excluded_locales": [],
-    "file": "toolkit/toolkit/about/aboutProcesses.ftl",
-    "type": "include_regex"
-  },
-  {
-    "checks": [
-      "NUMBER\\(\\$delta,\\s*maximumFractionDigits:\\s*\\d\\)",
-      "NUMBER\\(\\$total,\\s*maximumFractionDigits:\\s*\\d\\)"
-    ],
-    "entity": "about-processes-total-memory-size",
     "excluded_locales": [],
     "file": "toolkit/toolkit/about/aboutProcesses.ftl",
     "type": "include_regex"
@@ -143,17 +105,6 @@
     "entity": "about-webrtc-sdp-set-timestamp",
     "excluded_locales": [],
     "file": "toolkit/toolkit/about/aboutWebrtc.ftl",
-    "type": "include_regex"
-  },
-  {
-    "checks": [
-      "DATETIME\\(\\$earliestDate,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
-    ],
-    "entity": "cfr-whatsnew-tracking-blocked-subtitle",
-    "excluded_locales": [
-      "pl"
-    ],
-    "file": "browser/browser/newtab/asrouter.ftl",
     "type": "include_regex"
   },
   {
@@ -338,62 +289,6 @@
       "uk"
     ],
     "file": "browser/browser/browserContext.ftl",
-    "type": "not_include_regex"
-  },
-  {
-    "checks": [
-      "-fxaccount-brand-name\\([a-z]*:\\s?\""
-    ],
-    "entity": "options-use-sync",
-    "excluded_locales": [
-      "cs",
-      "el",
-      "en-CA",
-      "en-GB",
-      "eu",
-      "fi",
-      "fr",
-      "he",
-      "it",
-      "pl",
-      "rm",
-      "ro",
-      "ru",
-      "sco",
-      "sk",
-      "sl",
-      "sr",
-      "uk"
-    ],
-    "file": "browser/browser/newInstallPage.ftl",
-    "type": "not_include_regex"
-  },
-  {
-    "checks": [
-      "-fxaccount-brand-name\\([a-z]*:\\s?\""
-    ],
-    "entity": "sync-header",
-    "excluded_locales": [
-      "cs",
-      "el",
-      "en-CA",
-      "en-GB",
-      "eu",
-      "fi",
-      "fr",
-      "he",
-      "it",
-      "pl",
-      "rm",
-      "ro",
-      "ru",
-      "sco",
-      "sk",
-      "sl",
-      "sr",
-      "uk"
-    ],
-    "file": "browser/browser/newInstallPage.ftl",
     "type": "not_include_regex"
   }
 ]

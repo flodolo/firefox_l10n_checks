@@ -57,18 +57,5 @@
     ],
     "file": "toolkit/toolkit/featuregates/features.ftl",
     "type": "include"
-  },
-  {
-    "checks": [
-      "*.example.com"
-    ],
-    "entity": "csp.error.illegal-host-wildcard",
-    "excluded_locales": [
-      "da",
-      "et",
-      "eu"
-    ],
-    "file": "toolkit/chrome/global/extensions.properties",
-    "type": "include"
   }
 ]

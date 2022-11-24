@@ -45,18 +45,6 @@
     ]
   },
   {
-    "entity": "intl.charset.detector",
-    "excluded_locales": [
-      "ja",
-      "ja-JP-mac",
-      "ru",
-      "uk"
-    ],
-    "file": "toolkit/chrome/global/intl.properties",
-    "type": "equal_to",
-    "value": ""
-  },
-  {
     "entity": "intl.menuitems.alwaysappendaccesskeys",
     "file": "toolkit/chrome/global/intl.properties",
     "type": "acceptable_values",
