@@ -748,6 +748,7 @@ class QualityCheck:
             if tags:
                 html_strings[id] = tags
 
+        tmx_errors = 0
         for locale in self.locales:
             tmx_path = os.path.join(
                 self.tmx_path, locale, f"cache_{locale}_gecko_strings.json"
@@ -760,6 +761,7 @@ class QualityCheck:
                 if string_id not in locale_data:
                     error_msg = f"Missing translation for mandatory key ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
             # General checks (all strings)
             for string_id in reference_ids:
@@ -775,11 +777,13 @@ class QualityCheck:
                     if pattern.search(translation):
                         error_msg = f"Link in string ({string_id})"
                         self.error_messages[locale].append(error_msg)
+                        tmx_errors += 1
 
                 # Check for pilcrow character
                 if "¶" in translation:
                     error_msg = f"Pilcrow character in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
             # Check for HTML elements mismatch
             html_parser = MyHTMLParser()
@@ -802,6 +806,7 @@ class QualityCheck:
                 if tags != ref_tags:
                     error_msg = f"Mismatched HTML elements in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
             # FTL checks
             for string_id in ftl_ids:
@@ -815,6 +820,7 @@ class QualityCheck:
                 if '{ "' in translation:
                     error_msg = f"Fluent literal in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
                 # Check for DTD variables, e.g. '&something;'
                 pattern = re.compile("&.*;", re.UNICODE)
@@ -823,6 +829,7 @@ class QualityCheck:
                         continue
                     error_msg = f"XML entity in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
                 # Check for properties variables '%S' or '%1$S'
                 if string_id not in exclusions["printf"]["strings"]:
@@ -832,6 +839,7 @@ class QualityCheck:
                     if pattern.search(translation):
                         error_msg = f"printf variables in Fluent string ({string_id})"
                         self.error_messages[locale].append(error_msg)
+                        tmx_errors += 1
 
                 # Check for the message ID repeated in the translation
                 message_id = string_id.split(":")[1]
@@ -841,6 +849,7 @@ class QualityCheck:
                         f"Message ID is repeated in the Fluent string ({string_id})"
                     )
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
             # Check data-l10n-names
             for string_id, groups in data_l10n_ids.items():
@@ -862,10 +871,12 @@ class QualityCheck:
                             f"data-l10n-name mismatch in Fluent string ({string_id})"
                         )
                         self.error_messages[locale].append(error_msg)
+                        tmx_errors += 1
                 else:
                     # There are no data-l10n-name
                     error_msg = f"data-l10n-name missing in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
 
             # Check for CSS mismatches
             for string_id, cleaned_source in CSS_strings.items():
@@ -881,6 +892,8 @@ class QualityCheck:
                     # Groups are not matching
                     error_msg = f"CSS mismatch in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
+        self.error_summary["TMX checks"] = tmx_errors
 
 
 def main():
