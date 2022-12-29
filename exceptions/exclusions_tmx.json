@@ -118,8 +118,7 @@
     "strings": [
       "toolkit/chrome/global/intl.properties:font.language.group",
       "toolkit/chrome/global/intl.properties:intl.accept_languages",
-      "toolkit/chrome/global/intl.properties:pluralRule",
-      "toolkit/defines.inc:MOZ_LANG_TITLE"
+      "toolkit/chrome/global/intl.properties:pluralRule"
     ]
   },
   "printf": {

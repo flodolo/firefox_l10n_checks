@@ -38,14 +38,6 @@
   },
   {
     "checks": [
-      "(US)"
-    ],
-    "entity": "MOZ_LANG_TITLE",
-    "file": "toolkit/defines.inc",
-    "type": "not_include"
-  },
-  {
-    "checks": [
       "http://example.com",
       "https://example.com"
     ],
