@@ -145,6 +145,15 @@
   },
   {
     "checks": [
+      "DATETIME\\(\\$datetime,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "login-item-timeline-point-date",
+    "excluded_locales": [],
+    "file": "browser/browser/aboutLogins.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "DATETIME\\(\\$timeChanged,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "login-item-time-changed",
