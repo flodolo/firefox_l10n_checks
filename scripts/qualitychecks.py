@@ -626,7 +626,7 @@ class QualityCheck:
             ):
                 return True
 
-            return True
+            return False
 
         if self.verbose:
             print("Reading TMX data from Transvision")
