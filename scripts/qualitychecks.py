@@ -88,7 +88,10 @@ class QualityCheck:
         self.json_files.sort()
 
         # Get the list of supported locales
-        self.getLocales()
+        if cli_options["locale"] is None:
+            self.getLocales()
+        else:
+            self.locales = [cli_options["locale"]]
 
         # Store the number of plural forms for each locale
         self.plural_forms = {}
@@ -899,6 +902,7 @@ def main():
     # Parse command line options
     cl_parser = argparse.ArgumentParser()
     cl_parser.add_argument("check", help="Run a single check", default="all", nargs="?")
+    cl_parser.add_argument("--locale", dest="locale", help="Run single locale")
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
     cl_parser.add_argument("--tmx", dest="tmx", action="store_true")
     cl_parser.add_argument(
@@ -948,6 +952,7 @@ def main():
     cli_options = {
         "verbose": args.verbose,
         "tmx": args.tmx,
+        "locale": args.locale,
     }
 
     QualityCheck(
