@@ -4,9 +4,9 @@ from collections import OrderedDict
 from compare_locales.compare import compareProjects
 from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
+from custom_html_parser import MyHTMLParser
 from fluent.syntax import parse, visitor, serialize
 from fluent.syntax.serializer import FluentSerializer
-from html.parser import HTMLParser
 from urllib.request import urlopen
 import argparse
 import datetime
@@ -16,25 +16,6 @@ import os
 import pickle
 import re
 import sys
-
-
-class MyHTMLParser(HTMLParser):
-    def __init__(self):
-        self.clear()
-        super().__init__(convert_charrefs=True)
-
-    def clear(self):
-        self.tags = []
-
-    def handle_starttag(self, tag, attrs):
-        self.tags.append(tag)
-
-    def handle_endtag(self, tag):
-        self.tags.append(tag)
-
-    def get_tags(self):
-        self.tags.sort()
-        return self.tags
 
 
 class flattenSelectExpression(visitor.Transformer):
@@ -648,7 +629,10 @@ class QualityCheck:
             print("Reading TMX data from Transvision")
 
         datal10n_pattern = re.compile(
-            'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE
+            r'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE
+        )
+        placeable_pattern = re.compile(
+            r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
         )
         css_pattern = re.compile("[^\d]*", re.UNICODE)
 
@@ -695,7 +679,7 @@ class QualityCheck:
                             )
 
         """
-        Store specific English strings for addictional FTL checks:
+        Store specific English strings for additional FTL checks:
         - Strings with data-l10n-names
         - Strings with .style attributes
         """
@@ -741,8 +725,12 @@ class QualityCheck:
                 serializer = FluentSerializer()
                 text = serializer.serialize(flattener.visit(resource))
 
+            # Remove Fluent placeables before parsing HTML, because the parser
+            # will consider curly parentheses and other elements as starting
+            # tags.
+            cleaned_text = placeable_pattern.sub("", text)
             html_parser.clear()
-            html_parser.feed(text)
+            html_parser.feed(cleaned_text)
 
             tags = html_parser.get_tags()
             if tags:
@@ -800,10 +788,21 @@ class QualityCheck:
                     translation = serializer.serialize(flattener.visit(resource))
 
                 html_parser.clear()
-                html_parser.feed(translation)
+                cleaned_translation = placeable_pattern.sub("", translation)
+                html_parser.feed(cleaned_translation)
                 tags = html_parser.get_tags()
 
                 if tags != ref_tags:
+                    # Ignore if only the order was changed
+                    if sorted(tags) == sorted(ref_tags):
+                        continue
+                    error_msg = (
+                        f"Mismatched HTML elements in string ({string_id})\n"
+                        f"  Translation tags ({len(tags)}): {', '.join(tags)}\n"
+                        f"  Reference tags ({len(ref_tags)}): {', '.join(ref_tags)}\n"
+                        f"  Translation: {translation}\n"
+                        f"  Reference: {reference_data[string_id]}"
+                    )
                     error_msg = f"Mismatched HTML elements in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
                     tmx_errors += 1
