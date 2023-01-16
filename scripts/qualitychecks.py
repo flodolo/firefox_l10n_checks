@@ -674,6 +674,8 @@ class QualityCheck:
         # report as error if there are
         for key, key_data in exclusions.items():
             for grp, grp_data in key_data.items():
+                if grp == "files":
+                    continue
                 if grp == "locales":
                     for locale, locale_ids in grp_data.items():
                         for locale_id in locale_ids:
