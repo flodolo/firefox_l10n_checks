@@ -33,6 +33,12 @@
       "ja-JP-mac": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
+      "pl": [
+        "dom/chrome/dom/dom.properties:ScriptSourceInvalidUri",
+        "dom/chrome/dom/dom.properties:ScriptSourceLoadFailed",
+        "dom/chrome/dom/dom.properties:ScriptSourceMalformed",
+        "dom/chrome/dom/dom.properties:ScriptSourceNotAllowed"
+      ],
       "rm": [
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
