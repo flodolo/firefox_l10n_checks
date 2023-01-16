@@ -617,6 +617,13 @@ class QualityCheck:
             if string_id.startswith(self.excluded_products):
                 return True
 
+            # Check if entire file is excluded
+            if (
+                "files" in exclusions[exclusion_type]
+                and string_id.split(":")[0] in exclusions[exclusion_type]["files"]
+            ):
+                return True
+
             # Ignore excluded strings
             if string_id in exclusions[exclusion_type]["strings"]:
                 return True
@@ -763,7 +770,7 @@ class QualityCheck:
                 translation = locale_data[string_id]
 
                 # Check for links in strings
-                if string_id not in exclusions["http"]["strings"]:
+                if not ignoreString(string_id, locale_data, "http"):
                     pattern = re.compile("http(s)*:\/\/", re.UNICODE)
                     if pattern.search(translation):
                         error_msg = f"Link in string ({string_id})"
@@ -818,7 +825,10 @@ class QualityCheck:
                 translation = locale_data[string_id]
 
                 # Check for stray spaces
-                if '{ "' in translation:
+                if (
+                    '{ "' in translation
+                    and not ignoreString(string_id, locale_data, "ftl_literals")
+                ):
                     error_msg = f"Fluent literal in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
                     tmx_errors += 1

@@ -1,15 +1,18 @@
 {
   "HTML": {
+    "files": [
+      "dom/chrome/netError.dtd"
+    ],
     "locales": {
       "ast": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
       ],
       "cs": [
         "browser/browser/aboutDialog.ftl:community-2",
-        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+        "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "de": [
-        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
+        "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "gd": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
@@ -23,9 +26,6 @@
       "ja-JP-mac": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
-      "pl": [
-        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
-      ],
       "sq": [
         "browser/browser/protections.ftl:fingerprinter-tab-content",
         "devtools/client/aboutdebugging.ftl:about-debugging-setup-this-firefox2"
@@ -34,27 +34,39 @@
         "browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message2",
         "browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message2"
       ],
-      "szl": [
-        "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc"
-      ],
       "zh-CN": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
       ]
     },
     "strings": [
       "browser/chrome/overrides/appstrings.properties:externalProtocolUnknown",
+      "browser/chrome/overrides/netError.dtd:clockSkewError.longDesc",
       "devtools/client/debugger.properties:anonymousFunction",
       "devtools/client/netmonitor.properties:netmonitor.security.notAvailable",
       "devtools/client/styleeditor.properties:inlineStyleSheet",
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
       "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
+      "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/security/security.properties:MalformedIntegrityHash",
       "mobile/android/chrome/browser.properties:stacktrace.anonymousFunction"
     ]
   },
-  "http": {
+  "ftl_literals": {
     "locales": {},
+    "strings": [
+      "browser/langpack-metadata.ftl:langpack-contributors"
+    ]
+  },
+  "http": {
+    "locales": {
+      "es-ES": [
+        "browser/langpack-metadata.ftl:langpack-contributors"
+      ],
+      "gl": [
+        "browser/langpack-metadata.ftl:langpack-contributors"
+      ]
+    },
     "strings": [
       "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
       "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
