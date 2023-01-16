@@ -57,11 +57,14 @@ $tranvision_link = function($msg) {
         }
     }
 
-    // Search for the last "(" character, copy until the second to last character
+    // Clean up HTML from the message
+    $msg = str_replace("\n", '<br/>', htmlspecialchars($msg));
+
+    // Assume the key is between the first parentheses
     $key = mb_substr(
         $msg,
-        mb_strrpos($msg, '(') + 1,
-        mb_strlen($msg) - mb_strrpos($msg, '(') - 2
+        mb_strpos($msg, '(') + 1,
+        mb_strpos($msg, ')') - mb_strpos($msg, '(') - 1,
     );
     $url .= "&recherche={$key}";
 

@@ -806,7 +806,6 @@ class QualityCheck:
                         f"  Translation: {translation}\n"
                         f"  Reference: {reference_data[string_id]}"
                     )
-                    error_msg = f"Mismatched HTML elements in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
                     tmx_errors += 1
 

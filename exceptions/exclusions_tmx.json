@@ -48,7 +48,9 @@
       "devtools/client/styleeditor.properties:inlineStyleSheet",
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
-      "devtools/client/webconsole.properties:stacktrace.anonymousFunction"
+      "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
+      "dom/chrome/security/security.properties:MalformedIntegrityHash",
+      "mobile/android/chrome/browser.properties:stacktrace.anonymousFunction"
     ]
   },
   "http": {
