@@ -54,7 +54,8 @@
         "browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message2"
       ],
       "szl": [
-        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27",
+        "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "zh-CN": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
