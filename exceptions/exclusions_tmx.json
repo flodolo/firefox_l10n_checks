@@ -1,7 +1,8 @@
 {
   "HTML": {
     "files": [
-      "dom/chrome/netError.dtd"
+      "dom/chrome/netError.dtd",
+      "mobile/overrides/netError.dtd"
     ],
     "locales": {
       "ast": [
@@ -14,17 +15,29 @@
       "de": [
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
+      "eo": [
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
+      ],
       "gd": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
       "hy-AM": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
       ],
+      "id": [
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
+      ],
       "ja": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
       "ja-JP-mac": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
+      ],
+      "rm": [
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
+      ],
+      "ro": [
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "sq": [
         "browser/browser/protections.ftl:fingerprinter-tab-content",
@@ -33,6 +46,9 @@
       "sr": [
         "browser/browser/preferences/preferences.ftl:space-alert-over-5gb-message2",
         "browser/browser/preferences/preferences.ftl:space-alert-under-5gb-message2"
+      ],
+      "szl": [
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "zh-CN": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
