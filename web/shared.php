@@ -60,11 +60,11 @@ $tranvision_link = function($msg) {
     // Clean up HTML from the message
     $msg = str_replace("\n", '<br/>', htmlspecialchars($msg));
 
-    // Assume the key is between the first parentheses
+    // Assume the key is between the last pair of parentheses
     $key = mb_substr(
         $msg,
-        mb_strpos($msg, '(') + 1,
-        mb_strpos($msg, ')') - mb_strpos($msg, '(') - 1,
+        mb_strrpos($msg, '(') + 1,
+        mb_strrpos($msg, ')') - mb_strrpos($msg, '(') - 1,
     );
     $url .= "&recherche={$key}";
 
