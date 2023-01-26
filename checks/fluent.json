@@ -145,7 +145,7 @@
   },
   {
     "checks": [
-      "DATETIME\\(\\$datetime,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+      "DATETIME\\(\\$datetime,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"short\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "login-item-timeline-point-date",
     "excluded_locales": [],
