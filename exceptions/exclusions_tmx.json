@@ -27,6 +27,9 @@
       "id": [
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
+      "it": [
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+      ],
       "ja": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
