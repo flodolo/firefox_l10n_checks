@@ -42,6 +42,9 @@
         "dom/chrome/dom/dom.properties:ScriptSourceMalformed",
         "dom/chrome/dom/dom.properties:ScriptSourceNotAllowed"
       ],
+      "pt-BR": [
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+      ],
       "rm": [
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
