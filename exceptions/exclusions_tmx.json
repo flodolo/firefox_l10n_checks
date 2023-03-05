@@ -16,6 +16,7 @@
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "eo": [
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "gd": [
