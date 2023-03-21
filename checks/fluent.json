@@ -148,7 +148,9 @@
       "DATETIME\\(\\$datetime,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"short\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "login-item-timeline-point-date",
-    "excluded_locales": [],
+    "excluded_locales": [
+      "fi"
+    ],
     "file": "browser/browser/aboutLogins.ftl",
     "type": "include_regex"
   },
