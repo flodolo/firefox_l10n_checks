@@ -19,6 +19,9 @@
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
+      "fr": [
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+      ],
       "gd": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
       ],
