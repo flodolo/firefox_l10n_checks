@@ -112,6 +112,8 @@ he: browser/pdfviewer/viewer.properties:find_match_count_limit[one]
 hr: browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC
 hr: browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL
 it: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
+it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-browsers
+it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources
 it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
