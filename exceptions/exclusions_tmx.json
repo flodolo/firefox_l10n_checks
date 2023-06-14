@@ -56,7 +56,8 @@
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "sat": [
-        "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
+        "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body",
+        "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "sq": [
         "browser/browser/protections.ftl:fingerprinter-tab-content",
