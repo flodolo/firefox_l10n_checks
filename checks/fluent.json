@@ -192,6 +192,42 @@
   },
   {
     "checks": [
+      "DATETIME\\(\\$date,\\s*dateStyle:\\s*\"full\"\\)"
+    ],
+    "entity": "firefoxview-history-date-today",
+    "excluded_locales": [],
+    "file": "browser/browser/firefoxView.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*dateStyle:\\s*\"full\"\\)"
+    ],
+    "entity": "firefoxview-history-date-yesterday",
+    "excluded_locales": [],
+    "file": "browser/browser/firefoxView.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*dateStyle:\\s*\"full\"\\)"
+    ],
+    "entity": "firefoxview-history-date-this-month",
+    "excluded_locales": [],
+    "file": "browser/browser/firefoxView.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
+    ],
+    "entity": "firefoxview-history-date-prev-month",
+    "excluded_locales": [],
+    "file": "browser/browser/firefoxView.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "-fxaccount-brand-name\\([a-z]*:\\s?\""
     ],
     "entity": "fxa-signout-dialog2-title",
