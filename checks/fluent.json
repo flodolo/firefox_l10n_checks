@@ -136,6 +136,24 @@
   },
   {
     "checks": [
+      "DATETIME\\(\\$date,\\s*year:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*day:\\s*\"numeric\"\\)"
+    ],
+    "entity": "protections-footer-blocked-tracker-counter.tooltiptext",
+    "excluded_locales": [],
+    "file": "browser/browser/siteProtections.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$date,\\s*year:\\s*\"numeric\",\\s*month:\\s*\"long\"\\)"
+    ],
+    "entity": "protections-milestone",
+    "excluded_locales": [],
+    "file": "browser/browser/siteProtections.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "DATETIME\\(\\$date,\\s*day:\\s*\"numeric\",\\s*month:\\s*\"long\",\\s*year:\\s*\"numeric\"\\)"
     ],
     "entity": "about-logins-breach-alert-date",
