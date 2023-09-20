@@ -73,6 +73,9 @@
       ],
       "zh-CN": [
         "browser/browser/newtab/onboarding.ftl:mr1-onboarding-import-subtitle"
+      ],
+      "zh-TW": [
+        "browser/browser/shopping.ftl:shopping-callout-closed-opted-in-subtitle"
       ]
     },
     "strings": [
