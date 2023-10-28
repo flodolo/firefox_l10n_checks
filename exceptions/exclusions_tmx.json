@@ -10,6 +10,7 @@
       ],
       "cs": [
         "browser/browser/aboutDialog.ftl:community-2",
+        "browser/browser/shopping.ftl:shopping-onboarding-dynamic-subtitle",
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "de": [
