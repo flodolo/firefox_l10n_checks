@@ -139,6 +139,8 @@
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
       "mobile/overrides/netError.dtd:malformedURI.longDesc2",
+      "toolkit/toolkit/about/aboutAddons.ftl:plugins-openh264-description",
+      "toolkit/toolkit/about/aboutAddons.ftl:plugins-widevine-description",
       "toolkit/toolkit/about/aboutPlugins.ftl:plugins-openh264-description",
       "toolkit/toolkit/about/aboutPlugins.ftl:plugins-widevine-description",
       "toolkit/toolkit/featuregates/features.ftl:experimental-features-cookie-samesite-schemeful-description"
