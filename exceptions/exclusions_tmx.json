@@ -94,7 +94,8 @@
       "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
       "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/security/security.properties:MalformedIntegrityHash",
-      "mobile/android/chrome/browser.properties:stacktrace.anonymousFunction"
+      "mobile/android/chrome/browser.properties:stacktrace.anonymousFunction",
+      "mobile/android/mobile/android/geckoViewConsole.ftl:console-stacktrace-anonymous-function"
     ]
   },
   "ftl_literals": {
@@ -142,7 +143,6 @@
       "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
-      "mobile/android/mobile/android/geckoViewConsole.ftl:console-stacktrace-anonymous-function",
       "mobile/overrides/netError.dtd:malformedURI.longDesc2",
       "toolkit/toolkit/about/aboutAddons.ftl:plugins-openh264-description",
       "toolkit/toolkit/about/aboutAddons.ftl:plugins-widevine-description",
