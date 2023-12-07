@@ -18,10 +18,12 @@
       ],
       "eo": [
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2",
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "fr": [
-        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
       ],
       "gd": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
@@ -33,7 +35,8 @@
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "it": [
-        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
       ],
       "ja": [
         "browser/browser/newtab/onboarding.ftl:fx100-upgrade-thank-you-body"
@@ -48,7 +51,8 @@
         "dom/chrome/dom/dom.properties:ScriptSourceNotAllowed"
       ],
       "pt-BR": [
-        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation"
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
       ],
       "rm": [
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
@@ -138,6 +142,7 @@
       "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
+      "mobile/android/mobile/android/geckoViewConsole.ftl:console-stacktrace-anonymous-function",
       "mobile/overrides/netError.dtd:malformedURI.longDesc2",
       "toolkit/toolkit/about/aboutAddons.ftl:plugins-openh264-description",
       "toolkit/toolkit/about/aboutAddons.ftl:plugins-widevine-description",
