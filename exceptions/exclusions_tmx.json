@@ -143,6 +143,7 @@
       "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
       "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound3",
+      "dom/chrome/security/security.properties:HTTPSFirstAddingSessionException",
       "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
