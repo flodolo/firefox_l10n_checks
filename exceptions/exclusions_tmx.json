@@ -118,6 +118,13 @@
     },
     "strings": [
       "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
+      "dom/chrome/dom/dom.properties:DOMAttrModifiedWarning",
+      "dom/chrome/dom/dom.properties:DOMCharacterDataModifiedWarning",
+      "dom/chrome/dom/dom.properties:DOMNodeInsertedIntoDocumentWarning",
+      "dom/chrome/dom/dom.properties:DOMNodeInsertedWarning",
+      "dom/chrome/dom/dom.properties:DOMNodeRemovedFromDocumentWarning",
+      "dom/chrome/dom/dom.properties:DOMNodeRemovedWarning",
+      "dom/chrome/dom/dom.properties:DOMSubtreeModifiedWarning",
       "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
       "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
       "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
