@@ -38,7 +38,6 @@
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "it": [
-        "dom/chrome/dom/dom.properties:PatternAttributeCompileFailurev2",
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
       ],
@@ -96,6 +95,7 @@
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
       "devtools/client/webconsole.properties:stacktrace.anonymousFunction",
+      "dom/chrome/dom/dom.properties:PatternAttributeCompileFailurev2",
       "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/security/security.properties:MalformedIntegrityHash",
       "mobile/android/chrome/browser.properties:stacktrace.anonymousFunction",
