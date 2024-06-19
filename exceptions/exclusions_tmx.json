@@ -38,6 +38,7 @@
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
       "it": [
+        "dom/chrome/dom/dom.properties:PatternAttributeCompileFailurev2",
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
       ],
