@@ -1,10 +1,5 @@
 [
   {
-    "entity": "addonConfirmInstallSomeUnsigned.message",
-    "file": "browser/chrome/browser/browser.properties",
-    "type": "plural_forms"
-  },
-  {
     "entity": "protections.footer.blockedTrackerCounter.description",
     "file": "browser/chrome/browser/browser.properties",
     "type": "plural_forms"
