@@ -5,7 +5,7 @@ from compare_locales.compare import compareProjects
 from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
 from custom_html_parser import MyHTMLParser
-from fluent.syntax import parse, visitor, serialize
+from fluent.syntax import parse, visitor
 from fluent.syntax.serializer import FluentSerializer
 from urllib.request import urlopen
 import argparse
@@ -46,7 +46,7 @@ class QualityCheck:
         self,
         root_folder,
         tmx_path,
-        l10nrepos_path,
+        firefoxl10n_path,
         toml_path,
         requested_check,
         cli_options,
@@ -55,7 +55,7 @@ class QualityCheck:
         """Initialize object"""
         self.root_folder = root_folder
         self.tmx_path = tmx_path
-        self.l10nrepos_path = l10nrepos_path
+        self.firefoxl10n_path = firefoxl10n_path
         self.toml_path = toml_path
         self.requested_check = requested_check
         self.verbose = cli_options["verbose"]
@@ -120,7 +120,7 @@ class QualityCheck:
         if (
             not cli_options["tmx"]
             and requested_check == "all"
-            and self.l10nrepos_path != ""
+            and self.firefoxl10n_path != ""
         ):
             self.checkRepos()
 
@@ -263,7 +263,7 @@ class QualityCheck:
 
         for locale, rule_number in locales_plural_rules.items():
             num_plurals = get_plural(locale)
-            if num_plurals == None:
+            if num_plurals is None:
                 # Temporary fix for szl
                 if locale == "szl":
                     num_plurals = 3
@@ -482,8 +482,8 @@ class QualityCheck:
             self.root_folder, "exceptions", f"{checkname}.txt"
         )
         with open(exceptions_file) as f:
-            for l in f:
-                exceptions.append(l.rstrip())
+            for line in f:
+                exceptions.append(line.rstrip())
 
         # Load general exclusions
         exclusions = []
@@ -531,26 +531,28 @@ class QualityCheck:
 
             for node, node_data in data.items():
                 if isinstance(node_data, list):
-                    for l in node_data:
+                    for line in node_data:
                         # Store the message without line and column, since
                         # those change frequently.
-                        if "warning" in l:
+                        if "warning" in line:
                             msg = re.sub(
-                                " at line [\d]+, column [\d]+", "", l["warning"]
+                                " at line [\d]+, column [\d]+", "", line["warning"]
                             )
                             cl_output["warnings"].append(msg)
-                        if "error" in l:
-                            msg = re.sub(" at line [\d]+, column [\d]+", "", l["error"])
+                        if "error" in line:
+                            msg = re.sub(
+                                " at line [\d]+, column [\d]+", "", line["error"]
+                            )
                             cl_output["errors"].append(msg)
                 else:
                     extractCompareLocalesMessages(node_data, cl_output)
 
         # Get the available locales
-        locales = next(os.walk(self.l10nrepos_path))[1]
+        locales = next(os.walk(self.firefoxl10n_path))[1]
         locales.sort()
 
         configs = []
-        config_env = {"l10n_base": self.l10nrepos_path}
+        config_env = {"l10n_base": self.firefoxl10n_path}
 
         try:
             config = TOMLParser().parse(self.toml_path, env=config_env)
@@ -559,7 +561,7 @@ class QualityCheck:
         configs.append(config)
 
         try:
-            observers = compareProjects(configs, locales, self.l10nrepos_path)
+            observers = compareProjects(configs, locales, self.firefoxl10n_path)
         except (OSError, IOError) as exc:
             sys.exit("Error running compare-locales checks: " + str(exc))
 
@@ -590,12 +592,12 @@ class QualityCheck:
             extractCompareLocalesMessages(data[0]["details"][locale_key], cl_output)
 
             if locale_data["errors"] > 0:
-                if not locale in self.output_cl["errors"]:
+                if locale not in self.output_cl["errors"]:
                     self.output_cl["errors"][locale] = []
                 total_errors += locale_data["errors"]
                 self.output_cl["errors"][locale] = cl_output["errors"]
             if locale_data["warnings"] > 0:
-                if not locale in self.output_cl["warnings"]:
+                if locale not in self.output_cl["warnings"]:
                     self.output_cl["warnings"][locale] = []
                 total_warnings += locale_data["warnings"]
                 self.output_cl["warnings"][locale] = cl_output["warnings"]
@@ -644,7 +646,7 @@ class QualityCheck:
         placeable_pattern = re.compile(
             r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
         )
-        css_pattern = re.compile("[^\d]*", re.UNICODE)
+        css_pattern = re.compile(r"[^\d]*", re.UNICODE)
 
         # Load TMX exclusions
         exclusions = {}
@@ -773,7 +775,7 @@ class QualityCheck:
 
                 # Check for links in strings
                 if not ignoreString(string_id, locale_data, "http"):
-                    pattern = re.compile("http(s)*:\/\/", re.UNICODE)
+                    pattern = re.compile(r"http(s)*:\/\/", re.UNICODE)
                     if pattern.search(translation):
                         error_msg = f"Link in string ({string_id})"
                         self.error_messages[locale].append(error_msg)
@@ -836,7 +838,7 @@ class QualityCheck:
                     tmx_errors += 1
 
                 # Check for DTD variables, e.g. '&something;'
-                pattern = re.compile("&.*;", re.UNICODE)
+                pattern = re.compile(r"&.*;", re.UNICODE)
                 if pattern.search(translation):
                     if string_id in exclusions["xml"]["strings"]:
                         continue
@@ -847,7 +849,7 @@ class QualityCheck:
                 # Check for properties variables '%S' or '%1$S'
                 if string_id not in exclusions["printf"]["strings"]:
                     pattern = re.compile(
-                        "(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
+                        r"(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
                     )
                     if pattern.search(translation):
                         error_msg = f"printf variables in Fluent string ({string_id})"
@@ -915,9 +917,9 @@ def main():
     cl_parser.add_argument("check", help="Run a single check", default="all", nargs="?")
     cl_parser.add_argument("--locale", dest="locale", help="Run single locale")
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
-    cl_parser.add_argument("--tmx", dest="tmx", action="store_true")
+    cl_parser.add_argument("--tmx", dest="tmx", help="Only check TMX", action="store_true")
     cl_parser.add_argument(
-        "-output",
+        "--output",
         nargs="?",
         help="Path to folder where to store output in JSON format",
         default="",
@@ -947,7 +949,7 @@ def main():
             return value
 
         tmx_path = getConfig("tmx_path")
-        l10nrepos_path = getConfig("l10nrepos_path")
+        firefoxl10n_path = getConfig("firefoxl10n_path")
         toml_path = getConfig("toml_path")
 
     # Check if checks are already running for some reason
@@ -969,7 +971,7 @@ def main():
     QualityCheck(
         root_folder,
         tmx_path,
-        l10nrepos_path,
+        firefoxl10n_path,
         toml_path,
         args.check,
         cli_options,
