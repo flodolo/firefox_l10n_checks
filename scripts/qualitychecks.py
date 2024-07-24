@@ -5,7 +5,7 @@ from compare_locales.compare import compareProjects
 from compare_locales.paths import TOMLParser, ConfigNotFound
 from configparser import ConfigParser
 from custom_html_parser import MyHTMLParser
-from fluent.syntax import parse, visitor, serialize
+from fluent.syntax import parse, visitor
 from fluent.syntax.serializer import FluentSerializer
 from urllib.request import urlopen
 import argparse
@@ -263,7 +263,7 @@ class QualityCheck:
 
         for locale, rule_number in locales_plural_rules.items():
             num_plurals = get_plural(locale)
-            if num_plurals == None:
+            if num_plurals is None:
                 # Temporary fix for szl
                 if locale == "szl":
                     num_plurals = 3
@@ -482,8 +482,8 @@ class QualityCheck:
             self.root_folder, "exceptions", f"{checkname}.txt"
         )
         with open(exceptions_file) as f:
-            for l in f:
-                exceptions.append(l.rstrip())
+            for line in f:
+                exceptions.append(line.rstrip())
 
         # Load general exclusions
         exclusions = []
@@ -531,16 +531,18 @@ class QualityCheck:
 
             for node, node_data in data.items():
                 if isinstance(node_data, list):
-                    for l in node_data:
+                    for line in node_data:
                         # Store the message without line and column, since
                         # those change frequently.
-                        if "warning" in l:
+                        if "warning" in line:
                             msg = re.sub(
-                                " at line [\d]+, column [\d]+", "", l["warning"]
+                                " at line [\d]+, column [\d]+", "", line["warning"]
                             )
                             cl_output["warnings"].append(msg)
-                        if "error" in l:
-                            msg = re.sub(" at line [\d]+, column [\d]+", "", l["error"])
+                        if "error" in line:
+                            msg = re.sub(
+                                " at line [\d]+, column [\d]+", "", line["error"]
+                            )
                             cl_output["errors"].append(msg)
                 else:
                     extractCompareLocalesMessages(node_data, cl_output)
@@ -590,12 +592,12 @@ class QualityCheck:
             extractCompareLocalesMessages(data[0]["details"][locale_key], cl_output)
 
             if locale_data["errors"] > 0:
-                if not locale in self.output_cl["errors"]:
+                if locale not in self.output_cl["errors"]:
                     self.output_cl["errors"][locale] = []
                 total_errors += locale_data["errors"]
                 self.output_cl["errors"][locale] = cl_output["errors"]
             if locale_data["warnings"] > 0:
-                if not locale in self.output_cl["warnings"]:
+                if locale not in self.output_cl["warnings"]:
                     self.output_cl["warnings"][locale] = []
                 total_warnings += locale_data["warnings"]
                 self.output_cl["warnings"][locale] = cl_output["warnings"]
