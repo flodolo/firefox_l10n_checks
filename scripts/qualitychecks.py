@@ -46,7 +46,7 @@ class QualityCheck:
         self,
         root_folder,
         tmx_path,
-        l10nrepos_path,
+        firefoxl10n_path,
         toml_path,
         requested_check,
         cli_options,
@@ -55,7 +55,7 @@ class QualityCheck:
         """Initialize object"""
         self.root_folder = root_folder
         self.tmx_path = tmx_path
-        self.l10nrepos_path = l10nrepos_path
+        self.firefoxl10n_path = firefoxl10n_path
         self.toml_path = toml_path
         self.requested_check = requested_check
         self.verbose = cli_options["verbose"]
@@ -120,7 +120,7 @@ class QualityCheck:
         if (
             not cli_options["tmx"]
             and requested_check == "all"
-            and self.l10nrepos_path != ""
+            and self.firefoxl10n_path != ""
         ):
             self.checkRepos()
 
@@ -548,11 +548,11 @@ class QualityCheck:
                     extractCompareLocalesMessages(node_data, cl_output)
 
         # Get the available locales
-        locales = next(os.walk(self.l10nrepos_path))[1]
+        locales = next(os.walk(self.firefoxl10n_path))[1]
         locales.sort()
 
         configs = []
-        config_env = {"l10n_base": self.l10nrepos_path}
+        config_env = {"l10n_base": self.firefoxl10n_path}
 
         try:
             config = TOMLParser().parse(self.toml_path, env=config_env)
@@ -561,7 +561,7 @@ class QualityCheck:
         configs.append(config)
 
         try:
-            observers = compareProjects(configs, locales, self.l10nrepos_path)
+            observers = compareProjects(configs, locales, self.firefoxl10n_path)
         except (OSError, IOError) as exc:
             sys.exit("Error running compare-locales checks: " + str(exc))
 
@@ -949,7 +949,7 @@ def main():
             return value
 
         tmx_path = getConfig("tmx_path")
-        l10nrepos_path = getConfig("l10nrepos_path")
+        firefoxl10n_path = getConfig("firefoxl10n_path")
         toml_path = getConfig("toml_path")
 
     # Check if checks are already running for some reason
@@ -971,7 +971,7 @@ def main():
     QualityCheck(
         root_folder,
         tmx_path,
-        l10nrepos_path,
+        firefoxl10n_path,
         toml_path,
         args.check,
         cli_options,
