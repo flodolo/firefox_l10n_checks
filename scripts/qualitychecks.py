@@ -646,7 +646,7 @@ class QualityCheck:
         placeable_pattern = re.compile(
             r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
         )
-        css_pattern = re.compile("[^\d]*", re.UNICODE)
+        css_pattern = re.compile(r"[^\d]*", re.UNICODE)
 
         # Load TMX exclusions
         exclusions = {}
@@ -775,7 +775,7 @@ class QualityCheck:
 
                 # Check for links in strings
                 if not ignoreString(string_id, locale_data, "http"):
-                    pattern = re.compile("http(s)*:\/\/", re.UNICODE)
+                    pattern = re.compile(r"http(s)*:\/\/", re.UNICODE)
                     if pattern.search(translation):
                         error_msg = f"Link in string ({string_id})"
                         self.error_messages[locale].append(error_msg)
@@ -838,7 +838,7 @@ class QualityCheck:
                     tmx_errors += 1
 
                 # Check for DTD variables, e.g. '&something;'
-                pattern = re.compile("&.*;", re.UNICODE)
+                pattern = re.compile(r"&.*;", re.UNICODE)
                 if pattern.search(translation):
                     if string_id in exclusions["xml"]["strings"]:
                         continue
@@ -849,7 +849,7 @@ class QualityCheck:
                 # Check for properties variables '%S' or '%1$S'
                 if string_id not in exclusions["printf"]["strings"]:
                     pattern = re.compile(
-                        "(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
+                        r"(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
                     )
                     if pattern.search(translation):
                         error_msg = f"printf variables in Fluent string ({string_id})"
@@ -917,7 +917,7 @@ def main():
     cl_parser.add_argument("check", help="Run a single check", default="all", nargs="?")
     cl_parser.add_argument("--locale", dest="locale", help="Run single locale")
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
-    cl_parser.add_argument("--tmx", dest="tmx", action="store_true")
+    cl_parser.add_argument("--tmx", dest="tmx", help="Only check TMX", action="store_true")
     cl_parser.add_argument(
         "--output",
         nargs="?",
