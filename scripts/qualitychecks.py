@@ -536,12 +536,12 @@ class QualityCheck:
                         # those change frequently.
                         if "warning" in line:
                             msg = re.sub(
-                                " at line [\d]+, column [\d]+", "", line["warning"]
+                                r" at line [\d]+, column [\d]+", "", line["warning"]
                             )
                             cl_output["warnings"].append(msg)
                         if "error" in line:
                             msg = re.sub(
-                                " at line [\d]+, column [\d]+", "", line["error"]
+                                r" at line [\d]+, column [\d]+", "", line["error"]
                             )
                             cl_output["errors"].append(msg)
                 else:
@@ -858,7 +858,7 @@ class QualityCheck:
 
                 # Check for the message ID repeated in the translation
                 message_id = string_id.split(":")[1]
-                pattern = re.compile(re.escape(message_id) + "\s*=", re.UNICODE)
+                pattern = re.compile(re.escape(message_id) + r"\s*=", re.UNICODE)
                 if pattern.search(translation):
                     error_msg = (
                         f"Message ID is repeated in the Fluent string ({string_id})"
