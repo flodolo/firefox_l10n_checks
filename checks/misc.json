@@ -35,19 +35,5 @@
     "entity": "profiler-popup-capture-shortcut",
     "file": "browser/browser/appmenu.ftl",
     "type": "include"
-  },
-  {
-    "checks": [
-      "http://example.com",
-      "https://example.com"
-    ],
-    "entity": "experimental-features-cookie-samesite-schemeful-description",
-    "excluded_locales": [
-      "da",
-      "et",
-      "eu"
-    ],
-    "file": "toolkit/toolkit/featuregates/features.ftl",
-    "type": "include"
   }
 ]
