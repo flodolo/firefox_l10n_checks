@@ -919,7 +919,7 @@ def main():
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
     cl_parser.add_argument("--tmx", dest="tmx", action="store_true")
     cl_parser.add_argument(
-        "-output",
+        "--output",
         nargs="?",
         help="Path to folder where to store output in JSON format",
         default="",
