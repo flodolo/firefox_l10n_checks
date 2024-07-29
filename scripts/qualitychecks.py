@@ -592,12 +592,17 @@ class QualityCheck:
             cl_output = {"errors": [], "warnings": []}
 
             locale_key = keys_mapping.get(locale, locale)
-            # Temporary check to investigate failure on server
-            if isinstance(data[0]["details"][locale_key], list):
-                print(f"Issue with locale: {locale_key}")
-                print(data[0]["details"][locale_key])
+            # Sometimes compare-locales doesn't return a key with the locale,
+            # but just one filename starting with the locale code.
+            if locale_key not in locales:
+                [loc_guess, path] = locale_key.split("/", 1)
+                cl_data = {loc_guess: {path: data[0]["details"][locale_key]}}
+                print(f"Issue with compare-locales response for: {locale_key}")
+                print(f"Assumed locale: {loc_guess}")
+                print(json.dumps(data[0]["details"][locale_key], indent=2))
             else:
-                extractCompareLocalesMessages(data[0]["details"][locale_key], cl_output)
+                cl_data = data[0]["details"][locale_key]
+            extractCompareLocalesMessages(cl_data, cl_output)
 
             if locale_data["errors"] > 0:
                 if locale not in self.output_cl["errors"]:
@@ -609,7 +614,6 @@ class QualityCheck:
                     self.output_cl["warnings"][locale] = []
                 total_warnings += locale_data["warnings"]
                 self.output_cl["warnings"][locale] = cl_output["warnings"]
-
         self.error_summary["compare-locales"] = {
             "errors": total_errors,
             "warnings": total_warnings,
