@@ -549,6 +549,7 @@ class QualityCheck:
 
         # Get the available locales
         locales = next(os.walk(self.firefoxl10n_path))[1]
+        locales = [loc for loc in locales if not loc.startswith(".")]
         locales.sort()
 
         configs = []
@@ -561,6 +562,8 @@ class QualityCheck:
         configs.append(config)
 
         try:
+            if self.verbose:
+                print("Running compare-locales checks")
             observers = compareProjects(configs, locales, self.firefoxl10n_path)
         except (OSError, IOError) as exc:
             sys.exit("Error running compare-locales checks: " + str(exc))
@@ -589,7 +592,12 @@ class QualityCheck:
             cl_output = {"errors": [], "warnings": []}
 
             locale_key = keys_mapping.get(locale, locale)
-            extractCompareLocalesMessages(data[0]["details"][locale_key], cl_output)
+            # Temporary check to investigate failure on server
+            if isinstance(data[0]["details"][locale_key], list):
+                print(f"Issue with locale: {locale_key}")
+                print(data[0]["details"][locale_key])
+            else:
+                extractCompareLocalesMessages(data[0]["details"][locale_key], cl_output)
 
             if locale_data["errors"] > 0:
                 if locale not in self.output_cl["errors"]:
@@ -829,9 +837,8 @@ class QualityCheck:
                 translation = locale_data[string_id]
 
                 # Check for stray spaces
-                if (
-                    '{ "' in translation
-                    and not ignoreString(string_id, locale_data, "ftl_literals")
+                if '{ "' in translation and not ignoreString(
+                    string_id, locale_data, "ftl_literals"
                 ):
                     error_msg = f"Fluent literal in string ({string_id})"
                     self.error_messages[locale].append(error_msg)
@@ -917,7 +924,9 @@ def main():
     cl_parser.add_argument("check", help="Run a single check", default="all", nargs="?")
     cl_parser.add_argument("--locale", dest="locale", help="Run single locale")
     cl_parser.add_argument("--verbose", dest="verbose", action="store_true")
-    cl_parser.add_argument("--tmx", dest="tmx", help="Only check TMX", action="store_true")
+    cl_parser.add_argument(
+        "--tmx", dest="tmx", help="Only check TMX", action="store_true"
+    )
     cl_parser.add_argument(
         "--output",
         nargs="?",
