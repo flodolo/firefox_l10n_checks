@@ -91,6 +91,42 @@
   },
   {
     "checks": [
+      "NUMBER\\(\\$kb,\\s*maximumSignificantDigits:\\s*\\d\\)"
+    ],
+    "entity": "pdfjs-document-properties-size-kb",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/pdfviewer/viewer.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$mb,\\s*maximumSignificantDigits:\\s*\\d\\)"
+    ],
+    "entity": "pdfjs-document-properties-size-mb",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/pdfviewer/viewer.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$dateObj,\\s*dateStyle:\\s*\"short\",\\s*timeStyle:\\s*\"medium\"\\)"
+    ],
+    "entity": "pdfjs-document-properties-date-time-string",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/pdfviewer/viewer.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "DATETIME\\(\\$dateObj,\\s*dateStyle:\\s*\"short\",\\s*timeStyle:\\s*\"medium\"\\)"
+    ],
+    "entity": "pdfjs-annotation-date-time-string",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/pdfviewer/viewer.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "NUMBER\\(\\$timestamp,\\s*useGrouping:\\s*\"false\"\\)"
     ],
     "entity": "about-webrtc-sdp-set-at-timestamp-remote",
