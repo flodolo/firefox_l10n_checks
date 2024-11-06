@@ -61,7 +61,7 @@ $tranvision_link = function($msg) {
     $msg = str_replace("\n", '<br/>', htmlspecialchars($msg));
 
     // Try to find the string ID
-    if (mb_strpos($msg, "string (") !== false) {
+    if (mb_strpos($msg, 'string (') !== false) {
         $key = mb_substr(
             $msg,
             mb_strpos($msg, 'string (') + 8,
