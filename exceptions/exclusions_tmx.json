@@ -180,7 +180,8 @@
   "printf": {
     "locales": {},
     "strings": [
-      "browser/browser/preferences/addEngine.ftl:add-engine-url"
+      "browser/browser/preferences/addEngine.ftl:add-engine-url",
+      "browser/browser/search.ftl:add-engine-url"
     ]
   },
   "xml": {
