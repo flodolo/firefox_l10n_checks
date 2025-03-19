@@ -109,6 +109,33 @@
   },
   {
     "checks": [
+      "NUMBER\\(\\$result,\\s*maximumSignificantDigits:\\s*\\d\\)"
+    ],
+    "entity": "urlbar-result-action-calculator-result-2",
+    "excluded_locales": [],
+    "file": "browser/browser/browser.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$result,\\s*maximumSignificantDigits:\\s*\\d\\)"
+    ],
+    "entity": "urlbar-result-action-calculator-result-decimal",
+    "excluded_locales": [],
+    "file": "browser/browser/browser.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
+      "NUMBER\\(\\$result,\\s*useGrouping:\\s*\"false\",\\s*maximumFractionDigits:\\s*\\d\\)"
+    ],
+    "entity": "urlbar-result-action-calculator-result-3",
+    "excluded_locales": [],
+    "file": "browser/browser/browser.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "DATETIME\\(\\$dateObj,\\s*dateStyle:\\s*\"short\",\\s*timeStyle:\\s*\"medium\"\\)"
     ],
     "entity": "pdfjs-document-properties-date-time-string",
