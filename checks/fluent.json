@@ -100,6 +100,15 @@
   },
   {
     "checks": [
+      "NUMBER\\(\\$percent,\\s*maximumSignificantDigits:\\s*\\d,\\s*style:\\s*\"percent\"\\s*\\)"
+    ],
+    "entity": "about-logging-uploading-progress",
+    "excluded_locales": [],
+    "file": "toolkit/toolkit/about/aboutLogging.ftl",
+    "type": "include_regex"
+  },
+  {
+    "checks": [
       "NUMBER\\(\\$mb,\\s*maximumSignificantDigits:\\s*\\d\\)"
     ],
     "entity": "pdfjs-document-properties-size-mb",
