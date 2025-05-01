@@ -92,7 +92,11 @@
     ]
   },
   "ftl_literals": {
-    "locales": {},
+    "locales": {
+      "km": [
+        "browser/browser/contextual-manager.ftl:contextual-manager-passwords-remove-all-title"
+      ]
+    },
     "strings": [
       "browser/langpack-metadata.ftl:langpack-contributors"
     ]
