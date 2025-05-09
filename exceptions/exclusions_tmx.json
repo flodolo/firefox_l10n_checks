@@ -80,6 +80,7 @@
       "browser/chrome/overrides/appstrings.properties:externalProtocolUnknown",
       "devtools/client/debugger.properties:anonymousFunction",
       "devtools/client/netmonitor.properties:netmonitor.security.notAvailable",
+      "devtools/client/styleeditor.properties:constructedStyleSheet",
       "devtools/client/styleeditor.properties:inlineStyleSheet",
       "devtools/client/webconsole.properties:noCounterLabel",
       "devtools/client/webconsole.properties:noGroupLabel",
