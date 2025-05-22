@@ -186,7 +186,13 @@
     "locales": {},
     "strings": [
       "browser/browser/preferences/addEngine.ftl:add-engine-url",
-      "browser/browser/search.ftl:add-engine-url"
+      "browser/browser/search.ftl:add-engine-missing-terms-post-data",
+      "browser/browser/search.ftl:add-engine-missing-terms-url",
+      "browser/browser/search.ftl:add-engine-post-data",
+      "browser/browser/search.ftl:add-engine-suggest-url",
+      "browser/browser/search.ftl:add-engine-url",
+      "browser/browser/search.ftl:add-engine-url-placeholder",
+      "browser/browser/search.ftl:add-engine-url2"
     ]
   },
   "xml": {
