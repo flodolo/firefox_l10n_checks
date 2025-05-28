@@ -113,6 +113,7 @@
     },
     "strings": [
       "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
+      "browser/browser/search.ftl:add-engine-url-placeholder.placeholder",
       "dom/chrome/dom/dom.properties:DOMAttrModifiedWarning",
       "dom/chrome/dom/dom.properties:DOMCharacterDataModifiedWarning",
       "dom/chrome/dom/dom.properties:DOMNodeInsertedIntoDocumentWarning",
@@ -191,7 +192,7 @@
       "browser/browser/search.ftl:add-engine-post-data",
       "browser/browser/search.ftl:add-engine-suggest-url",
       "browser/browser/search.ftl:add-engine-url",
-      "browser/browser/search.ftl:add-engine-url-placeholder",
+      "browser/browser/search.ftl:add-engine-url-placeholder.placeholder",
       "browser/browser/search.ftl:add-engine-url2"
     ]
   },
