@@ -5,6 +5,9 @@
       "mobile/overrides/netError.dtd"
     ],
     "locales": {
+      "bs": [
+        "devtools/client/tooltips.ftl:inactive-css-ruby-element-fix"
+      ],
       "cs": [
         "browser/browser/aboutDialog.ftl:community-2",
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
