@@ -10,6 +10,7 @@
       ],
       "cs": [
         "browser/browser/aboutDialog.ftl:community-2",
+        "browser/browser/newtab/asrouter.ftl:cfr-doorhanger-milestone-heading2",
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
       ],
       "de": [
