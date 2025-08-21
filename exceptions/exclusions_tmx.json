@@ -75,9 +75,6 @@
       "szl": [
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27",
         "toolkit/toolkit/neterror/netError.ftl:neterror-clock-skew-error"
-      ],
-      "zh-TW": [
-        "browser/browser/shopping.ftl:shopping-callout-closed-opted-in-subtitle"
       ]
     },
     "strings": [
@@ -149,7 +146,6 @@
       "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound3",
       "dom/chrome/security/security.properties:HTTPSFirstAddingException",
-      "dom/chrome/security/security.properties:HTTPSFirstAddingSessionException",
       "dom/chrome/security/security.properties:InsecureFormActionPasswordsPresent",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnIframe",
       "dom/chrome/security/security.properties:InsecurePasswordsPresentOnPage",
@@ -195,7 +191,6 @@
       "browser/browser/search.ftl:add-engine-missing-terms-url",
       "browser/browser/search.ftl:add-engine-post-data",
       "browser/browser/search.ftl:add-engine-suggest-url",
-      "browser/browser/search.ftl:add-engine-url",
       "browser/browser/search.ftl:add-engine-url-placeholder.placeholder",
       "browser/browser/search.ftl:add-engine-url2"
     ]
