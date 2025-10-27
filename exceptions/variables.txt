@@ -127,6 +127,7 @@ it: mobile/android/chrome/aboutAddons.dtd:addonUnsigned.message
 ja-JP-mac: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja-JP-mac: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja-JP-mac: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.buttonlabel
+ja-JP-mac: browser/browser/backupSettings.ftl:backup-service-error-recovery-failed.heading
 ja-JP-mac: browser/browser/browser.ftl:popup-warning-exceeded-message
 ja-JP-mac: browser/browser/browser.ftl:popup-warning-message
 ja-JP-mac: browser/browser/browser.ftl:refresh-blocked-redirect-label
@@ -168,6 +169,7 @@ ja-JP-mac: toolkit/toolkit/neterror/netError.ftl:neterror-error-reporting-automa
 ja: browser/browser/aboutCertError.ftl:certerror-mitm-title
 ja: browser/browser/aboutPrivateBrowsing.ftl:about-private-browsing-info-description
 ja: browser/browser/appMenuNotifications.ftl:appmenu-update-other-instance.buttonlabel
+ja: browser/browser/backupSettings.ftl:backup-service-error-recovery-failed.heading
 ja: browser/browser/browser.ftl:popup-warning-exceeded-message
 ja: browser/browser/browser.ftl:popup-warning-message
 ja: browser/browser/browser.ftl:refresh-blocked-redirect-label
