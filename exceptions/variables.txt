@@ -115,8 +115,11 @@ it: browser/browser/appMenuNotifications.ftl:appmenu-update-restart-message
 it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-browsers
 it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources
 it: browser/browser/preferences/languages.ftl:browser-languages-error
+it: browser/browser/preferences/preferences.ftl:history-custom-description
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
+it: browser/browser/preferences/preferences.ftl:history-dontremember-description2.description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
+it: browser/browser/preferences/preferences.ftl:history-remember-description2.description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message2
