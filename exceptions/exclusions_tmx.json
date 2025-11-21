@@ -143,6 +143,7 @@
       "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
       "dom/chrome/dom/dom.properties:UseOfCaptureEventsWarning",
       "dom/chrome/dom/dom.properties:UseOfReleaseEventsWarning",
+      "dom/chrome/dom/dom.properties:XSLTDeprecatedWarning",
       "dom/chrome/layout/layout_errors.properties:PrincipalWritingModePropagationWarning",
       "dom/chrome/layout/layout_errors.properties:ScrollLinkedEffectFound3",
       "dom/chrome/security/security.properties:HTTPSFirstAddingException",
