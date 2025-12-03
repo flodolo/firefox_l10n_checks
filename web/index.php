@@ -66,7 +66,7 @@ foreach ($errors_list['summary'] as $check_name => $check_value) {
 </head>
 <body>
     <div class="container">
-        <p><a href="errors.php">List of current errors</a></p>
+        <p><a href="errors.php">List of current errors</a> — <a href="https://github.com/flodolo/firefox_l10n_checks/">GitHub repository</a></p>
 
         <h1>Summary</h1>
         <table class="table w-auto table-bordered table-striped">
