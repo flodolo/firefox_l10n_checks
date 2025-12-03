@@ -8,6 +8,7 @@ bs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/preferences/preferences.ftl:collection-health-report.label
 cs: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 cs: browser/browser/preferences/preferences.ftl:history-remember-label
+cs: browser/browser/preferences/preferences.ftl:history-remember-label2
 cs: browser/browser/preferences/preferences.ftl:preferences-colors-description
 cs: browser/chrome/browser/newInstall.dtd:sync
 cs: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
@@ -104,6 +105,7 @@ fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-head
 fi: toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header2
 fi: toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question
 fr: browser/browser/preferences/preferences.ftl:history-remember-label
+fr: browser/browser/preferences/preferences.ftl:history-remember-label2
 fr: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
 fr: toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation
 fy-NL: browser/chrome/overrides/netError.dtd:cspBlocked.longDesc
@@ -116,11 +118,15 @@ it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-brows
 it: browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources
 it: browser/browser/preferences/languages.ftl:browser-languages-error
 it: browser/browser/preferences/preferences.ftl:history-custom-description.description
+it: browser/browser/preferences/preferences.ftl:history-custom-description3.description
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description
 it: browser/browser/preferences/preferences.ftl:history-dontremember-description2.description
+it: browser/browser/preferences/preferences.ftl:history-dontremember-description3.description
 it: browser/browser/preferences/preferences.ftl:history-remember-description
 it: browser/browser/preferences/preferences.ftl:history-remember-description2.description
+it: browser/browser/preferences/preferences.ftl:history-remember-description3.description
 it: browser/browser/preferences/preferences.ftl:history-remember-label
+it: browser/browser/preferences/preferences.ftl:history-remember-label2
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message
 it: browser/browser/preferences/preferences.ftl:update-setting-write-failure-message2
 it: browser/browser/search.ftl:opensearch-error-download-desc
@@ -253,6 +259,7 @@ sk: browser/browser/aboutLogins.ftl:enable-password-sync-notification-message
 sk: browser/browser/newtab/onboarding.ftl:onboarding-multistage-import-subtitle
 sk: browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label
 sk: browser/browser/preferences/preferences.ftl:history-remember-label
+sk: browser/browser/preferences/preferences.ftl:history-remember-label2
 sk: browser/browser/protections.ftl:graph-week-summary-private-window
 sk: browser/chrome/browser/newInstall.dtd:sync
 sk: browser/chrome/overrides/netError.dtd:certerror.whatShouldIDo.badStsCertExplanation1
