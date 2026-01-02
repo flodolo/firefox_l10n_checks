@@ -93,6 +93,22 @@
       "mobile/android/mobile/android/geckoViewConsole.ftl:console-stacktrace-anonymous-function"
     ]
   },
+  "fluent_functions": {
+    "locales": {
+      "cs": [
+        "browser/browser/aboutUnloads.ftl:about-unloads-last-accessed",
+        "devtools/client/application.ftl:serviceworker-worker-updated"
+      ],
+      "fi": [
+        "browser/browser/aboutLogins.ftl:login-item-timeline-point-date"
+      ],
+      "pl": [
+        "browser/browser/newtab/asrouter.ftl:cfr-doorhanger-milestone-heading2",
+        "devtools/client/application.ftl:serviceworker-worker-updated"
+      ]
+    },
+    "strings": []
+  },
   "ftl_literals": {
     "locales": {
       "km": [

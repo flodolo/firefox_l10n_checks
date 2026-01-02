@@ -31,7 +31,6 @@ class flattenSelectExpression(visitor.Transformer):
 
 
 class QualityCheck:
-
     excluded_products = (
         "calendar",
         "chat",
@@ -104,7 +103,7 @@ class QualityCheck:
         for locale in self.locales:
             self.error_messages[locale] = []
 
-        # Run checks
+        # Run Tranvision checks
         if not cli_options["tmx"]:
             self.checkAPI()
             if requested_check == "all":
@@ -129,8 +128,8 @@ class QualityCheck:
             self.printErrors()
 
         # Compare with previous run
-        if requested_check == "all":
-            self.comparePreviousRun()
+        # if requested_check == "all":
+        self.comparePreviousRun()
 
     def comparePreviousRun(self):
         def diff(a, b):
@@ -649,6 +648,17 @@ class QualityCheck:
 
             return False
 
+        def extract_function_calls(text):
+            calls = []
+            for m in fluent_function_pattern.finditer(text):
+                fn = m.group(1)
+                params = sorted([p.strip() for p in m.group(2).split(",")])
+                call = [fn] + params
+                # Avoid storing duplicates with plural strings
+                if call not in calls:
+                    calls.append(call)
+            return sorted(calls)
+
         if self.verbose:
             print("Reading TMX data from Transvision")
 
@@ -657,6 +667,9 @@ class QualityCheck:
         )
         placeable_pattern = re.compile(
             r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
+        )
+        fluent_function_pattern = re.compile(
+            r"(NUMBER|DATETIME)\(([^)]*)\)", re.UNICODE
         )
         css_pattern = re.compile(r"[^\d]*", re.UNICODE)
 
@@ -711,6 +724,7 @@ class QualityCheck:
         """
         ftl_ids = []
         data_l10n_ids = {}
+        fluent_function_ids = {}
         CSS_strings = {}
         for id, text in reference_data.items():
             file_id, message_id = id.split(":")
@@ -740,6 +754,10 @@ class QualityCheck:
                 # Drop empty elements, ignore period for decimals
                 matches = [m for m in matches if m not in ["", "."]]
                 CSS_strings[id] = matches
+
+            matches = extract_function_calls(text)
+            if matches:
+                fluent_function_ids[id] = matches
 
         # Store strings with HTML elements
         html_parser = MyHTMLParser()
@@ -903,6 +921,29 @@ class QualityCheck:
                     error_msg = f"data-l10n-name missing in Fluent string ({string_id})"
                     self.error_messages[locale].append(error_msg)
                     tmx_errors += 1
+
+            # Check Fluent functions
+            for string_id, source_matches in fluent_function_ids.items():
+                if ignoreString(string_id, locale_data, "fluent_functions"):
+                    continue
+
+                translation = locale_data[string_id]
+                matches = extract_function_calls(translation)
+                if not matches:
+                    error_msg = (
+                        f"Fluent function missing in Fluent string ({string_id})"
+                    )
+                    self.error_messages[locale].append(error_msg)
+                    tmx_errors += 1
+                else:
+                    if matches != source_matches:
+                        error_msg = (
+                            f"Fluent function mismatch in Fluent string ({string_id})\n"
+                            f"Source text: {reference_data[string_id]})\n"
+                            f"Translation: {translation})\n"
+                        )
+                        self.error_messages[locale].append(error_msg)
+                        tmx_errors += 1
 
             # Check for CSS mismatches
             for string_id, cleaned_source in CSS_strings.items():
