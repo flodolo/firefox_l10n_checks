@@ -1,0 +1,317 @@
+{
+  "empty": {
+    "exclusions": [
+      "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key",
+      "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt-b.key",
+      "browser/browser/browserSets.ftl:full-zoom-reduce-shortcut-alt.key",
+      "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key",
+      "browser/browser/preferences/preferences.ftl:forms-primary-pw-former-name",
+      "browser/browser/sanitize.ftl:clear-time-duration-suffix.value",
+      "browser/langpack-metadata.ftl:langpack-contributors"
+    ],
+    "locales": {
+      "af": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "ar": [
+        "toolkit/crashreporter/crashreporter.ini:isRTL"
+      ],
+      "ckb": [
+        "toolkit/crashreporter/crashreporter.ini:isRTL"
+      ],
+      "de": [
+        "browser/browser/sanitize.ftl:clear-time-duration-prefix.accesskey",
+        "browser/browser/sanitize.ftl:clear-time-duration-prefix.value"
+      ],
+      "et": [
+        "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
+        "toolkit/chrome/global/dialog.properties:accesskey-help"
+      ],
+      "fa": [
+        "toolkit/crashreporter/crashreporter.ini:isRTL"
+      ],
+      "gn": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "he": [
+        "toolkit/crashreporter/crashreporter.ini:isRTL"
+      ],
+      "hy-AM": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "ja": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "kk": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "ko": [
+        "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
+        "toolkit/chrome/global/dialog.properties:accesskey-help"
+      ],
+      "lo": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
+      "pl": [
+        "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
+        "toolkit/chrome/global/dialog.properties:accesskey-help"
+      ],
+      "zh-TW": [
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ]
+    }
+  },
+  "shortcuts": {
+    "exclusions": [],
+    "locales": {
+      "ca": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key"
+      ],
+      "ca-valencia": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key"
+      ],
+      "cs": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key"
+      ],
+      "da": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+        "devtools/client/sourceeditor.properties:indentLess.commandkey",
+        "devtools/client/sourceeditor.properties:indentMore.commandkey",
+        "devtools/client/sourceeditor.properties:toggleComment.commandkey",
+        "devtools/client/toolbox.properties:toolbox.nextTool.key",
+        "devtools/client/toolbox.properties:toolbox.previousTool.key"
+      ],
+      "de": [
+        "browser/browser/browserSets.ftl:location-open-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:nav-back-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key"
+      ],
+      "fi": [
+        "browser/browser/browserSets.ftl:nav-back-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key"
+      ],
+      "it": [
+        "browser/browser/browserSets.ftl:nav-back-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:nav-fwd-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key",
+        "devtools/client/sourceeditor.properties:indentLess.commandkey",
+        "devtools/client/sourceeditor.properties:indentMore.commandkey",
+        "devtools/client/toolbox.properties:toolbox.nextTool.key",
+        "devtools/client/toolbox.properties:toolbox.previousTool.key"
+      ],
+      "ja": [
+        "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key"
+      ],
+      "ja-JP-mac": [
+        "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key"
+      ],
+      "lij": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key"
+      ],
+      "lt": [
+        "browser/browser/browserSets.ftl:full-zoom-enlarge-shortcut-alt2.key",
+        "browser/browser/browserSets.ftl:full-zoom-reset-shortcut-alt.key"
+      ],
+      "ru": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key"
+      ],
+      "sc": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-mac.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key"
+      ],
+      "scn": [
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut-alt.key",
+        "browser/browser/browserSets.ftl:picture-in-picture-toggle-shortcut.key",
+        "devtools/client/sourceeditor.properties:indentLess.commandkey",
+        "devtools/client/sourceeditor.properties:indentMore.commandkey",
+        "devtools/client/toolbox.properties:toolbox.nextTool.key",
+        "devtools/client/toolbox.properties:toolbox.previousTool.key"
+      ],
+      "sv-SE": [
+        "devtools/client/sourceeditor.properties:indentLess.commandkey",
+        "devtools/client/sourceeditor.properties:indentMore.commandkey"
+      ]
+    }
+  },
+  "variables": {
+    "exclusions": [],
+    "locales": {
+      "ar": [
+        "browser/pdfviewer/viewer.properties:find_match_count[one]",
+        "browser/pdfviewer/viewer.properties:find_match_count[two]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[one]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[two]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[zero]"
+      ],
+      "cs": [
+        "browser/browser/preferences/preferences.ftl:collection-health-report.label",
+        "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label2",
+        "browser/browser/preferences/preferences.ftl:preferences-colors-description",
+        "toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation"
+      ],
+      "et": [
+        "browser/installer/custom.properties:CONTEXT_OPTIONS",
+        "browser/installer/custom.properties:CONTEXT_SAFE_MODE",
+        "browser/installer/custom.properties:CREATE_ICONS_DESC",
+        "browser/installer/custom.properties:OPTIONAL_COMPONENTS_DESC",
+        "browser/installer/custom.properties:STATUS_INSTALL_APP",
+        "browser/installer/custom.properties:STATUS_UNINSTALL_MAIN",
+        "browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE",
+        "browser/installer/custom.properties:SURVEY_TEXT",
+        "browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE",
+        "browser/installer/custom.properties:UN_CONFIRM_PAGE_TITLE",
+        "browser/installer/custom.properties:UN_REFRESH_PAGE_EXPLANATION",
+        "browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL",
+        "browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE",
+        "browser/installer/mui.properties:MUI_TEXT_ABORTWARNING",
+        "browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE",
+        "browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT",
+        "browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_TITLE",
+        "browser/installer/mui.properties:MUI_TEXT_INSTALLING_SUBTITLE",
+        "browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE",
+        "browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TEXT",
+        "browser/installer/mui.properties:MUI_TEXT_WELCOME_INFO_TITLE",
+        "browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING",
+        "browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_SUBTITLE",
+        "browser/installer/mui.properties:MUI_UNTEXT_CONFIRM_TITLE",
+        "browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT",
+        "browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_TITLE",
+        "browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE",
+        "browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT",
+        "browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION",
+        "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING",
+        "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/override.properties:DirText",
+        "browser/installer/override.properties:LicenseTextRB"
+      ],
+      "fi": [
+        "browser/installer/custom.properties:CONTEXT_OPTIONS",
+        "browser/installer/custom.properties:CONTEXT_SAFE_MODE",
+        "browser/installer/custom.properties:CREATE_ICONS_DESC",
+        "browser/installer/custom.properties:REG_APP_DESC",
+        "browser/installer/custom.properties:STATUS_UNINSTALL_MAIN",
+        "browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE",
+        "browser/installer/custom.properties:SUMMARY_TAKE_DEFAULTS",
+        "browser/installer/custom.properties:SURVEY_TEXT",
+        "browser/installer/custom.properties:UN_CONFIRM_PAGE_SUBTITLE",
+        "browser/installer/custom.properties:UN_SURVEY_CHECKBOX_LABEL",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/custom.properties:WARN_RESTART_REQUIRED_UNINSTALL",
+        "browser/installer/custom.properties:WARN_RESTART_REQUIRED_UPGRADE",
+        "browser/installer/mui.properties:MUI_TEXT_COMPONENTS_SUBTITLE",
+        "browser/installer/mui.properties:MUI_TEXT_FINISH_INFO_REBOOT",
+        "browser/installer/mui.properties:MUI_TEXT_STARTMENU_SUBTITLE",
+        "browser/installer/mui.properties:MUI_UNTEXT_ABORTWARNING",
+        "browser/installer/mui.properties:MUI_UNTEXT_FINISH_INFO_REBOOT",
+        "browser/installer/mui.properties:MUI_UNTEXT_WELCOME_INFO_TITLE",
+        "browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT",
+        "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_HEADING",
+        "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_MESSAGE",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/override.properties:DirBrowseText",
+        "browser/installer/override.properties:LicenseTextRB",
+        "browser/installer/override.properties:UninstallCaption",
+        "browser/installer/override.properties:UninstallingText",
+        "toolkit/chrome/global/wizard.properties:default-first-title",
+        "toolkit/chrome/global/wizard.properties:default-last-title",
+        "toolkit/toolkit/global/createProfileWizard.ftl:create-profile-first-page-header2",
+        "toolkit/toolkit/global/createProfileWizard.ftl:create-profile-last-page-header2",
+        "toolkit/toolkit/global/unknownContentType.ftl:unknowncontenttype-action-question"
+      ],
+      "fr": [
+        "browser/browser/preferences/preferences.ftl:history-remember-label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label2",
+        "toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation"
+      ],
+      "he": [
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[one]"
+      ],
+      "it": [
+        "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-browsers",
+        "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources",
+        "browser/browser/preferences/languages.ftl:browser-languages-error",
+        "browser/browser/preferences/preferences.ftl:history-custom-description3.description",
+        "browser/browser/preferences/preferences.ftl:history-dontremember-description",
+        "browser/browser/preferences/preferences.ftl:history-dontremember-description3.description",
+        "browser/browser/preferences/preferences.ftl:history-remember-description",
+        "browser/browser/preferences/preferences.ftl:history-remember-description3.description",
+        "browser/browser/preferences/preferences.ftl:history-remember-label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label2",
+        "browser/browser/preferences/preferences.ftl:update-setting-write-failure-message2",
+        "browser/browser/search.ftl:opensearch-error-download-desc",
+        "browser/browser/search.ftl:opensearch-error-duplicate-desc",
+        "browser/browser/search.ftl:opensearch-error-format-desc"
+      ],
+      "ja": [
+        "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
+        "browser/browser/preferences/preferences.ftl:pane-experimental-title"
+      ],
+      "ja-JP-mac": [
+        "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
+        "browser/browser/preferences/preferences.ftl:pane-experimental-title"
+      ],
+      "pl": [
+        "browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in",
+        "browser/browser/preferences/preferences.ftl:category-general.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:category-home.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:category-search.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:category-sync3.tooltiptext",
+        "browser/chrome/browser/browser.properties:troubleshootModeRestartPromptTitle",
+        "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE",
+        "browser/pdfviewer/viewer.properties:find_match_count[one]",
+        "browser/pdfviewer/viewer.properties:find_match_count[two]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[one]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[two]",
+        "browser/pdfviewer/viewer.properties:find_match_count_limit[zero]"
+      ],
+      "si": [
+        "browser/browser/preferences/preferences.ftl:collection-health-report.label"
+      ],
+      "sk": [
+        "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label",
+        "browser/browser/preferences/preferences.ftl:history-remember-label2",
+        "browser/installer/custom.properties:PRIVATE_BROWSING_SHORTCUT_TITLE"
+      ],
+      "sl": [
+        "browser/installer/custom.properties:SUMMARY_PAGE_SUBTITLE",
+        "browser/installer/custom.properties:UN_REFRESH_PAGE_EXPLANATION",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG",
+        "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT",
+        "browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/override.properties:LicenseTextRB"
+      ]
+    }
+  }
+}

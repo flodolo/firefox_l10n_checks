@@ -144,9 +144,9 @@ class QualityCheck:
         if not cli_options["tmx"]:
             self.checkAPI()
             if requested_check == "all":
-                self.checkView("variables")
-                self.checkView("shortcuts")
-                self.checkView("empty")
+                self.check_view("variables")
+                self.check_view("shortcuts")
+                self.check_view("empty")
 
         # Check local TMX for FTL issues if available
         if requested_check == "all" and self.tmx_path != "":
@@ -154,7 +154,8 @@ class QualityCheck:
 
         # Run compare-locales checks if repos are available
         if (
-            not cli_options["tmx"]
+            not cli_options["ignore_comparelocales"]
+            and not cli_options["tmx"]
             and requested_check == "all"
             and self.firefoxl10n_path != ""
         ):
@@ -165,8 +166,8 @@ class QualityCheck:
             self.printErrors()
 
         # Compare with previous run
-        # if requested_check == "all":
-        self.comparePreviousRun()
+        if requested_check == "all":
+            self.comparePreviousRun()
 
     def comparePreviousRun(self):
         def diff(a, b):
@@ -497,67 +498,75 @@ class QualityCheck:
             if total_errors:
                 self.error_summary[json_file] = total_errors
 
-    def checkView(self, checkname):
-        """Check views for access keys and keyboard shortcuts"""
-        if checkname == "variables":
-            if self.verbose:
-                print("CHECK: variables")
-            url = "{}/variables/?locale={}&repo=gecko_strings&json"
-        elif checkname == "shortcuts":
-            if self.verbose:
-                print("CHECK: keyboard shortcuts")
-            url = "{}/commandkeys/?locale={}&repo=gecko_strings&json"
-        elif checkname == "empty":
-            if self.verbose:
-                print("CHECK: empty strings")
-            url = "{}/empty-strings/?locale={}&json"
+    def check_view(self, check_name: str):
+        """
+        Check views for access keys, keyboard shortcuts, and empty strings.
+        """
+        if self.verbose:
+            display_names = {
+                "variables": "variables",
+                "shortcuts": "keyboard shortcuts",
+                "empty": "empty strings",
+            }
+            print(f"CHECK: {display_names.get(check_name, check_name)}")
 
-        # Load individual locale exceptions
-        exceptions = []
-        exceptions_file = os.path.join(
-            self.root_folder, "exceptions", f"{checkname}.txt"
-        )
-        with open(exceptions_file) as f:
-            for line in f:
-                exceptions.append(line.rstrip())
+        # Define API URLs
+        url_templates = {
+            "variables": "{}/variables/?locale={}&repo=gecko_strings&json",
+            "shortcuts": "{}/commandkeys/?locale={}&repo=gecko_strings&json",
+            "empty": "{}/empty-strings/?locale={}&json",
+        }
+        url = url_templates.get(check_name, "")
 
-        # Load general exclusions
-        exclusions = []
-        exclusions_file = os.path.join(
-            self.root_folder, "exceptions", "exclusions.json"
-        )
-        with open(exclusions_file) as f:
-            json_data = json.load(f)
-            if checkname in json_data:
-                exclusions = json_data[checkname]
+        # 1. Load Centralized Exceptions from JSON
+        exceptions_path = Path(self.root_folder) / "exceptions" / "view_exceptions.json"
+        exceptions = {}
+        if exceptions_path.exists():
+            try:
+                with open(exceptions_path, encoding="utf-8") as f:
+                    exceptions = json.load(f)
+            except json.JSONDecodeError as e:
+                print(f"Error reading exceptions JSON: {e}")
 
         total_errors = 0
         for locale in self.locales:
+            # Fetch data using the existing getJsonData logic
             errors, success = self.getJsonData(
                 url.format(self.transvision_url, locale),
-                f"{checkname} for {locale}",
+                f"{check_name} for {locale}",
             )
 
             if not success:
                 self.general_errors.append(
-                    f"Error checking *{checkname}* for locale {locale}"
+                    f"Error checking *{check_name}* for locale {locale}"
                 )
                 continue
 
+            # Get locale-specific exceptions for this check type
+            locale_exceptions = (
+                exceptions.get(check_name, {}).get("locales", {}).get(locale, [])
+            )
+
             for error in errors:
+                # Ignore excluded products
                 if error.startswith(self.excluded_products):
                     continue
-                if error in exclusions:
+
+                # Ignore general exclusions
+                if error in exceptions.get(check_name, {}).get("exclusions", []):
                     continue
-                error_msg = f"{locale}: {error}"
-                if error_msg in exceptions:
+
+                if error in locale_exceptions:
                     continue
-                error_msg = error_msg.replace(locale, checkname, 1)
+
+                # Maintain original error message format
+                # Replaces the first instance of locale with check_name
+                error_msg = f"{locale}: {error}".replace(locale, check_name, 1)
                 self.error_messages[locale].append(error_msg)
                 total_errors += 1
 
         if total_errors:
-            self.error_summary[checkname] = total_errors
+            self.error_summary[check_name] = total_errors
 
     def checkRepos(self):
         """Run compare-locales against repos"""
@@ -1010,6 +1019,12 @@ def main():
         "--tmx", dest="tmx", help="Only check TMX", action="store_true"
     )
     cl_parser.add_argument(
+        "--nocl",
+        dest="ignore_comparelocales",
+        help="Don't run compare-locales checks",
+        action="store_true",
+    )
+    cl_parser.add_argument(
         "--output",
         nargs="?",
         help="Path to folder where to store output in JSON format",
@@ -1028,6 +1043,7 @@ def main():
         cli_options = {
             "verbose": args.verbose,
             "tmx": args.tmx,
+            "ignore_comparelocales": args.ignore_comparelocales,
             "locale": args.locale,
         }
 
