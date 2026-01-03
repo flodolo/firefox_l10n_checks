@@ -9,18 +9,17 @@ from typing import Optional
 
 
 class MyHTMLParser(HTMLParser):
-    def __init__(self):
+    def __init__(self) -> None:
         # Initialize internal state before calling super
         self.tags: list[str] = []
         super().__init__(convert_charrefs=True)
 
-    def clear(self):
+    def clear(self) -> None:
         """Resets the parser and clears the stored tags."""
         self.reset()
         self.tags = []
 
-    def handle_starttag(self, tag, attrs):
-        # Ignore specific tags
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, Optional[str]]]) -> None:
         if tag == "br":
             return
 
