@@ -82,7 +82,7 @@ class APIChecker:
             # Load check definitions
             check_path = self.root_folder / "checks" / f"{json_file}.json"
             try:
-                with open(check_path, "r", encoding="utf-8") as f:
+                with open(check_path, encoding="utf-8") as f:
                     checks = json.load(f)
             except Exception as e:
                 print(f"Error loading JSON file {json_file}: {e}")
@@ -190,6 +190,86 @@ class APIChecker:
         return error_msg
 
 
+class CompareLocalesChecker:
+    def __init__(self, firefoxl10n_path, toml_path, locales, verbose=False):
+        self.firefoxl10n_path = firefoxl10n_path
+        self.toml_path = toml_path
+        self.verbose = verbose
+        if locales:
+            self.locales = tuple(locales)
+        else:
+            self.locales = [
+                loc
+                for loc in next(os.walk(self.firefoxl10n_path))[1]
+                if not loc.startswith(".")
+            ]
+            self.locales.sort()
+
+    def _extract_messages(self, data, cl_output):
+        """Recursively traverse results to extract warnings and errors."""
+        for node_data in data.values() if isinstance(data, dict) else []:
+            if isinstance(node_data, list):
+                for line in node_data:
+                    # Strip line/column numbers for more stable comparison
+                    if "warning" in line:
+                        msg = re.sub(
+                            r" at line [\d]+, column [\d]+", "", line["warning"]
+                        )
+                        cl_output["warnings"].append(msg)
+                    if "error" in line:
+                        msg = re.sub(r" at line [\d]+, column [\d]+", "", line["error"])
+                        cl_output["errors"].append(msg)
+            else:
+                self._extract_messages(node_data, cl_output)
+
+    def run(self, results_container):
+        """Executes compare-locales and populates the results container."""
+        config_env = {"l10n_base": self.firefoxl10n_path}
+        try:
+            config = TOMLParser().parse(self.toml_path, env=config_env)
+            if self.verbose:
+                print("Running compare-locales checks...")
+            observers = compareProjects([config], self.locales, self.firefoxl10n_path)
+        except (ConfigNotFound, OSError) as e:
+            sys.exit(f"Error running compare-locales: {e}")
+
+        data = [observer.toJSON() for observer in observers]
+        if not data:
+            return
+
+        total_errors = 0
+        total_warnings = 0
+
+        # Mapping to handle complex keys like 'it/browser'
+        details_keys = list(data[0]["details"].keys())
+        keys_mapping = {
+            k.split(os.path.sep)[0]: k for k in details_keys if os.path.sep in k
+        }
+
+        for locale, stats in data[0]["summary"].items():
+            if stats["errors"] + stats["warnings"] == 0:
+                continue
+
+            cl_output = {"errors": [], "warnings": []}
+            locale_key = keys_mapping.get(locale, locale)
+
+            # Use the extracted recursion logic
+            cl_data = data[0]["details"].get(locale_key, {})
+            self._extract_messages(cl_data, cl_output)
+
+            if stats["errors"] > 0:
+                results_container.output_cl["errors"][locale] = cl_output["errors"]
+                total_errors += stats["errors"]
+            if stats["warnings"] > 0:
+                results_container.output_cl["warnings"][locale] = cl_output["warnings"]
+                total_warnings += stats["warnings"]
+
+        results_container.error_summary["compare-locales"] = {
+            "errors": total_errors,
+            "warnings": total_warnings,
+        }
+
+
 class TMXChecker:
     def __init__(
         self,
@@ -217,7 +297,7 @@ class TMXChecker:
     def load_exclusions(self):
         """Loads TMX-specific exclusions from JSON."""
         exclusions_file = self.root_folder / "exceptions" / "exclusions_tmx.json"
-        with open(exclusions_file, "r", encoding="utf-8") as f:
+        with open(exclusions_file, encoding="utf-8") as f:
             return json.load(f)
 
     def _ignore_string(
@@ -322,7 +402,7 @@ class TMXChecker:
         exclusions = self.load_exclusions()
         ref_path = self.tmx_path / "en-US" / "cache_en-US_gecko_strings.json"
 
-        with open(ref_path, "r", encoding="utf-8") as f:
+        with open(ref_path, encoding="utf-8") as f:
             reference_data = json.load(f)
 
         ref = self.preprocess_reference(reference_data)
@@ -336,7 +416,7 @@ class TMXChecker:
             if not locale_file.exists():
                 continue
 
-            with open(locale_file, "r", encoding="utf-8") as f:
+            with open(locale_file, encoding="utf-8") as f:
                 locale_data = json.load(f)
 
             locale_errors = []
@@ -505,6 +585,7 @@ class QualityCheck:
         self.requested_check = requested_check
         self.verbose = cli_options["verbose"]
         self.output_path = output_path
+        self.single_locale = cli_options["locale"] is not None
 
         if self.output_path != "":
             # Read existing content
@@ -568,7 +649,7 @@ class QualityCheck:
             and requested_check == "all"
             and self.firefoxl10n_path != ""
         ):
-            self.checkRepos()
+            self.check_repos()
 
         # Print errors
         if self.verbose:
@@ -879,101 +960,15 @@ class QualityCheck:
         if total_errors:
             self.error_summary[check_name] = total_errors
 
-    def checkRepos(self):
-        """Run compare-locales against repos"""
-
-        def extractCompareLocalesMessages(data, cl_output):
-            """Traverse JSON results to extract warnings and errors"""
-
-            for node, node_data in data.items():
-                if isinstance(node_data, list):
-                    for line in node_data:
-                        # Store the message without line and column, since
-                        # those change frequently.
-                        if "warning" in line:
-                            msg = re.sub(
-                                r" at line [\d]+, column [\d]+", "", line["warning"]
-                            )
-                            cl_output["warnings"].append(msg)
-                        if "error" in line:
-                            msg = re.sub(
-                                r" at line [\d]+, column [\d]+", "", line["error"]
-                            )
-                            cl_output["errors"].append(msg)
-                else:
-                    extractCompareLocalesMessages(node_data, cl_output)
-
-        # Get the available locales
-        locales = next(os.walk(self.firefoxl10n_path))[1]
-        locales = [loc for loc in locales if not loc.startswith(".")]
-        locales.sort()
-
-        configs = []
-        config_env = {"l10n_base": self.firefoxl10n_path}
-
-        try:
-            config = TOMLParser().parse(self.toml_path, env=config_env)
-        except ConfigNotFound as e:
-            print(e)
-        configs.append(config)
-
-        try:
-            if self.verbose:
-                print("Running compare-locales checks")
-            observers = compareProjects(configs, locales, self.firefoxl10n_path)
-        except OSError as exc:
-            sys.exit("Error running compare-locales checks: " + str(exc))
-
-        data = [observer.toJSON() for observer in observers]
-
-        total_errors = 0
-        total_warnings = 0
-
-        """
-        There's no guarantee that a "locale" key is present, it could
-        be "it/browser". Create a mapping between locale code and their
-        first key.
-        """
-        details_keys = list(data[0]["details"].keys())
-        keys_mapping = {}
-        for k in details_keys:
-            if os.path.sep in k:
-                keys_mapping[k.split(os.path.sep)[0]] = k
-
-        for locale, locale_data in data[0]["summary"].items():
-            if locale_data["errors"] + locale_data["warnings"] == 0:
-                continue
-
-            # Extract all warning and error messages
-            cl_output = {"errors": [], "warnings": []}
-
-            locale_key = keys_mapping.get(locale, locale)
-            # Sometimes compare-locales doesn't return a key with the locale,
-            # but just one filename starting with the locale code.
-            if locale_key not in locales:
-                [loc_guess, path] = locale_key.split("/", 1)
-                cl_data = {loc_guess: {path: data[0]["details"][locale_key]}}
-                print(f"Issue with compare-locales response for: {locale_key}")
-                print(f"Assumed locale: {loc_guess}")
-                print(json.dumps(data[0]["details"][locale_key], indent=2))
-            else:
-                cl_data = data[0]["details"][locale_key]
-            extractCompareLocalesMessages(cl_data, cl_output)
-
-            if locale_data["errors"] > 0:
-                if locale not in self.output_cl["errors"]:
-                    self.output_cl["errors"][locale] = []
-                total_errors += locale_data["errors"]
-                self.output_cl["errors"][locale] = cl_output["errors"]
-            if locale_data["warnings"] > 0:
-                if locale not in self.output_cl["warnings"]:
-                    self.output_cl["warnings"][locale] = []
-                total_warnings += locale_data["warnings"]
-                self.output_cl["warnings"][locale] = cl_output["warnings"]
-        self.error_summary["compare-locales"] = {
-            "errors": total_errors,
-            "warnings": total_warnings,
-        }
+    def check_repos(self):
+        """Run compare-locales against repos using CompareLocalesChecker."""
+        checker = CompareLocalesChecker(
+            firefoxl10n_path=self.firefoxl10n_path,
+            toml_path=self.toml_path,
+            locales=self.locales if self.single_locale else [],
+            verbose=self.verbose,
+        )
+        checker.run(self)
 
     def check_TMX(self):
         """Check local TMX for issues, mostly on FTL files"""
