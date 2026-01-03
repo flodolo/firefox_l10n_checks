@@ -508,7 +508,7 @@ class QualityCheck:
                 continue
 
             for error in errors:
-                if error.startswith((self.excluded_products)):
+                if error.startswith(self.excluded_products):
                     continue
                 if error in exclusions:
                     continue
@@ -564,7 +564,7 @@ class QualityCheck:
             if self.verbose:
                 print("Running compare-locales checks")
             observers = compareProjects(configs, locales, self.firefoxl10n_path)
-        except (OSError, IOError) as exc:
+        except OSError as exc:
             sys.exit("Error running compare-locales checks: " + str(exc))
 
         data = [observer.toJSON() for observer in observers]

@@ -19,7 +19,7 @@ class MyHTMLParser(HTMLParser):
         self.reset()
         self.tags = []
 
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, Optional[str]]]) -> None:
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag == "br":
             return
 
