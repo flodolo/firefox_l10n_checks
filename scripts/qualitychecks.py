@@ -7,6 +7,9 @@ from configparser import ConfigParser
 from custom_html_parser import MyHTMLParser
 from fluent.syntax import parse, visitor
 from fluent.syntax.serializer import FluentSerializer
+from pathlib import Path
+from configparser import ConfigParser
+from contextlib import contextmanager
 from urllib.request import urlopen
 import argparse
 import datetime
@@ -16,6 +19,40 @@ import os
 import pickle
 import re
 import sys
+
+# Define the root directory relative to the script location
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+
+@contextmanager
+def execution_lock(lock_file: Path):
+    """Ensures a lock file exists during execution and is cleaned up after."""
+    if lock_file.exists():
+        sys.exit("Checks are already running.")
+    try:
+        lock_file.touch()
+        yield
+    finally:
+        if lock_file.exists():
+            lock_file.unlink()
+
+
+def load_config(config_path: Path):
+    """Loads and validates the configuration file."""
+    if not config_path.is_file():
+        return None
+
+    config = ConfigParser()
+    config.read(config_path)
+
+    try:
+        return {
+            "tmx_path": Path(config.get("config", "tmx_path")),
+            "firefoxl10n_path": Path(config.get("config", "firefoxl10n_path")),
+            "toml_path": Path(config.get("config", "toml_path")),
+        }
+    except Exception as e:
+        sys.exit(f"Configuration error: {e}")
 
 
 class flattenSelectExpression(visitor.Transformer):
@@ -981,59 +1018,28 @@ def main():
     args = cl_parser.parse_args()
 
     # Check if there's a config file (optional)
-    root_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir)
-    config_file = os.path.join(root_folder, "config", "config.ini")
+    config_path = ROOT_DIR / "config" / "config.ini"
+    config_data = load_config(config_path)
 
-    tmx_path = ""
-    if os.path.isfile(config_file):
-        config_parser = ConfigParser()
-        config_parser.read(config_file)
+    lock_file = ROOT_DIR / ".running"
 
-        def getConfig(key):
-            try:
-                value = config_parser.get("config", key)
-                if key != "toml_path":
-                    value = os.path.join(value, "")
-            except:
-                sys.exit(f"{key} not found in config.ini")
-            if not os.path.exists(value):
-                print(f"Path in {key} is not valid: {value}")
-                value = ""
+    # Use context manager to handle the lifecycle of the lock file
+    with execution_lock(lock_file):
+        cli_options = {
+            "verbose": args.verbose,
+            "tmx": args.tmx,
+            "locale": args.locale,
+        }
 
-            return value
-
-        tmx_path = getConfig("tmx_path")
-        firefoxl10n_path = getConfig("firefoxl10n_path")
-        toml_path = getConfig("toml_path")
-
-    # Check if checks are already running for some reason
-    semaphore = os.path.join(root_folder, ".running")
-    if os.path.isfile(semaphore):
-        sys.exit("Checks are already running")
-    else:
-        try:
-            open(semaphore, "w")
-        except:
-            sys.exit("Can't create semaphore file")
-
-    cli_options = {
-        "verbose": args.verbose,
-        "tmx": args.tmx,
-        "locale": args.locale,
-    }
-
-    QualityCheck(
-        root_folder,
-        tmx_path,
-        firefoxl10n_path,
-        toml_path,
-        args.check,
-        cli_options,
-        args.output,
-    )
-
-    # Remove semaphore file
-    os.remove(semaphore)
+        QualityCheck(
+            root_folder=str(ROOT_DIR),
+            tmx_path=str(config_data["tmx_path"]),
+            firefoxl10n_path=str(config_data["firefoxl10n_path"]),
+            toml_path=str(config_data["toml_path"]),
+            requested_check=args.check,
+            cli_options=cli_options,
+            output_path=args.output,
+        )
 
 
 if __name__ == "__main__":
