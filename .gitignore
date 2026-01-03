@@ -1,6 +1,7 @@
 .php_cs.cache
 .running
 .vscode
+__pycache__
 checks.json
 config/config.ini
 errors.json
