@@ -13,6 +13,7 @@ from collections import OrderedDict
 from configparser import ConfigParser
 from contextlib import contextmanager
 from pathlib import Path
+from typing import Any
 from urllib.request import urlopen
 
 from compare_locales.compare import compareProjects
@@ -785,7 +786,7 @@ class QualityCheck:
             error_summary=self.error_summary,
         )
 
-    def getJsonData(self, url, search_id):
+    def getJsonData(self, url: str, search_id: str) -> tuple[Any, bool]:
         """
         Return two values:
         - Array of data
@@ -816,16 +817,15 @@ class QualityCheck:
             sys.exit("CRITICAL ERROR: List of plural forms not available")
 
         for locale, rule_number in locales_plural_rules.items():
-            num_plurals = get_plural(locale)
-            if num_plurals is None:
+            plurals = get_plural(locale)
+            # Fall back to English (2 plural forms)
+            num_plurals = 2
+            if plurals is None:
                 # Temporary fix for szl
                 if locale == "szl":
                     num_plurals = 3
-                else:
-                    # Fall back to English
-                    num_plurals = 2
             else:
-                num_plurals = len(get_plural(locale))
+                num_plurals = len(plurals)
             self.plural_forms[locale] = num_plurals
 
     def getLocales(self):
@@ -881,8 +881,7 @@ class QualityCheck:
                     open(os.path.join(self.root_folder, "checks", json_file + ".json"))
                 )
             except Exception as e:
-                print(f"Error loading JSON file {json_file}")
-                sys.exit(e)
+                sys.exit(f"Error loading JSON file {json_file}: {e}")
 
             available_checks = []
             for c in checks:
