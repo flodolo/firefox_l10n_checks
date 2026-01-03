@@ -1,15 +1,5 @@
 #! /usr/bin/env python3
 
-from collections import OrderedDict
-from compare_locales.compare import compareProjects
-from compare_locales.paths import TOMLParser, ConfigNotFound
-from configparser import ConfigParser
-from custom_html_parser import MyHTMLParser
-from fluent.syntax import parse, visitor
-from fluent.syntax.serializer import FluentSerializer
-from pathlib import Path
-from contextlib import contextmanager
-from urllib.request import urlopen
 import argparse
 import datetime
 import glob
@@ -18,6 +8,19 @@ import os
 import pickle
 import re
 import sys
+
+from collections import OrderedDict
+from configparser import ConfigParser
+from contextlib import contextmanager
+from pathlib import Path
+from urllib.request import urlopen
+
+from compare_locales.compare import compareProjects
+from compare_locales.paths import ConfigNotFound, TOMLParser
+from custom_html_parser import MyHTMLParser
+from fluent.syntax import parse, visitor
+from fluent.syntax.serializer import FluentSerializer
+
 
 # Define the root directory relative to the script location
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -412,7 +415,7 @@ class QualityCheck:
                 response = urlopen(url)
                 json_data = json.load(response)
                 return (json_data, True)
-            except:
+            except Exception:
                 # print(f"Error reading URL: {url}")
                 continue
 
