@@ -17,7 +17,6 @@ from urllib.request import urlopen
 
 from compare_locales.compare import compareProjects
 from compare_locales.paths import ConfigNotFound, TOMLParser
-from custom_html_parser import MyHTMLParser
 from fluent.syntax import parse, visitor
 from fluent.syntax.serializer import FluentSerializer
 
@@ -191,6 +190,280 @@ class APIChecker:
         return error_msg
 
 
+class TMXChecker:
+    def __init__(
+        self,
+        tmx_path: str,
+        root_folder: str,
+        excluded_products: tuple,
+        verbose: bool = False,
+    ):
+        self.tmx_path = Path(tmx_path)
+        self.root_folder = Path(root_folder)
+        self.excluded_products = excluded_products
+        self.verbose = verbose
+
+        self.datal10n_pattern = re.compile(
+            r'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE
+        )
+        self.placeable_pattern = re.compile(
+            r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
+        )
+        self.fluent_function_pattern = re.compile(
+            r"(NUMBER|DATETIME)\(([^)]*)\)", re.UNICODE
+        )
+        self.css_pattern = re.compile(r"[^\d]*", re.UNICODE)
+
+    def load_exclusions(self):
+        """Loads TMX-specific exclusions from JSON."""
+        exclusions_file = self.root_folder / "exceptions" / "exclusions_tmx.json"
+        with open(exclusions_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    def _ignore_string(
+        self, string_id, locale, locale_data, exclusions, exclusion_type
+    ):
+        if string_id not in locale_data:
+            return True
+        if string_id.startswith(self.excluded_products):
+            return True
+        if (
+            "files" in exclusions[exclusion_type]
+            and string_id.split(":")[0] in exclusions[exclusion_type]["files"]
+        ):
+            return True
+        if string_id in exclusions[exclusion_type]["strings"]:
+            return True
+        if (
+            locale in exclusions[exclusion_type]["locales"]
+            and string_id in exclusions[exclusion_type]["locales"][locale]
+        ):
+            return True
+        return False
+
+    def _extract_function_calls(self, text):
+        """Extracts Fluent function calls (NUMBER, DATETIME)."""
+        calls = []
+        for m in self.fluent_function_pattern.finditer(text):
+            fn = m.group(1)
+            params = sorted([p.strip() for p in m.group(2).split(",")])
+            call = [fn] + params
+            if call not in calls:
+                calls.append(call)
+        return sorted(calls)
+
+    def preprocess_reference(self, reference_data):
+        """Processes en-US data once to identify HTML, CSS, and Fluent functions."""
+        processed = {
+            "ftl_ids": [],
+            "data_l10n_ids": {},
+            "fluent_function_ids": {},
+            "css_strings": {},
+            "html_strings": {},
+            "reference_ids": [],
+        }
+
+        from custom_html_parser import MyHTMLParser
+
+        html_parser = MyHTMLParser()
+        flattener = flattenSelectExpression()
+        serializer = FluentSerializer()
+
+        for string_id, text in reference_data.items():
+            file_id, message_id = string_id.split(":")
+
+            if "region.properties" in string_id or string_id.startswith(
+                self.excluded_products
+            ):
+                continue
+
+            processed["reference_ids"].append(string_id)
+
+            if file_id.endswith(".ftl"):
+                processed["ftl_ids"].append(string_id)
+
+                # Data-l10n-name check
+                matches = list(set(self.datal10n_pattern.findall(text)))
+                if matches:
+                    processed["data_l10n_ids"][string_id] = sorted(matches)
+
+                # CSS check
+                if message_id.endswith(".style"):
+                    matches = [
+                        m
+                        for m in self.css_pattern.findall(text.rstrip(";"))
+                        if m not in ["", "."]
+                    ]
+                    processed["css_strings"][string_id] = matches
+
+                # Fluent functions
+                fn_matches = self._extract_function_calls(text)
+                if fn_matches:
+                    processed["fluent_function_ids"][string_id] = fn_matches
+
+            # HTML Tags check
+            temp_text = text
+            if "*[" in text:
+                temp_text = serializer.serialize(
+                    flattener.visit(parse(f"temp_id = {text}"))
+                )
+
+            cleaned_text = self.placeable_pattern.sub("", temp_text)
+            html_parser.clear()
+            html_parser.feed(cleaned_text)
+            tags = html_parser.get_tags()
+            if tags:
+                processed["html_strings"][string_id] = tags
+
+        return processed
+
+    def run(self, locales, results_container):
+        """Main execution loop for TMX checks."""
+        exclusions = self.load_exclusions()
+        ref_path = self.tmx_path / "en-US" / "cache_en-US_gecko_strings.json"
+
+        with open(ref_path, "r", encoding="utf-8") as f:
+            reference_data = json.load(f)
+
+        ref = self.preprocess_reference(reference_data)
+        tmx_errors = 0
+
+        flattener = flattenSelectExpression()
+        serializer = FluentSerializer()
+
+        for locale in locales:
+            locale_file = self.tmx_path / locale / f"cache_{locale}_gecko_strings.json"
+            if not locale_file.exists():
+                continue
+
+            with open(locale_file, "r", encoding="utf-8") as f:
+                locale_data = json.load(f)
+
+            locale_errors = []
+
+            # Check for mandatory strings
+            for sid in exclusions["mandatory"]["strings"]:
+                if sid not in locale_data:
+                    locale_errors.append(
+                        f"Missing translation for mandatory key ({sid})"
+                    )
+
+            # General checks (links and pilcrows)
+            for sid in ref["reference_ids"]:
+                if self._ignore_string(sid, locale, locale_data, exclusions, "ignore"):
+                    continue
+
+                translation = locale_data[sid]
+                if not self._ignore_string(
+                    sid, locale, locale_data, exclusions, "http"
+                ):
+                    if re.search(r"http(s)*:\/\/", translation, re.UNICODE):
+                        locale_errors.append(f"Link in string ({sid})")
+
+                if "¶" in translation:
+                    locale_errors.append(f"Pilcrow character in string ({sid})")
+
+            # HTML mismatch check
+            from custom_html_parser import MyHTMLParser
+
+            lp = MyHTMLParser()
+            for sid, ref_tags in ref["html_strings"].items():
+                if self._ignore_string(sid, locale, locale_data, exclusions, "HTML"):
+                    continue
+
+                trans = locale_data[sid]
+                if "*[" in trans:
+                    trans = serializer.serialize(
+                        flattener.visit(parse(f"temp_id = {trans}"))
+                    )
+
+                lp.clear()
+                lp.feed(self.placeable_pattern.sub("", trans))
+                tags = lp.get_tags()
+
+                if tags != ref_tags and sorted(tags) != sorted(ref_tags):
+                    locale_errors.append(f"Mismatched HTML elements in string ({sid})")
+
+            # FTL specific checks (literals, XML entities, printf, string ID)
+            for sid in ref["ftl_ids"]:
+                if self._ignore_string(sid, locale, locale_data, exclusions, "ignore"):
+                    continue
+
+                trans = locale_data[sid]
+                if '{ "' in trans and not self._ignore_string(
+                    sid, locale, locale_data, exclusions, "ftl_literals"
+                ):
+                    locale_errors.append(f"Fluent literal in string ({sid})")
+
+                if (
+                    re.search(r"&.*;", trans, re.UNICODE)
+                    and sid not in exclusions["xml"]["strings"]
+                ):
+                    locale_errors.append(f"XML entity in Fluent string ({sid})")
+
+                if sid not in exclusions["printf"]["strings"]:
+                    if re.search(
+                        r"(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", trans, re.UNICODE
+                    ):
+                        locale_errors.append(
+                            f"printf variables in Fluent string ({sid})"
+                        )
+
+                msg_id = sid.split(":")[1]
+                if re.search(re.escape(msg_id) + r"\s*=", trans, re.UNICODE):
+                    locale_errors.append(
+                        f"Message ID is repeated in the Fluent string ({sid})"
+                    )
+
+            # data-l10n-name mismatch
+            for sid, groups in ref["data_l10n_ids"].items():
+                if sid not in locale_data:
+                    continue
+                m = sorted(list(set(self.datal10n_pattern.findall(locale_data[sid]))))
+                if not m:
+                    locale_errors.append(
+                        f"data-l10n-name missing in Fluent string ({sid})"
+                    )
+                elif m != groups:
+                    locale_errors.append(
+                        f"data-l10n-name mismatch in Fluent string ({sid})"
+                    )
+
+            # Fluent function mismatch
+            for sid, source_matches in ref["fluent_function_ids"].items():
+                if self._ignore_string(
+                    sid, locale, locale_data, exclusions, "fluent_functions"
+                ):
+                    continue
+                m = self._extract_function_calls(locale_data[sid])
+                if not m:
+                    locale_errors.append(
+                        f"Fluent function missing in Fluent string ({sid})"
+                    )
+                elif m != source_matches:
+                    locale_errors.append(
+                        f"Fluent function mismatch in Fluent string ({sid})"
+                    )
+
+            # CSS mismatch
+            for sid, source_css in ref["css_strings"].items():
+                if sid not in locale_data:
+                    continue
+                m = [
+                    c
+                    for c in self.css_pattern.findall(locale_data[sid].rstrip(";"))
+                    if c not in ["", "."]
+                ]
+                if m != source_css:
+                    locale_errors.append(f"CSS mismatch in Fluent string ({sid})")
+
+            if locale_errors:
+                results_container.error_messages[locale].extend(locale_errors)
+                tmx_errors += len(locale_errors)
+
+        results_container.error_summary["TMX checks"] = tmx_errors
+
+
 class flattenSelectExpression(visitor.Transformer):
     def visit_SelectExpression(self, node):
         for variant in node.variants:
@@ -286,7 +559,7 @@ class QualityCheck:
 
         # Check local TMX for FTL issues if available
         if requested_check == "all" and self.tmx_path != "":
-            self.checkTMX()
+            self.check_TMX()
 
         # Run compare-locales checks if repos are available
         if (
@@ -702,349 +975,18 @@ class QualityCheck:
             "warnings": total_warnings,
         }
 
-    def checkTMX(self):
+    def check_TMX(self):
         """Check local TMX for issues, mostly on FTL files"""
-
-        def ignoreString(string_id, locale_data, exclusion_type):
-            # Ignore untranslated strings
-            if string_id not in locale_data:
-                return True
-
-            # Ignore strings from other products
-            if string_id.startswith(self.excluded_products):
-                return True
-
-            # Check if entire file is excluded
-            if (
-                "files" in exclusions[exclusion_type]
-                and string_id.split(":")[0] in exclusions[exclusion_type]["files"]
-            ):
-                return True
-
-            # Ignore excluded strings
-            if string_id in exclusions[exclusion_type]["strings"]:
-                return True
-            if (
-                locale in exclusions[exclusion_type]["locales"]
-                and string_id in exclusions[exclusion_type]["locales"][locale]
-            ):
-                return True
-
-            return False
-
-        def extract_function_calls(text):
-            calls = []
-            for m in fluent_function_pattern.finditer(text):
-                fn = m.group(1)
-                params = sorted([p.strip() for p in m.group(2).split(",")])
-                call = [fn] + params
-                # Avoid storing duplicates with plural strings
-                if call not in calls:
-                    calls.append(call)
-            return sorted(calls)
-
         if self.verbose:
-            print("Reading TMX data from Transvision")
+            print("Running TMX checks...")
 
-        datal10n_pattern = re.compile(
-            r'data-l10n-name\s*=\s*"([a-zA-Z\-]*)"', re.UNICODE
+        checker = TMXChecker(
+            tmx_path=self.tmx_path,
+            root_folder=self.root_folder,
+            excluded_products=self.excluded_products,
+            verbose=self.verbose,
         )
-        placeable_pattern = re.compile(
-            r'(?<!\{)\{\s*([\$|-]?[\w.-]+)(?:[\[(]?[\w.\-, :"]+[\])])*\s*\}', re.UNICODE
-        )
-        fluent_function_pattern = re.compile(
-            r"(NUMBER|DATETIME)\(([^)]*)\)", re.UNICODE
-        )
-        css_pattern = re.compile(r"[^\d]*", re.UNICODE)
-
-        # Load TMX exclusions
-        exclusions = {}
-        exclusions_file = os.path.join(
-            self.root_folder, "exceptions", "exclusions_tmx.json"
-        )
-        with open(exclusions_file) as f:
-            exclusions = json.load(f)
-
-        # Read source data (en-US)
-        ref_tmx_path = os.path.join(
-            self.tmx_path, "en-US", "cache_en-US_gecko_strings.json"
-        )
-        with open(ref_tmx_path) as f:
-            reference_data = json.load(f)
-
-        # Remove strings from other products and irrelevant files
-        reference_ids = []
-        for id in reference_data.keys():
-            if "region.properties" in id:
-                continue
-
-            if not id.startswith(self.excluded_products):
-                reference_ids.append(id)
-
-        # Verify if there are non existing strings in the exclusions file,
-        # report as error if there are
-        for key, key_data in exclusions.items():
-            for grp, grp_data in key_data.items():
-                if grp == "files":
-                    continue
-                if grp == "locales":
-                    for locale, locale_ids in grp_data.items():
-                        for locale_id in locale_ids:
-                            if locale_id not in reference_data:
-                                self.general_errors.append(
-                                    f"Non existing strings in exclusions_tmx.json ({key}, {grp}): {locale_id}"
-                                )
-                else:
-                    for id in grp_data:
-                        if id not in reference_data:
-                            self.general_errors.append(
-                                f"Non existing strings in exclusions_tmx.json ({key}, {grp}): {id}"
-                            )
-
-        """
-        Store specific English strings for additional FTL checks:
-        - Strings with data-l10n-names
-        - Strings with .style attributes
-        """
-        ftl_ids = []
-        data_l10n_ids = {}
-        fluent_function_ids = {}
-        CSS_strings = {}
-        for id, text in reference_data.items():
-            file_id, message_id = id.split(":")
-
-            # Ignore non ftl strings
-            if not file_id.endswith(".ftl"):
-                continue
-
-            # Ignore strings from other products
-            if file_id.startswith(self.excluded_products):
-                continue
-
-            ftl_ids.append(id)
-
-            matches_iterator = datal10n_pattern.finditer(text)
-            matches = []
-            for m in matches_iterator:
-                matches.append(m.group(1))
-            if matches:
-                # Remove duplicates
-                matches = list(set(matches))
-                data_l10n_ids[id] = sorted(matches)
-
-            if message_id.endswith(".style"):
-                # Alway strip the closing ';', to avoid errors on mismatches
-                matches = css_pattern.findall(text.rstrip(";"))
-                # Drop empty elements, ignore period for decimals
-                matches = [m for m in matches if m not in ["", "."]]
-                CSS_strings[id] = matches
-
-            matches = extract_function_calls(text)
-            if matches:
-                fluent_function_ids[id] = matches
-
-        # Store strings with HTML elements
-        html_parser = MyHTMLParser()
-        html_strings = {}
-        for id, text in reference_data.items():
-            if "*[" in text:
-                resource = parse(f"temp_id = {text}")
-                flattener = flattenSelectExpression()
-                serializer = FluentSerializer()
-                text = serializer.serialize(flattener.visit(resource))
-
-            # Remove Fluent placeables before parsing HTML, because the parser
-            # will consider curly parentheses and other elements as starting
-            # tags.
-            cleaned_text = placeable_pattern.sub("", text)
-            html_parser.clear()
-            html_parser.feed(cleaned_text)
-
-            tags = html_parser.get_tags()
-            if tags:
-                html_strings[id] = tags
-
-        tmx_errors = 0
-        for locale in self.locales:
-            tmx_path = os.path.join(
-                self.tmx_path, locale, f"cache_{locale}_gecko_strings.json"
-            )
-            with open(tmx_path) as f:
-                locale_data = json.load(f)
-
-            # Check for untranslated mandatory keys
-            for string_id in exclusions["mandatory"]["strings"]:
-                if string_id not in locale_data:
-                    error_msg = f"Missing translation for mandatory key ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-            # General checks (all strings)
-            for string_id in reference_ids:
-                # Ignore strings
-                if ignoreString(string_id, locale_data, "ignore"):
-                    continue
-
-                translation = locale_data[string_id]
-
-                # Check for links in strings
-                if not ignoreString(string_id, locale_data, "http"):
-                    pattern = re.compile(r"http(s)*:\/\/", re.UNICODE)
-                    if pattern.search(translation):
-                        error_msg = f"Link in string ({string_id})"
-                        self.error_messages[locale].append(error_msg)
-                        tmx_errors += 1
-
-                # Check for pilcrow character
-                if "¶" in translation:
-                    error_msg = f"Pilcrow character in string ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-            # Check for HTML elements mismatch
-            html_parser = MyHTMLParser()
-            for string_id, ref_tags in html_strings.items():
-                # Ignore strings
-                if ignoreString(string_id, locale_data, "HTML"):
-                    continue
-
-                translation = locale_data[string_id]
-                if "*[" in translation:
-                    resource = parse(f"temp_id = {translation}")
-                    flattener = flattenSelectExpression()
-                    serializer = FluentSerializer()
-                    translation = serializer.serialize(flattener.visit(resource))
-
-                html_parser.clear()
-                cleaned_translation = placeable_pattern.sub("", translation)
-                html_parser.feed(cleaned_translation)
-                tags = html_parser.get_tags()
-
-                if tags != ref_tags:
-                    # Ignore if only the order was changed
-                    if sorted(tags) == sorted(ref_tags):
-                        continue
-                    error_msg = (
-                        f"Mismatched HTML elements in string ({string_id})\n"
-                        f"  Translation tags ({len(tags)}): {', '.join(tags)}\n"
-                        f"  Reference tags ({len(ref_tags)}): {', '.join(ref_tags)}\n"
-                        f"  Translation: {translation}\n"
-                        f"  Reference: {reference_data[string_id]}"
-                    )
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-            # FTL checks
-            for string_id in ftl_ids:
-                # Ignore strings
-                if ignoreString(string_id, locale_data, "ignore"):
-                    continue
-
-                translation = locale_data[string_id]
-
-                # Check for stray spaces
-                if '{ "' in translation and not ignoreString(
-                    string_id, locale_data, "ftl_literals"
-                ):
-                    error_msg = f"Fluent literal in string ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-                # Check for DTD variables, e.g. '&something;'
-                pattern = re.compile(r"&.*;", re.UNICODE)
-                if pattern.search(translation):
-                    if string_id in exclusions["xml"]["strings"]:
-                        continue
-                    error_msg = f"XML entity in Fluent string ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-                # Check for properties variables '%S' or '%1$S'
-                if string_id not in exclusions["printf"]["strings"]:
-                    pattern = re.compile(
-                        r"(%(?:[0-9]+\$){0,1}(?:[0-9].){0,1}([sS]))", re.UNICODE
-                    )
-                    if pattern.search(translation):
-                        error_msg = f"printf variables in Fluent string ({string_id})"
-                        self.error_messages[locale].append(error_msg)
-                        tmx_errors += 1
-
-                # Check for the message ID repeated in the translation
-                message_id = string_id.split(":")[1]
-                pattern = re.compile(re.escape(message_id) + r"\s*=", re.UNICODE)
-                if pattern.search(translation):
-                    error_msg = (
-                        f"Message ID is repeated in the Fluent string ({string_id})"
-                    )
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-            # Check data-l10n-names
-            for string_id, groups in data_l10n_ids.items():
-                if string_id not in locale_data:
-                    continue
-
-                translation = locale_data[string_id]
-                matches_iterator = datal10n_pattern.finditer(translation)
-                matches = []
-                for m in matches_iterator:
-                    matches.append(m.group(1))
-                # Remove duplicates
-                matches = list(set(matches))
-                if matches:
-                    translated_groups = sorted(matches)
-                    if translated_groups != groups:
-                        # Groups are not matching
-                        error_msg = (
-                            f"data-l10n-name mismatch in Fluent string ({string_id})"
-                        )
-                        self.error_messages[locale].append(error_msg)
-                        tmx_errors += 1
-                else:
-                    # There are no data-l10n-name
-                    error_msg = f"data-l10n-name missing in Fluent string ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-
-            # Check Fluent functions
-            for string_id, source_matches in fluent_function_ids.items():
-                if ignoreString(string_id, locale_data, "fluent_functions"):
-                    continue
-
-                translation = locale_data[string_id]
-                matches = extract_function_calls(translation)
-                if not matches:
-                    error_msg = (
-                        f"Fluent function missing in Fluent string ({string_id})"
-                    )
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-                else:
-                    if matches != source_matches:
-                        error_msg = (
-                            f"Fluent function mismatch in Fluent string ({string_id})\n"
-                            f"Source text: {reference_data[string_id]})\n"
-                            f"Translation: {translation})\n"
-                        )
-                        self.error_messages[locale].append(error_msg)
-                        tmx_errors += 1
-
-            # Check for CSS mismatches
-            for string_id, cleaned_source in CSS_strings.items():
-                if string_id not in locale_data:
-                    continue
-
-                # Alway strip the closing ';', to avoid errors on mismatches
-                translation = locale_data[string_id].rstrip(";")
-                matches = css_pattern.findall(translation)
-                # Drop empty elements, ignore period for decimals
-                cleaned_translation = [m for m in matches if m not in ["", "."]]
-                if cleaned_translation != cleaned_source:
-                    # Groups are not matching
-                    error_msg = f"CSS mismatch in Fluent string ({string_id})"
-                    self.error_messages[locale].append(error_msg)
-                    tmx_errors += 1
-        self.error_summary["TMX checks"] = tmx_errors
+        checker.run(self.locales, self)
 
 
 def main():
