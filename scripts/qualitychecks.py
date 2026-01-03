@@ -8,7 +8,6 @@ from custom_html_parser import MyHTMLParser
 from fluent.syntax import parse, visitor
 from fluent.syntax.serializer import FluentSerializer
 from pathlib import Path
-from configparser import ConfigParser
 from contextlib import contextmanager
 from urllib.request import urlopen
 import argparse
@@ -53,6 +52,140 @@ def load_config(config_path: Path):
         }
     except Exception as e:
         sys.exit(f"Configuration error: {e}")
+
+
+class APIChecker:
+    def __init__(self, api_url, root_folder, verbose=False):
+        self.api_url = api_url
+        self.root_folder = Path(root_folder)
+        self.verbose = verbose
+        self.url_template = "{}/entity/gecko_strings/?id={}:{}"
+
+    def get_json_data(self, url, search_id):
+        """Fetches JSON with 5 retries and ensures socket closure."""
+        for _ in range(5):
+            try:
+                with urlopen(url, timeout=10) as response:
+                    return json.load(response), True
+            except Exception:
+                continue
+        return {}, False
+
+    def run(self, json_files, locales, plural_forms, results_container):
+        for json_file in json_files:
+            total_errors = 0
+            if self.verbose:
+                print(f"CHECK: {json_file}")
+
+            # Load check definitions
+            check_path = self.root_folder / "checks" / f"{json_file}.json"
+            try:
+                with open(check_path, "r", encoding="utf-8") as f:
+                    checks = json.load(f)
+            except Exception as e:
+                print(f"Error loading JSON file {json_file}: {e}")
+                continue
+
+            for c in checks:
+                query_url = self.url_template.format(
+                    self.api_url, c["file"], c["entity"]
+                )
+                json_data, success = self.get_json_data(
+                    query_url, f"{c['file']}:{c['entity']}"
+                )
+
+                if not success:
+                    results_container.general_errors.append(
+                        f"Error checking {c['file']}:{c['entity']}"
+                    )
+                    continue
+
+                for locale, translation in json_data.items():
+                    if locale == "en-US" or locale not in locales:
+                        continue
+
+                    # Original Exclusion Logic
+                    if "excluded_locales" in c and locale in c["excluded_locales"]:
+                        continue
+                    if "included_locales" in c and locale not in c["included_locales"]:
+                        continue
+
+                    error_msg = self._perform_checks(
+                        c, translation, locale, plural_forms
+                    )
+
+                    if error_msg:
+                        results_container.error_messages[locale].extend(error_msg)
+                        total_errors += len(error_msg)
+
+            if total_errors:
+                results_container.error_summary[json_file] = total_errors
+
+    def _perform_checks(self, c, translation, locale, plural_forms):
+        error_msg = []
+        check_type = c["type"]
+        file_entity = f"({c['file']}:{c['entity']})"
+
+        if check_type == "include_regex":
+            for t in c["checks"]:
+                if not re.search(t, translation, re.UNICODE):
+                    error_msg.append(f"Missing {t} {file_entity}")
+
+        elif check_type == "not_include_regex":
+            for t in c["checks"]:
+                if re.search(t, translation, re.UNICODE):
+                    error_msg.append(f"String includes {t} {file_entity}")
+
+        elif check_type == "include":
+            for t in c["checks"]:
+                if t not in translation:
+                    error_msg.append(f"Missing {t} {file_entity}")
+
+        elif check_type == "not_include":
+            for t in c["checks"]:
+                if t in translation:
+                    error_msg.append(f"Not expected text {t} {file_entity}")
+
+        elif check_type == "equal_to":
+            if c["value"].lower() != translation.lower():
+                error_msg.append(
+                    f"{translation} is not equal to {c['value']} {file_entity}"
+                )
+
+        elif check_type == "not_equal_to":
+            if c["value"] == translation:
+                error_msg.append(
+                    f"{translation} is equal to {c['value']} {file_entity}"
+                )
+
+        elif check_type == "acceptable_values":
+            if translation not in c["values"]:
+                error_msg.append(
+                    f"{translation} is not an acceptable value {file_entity}"
+                )
+
+        elif check_type == "typeof":
+            # Note: This check in the original code compared type(str) to a value in JSON.
+            if str(type(translation)) != str(c["value"]):
+                error_msg.append(
+                    f"{translation} is not of type {c['type']} {file_entity}"
+                )
+
+        elif check_type == "bytes_length":
+            current_length = len(translation.encode("utf-8"))
+            if current_length > c["value"]:
+                error_msg.append(
+                    f"String longer than {c['value']} bytes. Current length: {current_length} bytes. {file_entity}"
+                )
+
+        elif check_type == "plural_forms":
+            num_forms = len(translation.split(";"))
+            if num_forms != plural_forms.get(locale):
+                error_msg.append(
+                    f"String has {num_forms} plural forms, requested: {plural_forms.get(locale)} {file_entity}"
+                )
+
+        return error_msg
 
 
 class flattenSelectExpression(visitor.Transformer):
@@ -142,7 +275,7 @@ class QualityCheck:
 
         # Run Tranvision checks
         if not cli_options["tmx"]:
-            self.checkAPI()
+            self.check_API()
             if requested_check == "all":
                 self.check_view("variables")
                 self.check_view("shortcuts")
@@ -356,7 +489,7 @@ class QualityCheck:
             self.general_errors.sort()
             print("\n".join(self.general_errors))
 
-    def sanityCheckJSON(self):
+    def sanity_check_JSON(self):
         """Do a sanity check on JSON files, checking for duplicates"""
         for json_file in self.json_files:
             try:
@@ -375,128 +508,30 @@ class QualityCheck:
                     continue
                 available_checks.append(id)
 
-    def checkAPI(self):
+    def check_API(self):
         """Check strings via API requests"""
-        self.sanityCheckJSON()
+        self.sanity_check_JSON()
+
+        # Handle single-check requests
+        active_files = self.json_files
         if self.requested_check != "all":
             if self.requested_check not in self.json_files:
-                print(
-                    f"ERROR: The requested check ({self.requested_check}) does not exist. Available checks:"
+                sys.exit(
+                    f"ERROR: Requested check ({self.requested_check}) does not exist."
                 )
-                for f in self.json_files:
-                    print(f"- {f}")
-                sys.exit(1)
-            else:
-                self.json_files = [self.requested_check]
+            active_files = [self.requested_check]
 
-        url = "{}/entity/gecko_strings/?id={}:{}"
+        # Initialize and run the extracted checker
+        checker = APIChecker(
+            api_url=self.api_url, root_folder=self.root_folder, verbose=self.verbose
+        )
 
-        for json_file in self.json_files:
-            total_errors = 0
-            if self.verbose:
-                print(f"CHECK: {json_file}")
-            try:
-                checks = json.load(
-                    open(os.path.join(self.root_folder, "checks", json_file + ".json"))
-                )
-            except Exception as e:
-                print(f"Error loading JSON file {json_file}")
-                sys.exit(e)
-
-            for c in checks:
-                try:
-                    # print(f"Checking {c['entity']}")
-                    json_data, success = self.getJsonData(
-                        url.format(self.api_url, c["file"], c["entity"]),
-                        f"{c['file']}:{c['entity']}",
-                    )
-
-                    if not success:
-                        self.general_errors.append(
-                            f"Error checking {c['file']}:{c['entity']}"
-                        )
-                        continue
-
-                    for locale, translation in json_data.items():
-                        # Ignore en-US
-                        if locale == "en-US":
-                            continue
-
-                        # Ignore some locales if exclusions are defined
-                        if "excluded_locales" in c and locale in c["excluded_locales"]:
-                            continue
-                        if (
-                            "included_locales" in c
-                            and locale not in c["included_locales"]
-                        ):
-                            continue
-
-                        error_msg = []
-                        if c["type"] == "include_regex":
-                            for t in c["checks"]:
-                                pattern = re.compile(t, re.UNICODE)
-                                if not pattern.search(translation):
-                                    error_msg.append(
-                                        f"Missing {t} ({c['file']}:{c['entity']})"
-                                    )
-                        if c["type"] == "not_include_regex":
-                            for t in c["checks"]:
-                                pattern = re.compile(t, re.UNICODE)
-                                if pattern.search(translation):
-                                    error_msg.append(
-                                        f"String includes {t} ({c['file']}:{c['entity']})"
-                                    )
-                        elif c["type"] == "include":
-                            for t in c["checks"]:
-                                if t not in translation:
-                                    error_msg.append(
-                                        f"Missing {t} ({c['file']}:{c['entity']})"
-                                    )
-                        elif c["type"] == "not_include":
-                            for t in c["checks"]:
-                                if t in translation:
-                                    error_msg.append(
-                                        f"Not expected text {t} ({c['file']}:{c['entity']})"
-                                    )
-                        elif c["type"] == "equal_to":
-                            if c["value"].lower() != translation.lower():
-                                error_msg.append(
-                                    f"{translation} is not equal to {c['value']} ({c['file']}:{c['entity']})"
-                                )
-                        elif c["type"] == "not_equal_to":
-                            if c["value"] == translation:
-                                error_msg.append(
-                                    f"{translation} is equal to {c['value']} ({c['file']}:{c['entity']})"
-                                )
-                        elif c["type"] == "acceptable_values":
-                            if translation not in c["values"]:
-                                error_msg.append(
-                                    f"{translation} is not an acceptable value ({c['file']}:{c['entity']})"
-                                )
-                        elif c["type"] == "typeof":
-                            if type(translation) != c["value"]:
-                                error_msg.append(
-                                    f"{translation} is not of type {c['type']} ({c['file']}:{c['entity']})"
-                                )
-                        elif c["type"] == "bytes_length":
-                            current_length = len(translation.encode("utf-8"))
-                            if current_length > c["value"]:
-                                error_msg.append(
-                                    f"String longer than {c['value']} bytes. Current length: {current_length} bytes. Current text: {translation}. ({c['file']}:{c['entity']})"
-                                )
-                        elif c["type"] == "plural_forms":
-                            num_forms = len(translation.split(";"))
-                            if num_forms != self.plural_forms[locale]:
-                                error_msg.append(
-                                    f"String has {num_forms} plural forms, requested: {self.plural_forms[locale]} ({c['file']}:{c['entity']})"
-                                )
-                        if error_msg:
-                            self.error_messages[locale] += error_msg
-                            total_errors += 1
-                except Exception as e:
-                    print(e)
-            if total_errors:
-                self.error_summary[json_file] = total_errors
+        checker.run(
+            json_files=active_files,
+            locales=self.locales,
+            plural_forms=self.plural_forms,
+            results_container=self,
+        )
 
     def check_view(self, check_name: str):
         """
