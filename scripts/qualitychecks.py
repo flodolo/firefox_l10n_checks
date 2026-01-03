@@ -63,13 +63,14 @@ class APIChecker:
         self.verbose = verbose
         self.url_template = "{}/entity/gecko_strings/?id={}:{}"
 
-    def get_json_data(self, url, search_id):
+    def get_json_data(self, url):
         """Fetches JSON with 5 retries and ensures socket closure."""
         for _ in range(5):
             try:
                 with urlopen(url, timeout=10) as response:
                     return json.load(response), True
-            except Exception:
+            except Exception as e:
+                print(f"Error fetchinf remote JSON from {url}: {e}")
                 continue
         return {}, False
 
@@ -92,9 +93,7 @@ class APIChecker:
                 query_url = self.url_template.format(
                     self.api_url, c["file"], c["entity"]
                 )
-                json_data, success = self.get_json_data(
-                    query_url, f"{c['file']}:{c['entity']}"
-                )
+                json_data, success = self.get_json_data(query_url)
 
                 if not success:
                     results_container.general_errors.append(
@@ -672,12 +671,13 @@ class ResultsArchiver:
 
 class flattenSelectExpression(visitor.Transformer):
     def visit_SelectExpression(self, node):
+        default_variant = None
         for variant in node.variants:
             if variant.default:
                 default_variant = variant
                 break
-
-        node.variants = [default_variant]
+        if default_variant:
+            node.variants = [default_variant]
 
         return node
 
@@ -712,17 +712,6 @@ class QualityCheck:
         self.verbose = cli_options["verbose"]
         self.output_path = output_path
         self.single_locale = cli_options["locale"] is not None
-
-        if self.output_path != "":
-            # Read existing content
-            self.archive_data = {}
-            output_file = os.path.join(output_path, "checks.json")
-            if os.path.exists(output_file):
-                try:
-                    self.archive_data = json.load(open(output_file))
-                except Exception as e:
-                    print(f"Error loading JSON file {output_file}")
-                    print(e)
 
         self.transvision_url = "https://transvision.flod.org"
         self.api_url = f"{self.transvision_url}/api/v1"
@@ -802,13 +791,13 @@ class QualityCheck:
         - Array of data
         - If the request succeeded (boolean)
         """
-        for try_number in range(5):
+        for _ in range(5):
             try:
                 response = urlopen(url)
                 json_data = json.load(response)
                 return (json_data, True)
-            except Exception:
-                # print(f"Error reading URL: {url}")
+            except Exception as e:
+                print(f"Error fetching remote JSON from {url}: {e}")
                 continue
 
         self.general_errors.append(f"Error reading {search_id}")
@@ -1048,6 +1037,10 @@ def main():
     # Check if there's a config file (optional)
     config_path = ROOT_DIR / "config" / "config.ini"
     config_data = load_config(config_path)
+    if config_data is None:
+        print("ERROR: config.ini not found or could not be loaded.")
+        print("Please create a config.ini file before running this script.")
+        sys.exit(1)
 
     lock_file = ROOT_DIR / ".running"
 
