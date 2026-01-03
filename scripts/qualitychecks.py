@@ -544,6 +544,132 @@ class TMXChecker:
         results_container.error_summary["TMX checks"] = tmx_errors
 
 
+class ResultsArchiver:
+    def __init__(self, root_folder: Path, output_path: str):
+        self.root_folder = root_folder
+        self.output_path = Path(output_path) if output_path else None
+        self.pickle_file = self.root_folder / "previous_errors.dump"
+
+    def _diff(self, a, b):
+        b_set = set(b)
+        return [item for item in a if item not in b_set]
+
+    def _find_differences(self, check_type, current, previous, output):
+        """Identifies and prints new vs fixed errors."""
+        changes = False
+        new = self._diff(current, previous)
+        if new:
+            changes = True
+            output["new"] += new
+            print(f"New {check_type} ({len(new)}):")
+            print("\n".join(new))
+
+        fixed = self._diff(previous, current)
+        if fixed:
+            changes = True
+            output["fixed"] += fixed
+            print(f"Fixed {check_type} ({len(fixed)}):")
+            print("\n".join(fixed))
+
+        if changes:
+            output["message"].append(f"Total {check_type}: {len(current)}")
+
+        return changes
+
+    def archive(self, current_error_messages, output_cl, error_summary):
+        """Orchestrates the comparison and storage logic."""
+        # Load previous errors
+        previous_errors = {"errors": [], "compare-locales": [], "summary": {}}
+        if self.pickle_file.exists():
+            try:
+                with open(self.pickle_file, "rb") as f:
+                    previous_errors = pickle.load(f)
+            except Exception as e:
+                print(f"Error loading pickle: {e}")
+
+        # Flatten current errors for comparison
+        current_errors = []
+        for locale, errors in current_error_messages.items():
+            for e in errors:
+                current_errors.append(f"{locale} - {e}")
+        current_errors.sort()
+
+        flattened_cl = []
+        for locale, warnings in output_cl["warnings"].items():
+            for w in warnings:
+                flattened_cl.append(f"{locale} (compare-locales warning): {w}")
+        for locale, errors in output_cl["errors"].items():
+            for e in errors:
+                flattened_cl.append(f"{locale} (compare-locales error): {e}")
+        flattened_cl.sort()
+
+        # Prepare output structure
+        output = {"new": [], "fixed": [], "message": []}
+
+        changes = self._find_differences(
+            "errors", current_errors, previous_errors["errors"], output
+        )
+        changes_cl = self._find_differences(
+            "compare-locale errors",
+            flattened_cl,
+            previous_errors.get("compare-locales", []),
+            output,
+        )
+
+        if not changes and not changes_cl:
+            print("No changes.")
+            if self.output_path:
+                output["message"].append(f"No changes ({len(current_errors)}).")
+
+        # Persistence logic
+        output_data = {
+            "errors": current_errors,
+            "compare-locales": flattened_cl,
+            "summary": error_summary,
+        }
+
+        # Write Pickle for next run
+        with open(self.pickle_file, "wb") as f:
+            pickle.dump(output_data, f)
+
+        # Handle JSON exports if output_path is provided
+        if self.output_path:
+            self._save_json_results(output, output_data)
+
+    def _save_json_results(self, diff_output, current_data):
+        """Saves checks.json and errors.json."""
+        if self.output_path is None:
+            return
+
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+
+        # Clean up output dictionary
+        for key in ["new", "fixed"]:
+            if not diff_output[key]:
+                del diff_output[key]
+        if diff_output["message"]:
+            diff_output["message"] = "\n".join(diff_output["message"])
+
+        # Update checks.json (historical archive)
+        archive_file = self.output_path / "checks.json"
+        archive_data = {}
+        if archive_file.exists():
+            try:
+                with open(archive_file) as f:
+                    archive_data = json.load(f)
+            except Exception:
+                pass
+
+        archive_data[timestamp] = diff_output
+        with open(archive_file, "w") as f:
+            json.dump(archive_data, f, sort_keys=True, indent=2)
+
+        # Update errors.json (current snapshot)
+        errors_file = self.output_path / "errors.json"
+        with open(errors_file, "w") as f:
+            json.dump(current_data, f, sort_keys=True, indent=2)
+
+
 class flattenSelectExpression(visitor.Transformer):
     def visit_SelectExpression(self, node):
         for variant in node.variants:
@@ -657,106 +783,18 @@ class QualityCheck:
 
         # Compare with previous run
         if requested_check == "all":
-            self.comparePreviousRun()
+            self.compare_previous_run()
 
-    def comparePreviousRun(self):
-        def diff(a, b):
-            b = set(b)
-            return [aa for aa in a if aa not in b]
-
-        def findDifferences(type, current, previous, output):
-            changes = False
-            new = diff(current, previous)
-            if new:
-                changes = True
-                output["new"] += new
-                print(f"New {type} ({len(new)}):")
-                print("\n".join(new))
-
-            fixed = diff(previous, current)
-            if fixed:
-                changes = True
-                output["fixed"] += fixed
-                print(f"Fixed {type} ({len(fixed)}):")
-                print("\n".join(fixed))
-
-            if changes:
-                output["message"].append(f"Total {type}: {len(current)}")
-
-            return changes
-
-        # Read the list of errors from a previous run (if available)
-        pickle_file = os.path.join(self.root_folder, "previous_errors.dump")
-        previous_errors = {"errors": [], "compare-locales": [], "summary": {}}
-        if os.path.exists(pickle_file):
-            try:
-                with open(pickle_file, "rb") as f:
-                    previous_errors = pickle.load(f)
-            except Exception as e:
-                print(e)
-
-        current_errors = []
-        for locale, errors in self.error_messages.items():
-            for e in errors:
-                current_errors.append(f"{locale} - {e}")
-        current_errors.sort()
-
-        changes = False
-        changes_cl = False
-        # Initialize output
-        output = {
-            "new": [],
-            "fixed": [],
-            "message": [],
-        }
-        savetofile = self.output_path != ""
-
-        changes = findDifferences(
-            "errors", current_errors, previous_errors["errors"], output
+    def compare_previous_run(self):
+        """Compare current results with previous run using ResultsArchiver."""
+        archiver = ResultsArchiver(
+            root_folder=Path(self.root_folder), output_path=self.output_path
         )
-
-        flattened_cl = []
-        for locale, warnings in self.output_cl["warnings"].items():
-            for w in warnings:
-                flattened_cl.append(f"{locale} (compare-locales warning): {w}")
-        for locale, errors in self.output_cl["errors"].items():
-            for e in errors:
-                flattened_cl.append(f"{locale} (compare-locales error): {e}")
-        flattened_cl.sort()
-        previous_cl_output = previous_errors.get("compare-locales", [])
-        changes_cl = findDifferences(
-            "compare-locale errors", flattened_cl, previous_cl_output, output
+        archiver.archive(
+            current_error_messages=self.error_messages,
+            output_cl=self.output_cl,
+            error_summary=self.error_summary,
         )
-
-        if not changes and not changes_cl:
-            print("No changes.")
-            if savetofile:
-                output["message"].append(f"No changes ({len(current_errors)}).")
-
-        for key in ["new", "fixed"]:
-            if not output[key]:
-                del output[key]
-
-        if savetofile:
-            if output["message"]:
-                output["message"] = "\n".join(output["message"])
-            end_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-            self.archive_data[end_datetime] = output
-            checks_file = os.path.join(self.output_path, "checks.json")
-            with open(checks_file, "w") as outfile:
-                json.dump(self.archive_data, outfile, sort_keys=True, indent=2)
-            errors_file = os.path.join(self.output_path, "errors.json")
-            output_data = {
-                "errors": current_errors,
-                "compare-locales": flattened_cl,
-                "summary": self.error_summary,
-            }
-            with open(errors_file, "w") as outfile:
-                json.dump(output_data, outfile, sort_keys=True, indent=2)
-
-            # Write back the current list of errors
-            with open(pickle_file, "wb") as f:
-                pickle.dump(output_data, f)
 
     def getJsonData(self, url, search_id):
         """
