@@ -296,7 +296,7 @@ class TMXChecker:
 
     def load_exclusions(self):
         """Loads TMX-specific exclusions from JSON."""
-        exclusions_file = self.root_folder / "exceptions" / "exclusions_tmx.json"
+        exclusions_file = self.root_folder / "exceptions" / "tmx_exceptions.json"
         with open(exclusions_file, encoding="utf-8") as f:
             return json.load(f)
 
