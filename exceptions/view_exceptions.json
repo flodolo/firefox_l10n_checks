@@ -310,8 +310,13 @@
         "browser/installer/custom.properties:WARN_MIN_SUPPORTED_CPU_MSG",
         "browser/installer/custom.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
         "browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT",
+        "browser/installer/nsisstrings.properties:ERROR_DOWNLOAD_CONT2",
         "browser/installer/nsisstrings.properties:INSTALLER_WIN_CAPTION",
+        "browser/installer/nsisstrings.properties:WARN_DISK_SPACE_QUIT2",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_CPU_MSG2",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_CPU_MSG2",
         "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG",
+        "browser/installer/nsisstrings.properties:WARN_MIN_SUPPORTED_OSVER_MSG2",
         "browser/installer/override.properties:LicenseTextRB"
       ]
     }
