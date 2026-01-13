@@ -256,6 +256,10 @@
       "he": [
         "browser/pdfviewer/viewer.properties:find_match_count_limit[one]"
       ],
+      "hu": [
+        "browser/installer/nsisstrings.properties:STUB_CLEANUP_PAVEOVER_HEADER3",
+        "browser/installer/nsisstrings.properties:STUB_CLEANUP_REINSTALL_HEADER3"
+      ],
       "it": [
         "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-browsers",
         "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources",
