@@ -289,11 +289,13 @@
       ],
       "pl": [
         "browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in",
+        "browser/browser/preferences/preferences.ftl:category-ai-controls.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-general.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-home.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-search.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-sync3.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:preferences-ai-controls-header.heading",
         "browser/chrome/browser/browser.properties:troubleshootModeRestartPromptTitle",
         "browser/installer/nsisstrings.properties:STUB_CANCEL_PROMPT_BUTTON_CONTINUE",
         "browser/pdfviewer/viewer.properties:find_match_count[one]",
