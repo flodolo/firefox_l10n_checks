@@ -193,7 +193,13 @@
     ]
   },
   "mandatory": {
-    "locales": {},
+    "locales": {
+      "bqi": [
+        "toolkit/chrome/global/intl.properties:font.language.group",
+        "toolkit/chrome/global/intl.properties:intl.accept_languages",
+        "toolkit/chrome/global/intl.properties:pluralRule"
+      ]
+    },
     "strings": [
       "toolkit/chrome/global/intl.properties:font.language.group",
       "toolkit/chrome/global/intl.properties:intl.accept_languages",

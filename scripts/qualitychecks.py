@@ -423,6 +423,11 @@ class TMXChecker:
 
             # Check for mandatory strings
             for sid in exclusions["mandatory"]["strings"]:
+                if self._ignore_string(
+                    sid, locale, locale_data, exclusions, "mandatory"
+                ):
+                    continue
+
                 if sid not in locale_data:
                     locale_errors.append(
                         f"Missing translation for mandatory key ({sid})"
