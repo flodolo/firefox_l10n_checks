@@ -56,6 +56,11 @@
         "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
         "toolkit/chrome/global/dialog.properties:accesskey-help"
       ],
+      "sr": [
+        "toolkit/chrome/global/dialog.properties:accesskey-accept",
+        "toolkit/chrome/global/dialog.properties:accesskey-cancel",
+        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+      ],
       "zh-TW": [
         "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
       ]
