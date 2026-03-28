@@ -102,6 +102,9 @@
       "fi": [
         "browser/browser/aboutLogins.ftl:login-item-timeline-point-date"
       ],
+      "it": [
+        "browser/browser/policy-messages.ftl:compulsory-restart-message"
+      ],
       "pl": [
         "browser/browser/newtab/asrouter.ftl:cfr-doorhanger-milestone-heading2",
         "devtools/client/application.ftl:serviceworker-worker-updated"
