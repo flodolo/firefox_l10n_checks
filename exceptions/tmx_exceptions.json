@@ -5,6 +5,9 @@
       "mobile/overrides/netError.dtd"
     ],
     "locales": {
+      "ar": [
+        "browser/browser/aboutUnloads.ftl:about-unloads-intro"
+      ],
       "bs": [
         "devtools/client/tooltips.ftl:inactive-css-ruby-element-fix"
       ],
