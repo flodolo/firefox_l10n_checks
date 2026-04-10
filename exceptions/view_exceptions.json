@@ -163,6 +163,9 @@
         "browser/pdfviewer/viewer.properties:find_match_count_limit[two]",
         "browser/pdfviewer/viewer.properties:find_match_count_limit[zero]"
       ],
+      "az": [
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
+      ],
       "cs": [
         "browser/browser/preferences/preferences.ftl:collection-health-report.label",
         "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
@@ -170,6 +173,9 @@
         "browser/browser/preferences/preferences.ftl:history-remember-label2",
         "browser/browser/preferences/preferences.ftl:preferences-colors-description",
         "toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation"
+      ],
+      "de": [
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
       ],
       "et": [
         "browser/installer/custom.properties:CONTEXT_OPTIONS",
@@ -286,11 +292,16 @@
       ],
       "ja": [
         "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
-        "browser/browser/preferences/preferences.ftl:pane-experimental-title"
+        "browser/browser/preferences/preferences.ftl:pane-experimental-title",
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
       ],
       "ja-JP-mac": [
         "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
-        "browser/browser/preferences/preferences.ftl:pane-experimental-title"
+        "browser/browser/preferences/preferences.ftl:pane-experimental-title",
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
+      ],
+      "lt": [
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
       ],
       "pl": [
         "browser/browser/newtab/onboarding.ftl:mr2022-onboarding-live-language-continue-in",
