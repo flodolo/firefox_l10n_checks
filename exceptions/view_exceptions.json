@@ -172,7 +172,8 @@
         "browser/browser/preferences/preferences.ftl:history-remember-label",
         "browser/browser/preferences/preferences.ftl:history-remember-label2",
         "browser/browser/preferences/preferences.ftl:preferences-colors-description",
-        "toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation"
+        "toolkit/toolkit/neterror/netError.ftl:certerror-what-should-i-do-bad-sts-cert-explanation",
+        "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
       ],
       "de": [
         "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
