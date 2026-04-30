@@ -276,6 +276,7 @@
         "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-browsers",
         "browser/browser/migrationWizard.ftl:migration-wizard-import-browser-no-resources",
         "browser/browser/preferences/languages.ftl:browser-languages-error",
+        "browser/browser/preferences/preferences.ftl:browser-language-install-error.message",
         "browser/browser/preferences/preferences.ftl:history-custom-description3.description",
         "browser/browser/preferences/preferences.ftl:history-custom-description4.description",
         "browser/browser/preferences/preferences.ftl:history-dontremember-description",
