@@ -310,6 +310,7 @@
         "browser/browser/preferences/preferences.ftl:category-ai-controls.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-general.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-home.tooltiptext",
+        "browser/browser/preferences/preferences.ftl:category-languages.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-privacy.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-search.tooltiptext",
         "browser/browser/preferences/preferences.ftl:category-sync3.tooltiptext",
