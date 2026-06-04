@@ -108,6 +108,9 @@
       "fi": [
         "browser/browser/aboutLogins.ftl:login-item-timeline-point-date"
       ],
+      "fur": [
+        "browser/browser/policy-messages.ftl:compulsory-restart-message"
+      ],
       "it": [
         "browser/browser/policy-messages.ftl:compulsory-restart-message"
       ],
