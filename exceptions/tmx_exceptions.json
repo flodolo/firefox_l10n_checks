@@ -117,6 +117,9 @@
       "pl": [
         "browser/browser/newtab/asrouter.ftl:cfr-doorhanger-milestone-heading2",
         "devtools/client/application.ftl:serviceworker-worker-updated"
+      ],
+      "sl": [
+        "browser/browser/newtab/newtab.ftl:newtab-sports-widget-match-time"
       ]
     },
     "strings": []
