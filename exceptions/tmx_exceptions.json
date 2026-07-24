@@ -156,6 +156,7 @@
       "dom/chrome/dom/dom.properties:DOMSubtreeModifiedWarning",
       "dom/chrome/dom/dom.properties:DocumentReleaseCaptureWarning",
       "dom/chrome/dom/dom.properties:DrawWindowCanvasRenderingContext2DWarning",
+      "dom/chrome/dom/dom.properties:EditContextCharacterBoundsWarning",
       "dom/chrome/dom/dom.properties:ElementReleaseCaptureWarning",
       "dom/chrome/dom/dom.properties:ElementSetCaptureWarning",
       "dom/chrome/dom/dom.properties:InstallTriggerInstallDeprecatedWarning",
