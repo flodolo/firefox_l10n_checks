@@ -146,6 +146,7 @@
     "strings": [
       "browser/browser/aboutLogins.ftl:login-item-origin.placeholder",
       "browser/browser/aiFeatures.ftl:smart-window-model-custom-url.placeholder",
+      "browser/browser/contextual-manager.ftl:contextual-manager-passwords-origin-field.placeholder",
       "browser/browser/search.ftl:add-engine-url-placeholder.placeholder",
       "dom/chrome/dom/dom.properties:DOMAttrModifiedWarning",
       "dom/chrome/dom/dom.properties:DOMCharacterDataModifiedWarning",
