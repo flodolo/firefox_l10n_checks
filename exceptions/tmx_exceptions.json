@@ -24,6 +24,10 @@
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2",
         "toolkit/toolkit/about/aboutMozilla.ftl:about-mozilla-quote-6-27"
       ],
+      "eu": [
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
+        "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
+      ],
       "fr": [
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation",
         "toolkit/toolkit/about/aboutGlean.ftl:about-glean-adhoc-explanation2"
