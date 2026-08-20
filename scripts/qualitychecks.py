@@ -9,7 +9,7 @@ import pickle
 import re
 import sys
 
-from collections import OrderedDict
+from collections import OrderedDict, defaultdict
 from configparser import ConfigParser
 from contextlib import contextmanager
 from pathlib import Path
@@ -207,6 +207,11 @@ class CompareLocalesChecker:
 
     def _extract_messages(self, data, cl_output):
         """Recursively traverse results to extract warnings and errors."""
+        if isinstance(data, list):
+            # Leaf node: compare-locales collapses single branches, so the
+            # value for a locale with issues in only one file is the list of
+            # messages for that file, not a dict of paths.
+            data = {"": data}
         for node_data in data.values() if isinstance(data, dict) else []:
             if isinstance(node_data, list):
                 for line in node_data:
@@ -240,22 +245,23 @@ class CompareLocalesChecker:
         total_errors = 0
         total_warnings = 0
 
-        # Mapping to handle complex keys like 'it/browser'
-        details_keys = list(data[0]["details"].keys())
-        keys_mapping = {
-            k.split(os.path.sep)[0]: k for k in details_keys if os.path.sep in k
-        }
+        # Details keys are a compressed prefix tree, so a locale can show up
+        # as 'it', 'it/browser', or as a full file path. Group all top-level
+        # keys belonging to each locale.
+        details = data[0]["details"]
+        keys_mapping = defaultdict(list)
+        for k in details:
+            keys_mapping[k.split("/")[0]].append(k)
 
         for locale, stats in data[0]["summary"].items():
             if stats["errors"] + stats["warnings"] == 0:
                 continue
 
             cl_output = {"errors": [], "warnings": []}
-            locale_key = keys_mapping.get(locale, locale)
 
             # Use the extracted recursion logic
-            cl_data = data[0]["details"].get(locale_key, {})
-            self._extract_messages(cl_data, cl_output)
+            for locale_key in keys_mapping.get(locale, []):
+                self._extract_messages(details[locale_key], cl_output)
 
             if stats["errors"] > 0:
                 results_container.output_cl["errors"][locale] = cl_output["errors"]
