@@ -10,9 +10,6 @@
       "browser/langpack-metadata.ftl:langpack-contributors"
     ],
     "locales": {
-      "af": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
-      ],
       "ar": [
         "toolkit/crashreporter/crashreporter.ini:isRTL"
       ],
@@ -30,27 +27,12 @@
       "fa": [
         "toolkit/crashreporter/crashreporter.ini:isRTL"
       ],
-      "gn": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
-      ],
       "he": [
         "toolkit/crashreporter/crashreporter.ini:isRTL"
-      ],
-      "hy-AM": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
-      ],
-      "ja": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
-      ],
-      "kk": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
       ],
       "ko": [
         "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
         "toolkit/chrome/global/dialog.properties:accesskey-help"
-      ],
-      "lo": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
       ],
       "pl": [
         "toolkit/chrome/global/dialog.properties:accesskey-disclosure",
@@ -58,11 +40,7 @@
       ],
       "sr": [
         "toolkit/chrome/global/dialog.properties:accesskey-accept",
-        "toolkit/chrome/global/dialog.properties:accesskey-cancel",
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
-      ],
-      "zh-TW": [
-        "toolkit/chrome/global/intl.properties:intl.menuitems.alwaysappendaccesskeys"
+        "toolkit/chrome/global/dialog.properties:accesskey-cancel"
       ]
     }
   },

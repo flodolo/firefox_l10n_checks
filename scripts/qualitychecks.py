@@ -748,7 +748,7 @@ class QualityCheck:
 
         # Store the number of plural forms for each locale
         self.plural_forms = {}
-        self.getPluralForms()
+        self.getPluralForms(self.locales)
 
         # Initialize other error messages
         self.error_messages = OrderedDict()
@@ -815,28 +815,14 @@ class QualityCheck:
         self.general_errors.append(f"Error reading {search_id}")
         return ([], False)
 
-    def getPluralForms(self):
+    def getPluralForms(self, locales):
         """Get the number of plural forms for each locale"""
 
         from compare_locales.plurals import get_plural
 
-        url = f"{self.api_url}/entity/gecko_strings/?id=toolkit/chrome/global/intl.properties:pluralRule"
-        if self.verbose:
-            print("Reading the list of plural forms")
-        locales_plural_rules, success = self.getJsonData(url, "list of plural forms")
-        if not success:
-            sys.exit("CRITICAL ERROR: List of plural forms not available")
-
-        for locale, rule_number in locales_plural_rules.items():
+        for locale in self.locales:
             plurals = get_plural(locale)
-            # Fall back to English (2 plural forms)
-            num_plurals = 2
-            if plurals is None:
-                # Temporary fix for szl
-                if locale == "szl":
-                    num_plurals = 3
-            else:
-                num_plurals = len(plurals)
+            num_plurals = 2 if plurals is None else len(plurals)
             self.plural_forms[locale] = num_plurals
 
     def getLocales(self):
