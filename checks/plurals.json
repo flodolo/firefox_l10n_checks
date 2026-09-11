@@ -1,45 +1,5 @@
 [
   {
-    "entity": "protections.footer.blockedTrackerCounter.description",
-    "file": "browser/chrome/browser/browser.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "protections.milestone.description",
-    "file": "browser/chrome/browser/browser.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "accessibility.progress.progressbar",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/accessibility.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "editor.searchResults1",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/debugger.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "sourceSearch.resultsSummary2",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/debugger.properties",
-    "type": "plural_forms"
-  },
-  {
     "entity": "variablesViewMoreObjects",
     "excluded_locales": [
       "gd",
@@ -127,66 +87,6 @@
       "sr"
     ],
     "file": "devtools/client/netmonitor.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "ruleCount.label",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/styleeditor.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "messageRepeats.tooltip2",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/webconsole.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "webconsole.filteredMessagesByText.label",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/webconsole.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "webconsole.filteredMessagesByText.tooltip",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/webconsole.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "webconsole.reverseSearch.results",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/webconsole.properties",
-    "type": "plural_forms"
-  },
-  {
-    "entity": "webconsole.warningGroup.messageCount.tooltip",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/webconsole.properties",
     "type": "plural_forms"
   }
 ]
