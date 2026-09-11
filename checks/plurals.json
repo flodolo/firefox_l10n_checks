@@ -70,16 +70,6 @@
     "type": "plural_forms"
   },
   {
-    "entity": "networkMenu.summary.requestsCount2",
-    "excluded_locales": [
-      "gd",
-      "ltg",
-      "sr"
-    ],
-    "file": "devtools/client/netmonitor.properties",
-    "type": "plural_forms"
-  },
-  {
     "entity": "networkMenu.ws.summary.framesCount2",
     "excluded_locales": [
       "gd",

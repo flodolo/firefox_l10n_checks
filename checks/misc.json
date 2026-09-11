@@ -12,14 +12,6 @@
   },
   {
     "checks": [
-      "%s"
-    ],
-    "entity": "add-engine-url",
-    "file": "browser/browser/preferences/addEngine.ftl",
-    "type": "include"
-  },
-  {
-    "checks": [
       "+1",
       "\u2303\u21e71"
     ],

@@ -6,17 +6,5 @@
     "entity": "INSTALLER_WIN_CAPTION",
     "file": "browser/installer/nsisstrings.properties",
     "type": "include"
-  },
-  {
-    "checks": [
-      "\\$BrandShortName.*\\$BrandShortName"
-    ],
-    "entity": "WARN_MIN_SUPPORTED_OSVER_CPU_MSG",
-    "excluded_locales": [
-      "it",
-      "sr"
-    ],
-    "file": "browser/installer/nsisstrings.properties",
-    "type": "include_regex"
   }
 ]
