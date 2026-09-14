@@ -198,6 +198,9 @@
         "browser/installer/override.properties:DirText",
         "browser/installer/override.properties:LicenseTextRB"
       ],
+      "eu": [
+        "toolkit/toolkit/about/pdfFeaturesNotification.ftl:pdf-features-notification.heading"
+      ],
       "fi": [
         "browser/installer/custom.properties:CONTEXT_OPTIONS",
         "browser/installer/custom.properties:CONTEXT_SAFE_MODE",
