@@ -274,14 +274,19 @@
         "browser/browser/search.ftl:opensearch-error-format-desc"
       ],
       "ja": [
+        "browser/browser/browser.ftl:eme-notifications-drm-content-cdm-installing-message",
         "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
         "browser/browser/preferences/preferences.ftl:pane-experimental-title",
         "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
       ],
       "ja-JP-mac": [
+        "browser/browser/browser.ftl:eme-notifications-drm-content-cdm-installing-message",
         "browser/browser/preferences/preferences.ftl:do-not-track-option-default-content-blocking-known.label",
         "browser/browser/preferences/preferences.ftl:pane-experimental-title",
         "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"
+      ],
+      "lij": [
+        "browser/browser/browser.ftl:eme-notifications-drm-content-cdm-installing-message"
       ],
       "lt": [
         "toolkit/toolkit/neterror/netError.ftl:fp-neterror-denied-port-access"

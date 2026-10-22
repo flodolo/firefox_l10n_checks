@@ -176,6 +176,7 @@
       "dom/chrome/dom/dom.properties:PushMessageBadRecordSize",
       "dom/chrome/dom/dom.properties:PushMessageBadSalt",
       "dom/chrome/dom/dom.properties:PushMessageBadSenderKey",
+      "dom/chrome/dom/dom.properties:SVGUseInlineEventHandlerWarning",
       "dom/chrome/dom/dom.properties:SpeculationFailed2",
       "dom/chrome/dom/dom.properties:SyncXMLHttpRequestDeprecatedWarning",
       "dom/chrome/dom/dom.properties:SyncXMLHttpRequestWarning",
