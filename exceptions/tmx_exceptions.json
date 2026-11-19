@@ -130,6 +130,20 @@
   },
   "ftl_literals": {
     "locales": {
+      "ja": [
+        "browser/installer/custom.ftl:error-create-directory-suffix",
+        "browser/installer/custom.ftl:warn-disk-space",
+        "browser/installer/custom.ftl:warn-write-access",
+        "browser/installer/mui.ftl:mui-text-finish-info-text",
+        "browser/installer/mui.ftl:mui-untext-finish-info-text"
+      ],
+      "ja-JP-mac": [
+        "browser/installer/custom.ftl:error-create-directory-suffix",
+        "browser/installer/custom.ftl:warn-disk-space",
+        "browser/installer/custom.ftl:warn-write-access",
+        "browser/installer/mui.ftl:mui-text-finish-info-text",
+        "browser/installer/mui.ftl:mui-untext-finish-info-text"
+      ],
       "km": [
         "dom/dom/xslt.ftl:xpath-unbalanced-curly-brace"
       ]
